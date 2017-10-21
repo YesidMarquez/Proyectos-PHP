@@ -10,7 +10,7 @@ if (empty($USUARIO) || empty($CONTRASEÑA)) {
 
 
 //Consulta a la tabla
-$conn =mysqli_connect('localhost','dummies_php','12345') or die("Error al conectar " . mysqli_error());
+$conn =mysqli_connect('localhost','root','12345') or die("Error al conectar " . mysqli_error());
 mysqli_select_db($conn,"test_1")or die("cannot select DB");
 echo "Hasta el momento tu Login finciona";
 
