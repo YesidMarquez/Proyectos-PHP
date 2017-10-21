@@ -18,7 +18,7 @@
 				echo "<br>";
 
 
-					$usuario = "root";
+					$usuario = "dummies_php";
 					$password = "12345";
 					$servidor = "localhost";
 					$basededatos = "test_1";

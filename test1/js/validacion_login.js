@@ -3,7 +3,7 @@ function validarFormulario(formulario_login){
 
 	if (Nombre == ""){
 
-		alert ('Debe ingresar un nombre'); 
+		alert ('Debe ingresar un nombre de Usuario'); 
 	}else{
 
 		document.getElementById(formulario_login).submit();
