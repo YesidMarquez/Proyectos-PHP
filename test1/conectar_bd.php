@@ -25,7 +25,7 @@
 					
 					// Datos de la base de datos
 					
-					$usuario = "dummies_php";
+					$usuario = "root";
 					$password = "12345";
 					$servidor = "localhost";
 					$basededatos = "test_1";
