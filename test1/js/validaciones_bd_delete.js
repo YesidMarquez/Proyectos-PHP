@@ -1,12 +1,12 @@
-function validarFormulario(formulario){
-	var nombre = document.getElementById("nombre").value;
+function validarFormulario(formulario_DL){
+	var id_usuario = document.getElementById("id_usuario").value;
 
-	if (nombre == ""){
+	if (id_usuario == ""){
 
-		alert ('Debe ingresar un nombre'); 
+		alert ('Debe ingresar un Id de Usuario'); 
 	}else{
 
-		document.getElementById(formulario).submit();
+		document.getElementById(formulario_DL).submit();
 		
 
 	}

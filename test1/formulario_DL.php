@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CRUD 1.0</title>
+	<script type="text/javascript" src="js/validaciones_bd_delete.js"></script>
 </head>
 <body>
 	<div>
@@ -11,16 +12,15 @@
 			<fieldset>
 			  
 			  <h1>CRUD</h1>
-			  	<FORM ACTION="conectar_bd_delete.php" METHOD="POST">
+			  	<FORM ACTION="conectar_bd_delete.php" METHOD="POST" name= "formulario_DL" id="formulario_DL" onclick="" onsubmit="">
 
-				Ingrese el Id_Usuario: <INPUT TYPE="text" NAME="id_usuario"><br><br>	
+				Ingrese el Id_Usuario: <INPUT TYPE="text" NAME="id_usuario" id= "id_usuario" complement="required"><br><br>
+				<button TYPE="button" VALUE="Eliminar" onclick="validarFormulario('formulario_DL');">Eliminar</button><br><br>	
 				
-				<INPUT TYPE="submit" VALUE="Eliminar"><br><br>
-
 				</FORM>
 
 				<form ACTION="menu.html">
-				<INPUT TYPE="submit" VALUE="Retornar al menu"><br></form>
+				<button TYPE="submit" VALUE="Retornar al menu">Retornar al menu</button><br></form>
 
 				<?php
 

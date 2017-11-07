@@ -23,7 +23,8 @@
 			
 				</FORM>
 				<form ACTION="menu.html">
-				<INPUT TYPE="button" VALUE="Retornar al menu"><br><br></form>
+				<button TYPE="submit" VALUE="Retornar al menu"">Retornar al menu</button>	
+				<br><br></form>
 
 
 
