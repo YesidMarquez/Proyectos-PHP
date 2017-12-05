@@ -12,19 +12,21 @@
 			
 			<fieldset>
 			  
-			  <h1>CRUD</h1>
-			  	<FORM ACTION="conectar_bd_insert.php" METHOD="POST" name= "formulario" id="formulario" onclick="" onsubmit="">
+			  <h1>Sis_Vise</h1>
 
-				
-				<form enctype="multipart/form-data" action="uploader.php" method="POST">
-				Codigo Empleado: <INPUT TYPE="text" NAME="Nombre" id= "Nombre" complement="required"><br><br>
-				<input name="uploadedfile" type="file" />
-				<input type="submit" value="Subir archivo" />
+			  	<form action="conectar_bd_insert.php" enctype="multipart/form-data" method="post" name= "formulario" id="formulario" onclick="" onsubmit="">
+
+		  			Codigo Empleado: <INPUT TYPE="text" NAME="Identificacion" id= "Identificacion" complement="required"><br><br>
+		  			Ingrese los Nombres: <INPUT TYPE="text" NAME="Nombres" id= "Nombres" complement="required"><br><br>
+					Ingrese los Apellidos: <INPUT TYPE="text" NAME="Apellidos" id= "Apellidos" complement="required"><br><br>
+					Ingrese el Cargo: <INPUT TYPE="text" NAME="Cargo" id= "Cargo" complement="required"><br><br>
+					Ingrese la Ciudad: <INPUT TYPE="text" NAME="Ciudad" id= "Ciudad" complement="required"><br><br>
+				 	<label for="imagen">Cargar Imagen:</label> 
+				  	<input id="imagen" name="imagen" size="30" type="file" /><br><br>
+				  	<input type="submit" value="Insertar Daros" />
 				</form>
-				<button TYPE="button" VALUE="Insertar" onclick="validarFormulario('formulario');">Insertar</button>
-			
-				</FORM>
-				<form ACTION="menu.html">
+			  									
+				<form ACTION="menu.html"><br><br>
 				<button TYPE="submit" VALUE="Retornar al menu"">Retornar al menu</button>	
 				<br><br></form>
 

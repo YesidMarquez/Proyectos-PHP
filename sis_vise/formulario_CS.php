@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CRUD 1.0</title>
+	<title>Sis_Vise</title>
 	<script type="text/javascript" src="js/validaciones_bd.js"></script>
 </head>
 <body>
@@ -12,7 +12,7 @@
 			
 			<fieldset>
 			  
-			  <h1>CRUD</h1>
+			  <h1>Sis_Vise</h1>
 			  	<FORM ACTION="conectar_bd.php" METHOD="POST" name= "formulario_cs" id="formulario_cs" onclick="" onsubmit="">
 
 				Ingrese el Id_Empleado: <INPUT TYPE="text" NAME="usuario" id= "usuario" complement="required"><br><br>	

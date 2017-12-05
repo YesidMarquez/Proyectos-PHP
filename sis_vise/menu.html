@@ -1,38 +1,106 @@
-
-<!DOCTYPE html>
 <html>
-<head>
-	<title>CRUD 1.0</title>
-</head>
-<body>
-	<div>
-		<center>
+	<head>
+		<title>Sis_Vise</title>
+		<style type="text/css">
+			
+			* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			#header {
+				margin:auto;
+				width:500px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			.Fields input{
+				background-color: #E9E9E9;
+				border: 2px solid #A8A8A8;
+				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+				font-size: 10px;
+}
 
 			
-			<fieldset>
-			  
-			  <h1>CRUD</h1>
-			 	<FORM ACTION="formulario_CS.php" METHOD="POST">
-				Consulta Usuarios: <INPUT TYPE="submit" VALUE="Consultar"><br><br></FORM>
-
-				<form ACTION="formulario.php">
-				Ingresar Credenciales:  <INPUT TYPE="submit" VALUE="Ingresar"><br><br></form>
-
-				<form ACTION="formulario_UD.php">
-				Actualizar Usuarios: <!--<INPUT TYPE="submit" VALUE="Actualizar"><br><br>--></form>
-
-				<form ACTION="formulario_DL.php">
-				Eliminar Usuarios: <!--<INPUT TYPE="submit" VALUE="Eliminar"><br><br>--></form>
-
-				<form ACTION="index.html">
-				<INPUT TYPE="submit" VALUE="Salir"><br><br></form>
-						 
+			.nav li a:hover {
+				background-color:#434343;
+			}
 			
-			</fieldset>
-		</center>
-	</div>
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<ul class="nav">
+				<li><a href="">Inicio</a></li>
+				<li><a href="">Servicios</a>
+					<ul>
+						<li><a href="" >Consultas</a></li>
+							<FORM ACTION="formulario_CS.php" METHOD="POST">
+							
+								<input style="background-color: #000000" value="Consultar"  type="submit"/><br><br></FORM>
 
-</body>
+						<li><a href="">Ingresos</a></li>
+							<form ACTION="formulario.php">
+							<input style="background-color: #000000" value="Ingresar"  type="submit"/><br><br></FORM>
+							
+						<li><a href="">Actualizaciones</a></li>
+							<form ACTION="formulario_UD.php">
+							<input style="background-color: #000000" value="Actualizar"  type="submit"/><br><br></FORM>	
+							
+					</ul>
+				</li>
+				<li><a href="">Acerca de</a>
+					<ul>
+						<li><a href="">Submenu1</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="">Salir</a>
+					<ul>
+						<li><a href="">Salir</a></li>
+						<form ACTION="index.html">
+					
+						<input style="background-color: #000000" TYPE="submit" VALUE="Salir"><br><br></form>
+						
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</body>
 </html>
-
 

@@ -10,11 +10,11 @@
 			
 			<fieldset>
 			  
-			  <h1>CRUD</h1>
+			  <h1>SIS-VISE</h1>
 			  <?php
 
 
-				echo "**********************************SELECT*********************************";
+				echo "**********************************CONSULTAS*********************************";
 				echo "<br>";
 				echo "<br>";
 
@@ -49,11 +49,12 @@
 						
 												
 					else{
-						$campos = "SELECT id_empleado, nombres, apellidos, cargo, ciudad, c.cod_imagen";
-						$tablas = " FROM empleado, credencial as c";
-						$condicion = " WHERE id_empleado = ";
-						$query = $campos.$tablas.$condicion.$consul;
-						$resultado = mysqli_query( $conexion, $query ) or die ( "Algo ha ido mal ");
+						$campos = "SELECT id_empleado, nombres, apellidos, cargo, ciudad, ruta_imagen FROM empleado, credencial WHERE id_empleado = '$consul' and empleado_id = '$consul'";
+						//$tablas = " FROM empleado, credencial";
+						//$condicion = " WHERE id_empleado = ";
+						//$condicion1= "and empleado_id = ";
+						//$query = $campos.$tablas.$condicion.$consul.$condicion1.$consul;
+						$resultado = mysqli_query( $conexion, $campos ) or die ( "Algo ha ido mal ");
 						
 						// Motrar el resultado de los registro de la base de datos
 						// Encabezado de la tabla
@@ -64,11 +65,11 @@
 						echo "</td> <td>";
 						echo "<th>Apellidos</th>";
 						echo "</td> <td>";
-						echo "<th>cargo</th>";
+						echo "<th>Cargo</th>";
 						echo "</td> <td>";
-						echo "<th>ciudad</th>";
+						echo "<th>Ciudad</th>";
 						echo "</td> <td>";
-						echo "<th>imagen</th>";
+						echo "<th>Imagen</th>";
 						echo "</td> <td>";
 						
 						echo "</tr>";
@@ -77,7 +78,8 @@
 						while ($columna = mysqli_fetch_array( $resultado ))
 						{
 							echo "<tr>";
-							echo "<td>" . $columna['nombres'] . "</td> <td>"."</td> <td>" . $columna['apellidos']. "</td> <td>" ."</td><td>". $columna['cargo']. "</td> <td>". "</td><td>" .$columna['ciudad'] . "</td> <td>" ."</td><td>" ."</td><td>"."</td>".$columna['cod_imagen'] . "</td> <td>"."</td> <td>" ;
+							echo "<td>" . $columna['nombres'] . "</td> <td>"."</td> <td>" . $columna['apellidos']. "</td> <td>" ."</td><td>". $columna['cargo']. "</td> <td>". "</td><td>" .$columna['ciudad'] . "</td> <td>"."</td> <td>" .$columna['ruta_imagen'] . "</td> <td>"."</td><td>" ."</td><td>"."</td>" ;
+							echo "<img src='intranet/uploads/2680820.pdf' >";
 							echo "</tr>";
 						}
 						
