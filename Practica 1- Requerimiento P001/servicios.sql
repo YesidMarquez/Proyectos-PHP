@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2017 a las 06:56:55
+-- Tiempo de generación: 12-12-2017 a las 00:01:26
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 7.1.7
 
@@ -55,6 +55,13 @@ CREATE TABLE `costo` (
   `reparacion_id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `costo`
+--
+
+INSERT INTO `costo` (`id_costo`, `concepto`, `reparacion_id`) VALUES
+(11, 'Reparación fuente', 101);
+
 -- --------------------------------------------------------
 
 --
@@ -91,6 +98,14 @@ CREATE TABLE `empleados` (
   `disp_serie` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`id_tecnico`, `nombres`, `apellidos`, `disp_serie`) VALUES
+(1088256244, 'Yesid Leandro', 'Marquez Pradilla', 'MXL5227'),
+(1088273174, 'Paula Andrea', 'Jimenez Montoya', 'WHK200');
+
 -- --------------------------------------------------------
 
 --
@@ -102,8 +117,16 @@ CREATE TABLE `factura` (
   `cliente_nit` int(50) NOT NULL,
   `reparacion_id` int(50) NOT NULL,
   `costo_id` int(50) NOT NULL,
-  `tecnico_id` int(50) NOT NULL
+  `tecnico_id` int(50) NOT NULL,
+  `valor_id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `factura`
+--
+
+INSERT INTO `factura` (`id_factura`, `cliente_nit`, `reparacion_id`, `costo_id`, `tecnico_id`, `valor_id`) VALUES
+(20, 830070339, 101, 11, 1088256244, 0);
 
 -- --------------------------------------------------------
 
@@ -116,6 +139,14 @@ CREATE TABLE `garantia` (
   `revision_id` int(50) NOT NULL,
   `tipo_id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `garantia`
+--
+
+INSERT INTO `garantia` (`id_garantia`, `revision_id`, `tipo_id`) VALUES
+(10, 1, 2),
+(11, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -151,6 +182,14 @@ CREATE TABLE `reparacion` (
   `tecnico_id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `reparacion`
+--
+
+INSERT INTO `reparacion` (`id_reparacion`, `descripcion`, `revision_id`, `garantia_id`, `tecnico_id`) VALUES
+(100, 'MONITOR LCD, se repara filtos de imagen por defectos de fabrica', 1, 10, 1088256244),
+(101, 'TORRE HP, cambio de fuente, se videncia el mal uso, no se conecta a un estabilizador.', 2, 11, 1088273174);
+
 -- --------------------------------------------------------
 
 --
@@ -164,6 +203,14 @@ CREATE TABLE `revision` (
   `disp_serie` varchar(100) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `revision`
+--
+
+INSERT INTO `revision` (`id_revision`, `descripcion`, `tecnico_id`, `disp_serie`) VALUES
+(1, 'Se revisa dispositivo, después de la evaluación se establece que que ingresa por garantía', 1088256244, 'MXL5227'),
+(2, 'Se revisa dispositivo, después de la evaluación se establece que que ingresa por reparacion', 1088273174, 'WHK200');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +221,35 @@ CREATE TABLE `tipo_garantia` (
   `id_tipo` int(50) NOT NULL,
   `descripcion` text COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_garantia`
+--
+
+INSERT INTO `tipo_garantia` (`id_tipo`, `descripcion`) VALUES
+(1, 'Defectos de Fabrica'),
+(2, 'Defectos de componetes'),
+(3, 'Sin Garantía uso inadecuado del dispositivo');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `valores`
+--
+
+CREATE TABLE `valores` (
+  `id_valor` int(50) NOT NULL,
+  `valor` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `concepto` text COLLATE utf8_spanish_ci NOT NULL,
+  `factura_id` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `valores`
+--
+
+INSERT INTO `valores` (`id_valor`, `valor`, `concepto`, `factura_id`) VALUES
+(20, '$200.000', 'Reparacion fuente', 20);
 
 --
 -- Índices para tablas volcadas
@@ -214,7 +290,8 @@ ALTER TABLE `factura`
   ADD UNIQUE KEY `cliente_nit` (`cliente_nit`),
   ADD UNIQUE KEY `reparacion_id` (`reparacion_id`),
   ADD UNIQUE KEY `costo_id` (`costo_id`),
-  ADD UNIQUE KEY `tecnico_id` (`tecnico_id`);
+  ADD UNIQUE KEY `tecnico_id` (`tecnico_id`),
+  ADD UNIQUE KEY `valor_id` (`valor_id`) USING BTREE;
 
 --
 -- Indices de la tabla `garantia`
@@ -255,6 +332,13 @@ ALTER TABLE `tipo_garantia`
   ADD PRIMARY KEY (`id_tipo`);
 
 --
+-- Indices de la tabla `valores`
+--
+ALTER TABLE `valores`
+  ADD PRIMARY KEY (`id_valor`),
+  ADD UNIQUE KEY `factura_id` (`factura_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -267,7 +351,12 @@ ALTER TABLE `recibidos`
 -- AUTO_INCREMENT de la tabla `revision`
 --
 ALTER TABLE `revision`
-  MODIFY `id_revision` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_revision` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `valores`
+--
+ALTER TABLE `valores`
+  MODIFY `id_valor` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- Restricciones para tablas volcadas
 --
@@ -326,6 +415,12 @@ ALTER TABLE `reparacion`
 ALTER TABLE `revision`
   ADD CONSTRAINT `revision_ibfk_1` FOREIGN KEY (`tecnico_id`) REFERENCES `empleados` (`id_tecnico`),
   ADD CONSTRAINT `revision_ibfk_2` FOREIGN KEY (`disp_serie`) REFERENCES `dispositivo` (`serie_disp`);
+
+--
+-- Filtros para la tabla `valores`
+--
+ALTER TABLE `valores`
+  ADD CONSTRAINT `valores_ibfk_1` FOREIGN KEY (`factura_id`) REFERENCES `factura` (`id_factura`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
