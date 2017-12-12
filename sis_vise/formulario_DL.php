@@ -36,7 +36,7 @@
 					// Datos de la base de datos
 					
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "test_1";
 					

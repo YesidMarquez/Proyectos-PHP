@@ -19,7 +19,7 @@
 
 
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "test_1";
 					$ID_USER=$_POST['id_usuario'];

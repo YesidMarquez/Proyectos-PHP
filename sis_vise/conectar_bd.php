@@ -26,7 +26,7 @@
 					// Datos de la base de datos
 					
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "credenciales";
 					
@@ -79,8 +79,9 @@
 						{
 							echo "<tr>";
 							echo "<td>" . $columna['nombres'] . "</td> <td>"."</td> <td>" . $columna['apellidos']. "</td> <td>" ."</td><td>". $columna['cargo']. "</td> <td>". "</td><td>" .$columna['ciudad'] . "</td> <td>"."</td> <td>" .$columna['ruta_imagen'] . "</td> <td>"."</td><td>" ."</td><td>"."</td>" ;
-							echo "<img src='intranet/uploads/2680820.pdf' >";
+							
 							echo "</tr>";
+							
 						}
 						
 						echo "</table>"; // Fin de la tabla
@@ -97,7 +98,8 @@
 					<title></title>
 				</head>
 				<body>
-
+					<img src="intranet/uploads/$columna['ruta_imagen']" width="300" height="250" alt="Tamaño original" border="3"> 
+							<br> 
 
 					<form ACTION="menu.html">
 					<INPUT TYPE="submit" VALUE="Retornar al menu"><br></form>

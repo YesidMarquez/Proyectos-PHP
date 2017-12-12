@@ -18,7 +18,7 @@
 
 
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "credenciales";
 					$ID=$_POST["Identificacion"];

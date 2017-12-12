@@ -17,7 +17,7 @@
 				echo "<br>";
 
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "credenciales";
 					$IDE=$_POST['Cedula'];
@@ -33,7 +33,7 @@
 
 
 					//Si existe imagen y tiene un tamaño correcto
-					if (($nombre_img == !NULL) && ($_FILES['imagen']['size'] <= 200000)) 
+					if (($nombre_img == !NULL) && ($_FILES['imagen']['size'] <= 2000000)) 
 					{
 					   //indicamos los formatos que permitimos subir a nuestro servidor
 					   if (($_FILES["imagen"]["type"] == "image/gif")
