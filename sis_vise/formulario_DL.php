@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CRUD 1.0</title>
+	<title>Sis_Vise</title>
 	<script type="text/javascript" src="js/validaciones_bd_delete.js"></script>
 </head>
 <body>
@@ -11,7 +11,7 @@
 			
 			<fieldset>
 			  
-			  <h1>CRUD</h1>
+			  <h1>Sis_Vise</h1>
 			  	<FORM ACTION="conectar_bd_delete.php" METHOD="POST" name= "formulario_DL" id="formulario_DL" onclick="" onsubmit="">
 
 				Ingrese el Id_Usuario: <INPUT TYPE="text" NAME="id_usuario" id= "id_usuario" complement="required"><br><br>
@@ -36,7 +36,7 @@
 					// Datos de la base de datos
 					
 					$usuario = "root";
-					$password = "";
+					$password = "12345";
 					$servidor = "localhost";
 					$basededatos = "test_1";
 					

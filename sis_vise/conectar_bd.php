@@ -72,6 +72,7 @@
 						echo "<th>Imagen</th>";
 						echo "</td> <td>";
 						
+						
 						echo "</tr>";
 						
 						// Bucle while que recorre cada registro y muestra cada campo en la tabla.
@@ -83,24 +84,34 @@
 							echo "</tr>";
 							
 						}
+						$campos = "SELECT ruta_imagen FROM credencial WHERE empleado_id = '$consul'";
+						//$tablas = " FROM empleado, credencial";
+						//$condicion = " WHERE id_empleado = ";
+						//$condicion1= "and empleado_id = ";
+						//$query = $campos.$tablas.$condicion.$consul.$condicion1.$consul;
+
+						$resultado = mysqli_query( $conexion, $campos ) or die ( "Algo ha ido mal ");
 						
+						echo "<img src='intranet/uploads".$resultado1."' border='2' width='300' height='100'>";  						
 						echo "</table>"; // Fin de la tabla
 						// cerrar conexión de base de datos
 						mysqli_close( $conexion );
 						echo "<br>";
-					}	
+						
+					}
 
+					
 						
 				?>
+				 
+							<br> 
 				<!DOCTYPE html>
 				<html>
 				<head>
 					<title></title>
 				</head>
 				<body>
-					<img src="intranet/uploads/$columna['ruta_imagen']" width="300" height="250" alt="Tamaño original" border="3"> 
-							<br> 
-
+					
 					<form ACTION="menu.html">
 					<INPUT TYPE="submit" VALUE="Retornar al menu"><br></form>
 

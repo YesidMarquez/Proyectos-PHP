@@ -17,7 +17,7 @@
 
 		  			Ingrese la Cedula: <INPUT TYPE="text" NAME="Cedula" id= "Cedula" complement="required"><br><br>	
 					<label for="imagen">Imagen:</label> 
-				  	<input id="imagen" name="imagen" size="30" type="file" /><br><br>
+				  	<input id="imagen" name="imagen" size="30" type="file" accept="image/* " /><br><br>
 				  	<input type="submit" VALUE="Actualizar" onclick="validarFormulario('formulario_ud');"></button><br><br>
 				</form>
 			  					
