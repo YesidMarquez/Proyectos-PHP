@@ -32,7 +32,7 @@
       <?php  
  
       if (empty($_GET['alert'])) {
-        echo "";
+        echo "hola mundo";
       } 
 
       elseif ($_GET['alert'] == 1) {
