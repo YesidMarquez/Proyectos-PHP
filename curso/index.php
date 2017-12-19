@@ -2,6 +2,19 @@
 	
 	require 'conexion.php';
 
+	$where = "";
+	
+	if(!empty($_POST))
+	{
+		$valor = $_POST['campo'];
+		if(!empty($valor)){
+			$where = "WHERE nombre LIKE '%$valor'";
+		}
+	}
+	$sql = "SELECT * FROM personas $where";
+	$resultado = $mysqli->query($sql);
+
+
 ?>	
 
 <html lang="es">
@@ -27,7 +40,27 @@
 
 				<a href="nuevo.php" class="btn btn-primary">Nuevo Registro</a>
 			</div>
+			<br>
+			<div class="row table-responsive">
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>NOMBRE </th>
+							<th>Email</th>
+							<th>Telefono</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<!--cuerpo de la tabla-->
+					<tbody></tbody>
+				</table>
+			</div>
 		</div>
+
+
 
 
 
