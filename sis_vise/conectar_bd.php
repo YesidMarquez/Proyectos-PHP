@@ -84,7 +84,7 @@
 							echo "</tr>";
 							
 						}
-						$campos = "SELECT ruta_imagen FROM credencial WHERE empleado_id = '$consul'";
+						$campos = "SELECT empleado_id FROM credencial WHERE empleado_id = '$consul'";
 						//$tablas = " FROM empleado, credencial";
 						//$condicion = " WHERE id_empleado = ";
 						//$condicion1= "and empleado_id = ";
@@ -92,7 +92,7 @@
 
 						$resultado = mysqli_query( $conexion, $campos ) or die ( "Algo ha ido mal ");
 						
-						echo "<img src='intranet/uploads".$resultado1."' border='2' width='300' height='100'>";  						
+						echo "<img src='intranet/uploads/".$campos."jpg"."' border='2' width='300' height='100'>";  						
 						echo "</table>"; // Fin de la tabla
 						// cerrar conexión de base de datos
 						mysqli_close( $conexion );
