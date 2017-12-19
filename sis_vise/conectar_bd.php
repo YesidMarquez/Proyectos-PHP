@@ -71,7 +71,7 @@
 						echo "</td> <td>";
 						echo "<th>Imagen</th>";
 						echo "</td> <td>";
-						
+						//dfgifgifgligfiu
 						
 						echo "</tr>";
 						

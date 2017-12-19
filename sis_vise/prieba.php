@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `imagephp` (
   `tipo` char(15) NOT NULL,
   `imagen` mediumblob NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM;
+) ENGINE=MyISAM;ffffffffffffffffffffffffffffffffffffffff
 */
 ?>
 <!DOCTYPE html>
