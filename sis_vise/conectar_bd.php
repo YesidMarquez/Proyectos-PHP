@@ -108,8 +108,8 @@
 				</head>
 				<body>
 					
-					<form ACTION="menu.html">
-					<INPUT TYPE="submit" VALUE="Retornar al menu"><br></form>
+					<form ACTION="formulario_CS.php">
+					<INPUT TYPE="submit" VALUE="Atras" class="btn btn-primary"><br></form>
 
 					
 

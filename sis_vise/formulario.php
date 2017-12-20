@@ -4,37 +4,72 @@
 <head>
 	<title>CRUD 1.0</title>
 	<script type="text/javascript" src="js/validaciones.js"></script>
+	<meta name="viewporte" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"  href="css/bootstrap-theme.css">
+	<link rel="stylesheet"  href="css/bootstrap.min.css">
+	<script src="js/jquery-3.3.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div>
-		<center>
-
+		<div class="container">
+			<div class="row">
+				<h3 style="text-align:center">Opcion no se encuentra habilitada Para este Usuario</h3>
+			</div>
 			
-			<fieldset>
-			  
-			  <h1>Sis_Vise</h1>
-
-			  	<form action="conectar_bd_insert.php" enctype="multipart/form-data" method="post" name= "formulario" id="formulario" onclick="" onsubmit="">
-
-		  			Codigo Empleado: <INPUT TYPE="text" NAME="Identificacion" id= "Identificacion" complement="required"><br><br>
-		  			Ingrese los Nombres: <INPUT TYPE="text" NAME="Nombres" id= "Nombres" complement="required"><br><br>
-					Ingrese los Apellidos: <INPUT TYPE="text" NAME="Apellidos" id= "Apellidos" complement="required"><br><br>
-					Ingrese el Cargo: <INPUT TYPE="text" NAME="Cargo" id= "Cargo" complement="required"><br><br>
-					Ingrese la Ciudad: <INPUT TYPE="text" NAME="Ciudad" id= "Ciudad" complement="required"><br><br>
-				 	<label for="imagen">Cargar Imagen:</label> 
-				  	<input id="imagen" name="imagen" size="30" type="file" /><br><br>
-				  	<input type="submit" value="Insertar Daros" />
-				</form>
-			  									
-				<form ACTION="menu.html"><br><br>
-				<button TYPE="submit" VALUE="Retornar al menu"">Retornar al menu</button>	
-				<br><br></form>
-
-
-
-			</fieldset>
-		</center>
-	</div>
-
-</body>
+			<!--<form class="form-horizontal" method="POST" action="conectar_bd_insert.php" autocomplete="off">
+				<div class="form-group">
+					<label for="Identificacion" class="col-sm-2 control-label">Identificacion</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Identificacion" name="Identificacion" placeholder="Identificacion" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Apellidos" class="col-sm-2 control-label">Apellidos</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Apellidos" name="Apellidos" placeholder="Apellidos" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Nombres" class="col-sm-2 control-label">Nombres</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="Nombres" name="Nombres" placeholder="Nombres" required>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="Cargo" class="col-sm-2 control-label">Cargo</label>
+					<div class="col-sm-10">
+						<input type="tel" class="form-control" id="Cargo" name="Cargo" placeholder="Cargo">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="Ciudad" class="col-sm-2 control-label">Ciudad</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="Ciudad" name="Ciudad">
+							<option value="Pereira">Pereira</option>
+							<option value="Armenia">Armenia</option>
+							<option value="Manizales">Manizales</option>
+							<option value="Cartago">Cartago</option>
+							
+						</select>
+					</div>
+				
+				</div>
+				<div>
+					<label for="imagen" class="col-sm-2 control-label">Cargar Imagen</label>
+				  	<input id="imagen" name="imagen" class="btn btn-default" size="30" type="file" />
+				</div>-->
+												
+				
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10"><br>
+						<a href="menu.html" class="btn btn-default">Regresar</a>
+						<button type="submit" class="btn btn-primary">Guardar</button>
+					</div>
+				</div>
+			</form>--
+		</div>
+	</body>
 </html>

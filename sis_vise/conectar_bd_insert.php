@@ -26,9 +26,9 @@
 					$APELLIDOS=$_POST["Apellidos"];
 					$CARGO=$_POST["Cargo"];
 					$CIUDAD=$_POST["Ciudad"];
-					$nombre_img = $_FILES['imagen']['name'];
+					/*$nombre_img = $_FILES['imagen']['name'];
 					$tipo = $_FILES['imagen']['type'];
-					$tamano = $_FILES['imagen']['size'];
+					$tamano = $_FILES['imagen']['size'];*/
 
 					// creación de la conexión a la base de datos con mysql_connect()
 					$conexion = mysqli_connect( $servidor, $usuario,$password);
@@ -37,7 +37,7 @@
 					$db = mysqli_select_db( $conexion, $basededatos );
 
 
-					//Si existe imagen y tiene un tamaño correcto
+					/*//Si existe imagen y tiene un tamaño correcto
 					if (($nombre_img == !NULL) && ($_FILES['imagen']['size'] <= 200000)) 
 					{
 					   //indicamos los formatos que permitimos subir a nuestro servidor
@@ -62,18 +62,18 @@
 					{
 					   //si existe la variable pero se pasa del tamaño permitido
 					   if($nombre_img == !NULL) echo "La imagen es demasiado grande "; 
-					}
+					}*/
 
 					
 					
 				// establecer y realizar consulta. guardamos en variable.
 					//$campos1 = "UPDATE credencial SET ruta_imagen = '$nombre_img' ";
 					$campos1 = "INSERT INTO empleado (`id_empleado`, `nombres`, `apellidos`, `cargo`, `ciudad`)  VALUES ('$ID', '$NOMBRES', '$APELLIDOS', '$CARGO', '$CIUDAD')";
-					$campos2 = "INSERT INTO credencial (`empleado_id`,`ruta_imagen`) VALUES ('$ID', '$nombre_img')";
+					/*$campos2 = "INSERT INTO credencial (`empleado_id`,`ruta_imagen`) VALUES ('$ID', '$nombre_img')";*/
 
 					
-					$resultado1 = mysqli_query( $conexion, $campos1 ) or die ( "Algo ha ido mal en la insecion a la base de datos");
-					$resultado2 = mysqli_query( $conexion, $campos2 ) or die ( "Algo ha ido mal en la insecion a la base de datos");
+					$resultado1 = mysqli_query( $conexion, $campos1 ) or die ( "Algo ha ido mal en la insecion a la base de datos 1");
+					/*$resultado2 = mysqli_query( $conexion, $campos2 ) or die ( "Algo ha ido mal en la insecion a la base de datos 2");*/
 					
 					if($resultado1)
 					{	
