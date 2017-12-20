@@ -18,10 +18,6 @@
 				echo "<br>";
 				echo "<br>";
 
-
-					// Ejemplo de conexión a base de datos MySQL con PHP.
-					//
-					// Ejemplo realizado por Oscar Abad Folgueira: http://www.oscarabadfolgueira.com y https://www.dinapyme.com
 					
 					// Datos de la base de datos
 					
