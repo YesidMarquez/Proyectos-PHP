@@ -45,7 +45,7 @@ class myDBC {
 		//El password obtenido se le aplica el crypt
 		//Posteriormente se compara en el query
 		$pass_c = crypt($contrasenia, '_er#.lop');
-		$q = "select * from usuarios where nombre='$usuario' and password='$pass_c'";
+		$q = "select * from usuarios where usuario='$usuario' and password='$pass_c'";
 		
 		$result = $this->mysqli->query($q);
 		//Si el resultado obtenido no tiene nada 

@@ -22,10 +22,14 @@ if(isset($_SESSION['session']))
     
 	<div id="envoltura">
 		<div id="contenedor">
+			<center>
+				<div >
+					<img src="./css/images/logo.jpg">
+				</div>
+				
+			</center>
 	
-			<div id="cabecera" >
-				<img src="./css/images/logo.gif">
-			</div>
+			
 	
 			<div id="cuerpo">
 				<form id="form-login" action="./php/login.php" method="post" autocomplete="off">
