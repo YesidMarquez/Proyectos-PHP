@@ -65,7 +65,7 @@
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10"><br>
-						<a href="menu.html" class="btn btn-default">Regresar</a>
+						<a href="menu.php" class="btn btn-default">Regresar</a>
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</div>

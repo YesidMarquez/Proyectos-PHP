@@ -1,3 +1,12 @@
+<?php
+	require 'conexion.php';
+	
+	$where = "where venc_curso BETWEEN CAST('2018-12-01' AS DATE) AND CAST('2018-12-31' AS DATE) and id_empleado=empleado_id";
+	$sql = "SELECT id_empleado, nombres, apellidos, venc_curso, venc_acreditacion FROM empleado, credencial $where";//
+	$resultado = $mysqli->query($sql);
+	
+?>
+
 <htm lang="es">
 	<head>
 		<meta name="viewporte" content="width=device-width, initial-scale=1">
@@ -66,15 +75,7 @@
 			}
 		</style>
 	</head>
-	<center>
-				<div >
-					<p>
-						<img src="imagenes/logo.jpg" align="left" width="10%">
-					</p>
-					
-				</div>
-				
-		</center>
+	
 	<body>
 
 		
@@ -84,7 +85,6 @@
             <div class="container">
             <div class="row">
                 <h2 style="text-align: center;">Sistema de Infomacion</h2>
-                <h3 style="text-align: center;">Seguimiento de Acreditaciones</h3>
             </div>
 
             
@@ -106,7 +106,7 @@
 				<li><a href="">Personal</a>
 					<ul>
 						<li><a href="formulario_CS.php" >Personal Activo</a></li>
-						<li><a href="formulario.php">Personal Inactivo</a></li>
+						<li><a href="formulario_CS.php" >Vencimiento Cursos</a></li>
 						<li><a href="formulario_UD.php">Venciemintos de Contrato</a></li>
 						
 						
@@ -114,7 +114,8 @@
 				</li>
 				<li><a href="">Reportes</a>
 					<ul>
-						<li><a href="formulario_CS.php" >Vencimiento Cursos</a></li>
+						<li><a href="cursos_c.php" >Vencimiento Cursos</a></li>
+						<li><a href="acreditaciones_c.php" >Vencimiento Acreditaciones</a></li>
 						<li><a href="formulario.php">Personal Acreditado</a></li>
 						<li><a href="formulario_UD.php">Personal En Proceso de Acreditacion</a></li>
 						<li><a href="formulario_UD.php">Planta Personal Pereira</a></li>
@@ -145,33 +146,28 @@
 				
 			</ul>
 		</div>
-		<div class="container">
-			<div class="row"><br><br><br><br><br><br>
-                <h2 style="text-align: center">Alertas de Vencimientos</h2>
-                
-            </div>
-						
+		
+		
+	</body><br><br><br><br><br>
+	<center>
+
+		<div >
+			<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<marquee direction="right"  onmouseover="stop()" onmouseout="start()" scrollamount="15" scrolldelay="100" >
+					<img src="imagenes/logo.jpg" align="" width="10%">
+					<img src="imagenes/logo1.jpg" align="" width="10%">
+					<img src="imagenes/SISE.jpg" align="" width="10%">
+					<img src="imagenes/SISE1.jpg" align="" width="10%">
+					<img src="imagenes/SISE2.jpg" align="" width="10%">
+					<img src="imagenes/SISE3.jpg" align="" width="10%">
+					
+				</marquee>
+			</p>
 			
-			<div class="row table-responsive">
-
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>NOMBRE </th>
-							<th>Email</th>
-							<th>Telefono</th>
-							<th></th>
-							<th></th>
-						</tr>
-					</thead>
-					<!--cuerpo de la tabla-->
-					<tbody></tbody>
-				</table>
-			</div>
 		</div>
+		
+				
+	</center>
 
-
-	</body>
 </html>
 
