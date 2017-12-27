@@ -106,7 +106,7 @@
                                 <td><?php echo $row['nombres']; ?></td>
                                 <td><?php echo $row['apellidos']; ?></td>
                                 <td><?php echo $row['venc_acreditacion']; ?></td>
-                                <td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td><a href="modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
@@ -122,4 +122,3 @@
 
     </body>
 </html>
-

@@ -81,7 +81,7 @@
 
         <div class="container">
             <div class="row">
-                <h2 style="text-align:center">Vencimiento Acreditacion</h2>
+                <h2 style="text-align:center">Vencimiento Curso</h2>
             </div>
                                    
             <br>
@@ -94,7 +94,7 @@
                             <th>Nombres</th>
                             <th>Apellidos</th>
                             <th >Vencimiento Curso</th>
-                            <th>Vencimiento Acreditacion</th>
+                            <th>Modificar</th>
                         </tr>
                     </thead>
                     <!--cuerpo de la tabla-->
@@ -105,7 +105,7 @@
                                 <td><?php echo $row['nombres']; ?></td>
                                 <td><?php echo $row['apellidos']; ?></td>
                                 <td><?php echo $row['venc_curso']; ?></td>
-                                <td><a href="formulario_UD.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td><a href="formulario_UD.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
