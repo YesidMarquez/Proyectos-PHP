@@ -2,8 +2,8 @@
 <?php
     require 'conexion.php';
     
-    $where = "where fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-31' AS DATE) and id_empleado=empleado_id";
-    $sql = "SELECT id_empleado, nombre_1, apellido_1, fecha_acreditacion FROM empleado, acreditacion $where";//
+    $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado";
+    $sql = "SELECT empleado.id_empleado, empleado.nombre_1, empleado.apellido_1,empleado.direccion, ubicacion.nombre_puesto, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM `ubicacion`,`empleado`,control_cursos, contrato $where";//
     $resultado = $mysqli->query($sql);
     
 ?>
@@ -80,14 +80,13 @@
     
     <body>
 
-
         <div class="container">
             <div class="row">
                 <h2 style="text-align:center">Vencimiento Acreditacion</h2>
             </div>
                                    
             <br>
-            <form ACTION="menu.php"><br>
+               <form ACTION="menu.php"><br>
                 <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
 
             <div class="row table-responsive">
@@ -95,9 +94,12 @@
                     <thead>
                         <tr>
                             <th>Cedula</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>Vencimiento Acreditacion</th>
+                            <th>Nombre_1</th>
+                            <th>Apellido_1</th>
+                            <th>Direccion</th>
+                            <th>Ubicacion</th>
+                            <th>Curso</th>
+                            <th>Fecha Vence Curso</th>
                             <th>Modificar</th>
                         </tr>
                     </thead>
@@ -108,7 +110,10 @@
                                 <td><?php echo $row['id_empleado']; ?></td>
                                 <td><?php echo $row['nombre_1']; ?></td>
                                 <td><?php echo $row['apellido_1']; ?></td>
-                                <td><?php echo $row['fecha_acreditacion']; ?></td>
+                                <td><?php echo $row['direccion']; ?></td>
+                                <td><?php echo $row['nombre_puesto']; ?></td>
+                                <td><?php echo $row['nro_curso']; ?></td>
+                                <td><?php echo $row['fecha_vencimiento']; ?></td>
                                 <td><a href="modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
@@ -120,7 +125,7 @@
                 </table>
             </div>
             </FORM>
-                
+             
 
     </body>
 </html>

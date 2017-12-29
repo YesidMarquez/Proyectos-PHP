@@ -118,7 +118,7 @@
 						<li><a href="acreditaciones_c.php" >Vencimiento Acreditaciones</a></li>
 						<li><a href="formulario.php">Personal Acreditado</a></li>
 						<li><a href="formulario_UD.php">Personal En Proceso de Acreditacion</a></li>
-						<li><a href="formulario_UD.php">Planta Personal Pereira</a></li>
+						<li><a href="planta.php">Planta Personal Pereira</a></li>
 						
 						
 					</ul>

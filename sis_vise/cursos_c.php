@@ -85,6 +85,8 @@
             </div>
                                    
             <br>
+             <form ACTION="menu.php"><br>
+                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
 
             <div class="row table-responsive">
                 <table class="table table-striped">
@@ -116,8 +118,7 @@
                 </table>
             </div>
             </FORM>
-                <form ACTION="menu.php"><br>
-                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
+               
 
     </body>
 </html>
