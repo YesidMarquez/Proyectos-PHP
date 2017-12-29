@@ -21,7 +21,7 @@
 				  	<input type="submit" VALUE="Actualizar" onclick="validarFormulario('formulario_ud');"></button><br><br>
 				</form>
 			  					
-				<form ACTION="menu.html">
+				<form ACTION="menu.php">
 				<button TYPE="submit" VALUE="Retornar al menu">Retornar al menu</button><br><br>  
 				
 				

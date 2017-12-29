@@ -1,8 +1,8 @@
 <?php
     require 'conexion.php';
     
-    $where = "where venc_curso BETWEEN CAST('2018-12-01' AS DATE) AND CAST('2018-12-31' AS DATE) and id_empleado=empleado_id";
-    $sql = "SELECT id_empleado, nombres, apellidos, venc_curso FROM empleado, credencial $where";//
+    $where = "where fecha_vencimiento BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-15' AS DATE) and id_empleado=empleado_id";
+    $sql = "SELECT id_empleado, nombre_1, apellido_1, fecha_vencimiento FROM empleado, control_cursos $where";//
     $resultado = $mysqli->query($sql);
     
 ?>
@@ -102,9 +102,9 @@
                         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                             <tr>
                                 <td><?php echo $row['id_empleado']; ?></td>
-                                <td><?php echo $row['nombres']; ?></td>
-                                <td><?php echo $row['apellidos']; ?></td>
-                                <td><?php echo $row['venc_curso']; ?></td>
+                                <td><?php echo $row['nombre_1']; ?></td>
+                                <td><?php echo $row['apellido_1']; ?></td>
+                                <td><?php echo $row['fecha_vencimiento']; ?></td>
                                 <td><a href="formulario_UD.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
