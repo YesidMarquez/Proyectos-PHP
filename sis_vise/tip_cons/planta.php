@@ -1,9 +1,8 @@
-
 <?php
-    require 'conexion.php';
+    require '../conexion.php';
     
-    $where = "where fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-31' AS DATE) and id_empleado=empleado_id";
-    $sql = "SELECT id_empleado, apellido_1, apellido_2, nombre_1,nombre_2, fecha_acreditacion FROM empleado, acreditacion $where";//
+    $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado";
+    $sql = "SELECT id_empleado,apellido_1, apellido_2, nombre_1,nombre_2,empleado.direccion, ubicacion.nombre_puesto, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM `ubicacion`,`empleado`,control_cursos, contrato  $where";//
     $resultado = $mysqli->query($sql);
     
 ?>
@@ -11,10 +10,10 @@
 <htm lang="es">
     <head>
         <meta name="viewporte" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"  href="css/bootstrap-theme.css">
-        <link rel="stylesheet"  href="css/bootstrap.min.css">
-        <script src="js/jquery-3.3.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet"  href="../css/bootstrap-theme.css">
+        <link rel="stylesheet"  href="../css/bootstrap.min.css">
+        <script src="../js/jquery-3.3.3.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <title>Sis_Vise</title>
         <style type="text/css">
             
@@ -82,8 +81,11 @@
 
         <div class="container">
             <div class="row">
-                <h2 style="text-align:center">Vencimiento Acreditacion</h2>
+                <h2 style="text-align:center">Datos del Personal</h2>
             </div>
+            </FORM>
+                <form ACTION="../menu.php"><br>
+                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
                                    
             <br>
 
@@ -93,11 +95,16 @@
                         <tr>
                             <th>Cedula</th>
                             <th>Apellido 1</th>
-                            <th>Apellido 2</th>
+                            <th>Apellido 2</th>  
                             <th>Nombre 1</th>
-                            <th>Nombre 2</th>
-                            <th>Vencimiento Acreditacion</th>
-                            <th>Modificar</th>
+                            <th>Nombre 2</th>                          
+                            <th>Puesto</th>
+                            <th>Direccion res.</th>
+                            <th>NRO</th>
+                            <th >Vencimiento Curso</th>
+                            <th>Fecha ven.</th>
+                            <th>Ingreso</th>
+                            <th>Vencimiento</th>
                         </tr>
                     </thead>
                     <!--cuerpo de la tabla-->
@@ -109,8 +116,14 @@
                                 <td><?php echo $row['apellido_2']; ?></td>
                                 <td><?php echo $row['nombre_1']; ?></td>
                                 <td><?php echo $row['nombre_2']; ?></td>
-                                <td><?php echo $row['fecha_acreditacion']; ?></td>
-                                <td><a href="modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td><?php echo $row['nombre_puesto']; ?></td>
+                                <td><?php echo $row['direccion']; ?></td>
+                                <td><?php echo $row['nro_curso']; ?></td>
+                                <td><?php echo $row['fecha_vencimiento']; ?></td>
+                                <td><?php echo $row['fecha_ingreso']; ?></td>
+                                <td><?php echo $row['fecha_vencimiento']; ?></td>
+                                <td><?php echo $row['nombre_puesto']; ?></td>
+                                <td><a href="../operaciones/modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
@@ -120,9 +133,8 @@
                     </tbody>
                 </table>
             </div>
-            </FORM>
-                <form ACTION="menu.php"><br>
-                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
+            
 
     </body>
 </html>
+

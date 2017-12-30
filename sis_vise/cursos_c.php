@@ -1,7 +1,7 @@
 <?php
     require 'conexion.php';
     
-    $where = "where fecha_vencimiento BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-15' AS DATE) and id_empleado=empleado_id";
+    $where = "where fecha_vencimiento BETWEEN CAST('2018-10-15' AS DATE) AND CAST('2018-11-30' AS DATE) and id_empleado=empleado_id";
     $sql = "SELECT id_empleado, nombre_1, apellido_1, fecha_vencimiento FROM empleado, control_cursos $where";//
     $resultado = $mysqli->query($sql);
     

@@ -105,7 +105,7 @@
 				</li>
 				<li><a href="">Personal</a>
 					<ul>
-						<li><a href="formulario_CS.php" >Personal Activo</a></li>
+						<li><a href="tip_cons/personal.php" >Personal Activo</a></li>
 						<li><a href="formulario_CS.php" >Vencimiento Cursos</a></li>
 						<li><a href="formulario_UD.php">Venciemintos de Contrato</a></li>
 						
@@ -114,11 +114,11 @@
 				</li>
 				<li><a href="">Reportes</a>
 					<ul>
-						<li><a href="cursos_c.php" >Vencimiento Cursos</a></li>
-						<li><a href="acreditaciones_c.php" >Vencimiento Acreditaciones</a></li>
-						<li><a href="formulario.php">Personal Acreditado</a></li>
+						<li><a href="tip_cons/cursos.php" >Vencimiento Cursos</a></li>
+						<li><a href="tip_cons/acreditaciones.php" >Vencimiento Acreditaciones</a></li>
+						<li><a href="tip_cons/per_acredi.php">Personal Acreditado</a></li>
 						<li><a href="formulario_UD.php">Personal En Proceso de Acreditacion</a></li>
-						<li><a href="formulario_UD.php">Planta Personal Pereira</a></li>
+						<li><a href="tip_cons/Planta.php">Planta Personal Pereira</a></li>
 						
 						
 					</ul>
@@ -127,7 +127,7 @@
 					<ul>
 						<li><a href="formulario_CS.php" >Tutorial</a></li>
 						<li><a href="formulario.php">Notas Legales</a></li>
-						<li><a href="formulario_UD.php">Soporte</a></li>
+						<li><a href="SOPORTES/QUERYS.xls">Soporte</a></li>
 						
 						
 					</ul>
