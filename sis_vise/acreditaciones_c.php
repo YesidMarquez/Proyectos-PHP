@@ -3,7 +3,7 @@
     require 'conexion.php';
     
     $where = "where fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-31' AS DATE) and id_empleado=empleado_id";
-    $sql = "SELECT id_empleado, nombre_1, apellido_1, fecha_acreditacion FROM empleado, acreditacion $where";//
+    $sql = "SELECT id_empleado, apellido_1, apellido_2, nombre_1,nombre_2, fecha_acreditacion FROM empleado, acreditacion $where";//
     $resultado = $mysqli->query($sql);
     
 ?>
@@ -95,8 +95,10 @@
                     <thead>
                         <tr>
                             <th>Cedula</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
+                            <th>Apellido 1</th>
+                            <th>Apellido 2</th>
+                            <th>Nombre 1</th>
+                            <th>Nombre 2</th>
                             <th>Vencimiento Acreditacion</th>
                             <th>Modificar</th>
                         </tr>
@@ -106,8 +108,10 @@
                         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                             <tr>
                                 <td><?php echo $row['id_empleado']; ?></td>
-                                <td><?php echo $row['nombre_1']; ?></td>
                                 <td><?php echo $row['apellido_1']; ?></td>
+                                <td><?php echo $row['apellido_2']; ?></td>
+                                <td><?php echo $row['nombre_1']; ?></td>
+                                <td><?php echo $row['nombre_2']; ?></td>
                                 <td><?php echo $row['fecha_acreditacion']; ?></td>
                                 <td><a href="modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 

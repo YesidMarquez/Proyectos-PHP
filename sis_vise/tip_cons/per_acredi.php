@@ -1,8 +1,9 @@
+
 <?php
-    require 'conexion.php';
+    require '../conexion.php';
     
-    $where = "where fecha_vencimiento BETWEEN CAST('2018-10-15' AS DATE) AND CAST('2018-11-30' AS DATE) and id_empleado=empleado_id";
-    $sql = "SELECT id_empleado, nombre_1, apellido_1, fecha_vencimiento FROM empleado, control_cursos $where";//
+    $where = "where fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-31' AS DATE) and id_empleado=empleado_id";
+    $sql = "SELECT id_empleado, apellido_1, apellido_2, nombre_1,nombre_2, fecha_acreditacion FROM empleado, acreditacion $where";//
     $resultado = $mysqli->query($sql);
     
 ?>
@@ -10,10 +11,10 @@
 <htm lang="es">
     <head>
         <meta name="viewporte" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"  href="css/bootstrap-theme.css">
-        <link rel="stylesheet"  href="css/bootstrap.min.css">
-        <script src="js/jquery-3.3.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet"  href="../css/bootstrap-theme.css">
+        <link rel="stylesheet"  href="../css/bootstrap.min.css">
+        <script src="../js/jquery-3.3.3.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <title>Sis_Vise</title>
         <style type="text/css">
             
@@ -81,21 +82,25 @@
 
         <div class="container">
             <div class="row">
-                <h2 style="text-align:center">Vencimiento Curso</h2>
+                <h2 style="text-align:center">Vencimiento Acreditacion</h2>
             </div>
+            </FORM>
+                <form ACTION="../menu.php"><br>
+                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
+
                                    
             <br>
-             <form ACTION="menu.php"><br>
-                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
 
             <div class="row table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>Cedula</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th >Vencimiento Curso</th>
+                            <th>Apellido 1</th>
+                            <th>Apellido 2</th>
+                            <th>Nombre 1</th>
+                            <th>Nombre 2</th>
+                            <th>Vencimiento Acreditacion</th>
                             <th>Modificar</th>
                         </tr>
                     </thead>
@@ -104,10 +109,12 @@
                         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                             <tr>
                                 <td><?php echo $row['id_empleado']; ?></td>
-                                <td><?php echo $row['nombre_1']; ?></td>
                                 <td><?php echo $row['apellido_1']; ?></td>
-                                <td><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><a href="formulario_UD.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td><?php echo $row['apellido_2']; ?></td>
+                                <td><?php echo $row['nombre_1']; ?></td>
+                                <td><?php echo $row['nombre_2']; ?></td>
+                                <td><?php echo $row['fecha_acreditacion']; ?></td>
+                                <td><a href="../operaciones/modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
@@ -117,9 +124,6 @@
                     </tbody>
                 </table>
             </div>
-            </FORM>
-               
-
+            
     </body>
 </html>
-
