@@ -2,7 +2,7 @@
 <?php
     require '../conexion.php';
     
-    $where = "where fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-31' AS DATE) and id_empleado=empleado_id";
+    $where = "where fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-12-31' AS DATE) and id_empleado=empleado_id";
     $sql = "SELECT id_empleado, apellido_1, apellido_2, nombre_1,nombre_2, fecha_acreditacion FROM empleado, acreditacion $where";//
     $resultado = $mysqli->query($sql);
     
@@ -102,6 +102,7 @@
                             <th>Nombre 2</th>
                             <th>Vencimiento Acreditacion</th>
                             <th>Modificar</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
                     <!--cuerpo de la tabla-->
@@ -115,15 +116,45 @@
                                 <td><?php echo $row['nombre_2']; ?></td>
                                 <td><?php echo $row['fecha_acreditacion']; ?></td>
                                 <td><a href="../operaciones/modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                 <td><a href="#" data-href="../operaciones/eliminar.php?id_empleado=<?php echo $row['id_empleado']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
                             </tr>
                         <?php } ?>
                     </tbody>
-                    </tbody>
                 </table>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Eliminar Registro</h4>
+                        </div>
+                        
+                        <div class="modal-body">
+                            ¿Desea eliminar este registro?
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-danger btn-ok">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                $('#confirm-delete').on('show.bs.modal', function(e) {
+                    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+                    
+                    $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+                });
+            </script>
             
     </body>
 </html>

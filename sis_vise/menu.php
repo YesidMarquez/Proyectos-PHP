@@ -4,11 +4,11 @@
 	$where = "where venc_curso BETWEEN CAST('2018-12-01' AS DATE) AND CAST('2018-12-31' AS DATE) and id_empleado=empleado_id";
 	$sql = "SELECT id_empleado, nombres, apellidos, venc_curso, venc_acreditacion FROM empleado, credencial $where";//
 	$resultado = $mysqli->query($sql);
-	
 ?>
 
 <htm lang="es">
 	<head>
+		<script src='http://www.google.com/jsapi'></script>
 		<meta name="viewporte" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet"  href="css/bootstrap-theme.css">
 		<link rel="stylesheet"  href="css/bootstrap.min.css">
@@ -50,7 +50,6 @@
 				font-size: 10px;
 }
 
-			
 			.nav li a:hover {
 				background-color:#434343;
 			}
@@ -77,8 +76,7 @@
 	</head>
 	
 	<body>
-
-		
+				
 		<center>
 		
 		<center>
@@ -86,7 +84,6 @@
             <div class="row">
                 <h2 style="text-align: center;">Sistema de Infomacion</h2>
             </div>
-
             
         </center>
         
@@ -109,7 +106,6 @@
 						<li><a href="formulario_CS.php" >Vencimiento Cursos</a></li>
 						<li><a href="formulario_UD.php">Venciemintos de Contrato</a></li>
 						
-						
 					</ul>
 				</li>
 				<li><a href="">Reportes</a>
@@ -118,13 +114,9 @@
 						<li><a href="tip_cons/acreditaciones.php" >Vencimiento Acreditaciones</a></li>
 						<li><a href="tip_cons/per_acredi.php">Personal Acreditado</a></li>
 						<li><a href="formulario_UD.php">Personal En Proceso de Acreditacion</a></li>
-<<<<<<< HEAD
 						<li><a href="planta.php">Planta Personal Pereira</a></li>
-=======
 						<li><a href="tip_cons/Planta.php">Planta Personal Pereira</a></li>
->>>>>>> 5289140a034ce7170036c8330d3e58e6e94468ee
-						
-						
+				
 					</ul>
 				</li>
 				<li><a href="">Documentacion</a>
@@ -132,8 +124,7 @@
 						<li><a href="formulario_CS.php" >Tutorial</a></li>
 						<li><a href="formulario.php">Notas Legales</a></li>
 						<li><a href="SOPORTES/QUERYS.xls">Soporte</a></li>
-						
-						
+					
 					</ul>
 				</li>
 				<li><a href="">Opciones</a>
@@ -150,7 +141,6 @@
 				
 			</ul>
 		</div>
-		
 		
 	</body><br><br><br><br><br>
 	<center>

@@ -1,86 +1,49 @@
-<htm lang="es">
+<?php
+    require '../conexion.php';
+    
+    $id = $_GET['id_empleado'];
+    
+    $sql = "SELECT * FROM acreditacion WHERE empleado_id = '$id'";
+    $resultado = $mysqli->query($sql);
+    $row = $resultado->fetch_array(MYSQLI_ASSOC);
+    
+?>
+<html lang="es">
     <head>
-        <meta name="viewporte" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"  href="../css/bootstrap-theme.css">
-        <link rel="stylesheet"  href="../css/bootstrap.min.css">
-        <script src="../js/jquery-3.3.3.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <title>Sis_Vise</title>
-        <style type="text/css">
-            
-            * {
-                margin:0px;
-                padding:0px;
-            }
-            
-            #header {
-                margin:auto;
-                width:500px;
-                font-family:Arial, Helvetica, sans-serif;
-            }
-            
-            ul, ol {
-                list-style:none;
-            }
-            
-            .nav > li {
-                float:left;
-            }
-            
-            .nav li a {
-                background-color:#000;
-                color:#fff;
-                text-decoration:none;
-                padding:10px 12px;
-                display:block;
-            }
-            .Fields input{
-                background-color: #E9E9E9;
-                border: 2px solid #A8A8A8;
-                font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-                font-size: 10px;
-}
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-theme.css" rel="stylesheet">
+        <script src="../js//jquery-3.1.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script> 
 
-            
-            .nav li a:hover {
-                background-color:#434343;
-            }
-            
-            .nav li ul {
-                display:none;
-                position:absolute;
-                min-width:140px;
-            }
-            
-            .nav li:hover > ul {
-                display:block;
-            }
-            
-            .nav li ul li {
-                position:relative;
-            }
-            
-            .nav li ul li ul {
-                right:-140px;
-                top:0px;
-            }
-        </style>
+        
     </head>
-
     
     <body>
-
         <div class="container">
             <div class="row">
-                <h2 style="text-align:center">Muy Pronto podras modificar los registros....... </h2>
+                <h3 style="text-align:center">MODIFICAR REGISTRO</h3>
             </div>
-                                   
-            <br>
-
             
-            </FORM>
-                <form ACTION="../menu.php"><br>
-                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
-
+            <form class="form-horizontal" method="POST" action="../tip_cons/actualizar.php" autocomplete="off">
+                <div class="form-group">
+                    <label for="nombre" class="col-sm-2 control-label">Fecha de Acreditacion</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" required>
+                    </div>
+                </div>
+                
+                <input type="hidden" id="id" name="id" value="<?php echo $row['id_empleado']; ?>" />
+                             
+                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <a href="../tip_cons/acreditaciones.php" class="btn btn-default">Regresar</a>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

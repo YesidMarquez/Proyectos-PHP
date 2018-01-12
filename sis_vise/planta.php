@@ -1,131 +1,65 @@
-
-<?php
-    require 'conexion.php';
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Menú </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fuentes de Google -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     
-    $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado";
-    $sql = "SELECT empleado.id_empleado, empleado.nombre_1, empleado.apellido_1,empleado.direccion, ubicacion.nombre_puesto, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM `ubicacion`,`empleado`,control_cursos, contrato $where";//
-    $resultado = $mysqli->query($sql);
-    
-?>
+    <!-- Iconos -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
 
-<htm lang="es">
-    <head>
-        <meta name="viewporte" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"  href="css/bootstrap-theme.css">
-        <link rel="stylesheet"  href="css/bootstrap.min.css">
-        <script src="js/jquery-3.3.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <title>Sis_Vise</title>
-        <style type="text/css">
-            
-            * {
-                margin:0px;
-                padding:0px;
-            }
-            
-            #header {
-                margin:auto;
-                width:500px;
-                font-family:Arial, Helvetica, sans-serif;
-            }
-            
-            ul, ol {
-                list-style:none;
-            }
-            
-            .nav > li {
-                float:left;
-            }
-            
-            .nav li a {
-                background-color:#000;
-                color:#fff;
-                text-decoration:none;
-                padding:10px 12px;
-                display:block;
-            }
-            .Fields input{
-                background-color: #E9E9E9;
-                border: 2px solid #A8A8A8;
-                font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-                font-size: 10px;
-}
+  
+</head>
 
-            
-            .nav li a:hover {
-                background-color:#434343;
-            }
-            
-            .nav li ul {
-                display:none;
-                position:absolute;
-                min-width:140px;
-            }
-            
-            .nav li:hover > ul {
-                display:block;
-            }
-            
-            .nav li ul li {
-                position:relative;
-            }
-            
-            .nav li ul li ul {
-                right:-140px;
-                top:0px;
-            }
-        </style>
-    </head>
+<body>
+  
+    <h1>Sistema de Infomacion <a href="http://creaticode.com/blog">MAT-SW</a></h1>
+    <!-- Contenedor -->
+    <ul id="accordion" class="accordion">
+        <li>
+            <div class="link"><i class="fa fa-paint-brush"></i>Servicios<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="formulario_CS.php" >Consultas</a></li>
+                <li><a href="formulario.php">Ingresos</a></li>
+                <li><a href="formulario_UD.php">Actualizaciones</a></li>
+            </ul>
+        </li>
+        <li class="default open">
+            <div class="link"><i class="fa fa-code"></i>Reportes<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="tip_cons/personal.php">Personal Activo</a></li>
+                <li><a href="tip_cons/cursos.php" >Vencimiento Cursos</a></li>
+                <li><a href="tip_cons/acreditaciones.php" >Vencimiento Acreditaciones</a></li>
+                <li><a href="tip_cons/per_acredi.php">Personal Acreditado</a></li>
+                <li><a href="formulario_UD.php">Personal En Proceso de Acreditacion</a></li>
+                <li><a href="tip_cons/Planta.php">Planta Personal Pereira</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><i class="fa fa-mobile"></i>Documentacion<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="formulario_CS.php" >Tutorial</a></li>
+                <li><a href="formulario.php">Notas Legales</a></li>
+                <li><a href="SOPORTES/QUERYS.xls">Soporte</a></li>
+            </ul>
+        </li>
+        <li><div class="link"><i class="fa fa-globe"></i>Opciones<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="index.html" >Cerrar Sesion</a></li>
+                <li><a href="formulario.php">Cambiar Contraseña</a></li>
+                        
+                <li><a href="https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar">Tutorial Curso</a></li>
+            </ul>
+        </li>
+    </ul>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    
-    <body>
+    <script src="js/index.js"></script>
 
-        <div class="container">
-            <div class="row">
-                <h2 style="text-align:center">Vencimiento Acreditacion</h2>
-            </div>
-                                   
-            <br>
-               <form ACTION="menu.php"><br>
-                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
-
-            <div class="row table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Cedula</th>
-                            <th>Nombre_1</th>
-                            <th>Apellido_1</th>
-                            <th>Direccion</th>
-                            <th>Ubicacion</th>
-                            <th>Curso</th>
-                            <th>Fecha Vence Curso</th>
-                            <th>Modificar</th>
-                        </tr>
-                    </thead>
-                    <!--cuerpo de la tabla-->
-                    <tbody>
-                        <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
-                            <tr>
-                                <td><?php echo $row['id_empleado']; ?></td>
-                                <td><?php echo $row['nombre_1']; ?></td>
-                                <td><?php echo $row['apellido_1']; ?></td>
-                                <td><?php echo $row['direccion']; ?></td>
-                                <td><?php echo $row['nombre_puesto']; ?></td>
-                                <td><?php echo $row['nro_curso']; ?></td>
-                                <td><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><a href="modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                
-                                <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-                    </tbody>
-                </table>
-            </div>
-            </FORM>
-             
-
-    </body>
+</body>
 </html>

@@ -27,6 +27,8 @@
 				</FORM>
 				<form ACTION="menu.php"><br>
 				<INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
+
+				
 									
 		</div>
 	
