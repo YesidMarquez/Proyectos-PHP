@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label for="nombre" class="col-sm-2 control-label">Fecha de Acreditacion</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" required>
+                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="" required>
                     </div>
                 </div>
                 

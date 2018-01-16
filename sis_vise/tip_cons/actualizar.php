@@ -7,11 +7,16 @@
 	$id = $_POST['id'];
 	$fecha = $_POST['fec'];
 	
-	
+	echo '¡Hola ' . htmlspecialchars($_POST["fec"]) . '!';
 	
 	$sql = "UPDATE acreditacion SET fecha_acreditacion = '$fecha' WHERE empleado_id='$id'";
 	
 	$resultado = $mysqli->query($sql);
+	if($resultado == false) {
+	echo '<p>Error al modificar los campos en la tabla.</p>';
+	}else{
+	echo '<p>Los datos se han modificado correctamente.</p>';
+}
 	
 ?>
  
