@@ -6,10 +6,14 @@
 	
 	$id = $_POST['id'];
 	$fecha = $_POST['fec'];
+	$inicio = strtotime($fecha);
+	$inicio1 = date('Y-m-d',$inicio);
 	
-	echo '¡Hola ' . htmlspecialchars($_POST["fec"]) . '!';
+	echo ($inicio1);
+	echo ($id);
+
 	
-	$sql = "UPDATE acreditacion SET fecha_acreditacion = '$fecha' WHERE empleado_id='$id'";
+	$sql = "UPDATE acreditacion SET fecha_acreditacion = '$inicio1' WHERE empleado_id='$id'";
 	
 	$resultado = $mysqli->query($sql);
 	if($resultado == false) {

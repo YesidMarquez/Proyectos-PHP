@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>CRUD 1.0</title>
@@ -19,7 +19,8 @@
 				Ingrese el Apellido:   <INPUT TYPE="text" NAME="Apellido" id= "Apellido" complement="required"><br><br>
 				Ingrese el Nickname:   <INPUT TYPE="text" NAME="Nickname" id= "Nickname" complement="required"><br><br>
 				Ingrese el Estado:     <INPUT TYPE="text" NAME="Estado" id= "Estado" complement="required"><br><br>
-				<button TYPE="button" VALUE="Actualizar" onclick="validarFormulario('formulario_ud');">Actualizar</button><br><br> 
+				Ingrese el Fecha:     <INPUT TYPE="text" NAME="Fecha" id= "Fecha" complement="required"><br><br>
+				<button TYPE="submit" VALUE="Actualizar" onclick="validarFormulario('formulario_ud');">Actualizar</button><br><br> 
 				</FORM>
 				<form ACTION="menu.html">
 				<button TYPE="submit" VALUE="Retornar al menu">Retornar al menu</button><br><br>  
@@ -40,7 +41,7 @@
 					// Datos de la base de datos
 					
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "test_1";
 					
@@ -53,7 +54,7 @@
 					// establecer y realizar consulta. guardamos en variable.
 					
 
-					$campos = "SELECT id_usuario, nombre, apellido, nickname, clave FROM usuario ";
+					$campos = "SELECT id_usuario, nombre, apellido, nickname, clave, ingreso FROM usuario ";
 					$tablas = " ";
 					
 					$query = $campos.$tablas;
@@ -74,6 +75,8 @@
 					echo "</td> <td>";
 					echo "<th>Contraseña</th>";
 					echo "</td> <td>";
+					echo "<th>fecha ingreso</th>";
+					echo "</td> <td>";
 					
 					echo "</tr>";
 					
@@ -81,7 +84,7 @@
 					while ($columna = mysqli_fetch_array( $resultado ))
 					{
 						echo "<tr>";
-						echo "<td>" .$columna['id_usuario'] ."</td> <td>". "</td> <td>". $columna['nombre'] . "</td> <td>"."</td> <td>" . $columna['apellido']. "</td> <td>" ."</td><td>". $columna['nickname']. "</td> <td>". "</td><td>" .$columna['clave'] . "</td> <td>" ."</td><td>" ."</td><td>"."</td>";
+						echo "<td>" .$columna['id_usuario'] ."</td> <td>". "</td> <td>". $columna['nombre'] . "</td> <td>"."</td> <td>" . $columna['apellido']. "</td> <td>" ."</td><td>". $columna['nickname']. "</td> <td>". "</td><td>" .$columna['clave'] . "</td> <td>" ."</td><td>".$columna['ingreso'] . "</td> <td>" ."</td><td>" ;
 						echo "</tr>";
 					}
 					

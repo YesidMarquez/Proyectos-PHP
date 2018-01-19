@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>CRUD 1.0</title>
@@ -17,7 +17,7 @@
 				echo "<br>";
 
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "test_1";
 
@@ -26,6 +26,10 @@
 					$APELLIDO=$_POST['Apellido'];
 					$NICKNAME=$_POST['Nickname'];
 					$ESTADO=$_POST['Estado'];
+					$FECHA=$_POST['Fecha'];
+					$inicio = strtotime($FECHA);
+					$inicio1 = date('Y-m-d',$inicio);
+					
 					
 					// creación de la conexión a la base de datos con mysql_connect()
 					$conexion = mysqli_connect( $servidor, $usuario,$password);
@@ -34,7 +38,7 @@
 					$db = mysqli_select_db( $conexion, $basededatos );
 
 				// establecer y realizar consulta. guardamos en variable.
-					$campos1 = "UPDATE usuario SET nombre='$NOMBRE',apellido='$APELLIDO', nickname= '$NICKNAME',estado_id= $ESTADO WHERE id_usuario = $USER";
+					$campos1 = "UPDATE usuario SET nombre='$NOMBRE',apellido='$APELLIDO', nickname= '$NICKNAME',estado_id= $ESTADO,	ingreso='$inicio1' WHERE id_usuario = $USER";
 					
 					$resultado1 = mysqli_query( $conexion, $campos1 ) or die ( "NO se realizaron Actualizaciones ");
 					if($resultado1)
@@ -43,7 +47,7 @@
 					    echo("____________________________________________");echo "<br>";
 					    echo("Datos Actualizados");echo "<br>";
 					    echo("____________________________________________");echo "<br>";echo "<br>";
-					    $campos = "SELECT u.id_usuario, u.nombre, u.apellido, u.nickname,u.clave, e.nombre AS `Descripción del Estado` ";
+					    $campos = "SELECT u.id_usuario, u.nombre, u.apellido, u.nickname,u.ingreso,e.nombre AS `Descripción del Estado` ";
 						$tablas = "FROM usuario u, estado e ";
 						$condicion = "WHERE u.estado_id = e.id_estado ";
 						$query = $campos.$tablas.$condicion;
@@ -62,16 +66,16 @@
 						echo "</td> <td>";
 						echo "<th>Nickname</th>";
 						echo "</td> <td>";
-						echo "<th>Contraseña</th>";
-						echo "</td> <td>";
-						echo "<th>Descripción del Estado</th>";
+						
+						
+						echo "<th>ingreso</th>";
 						echo "</tr>";
 						
 						// Bucle while que recorre cada registro y muestra cada campo en la tabla.
 						while ($columna = mysqli_fetch_array( $resultado ))
 						{
 							echo "<tr>";
-							echo "<td>" .$columna['id_usuario'] . "</td> <td>"."</td> <td>". $columna['nombre'] . "</td> <td>"."</td> <td>" . $columna['apellido']. "</td> <td>" ."</td><td>". $columna['nickname']. "</td> <td>". "</td><td>" .$columna['clave'] . "</td> <td>" ."</td><td>" . $columna['Descripción del Estado'] ."</td> <td>"."</td><td>"."</td>";
+							echo "<td>" .$columna['id_usuario'] . "</td> <td>"."</td> <td>". $columna['nombre'] . "</td> <td>"."</td> <td>" . $columna['apellido']. "</td> <td>" ."</td><td>". $columna['nickname']. "</td> <td>" ."</td><td>" . $columna['ingreso'] ."</td> <td>"."</td><td>";
 							echo "</tr>";
 						}
 						

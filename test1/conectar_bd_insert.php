@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>CRUD 1.0</title>
@@ -18,7 +18,7 @@
 
 
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "test_1";
 					$NOMBRE=$_POST["Nombre"];

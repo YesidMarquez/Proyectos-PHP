@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>CRUD 1.0</title>
@@ -26,7 +26,7 @@
 					// Datos de la base de datos
 					
 					$usuario = "root";
-					$password = "12345";
+					$password = "";
 					$servidor = "localhost";
 					$basededatos = "test_1";
 					

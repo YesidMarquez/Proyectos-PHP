@@ -28,13 +28,17 @@
             
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar.php" autocomplete="off">
                 <div class="form-group">
+                    <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
+                    </div>
                     <label for="nombre" class="col-sm-2 control-label">Fecha de Acreditacion</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="" required>
+                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" required>
                     </div>
                 </div>
                 
-                <input type="hidden" id="id" name="id" value="<?php echo $row['id_empleado']; ?>" />
+                <input type="hidden" id="id" name="id" value="<?php echo $row['empleado_id']; ?>" />
                              
                 
                 <div class="form-group">
