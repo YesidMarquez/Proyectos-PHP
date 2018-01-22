@@ -99,8 +99,6 @@
                             <th>Apellidos</th>
                             <th>Nombres</th>
                             <th>Curso</th>
-                            <th>NRO</th>
-                            <th>Vencimiento Curso   </th>
                             <th>Ven. Acreditacion</th>
                             <th>Modificar</th>
                             <th>Eliminar</th>
@@ -114,8 +112,6 @@
                                 <td><?php echo $row['apellidos']; ?></td>
                                 <td><?php echo $row['nombres']; ?></td>
                                 <td><?php echo $row['descripcion']; ?></td>
-                                <td><?php echo $row['nro_curso']; ?></td>
-                                <td><?php echo $row['fecha_vencimiento']; ?></td>
                                 <td><?php echo $row['fecha_acreditacion']; ?></td>
                                 <td><a href="../operaciones/modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="../operaciones/eliminar.php?id_empleado=<?php echo $row['id_empleado']; ?>"  data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>

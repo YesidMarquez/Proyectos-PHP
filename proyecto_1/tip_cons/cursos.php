@@ -97,7 +97,7 @@
                             <th>Cedula</th>
                             <th>Nombres</th>
                             <th>Apellidos</th>
-                            <th >Vencimiento Curso</th>
+                            <th>Vencimiento Curso</th>
                             <th>Modificar</th>
                         </tr>
                     </thead>

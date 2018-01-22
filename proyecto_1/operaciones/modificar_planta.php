@@ -36,13 +36,12 @@
     <body>
         <div class="container">
             <div class="row">
-                
-                <h3 style="text-align:center">DATOS DEL EMPLEADO</h3>
+                <h3 style="text-align:center">MODIFICAR DATOS DE LA PLANTA</h3>
             </div>
             
-            <form class="form-horizontal" method="POST" action="../tip_cons/actualizar.php" autocomplete="off">
+            <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_planta.php" autocomplete="off">
                 <div class="form-group">
-                    <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
+                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
                     </div>
@@ -77,15 +76,15 @@
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Direccion</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['direccion']; ?>" readonly="readonly">
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion" value="<?php echo $row1['direccion']; ?>" >
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Ciudad/Residencia</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['ciudad_residencia']; ?>" readonly="readonly">
+                        <input type="text" class="form-control" id="c_res" name="c_res" placeholder="c_res" value="<?php echo $row1['ciudad_residencia']; ?>" >
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Telefono</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['telefono']; ?>" readonly="readonly">
+                        <input type="text" class="form-control" id="tel" name="tel" placeholder="tel" value="<?php echo $row1['telefono']; ?>" >
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
                     <div class="col-sm-10">
@@ -115,16 +114,18 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" readonly="readonly">
                     </div>
-
+                   
                 </div>
                 
                 <input type="hidden" id="id" name="id" value="<?php echo $row['empleado_id']; ?>" />
+                <input type="hidden" id="name" name="name" value="<?php echo $row1['nombres']; ?>" />
+                <input type="hidden" id="apel" name="apel" value="<?php echo $row1['apellidos']; ?>" />
                              
                 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <a href="../tip_cons/planta.php" class="btn btn-default">Regresar</a>
-                       
+                        <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Regresar</a>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
             </form>

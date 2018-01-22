@@ -79,7 +79,7 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['direccion']; ?>" readonly="readonly">
                     </div>
-                    <label for="nombre" class="col-sm-2 control-label">Ciudad/Residencia</label>
+                    <label for="nombre" class="col-sm-2 control-label">Ciudad de Residencia</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['ciudad_residencia']; ?>" readonly="readonly">
                     </div>
