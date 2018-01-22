@@ -2,48 +2,23 @@
 
 require '../config/conexion.php';
 
+$ID= $_POST['id'];
 $USUARIO= $_POST['user'];
-$CONTRASEÑA=$_POST['pw'];
+$CONTRASEÑA=$_POST['npw'];
 
 if (empty($USUARIO) || empty($CONTRASEÑA)) {
 
 	header("Location: ../operaciones/cambiar_pw.php");
 
 	exit();
+	
 }
 
-
-//Conexion Base de Datos
-require '../config/conexion.php';
-//Consulta a la tabla
-$sql = ("SELECT * from usuarios where usuario='" . $USUARIO . "'");
-$result = $mysqli->query($sql);
-echo "Hasta el momento tu Login finciona";
-
-if ($row = mysqli_fetch_array($result)) {
-	if ($row["password"]==$CONTRASEÑA) {
-		session_start();
-		$_SESSION['usuario'] = $USUARIO;
-		
-		
-		# code...
-	}else{
-			header("Location: ../pw.php");
-			exit();
-			# code...
-	}
-
-
-}else{
-	header("Location: ../operaciones/cambiar_pw.php");
-	exit();
-
-}
-
- ?>
-
-
-
+$sql = "UPDATE usuarios SET password = '$CONTRASEÑA' WHERE id_usuario = '$ID';";
+	$resultado = $mysqli->query($sql);
+	/********************************************************************************************/
+	
+?>
  
 <html lang="es">
 	<head>
@@ -59,13 +34,13 @@ if ($row = mysqli_fetch_array($result)) {
 		<div class="container">
 			<div class="row">
 				<div class="row" style="text-align:center">
-					<?php if($result) { ?>
-						<h3>Señor usuario <?php echo ($USUARIO)?> su contraseña fue modificada</h3>
+					<?php if($resultado) { ?>
+						<h3>Usuario <?php echo ($USUARIO)?> SU PW FUE MODIFICADA</h3>
 						<?php } else { ?>
 						<h3>ERROR AL MODIFICAR</h3>
 					<?php } ?>
 					
-					<a href="../menu.php" class="btn btn-primary">Regresar</a>
+					<a href="../operaciones/cambiar_pw.php" class="btn btn-primary">Regresar</a>
 					
 				</div>
 			</div>

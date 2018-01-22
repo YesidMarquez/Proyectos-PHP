@@ -19,6 +19,10 @@
             
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_pw.php" autocomplete="off">
                 <div class="form-group">
+                    <label for="nombre" class="col-sm-2 control-label" >Identificacion</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="id" name="id" placeholder="Identificacion" value="" >
+                    </div>
                     <label for="nombre" class="col-sm-2 control-label" >Usuario</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="user" name="user" placeholder="Usuario" value="" >

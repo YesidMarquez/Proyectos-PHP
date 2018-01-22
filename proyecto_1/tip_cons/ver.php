@@ -42,22 +42,24 @@
             
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar.php" autocomplete="off">
                 <div class="form-group">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <a href="../tip_cons/planta.php" class="btn btn-default">Regresar</a>
+                           
+                        </div>
+                    </div>
+                    <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
                     <div class="col-sm-10">
-                        <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                         <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Nombres</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['nombres']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Expedicion Ccedula</label>
                     <div class="col-sm-10">
@@ -121,12 +123,7 @@
                 <input type="hidden" id="id" name="id" value="<?php echo $row['empleado_id']; ?>" />
                              
                 
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <a href="../tip_cons/planta.php" class="btn btn-default">Regresar</a>
-                       
-                    </div>
-                </div>
+                
             </form>
         </div>
     </body>

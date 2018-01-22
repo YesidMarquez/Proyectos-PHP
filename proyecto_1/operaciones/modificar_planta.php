@@ -36,12 +36,12 @@
     <body>
         <div class="container">
             <div class="row">
-                <h3 style="text-align:center">MODIFICAR DATOS DE LA PLANTA</h3>
+                <h3 style="text-align:center">MODIFICAR DATOS <?php echo $row1['apellidos']; ?> <?php echo $row1['nombres']; ?> DE LA PLANTA</h3>
             </div>
             
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_planta.php" autocomplete="off">
                 <div class="form-group">
-                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
+                     <!--<label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
                     </div>
@@ -69,24 +69,24 @@
                     <label for="nombre" class="col-sm-2 control-label">Ciudad Nacimiento</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['ciudad_nacimiento']; ?>" readonly="readonly">
-                    </div>
+                    </div>-->
                     <label for="nombre" class="col-sm-2 control-label">Tipo de Sangre</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['tipo_sangre']; ?>" readonly="readonly">
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="t_san" name="t_san" placeholder="t_san" value="<?php echo $row1['tipo_sangre']; ?>" >
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Direccion</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-5">
                         <input type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion" value="<?php echo $row1['direccion']; ?>" >
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Ciudad/Residencia</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-2">
                         <input type="text" class="form-control" id="c_res" name="c_res" placeholder="c_res" value="<?php echo $row1['ciudad_residencia']; ?>" >
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Telefono</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-5">
                         <input type="text" class="form-control" id="tel" name="tel" placeholder="tel" value="<?php echo $row1['telefono']; ?>" >
                     </div>
-                    <label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
+                    <!--<label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row2['descripcion']; ?>" readonly="readonly">
                     </div>
@@ -112,7 +112,7 @@
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Fecha de Acreditacion</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" readonly="readonly">
+                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" readonly="readonly">-->
                     </div>
                    
                 </div>

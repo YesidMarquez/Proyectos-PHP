@@ -116,7 +116,7 @@
 					<ul>
 						<li><a href="formularios/formulario_CS.php" >Tutorial</a></li>
 						<li><a href="formularios/formulario.php">Notas Legales</a></li>
-						<li><a href="SOPORTES/QUERYS.xls">Soporte</a></li>
+						<li><a href="archivos/SOPORTES/CREDENCIALES/CREDENCIALES VENCEN 15-11-2017.jpg">Soporte</a></li>
 					
 					</ul>
 				</li>
