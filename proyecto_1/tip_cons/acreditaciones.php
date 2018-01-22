@@ -84,9 +84,9 @@
             <div class="row">
                 <h2 style="text-align:center">Vencimiento Acreditacion</h2>
             </div>
-            </FORM>
-                <form ACTION="../menu.php"><br>
-                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
+        <form ACTION="../menu.php"><br>
+            <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br>
+        </form>
 
                                    
             <br>
@@ -118,10 +118,9 @@
                                 <td><?php echo $row['fecha_vencimiento']; ?></td>
                                 <td><?php echo $row['fecha_acreditacion']; ?></td>
                                 <td><a href="../operaciones/modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                 <td><a href="#" data-href="../operaciones/eliminar.php?id_empleado=<?php echo $row['id_empleado']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                                <td><a href="../operaciones/eliminar.php?id_empleado=<?php echo $row['id_empleado']; ?>"  data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>
                                 
-                                <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
+                                
                             </tr>
                         <?php } ?>
                     </tbody>

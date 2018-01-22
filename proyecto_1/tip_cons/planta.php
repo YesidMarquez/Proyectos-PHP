@@ -2,7 +2,7 @@
     require '../config/conexion.php';
     
     $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado";
-    $sql = "SELECT id_empleado,apellido_1, apellido_2, nombre_1,nombre_2,empleado.direccion, ubicacion.nombre_puesto, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM `ubicacion`,`empleado`,control_cursos, contrato  $where";//
+    $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, ubicacion.nombre_puesto, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM ubicacion,empleado,control_cursos, contrato  $where";//
     $resultado = $mysqli->query($sql);
     
 ?>
@@ -94,17 +94,13 @@
                     <thead>
                         <tr>
                             <th>Cedula</th>
-                            <th>Apellido 1</th>
-                            <th>Apellido 2</th>  
-                            <th>Nombre 1</th>
-                            <th>Nombre 2</th>                          
+                            <th>Apellidos</th>
+                            <th>Nombres</th>
                             <th>Puesto</th>
-                            <th>Direccion res.</th>
-                            <th>NRO</th>
-                            <th >Vencimiento Curso</th>
-                            <th>Fecha ven.</th>
+                            <th>Cliente</th>
                             <th>Ingreso</th>
                             <th>Vencimiento</th>
+                            <th>Ver</th>
                         </tr>
                     </thead>
                     <!--cuerpo de la tabla-->
@@ -112,18 +108,13 @@
                         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                             <tr>
                                 <td><?php echo $row['id_empleado']; ?></td>
-                                <td><?php echo $row['apellido_1']; ?></td>
-                                <td><?php echo $row['apellido_2']; ?></td>
-                                <td><?php echo $row['nombre_1']; ?></td>
-                                <td><?php echo $row['nombre_2']; ?></td>
-                                <td><?php echo $row['nombre_puesto']; ?></td>
+                                <td><?php echo $row['apellidos']; ?></td>
+                                <td><?php echo $row['nombres']; ?></td>
+                                <td><?php echo $row['nombre_puesto']; ?>
                                 <td><?php echo $row['direccion']; ?></td>
-                                <td><?php echo $row['nro_curso']; ?></td>
-                                <td><?php echo $row['fecha_vencimiento']; ?></td>
                                 <td><?php echo $row['fecha_ingreso']; ?></td>
                                 <td><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><?php echo $row['nombre_puesto']; ?></td>
-                                <td><a href="../operaciones/modificar.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td><a href="../operaciones/ver.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-search"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
