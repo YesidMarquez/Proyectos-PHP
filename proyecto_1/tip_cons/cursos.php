@@ -2,7 +2,7 @@
     require '../config/conexion.php';
     
     $where = "where fecha_vencimiento BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-31' AS DATE) and id_empleado=empleado_id";
-    $sql = "SELECT id_empleado, nombre_1, apellido_1, fecha_vencimiento FROM empleado, control_cursos $where";//
+    $sql = "SELECT id_empleado, concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, nro_curso, fecha_vencimiento FROM empleado, control_cursos $where";//
     $resultado = $mysqli->query($sql);
     
 ?>
@@ -97,6 +97,7 @@
                             <th>Cedula</th>
                             <th>Nombres</th>
                             <th>Apellidos</th>
+                            <th>NRO</th>
                             <th>Vencimiento Curso</th>
                             <th>Modificar</th>
                         </tr>
@@ -106,10 +107,11 @@
                         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                             <tr>
                                 <td><?php echo $row['id_empleado']; ?></td>
-                                <td><?php echo $row['nombre_1']; ?></td>
-                                <td><?php echo $row['apellido_1']; ?></td>
+                                <td><?php echo $row['nombres']; ?></td>
+                                <td><?php echo $row['apellidos']; ?></td>
+                                <td><?php echo $row['nro_curso']; ?></td>
                                 <td><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><a href="../formulario_UD.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td><a href="../operaciones/modificar_cursos.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
