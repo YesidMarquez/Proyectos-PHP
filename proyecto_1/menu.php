@@ -98,7 +98,7 @@
 				<li><a href="">Servicios</a>
 					<ul>
 						
-						<li><a href="formularios/formulario_UD.php">Actualizaciones</a></li>
+						<li><a href="tip_cons/consulta.php">Actualizaciones</a></li>
 						<li><a href="tip_cons/cursos.php" >Control Cursos</a></li>
 						<li><a href="tip_cons/acreditaciones.php" >Control SVSP</a></li>
 						<li><a href="tip_cons/planta.php">Planta Personal</a></li>					
