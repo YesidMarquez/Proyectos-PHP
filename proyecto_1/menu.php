@@ -125,7 +125,8 @@
 						<li><a href="index.html" >Cerrar Sesion</a></li>
 						<li><a href="operaciones/cambiar_pw.php">Cambiar Contraseña</a></li>
 						
-						<li><a href="https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar">Tutorial Curso</a></li>
+						<li><a href="https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar">codigosdeprogramacion</a></li>
+						<li><a href="https://styde.net/manejo-de-errores-404-en-laravel/">styde.net</a></li>
 						
 					</ul>
 					
