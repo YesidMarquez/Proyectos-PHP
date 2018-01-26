@@ -44,7 +44,7 @@
 			<div class="row">
 				<div class="row" style="text-align:center">
 					<?php if($resultado) { ?>
-						<h3>LOS REGISTROS CON ID <?php echo ($id)?> <?php echo ($apl)?> <?php echo ($name)?> FUE MODIFICADO</h3>
+						<h3>LOS REGISTROS CON ID <?php echo ($id)?> <?php echo ($apl)?> <?php echo ($name)?> FUERON MODIFICADOS</h3>
 						<?php } else { ?>
 						<h3>ERROR AL MODIFICAR</h3>
 					<?php } ?>
