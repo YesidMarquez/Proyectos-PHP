@@ -98,13 +98,13 @@
 				<li><a href="">Servicios</a>
 					<ul>
 						
-						
+						<li><a href="tip_cons/consulta.php">Actualizaciones</a></li>
 						<li><a href="tip_cons/cursos.php" >Control Cursos</a></li>
 						<li><a href="tip_cons/acreditaciones.php" >Control SVSP</a></li>
 						<li><a href="tip_cons/planta.php">Planta Personal</a></li>					
 						<li><a href="formularios/formulario_UD.php">Vencieminto Contrato</a></li>
 						<!--<li><a href="formularios/formulario_CS.php" >Consultas</a></li>
-							<li><a href="tip_cons/consulta.php">Actualizaciones</a></li>
+							
 						<li><a href="formularios/formulario.php">Ingresos</a></li>
 						<li><a href="formularios/formulario_UD.php">Personal Proceso SVSP</a></li>
 						<li><a href="tip_cons/per_acredi.php">Personal SVSP</a></li>-->
