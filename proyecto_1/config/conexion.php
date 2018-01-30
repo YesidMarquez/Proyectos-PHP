@@ -11,6 +11,6 @@ if($mysqli->connect_error){
 	dir('Error en la conexion'.$mysqli->connect_error);
 }	
 
-printf("Sevidor informacion: %s\n", $mysqli->server_info);
+//printf("Sevidor informacion: %s\n", $mysqli->server_info);
 
 ?>
