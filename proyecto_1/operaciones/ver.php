@@ -7,7 +7,7 @@
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
     /*-----------------------------------------------------------------------*/
-    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero FROM empleado WHERE id_empleado='$id' ";
+    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion FROM empleado, contrato,tipo_contrato WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id ";
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
      /*-----------------------------------------------------------------------*/
@@ -59,7 +59,7 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
                     </div>
-                    <label for="nombre" class="col-sm-2 control-label">Expedicion Ccedula</label>
+                    <label for="nombre" class="col-sm-2 control-label">Expedicion Cedula</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['exp_cedula']; ?>" readonly="readonly">
                     </div>
@@ -86,6 +86,22 @@
                     <label for="nombre" class="col-sm-2 control-label">Telefono</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['telefono']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Fecha Ingreso</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_ingreso']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Fecha Vencimiento</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_vencimiento']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Prorrogas</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['prorrogas']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Tipo Contrato</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['tipo_contrato_id']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
                     <div class="col-sm-10">

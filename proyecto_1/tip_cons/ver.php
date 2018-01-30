@@ -7,7 +7,7 @@
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
     /*-----------------------------------------------------------------------*/
-    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero FROM empleado WHERE id_empleado='$id' ";
+    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion FROM empleado, contrato,tipo_contrato WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id ";
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
      /*-----------------------------------------------------------------------*/
@@ -42,26 +42,24 @@
             
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar.php" autocomplete="off">
                 <div class="form-group">
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <a href="../tip_cons/planta.php" class="btn btn-default">Regresar</a>
-                           
-                        </div>
-                    </div>
-                    <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
                     <div class="col-sm-10">
+                        <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                         <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Nombres</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['nombres']; ?>" readonly="readonly">
                     </div>
-                    <label for="nombre" class="col-sm-2 control-label">Expedicion Ccedula</label>
+                    <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
+                    </div>
+                    <label for="nombre" class="col-sm-2 control-label">Expedicion Cedula</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['exp_cedula']; ?>" readonly="readonly">
                     </div>
@@ -81,13 +79,29 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['direccion']; ?>" readonly="readonly">
                     </div>
-                    <label for="nombre" class="col-sm-2 control-label">Ciudad de Residencia</label>
+                    <label for="nombre" class="col-sm-2 control-label">Ciudad/Residencia</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['ciudad_residencia']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Telefono</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['telefono']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Fecha Ingreso</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_ingreso']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Fecha Vencimiento</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_vencimiento']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Prorrogas</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['prorrogas']; ?>" readonly="readonly">
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Tipo Contrato</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"  value="<?php echo $row1['descripcion']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
                     <div class="col-sm-10">
@@ -123,7 +137,12 @@
                 <input type="hidden" id="id" name="id" value="<?php echo $row['empleado_id']; ?>" />
                              
                 
-                
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <a href="../tip_cons/planta.php" class="btn btn-default">Regresar</a>
+                       
+                    </div>
+                </div>
             </form>
         </div>
     </body>

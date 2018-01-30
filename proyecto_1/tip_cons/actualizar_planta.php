@@ -9,12 +9,16 @@
 	$resi = $_POST["c_res"];
 	$tel = $_POST["tel"];
 	$sangre=$_POST['t_san'];
+	$estado=$_POST['estado'];
+
+	echo ($estado);
+
 
 	
 	
 		
 	
-	$sql = "UPDATE empleado SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre'WHERE id_empleado='$id'";
+	$sql = "UPDATE empleado SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado' WHERE id_empleado='$id'";
 	$resultado = $mysqli->query($sql);
 	/********************************************************************************************/
 	$sql1 = "SELECT * FROM acreditacion WHERE empleado_id = '$id' ";

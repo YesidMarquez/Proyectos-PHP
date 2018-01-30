@@ -86,6 +86,16 @@
                     <div class="col-sm-5">
                         <input type="text" class="form-control" id="tel" name="tel" placeholder="tel" value="<?php echo $row1['telefono']; ?>" >
                     </div>
+                    
+                    <label for="estado_civil" class="col-sm-2 control-label">Estado</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" id="estado" name="estado">
+                            <option value="1">ACTIVO</option>
+                            <option value="2">INACTIVO</option>
+                            
+                        </select>
+                        
+                    </div>
                     <!--<label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row2['descripcion']; ?>" readonly="readonly">
