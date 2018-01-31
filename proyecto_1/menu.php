@@ -87,13 +87,16 @@
                 <h6 style="text-align: center;">PROYECTO 1</h6>
                 
             </div>
-            
+           
+        		
+           
         </center>
-        
-        <center>
 
-		<div id="header">
-			<ul class="nav" align="left">
+
+
+
+		<!--<<div id="header">
+			<ul class="nav" align="center">
 				
 				<li><a href="">Servicios</a>
 					<ul>
@@ -103,11 +106,11 @@
 						<li><a href="tip_cons/acreditaciones.php" >Control SVSP</a></li>
 						<li><a href="tip_cons/planta.php">Planta Personal</a></li>					
 						<li><a href="formularios/formulario_UD.php">Vencieminto Contrato</a></li>
-						<!--<li><a href="formularios/formulario_CS.php" >Consultas</a></li>
+						li><a href="formularios/formulario_CS.php" >Consultas</a></li>
 							
 						<li><a href="formularios/formulario.php">Ingresos</a></li>
 						<li><a href="formularios/formulario_UD.php">Personal Proceso SVSP</a></li>
-						<li><a href="tip_cons/per_acredi.php">Personal SVSP</a></li>-->
+						<li><a href="tip_cons/per_acredi.php">Personal SVSP</a></li>
 						
 												
 					</ul>
@@ -134,7 +137,85 @@
 				</li>
 							
 			</ul>
-		</div>
+		</div>--><br>
+		<center>
+				<div class="row u-row-wrapper" data-reactid="32">
+	        		
+	        		<div class="col-xs-12 col-sm-4" data-reactid="36">
+	        			<div class="Card" data-reactid="37">
+
+	        				<figure data-reactid="38">
+	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
+	        				</figure>
+	        				<div class="Card-info" data-reactid="40">
+	        					
+	        					<span class="Card-title" data-reactid="42">Actualizacion</span>
+
+						       					
+	        				</div>
+	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"></a>
+	        			</div>
+	        		</div>
+	        		<div class="col-xs-12 col-sm-4" data-reactid="47">
+	        			<div class="Card" data-reactid="48">
+	        				<figure data-reactid="49">
+	        					<a href="tip_cons/cursos.php" ><img src=imagenes/control.jpg alt="" width="100" height="100" data-reactid="50">
+	        				</figure>
+	        				<div class="Card-info" data-reactid="51">
+	        					<span class="Card-title" data-reactid="53">Control Cursos</span>
+	        					
+	        				</div>
+	        				
+	        			</div>
+	        		</div>
+	        		<div class="col-xs-12 col-sm-4" data-reactid="58">
+	        			<div class="Card" data-reactid="59">
+	        				<figure data-reactid="60">
+	        					<a href="tip_cons/acreditaciones.php"  class="Card-link" data-reactid="68"><img src="imagenes/control2.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
+	        				</figure>
+	        				<div class="Card-info" data-reactid="62">
+	        					
+	        					<span class="Card-title" data-reactid="64">Control SVSP</span>
+	        					
+	        				</div>
+	        				
+	        			</div>
+	        		</div>
+	        		
+	    	</div><br><br>			
+		</center>
+		<center>
+			<div class="col-xs-12 col-sm-4" data-reactid="58">
+    			<div class="Card" data-reactid="59">
+    				<figure data-reactid="60">
+    					<a href="tip_cons/planta.php"   data-reactid="68"><img src="imagenes/personal.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
+    				</figure>
+    				<div class="Card-info" data-reactid="62">
+    					
+    					<span class="Card-title" data-reactid="64">Planta de Personal</span>
+    					
+    				</div>
+    				<a href="" class="Card-link" data-reactid="68"></a>
+    			</div>
+    			
+    		</div>
+    		<div class="col-xs-12 col-sm-4" data-reactid="58">
+    			<div class="Card" data-reactid="59">
+    				<figure data-reactid="60">
+    					<a href="index.html"   data-reactid="68"><img src="imagenes/cerrar.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
+    				</figure>
+    				<div class="Card-info" data-reactid="62">
+    					
+    					<span class="Card-title" data-reactid="64">Cerrar Sesion</span>
+    					
+    				</div>
+    				<a href="" class="Card-link" data-reactid="68"></a>
+    			</div>
+    			
+    		</div>
+		</center>
+		
+
 		</center>
 		
 	</body><br><br><br><br><br>
