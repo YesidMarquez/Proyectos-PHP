@@ -10,6 +10,9 @@
 	$tel = $_POST["tel"];
 	$sangre=$_POST['t_san'];
 	$estado=$_POST['estado'];
+	$prorroga=$_POST['prorroga'];
+	$vence=$_POST['vence'];
+	$ingreso=$_POST['ingreso'];
 
 	echo ($estado);
 
@@ -18,7 +21,7 @@
 	
 		
 	
-	$sql = "UPDATE empleado SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado' WHERE id_empleado='$id'";
+	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE id_empleado='$id'";
 	$resultado = $mysqli->query($sql);
 	/********************************************************************************************/
 	$sql1 = "SELECT * FROM acreditacion WHERE empleado_id = '$id' ";

@@ -18,6 +18,10 @@
     $sql3 = "SELECT fecha_radicado,numero_radicado FROM acreditacion WHERE empleado_id = '$id' ";
     $resultado3 = $mysqli->query($sql3);
     $row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
+    /*------------------------------------------------------------------------*/
+    $sql4 = "SELECT * FROM contrato WHERE empleado_id = '$id' ";
+    $resultado4 = $mysqli->query($sql4);
+    $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
     
     
 ?>
@@ -95,6 +99,18 @@
                             
                         </select>
                         
+                    </div>
+                    <label for="nombre" class="col-sm-2 control-label">Fecha Ingreso</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="ingreso" name="ingreso" placeholder="ingreso" value="<?php echo $row4['fecha_ingreso']; ?>" >
+                    </div>
+                    <label for="nombre" class="col-sm-2 control-label">Fecha Vencimiento</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="vence" name="vence" placeholder="vence" value="<?php echo $row4['fecha_vencimiento']; ?>" >
+                    </div>
+                     <label for="nombre" class="col-sm-2 control-label">Prorrogas</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="prorroga" name="prorroga" placeholder="prorroga" value="<?php echo $row4['prorrogas']; ?>" >
                     </div>
                     <!--<label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
                     <div class="col-sm-10">
