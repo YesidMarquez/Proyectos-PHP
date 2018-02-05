@@ -21,10 +21,15 @@
 	
 		
 
+
 	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id' ";
 
 	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id'";
 
+	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id'";
+
+
+	
 	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id'";
 
 	$resultado = $mysqli->query($sql);

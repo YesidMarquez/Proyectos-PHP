@@ -212,6 +212,7 @@
             <div class="row table-responsive">
 
 
+
                 <table  class="table table-striped" border="3" style="background-color:#e6f9ff">
                     <thead border="3" >
                         <tr  style="background-color:#cccccc">
@@ -224,13 +225,13 @@
 
                 
 
-               
+
                     </thead>
 
                     <!--cuerpo de la tabla-->
                     <tbody>
                         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
-                            <tr>
+
 
 
                                 <td><center><?php echo $row['id_empleado']; ?></td>
@@ -243,7 +244,7 @@
                                
 
                                 
-                                
+
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
                             </tr>

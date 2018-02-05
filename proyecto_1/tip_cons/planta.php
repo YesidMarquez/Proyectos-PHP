@@ -98,7 +98,11 @@
 
             <div class="row table-responsive">
 
+
                 <table class="table table-striped" border="3" style="background-color:#e6f9ff">
+
+                <table class="table table-striped" border="3">
+
 
                 <table class="table table-striped" border="3">
 
