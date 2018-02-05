@@ -91,15 +91,15 @@
             <br>
 
             <div class="row table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped" border="3">
                     <thead>
                         <tr>
-                            <th>Cedula</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>NRO</th>
-                            <th>Vencimiento Curso</th>
-                            <th>Modificar</th>
+                            <th><CENTER>Cedula</th>
+                            <th><CENTER>Nombres</th>
+                            <th><CENTER>Apellidos</th>
+                            <th><CENTER>NRO</th>
+                            <th><CENTER>Vencimiento Curso</th>
+                            <th><CENTER>Modificar</th>
                         </tr>
                     </thead>
                     <!--cuerpo de la tabla-->
@@ -111,7 +111,7 @@
                                 <td><?php echo $row['apellidos']; ?></td>
                                 <td><?php echo $row['nro_curso']; ?></td>
                                 <td><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><a href="../operaciones/modificar_cursos.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td><center><a href="../operaciones/modificar_cursos.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></center></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->

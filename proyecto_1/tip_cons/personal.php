@@ -91,7 +91,7 @@
             <br>
 
             <div class="row table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped" border="3">
                     <thead>
                         <tr>
                             <th>Cedula</th>

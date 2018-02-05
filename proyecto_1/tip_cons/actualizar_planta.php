@@ -21,7 +21,7 @@
 	
 		
 	
-	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE id_empleado='$id'";
+	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id'";
 	$resultado = $mysqli->query($sql);
 	/********************************************************************************************/
 	$sql1 = "SELECT * FROM acreditacion WHERE empleado_id = '$id' ";
@@ -55,8 +55,8 @@
 						<?php } else { ?>
 						<h3>ERROR AL MODIFICAR</h3>
 					<?php } ?>
-					
-					<a href="ver.php?id_empleado=<?php echo $row1['empleado_id'];  ?>" class="btn btn-primary">Regresar</a>
+					<a href="planta.php" class="btn btn-default">Planta</a>
+                    <a href="ver.php?id_empleado=<?php echo $row1['empleado_id'];  ?>" class="btn btn-primary">Empleado</a>
 					
 				</div>
 			</div>

@@ -150,7 +150,8 @@
                 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Regresar</a>
+                        <a href="../tip_cons/planta.php" class="btn btn-default">Planta</a>
+                        <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Empleado</a>
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
