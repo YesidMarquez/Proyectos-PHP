@@ -1,9 +1,114 @@
 <?php
 	require 'config/conexion.php';
+
+	// Imprime algo como: Monday 8th of August 2005 03:12:46 PM
+	date('m');
+	if (date('m')==01) {
+		$fecha1= '2018-01-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = date_create('2018-01-01');
+		date_add($fecha, date_interval_create_from_date_string('30 days'));
+		$fecha3= date_format($fecha, 'Y-m-d');
+
+		/*$fecha = new DateTime('2018-01-01');
+		$fecha->add(new DateInterval('P30D'));
+		echo $fecha->format('Y-m-d') . "\n";*/
+	}elseif (date('m')==02) {
+		$fecha1= '2018-02-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = date_create('2018-02-01');
+		date_add($fecha, date_interval_create_from_date_string('28 days'));
+		$fecha3= date_format($fecha, 'Y-m-d');
+		echo ($fecha3);
+		/*
+		$fecha = new DateTime('2018-02-01');
+		$fecha->add(new DateInterval('P27D'));
+		echo $fecha->format('Y-m-d') . "\n";*/
+	}elseif (date('m')==03) {
+		$fecha1= '2018-03-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-03-01');
+		$fecha->add(new DateInterval('P30D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==04) {
+		$fecha1= '2018-04-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-04-01');
+		$fecha->add(new DateInterval('P29D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==05) {
+		$fecha1= '2018-05-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-05-01');
+		$fecha->add(new DateInterval('P30D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==06) {
+		$fecha1= '2018-06-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-06-01');
+		$fecha->add(new DateInterval('P29D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==07) {
+		$fecha1= '2018-07-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-07-01');
+		$fecha->add(new DateInterval('P30D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==8) {
+		$fecha1= '2018-08-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-08-01');
+		$fecha->add(new DateInterval('P30D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==9) {
+		$fecha1= '2018-09-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-09-01');
+		$fecha->add(new DateInterval('P29D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==10) {
+		$fecha1= '2018-10-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-10-01');
+		$fecha->add(new DateInterval('P30D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==11) {
+		$fecha1= '2018-11-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-11-01');
+		$fecha->add(new DateInterval('P29D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}elseif (date('m')==12) {
+		$fecha1= '2018-12-01';
+		echo ($fecha1);
+		echo "  ";
+		$fecha = new DateTime('2018-12-01');
+		$fecha->add(new DateInterval('P30D'));
+		echo $fecha->format('Y-m-d') . "\n";
+	}
+
+
+
+
 	
-	$where = "where venc_curso BETWEEN CAST('2018-12-01' AS DATE) AND CAST('2018-12-31' AS DATE) and id_empleado=empleado_id";
+	$where = "where venc_curso BETWEEN CAST('$fecha1' AS DATE) AND CAST('$fecha3' AS DATE) and id_empleado=empleado_id";
 	$sql = "SELECT id_empleado, nombres, apellidos, venc_curso, venc_acreditacion FROM empleado, credencial $where";//
 	$resultado = $mysqli->query($sql);
+
+?>
+
+
 ?>
 
 <htm lang="es">
@@ -91,86 +196,53 @@
         		
            
         </center>
-        <table border="0">
-		<tr>
-		  <td ><CENTER></CENTER></td>
-		</tr>
-		 
-		<tr>
-		  <td><div class="col-xs-12 col-sm-4" data-reactid="36">
-	        			<div class="Card" data-reactid="37">
 
-	        				<figure data-reactid="38">
-	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
-	        				</figure>
-	        				<div class="Card-info" data-reactid="40">
-	        					
-	        					<span class="Card-title" data-reactid="42">Actualizacion</span>
 
-						       					
-	        				</div>
-	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"></a>
-	        			</div>
-	        		</div></td>
-		  <td><div class="col-xs-12 col-sm-4" data-reactid="47">
-	        			<div class="Card" data-reactid="48">
-	        				<figure data-reactid="49">
-	        					<a href="tip_cons/cursos.php" ><img src=imagenes/control.jpg alt="" width="100" height="100" data-reactid="50">
-	        				</figure>
-	        				<div class="Card-info" data-reactid="51">
-	        					<span class="Card-title" data-reactid="53">Control Cursos</span>
-	        					
-	        				</div>
-	        				
-	        			</div>
-	        		</div></td>
-		  <td><div class="col-xs-12 col-sm-4" data-reactid="58">
-	        			<div class="Card" data-reactid="59">
-	        				<figure data-reactid="60">
-	        					<a href="tip_cons/acreditaciones.php"  class="Card-link" data-reactid="68"><img src="imagenes/control2.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
-	        				</figure>
-	        				<div class="Card-info" data-reactid="62">
-	        					
-	        					<span class="Card-title" data-reactid="64">Control SVSP</span>
-	        					
-	        				</div>
-	        				
-	        			</div>
-	        		</div></td>
-		  <td><div class="col-xs-12 col-sm-4" data-reactid="58">
-    			<div class="Card" data-reactid="59">
-    				<figure data-reactid="60">
-    					<a href="tip_cons/planta.php"   data-reactid="68"><img src="imagenes/personal.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
-    				</figure>
-    				<div class="Card-info" data-reactid="62">
-    					
-    					<span class="Card-title" data-reactid="64">Planta de Personal</span>
-    					
-    				</div>
-    				<a href="" class="Card-link" data-reactid="68"></a>
-    			</div>
-    			
-    		</div></td>
-		  <td><div class="col-xs-12 col-sm-4" data-reactid="58">
-    			<div class="Card" data-reactid="59">
-    				<figure data-reactid="60">
-    					<a href="index.html"   data-reactid="68"><img src="imagenes/cerrar.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
-    				</figure>
-    				<div class="Card-info" data-reactid="62">
-    					
-    					<span class="Card-title" data-reactid="64">Cerrar Sesion</span>
-    					
-    				</div>
-    				<a href="" class="Card-link" data-reactid="68"></a>
-    			</div>
-    			
-    		</div></td>
-		  
-		</tr>
-		</table>
 
-		<br>
-		<!--Modelo meno son cuadro contenedor
+
+		<!--<<div id="header">
+			<ul class="nav" align="center">
+				
+				<li><a href="">Servicios</a>
+					<ul>
+						
+						<li><a href="tip_cons/consulta.php">Actualizaciones</a></li>
+						<li><a href="tip_cons/cursos.php" >Control Cursos</a></li>
+						<li><a href="tip_cons/acreditaciones.php" >Control SVSP</a></li>
+						<li><a href="tip_cons/planta.php">Planta Personal</a></li>					
+						<li><a href="formularios/formulario_UD.php">Vencieminto Contrato</a></li>
+						li><a href="formularios/formulario_CS.php" >Consultas</a></li>
+							
+						<li><a href="formularios/formulario.php">Ingresos</a></li>
+						<li><a href="formularios/formulario_UD.php">Personal Proceso SVSP</a></li>
+						<li><a href="tip_cons/per_acredi.php">Personal SVSP</a></li>
+						
+												
+					</ul>
+				</li>
+								
+				<li><a href="">Documentacion</a>
+					<ul>
+						<li><a href="formularios/formulario_CS.php" >Tutorial</a></li>
+						<li><a href="formularios/formulario.php">Notas Legales</a></li>
+						<li><a href="archivos/SOPORTES/CREDENCIALES/CREDENCIALES VENCEN 15-11-2017.jpg">Soporte</a></li>
+					
+					</ul>
+				</li>
+				<li><a href="">Opciones</a>
+					<ul>
+						<li><a href="index.html" >Cerrar Sesion</a></li>
+						<li><a href="operaciones/cambiar_pw.php">Cambiar Contraseña</a></li>
+						
+						<li><a href="https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar">codigosdeprogramacion</a></li>
+						<li><a href="https://styde.net/manejo-de-errores-404-en-laravel/">styde.net</a></li>
+						
+					</ul>
+					
+				</li>
+							
+			</ul>
+		</div>--><br>
 		<center>
 				<div class="row u-row-wrapper" data-reactid="32">
 	        		
@@ -249,7 +321,7 @@
 		</center>
 		
 
-		</center>	
+		</center>
 		
 	</body><br><br><br><br><br>
 	<center>

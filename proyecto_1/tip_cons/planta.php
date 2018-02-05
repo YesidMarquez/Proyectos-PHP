@@ -97,33 +97,40 @@
             <br>
 
             <div class="row table-responsive">
-                <table class="table table-striped">
+
+                <table class="table table-striped" border="3" style="background-color:#e6f9ff">
+
+                <table class="table table-striped" border="3">
+
+
+                <table class="table table-striped" border="3">
+
                     <thead>
-                        <tr>
-                            <th>Cedula</th>
-                            <th>Apellidos</th>
-                            <th>Nombres</th>
-                            <th>Puesto</th>
-                            <th>Cliente</th>
-                            <th>Ingreso</th>
-                            <th>Vencimiento</th>
-                            <th>Estado</th>
-                            <th>Ver</th>
+                        <tr style="background-color:#cccccc">
+                            <th><center>Cedula</th>
+                            <th><center>Apellidos</th>
+                            <th><center>Nombres</th>
+                            <th><center>Puesto</th>
+                            <th><center>Cliente</th>
+                            <th><center>Ingreso</th>
+                            <th><center>Vencimiento</th>
+                            <th><center>Estado</th>
+                            <th><center>Ver</th>
                         </tr>
                     </thead>
                     <!--cuerpo de la tabla-->
                     <tbody>
                         <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                             <tr>
-                                <td><?php echo $row['id_empleado']; ?></td>
-                                <td><?php echo $row['apellidos']; ?></td>
-                                <td><?php echo $row['nombres']; ?></td>
-                                <td><?php echo $row['nombre_puesto']; ?>
-                                <td><?php echo $row['nombre_cliente']; ?></td>
-                                <td><?php echo $row['fecha_ingreso']; ?></td>
-                                <td><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><?php echo $row['descripcion']; ?></td>
-                                <td><a href="../tip_cons/ver.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-search"></span></a></td>
+                                <td><center><?php echo $row['id_empleado']; ?></td>
+                                <td><center><?php echo $row['apellidos']; ?></td>
+                                <td><center><?php echo $row['nombres']; ?></td>
+                                <td><center><?php echo $row['nombre_puesto']; ?>
+                                <td><center><?php echo $row['nombre_cliente']; ?></td>
+                                <td><center><?php echo $row['fecha_ingreso']; ?></td>
+                                <td><center><?php echo $row['fecha_vencimiento']; ?></td>
+                                <td><center><?php echo $row['descripcion']; ?></td>
+                                <td><center><a href="../tip_cons/ver.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-search"></span></a></center></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
