@@ -1,7 +1,7 @@
 <?php
    	require '../config/conexion.php';
 
-	
+	/*ssssss*/
 	$id = $_POST['id'];
 	$name = $_POST['name'];
 	$apl = $_POST['apel'];
