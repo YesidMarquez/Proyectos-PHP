@@ -98,7 +98,7 @@
                             <option value="2">INACTIVO</option>
                             
                         </select>
-                        
+                                               
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Fecha Ingreso</label>
                     <div class="col-sm-5">

@@ -4,17 +4,17 @@
 	
 	$id = $_POST['id'];
 	$NRO= $_POST['nro'];
-	$ACADEMIA= $_POST['ACA'];
+	$ACADEMIA= $_POST['Academia'];
 	$NIVEL=$_POST['niv'];
 	$fecha = $_POST['fec'];
 	$inicio = strtotime($fecha);
 	$inicio1 = date('Y-m-d',$inicio);
 	
 	echo ($inicio1);
-	echo ($id);
+	echo ($ACADEMIA);
 
 	
-	$sql = "UPDATE control_cursos SET fecha_vencimiento = '$inicio1', nro_curso='$NRO',academia_nit='$ACADEMIA',descripcion='$NIVEL' WHERE empleado_id='$id'";
+	$sql = "UPDATE control_cursos SET fecha_vencimiento = '$inicio1', nro_curso='$NRO',academia_nit='$ACADEMIA'/*,curso_id='$NIVEL' */WHERE empleado_id='$id'";
 	
 	$resultado = $mysqli->query($sql);
 	if($resultado == false) {

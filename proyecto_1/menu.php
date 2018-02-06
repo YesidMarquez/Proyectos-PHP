@@ -1,12 +1,5 @@
-<?php
-	require 'config/conexion.php';
-	
-	$where = "where venc_curso BETWEEN CAST('2018-12-01' AS DATE) AND CAST('2018-12-31' AS DATE) and id_empleado=empleado_id";
-	$sql = "SELECT id_empleado, nombres, apellidos, venc_curso, venc_acreditacion FROM empleado, credencial $where";//
-	$resultado = $mysqli->query($sql);
-?>
-
 <htm lang="es">
+
 	<head>
 		<script src='http://www.google.com/jsapi'></script>
 		<meta name="viewporte" content="width=device-width, initial-scale=1">
@@ -48,7 +41,7 @@
 				border: 2px solid #A8A8A8;
 				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 				font-size: 10px;
-}
+			}
 
 			.nav li a:hover {
 				background-color:#434343;
@@ -76,28 +69,20 @@
 	</head>
 	
 	<body>
-				
-		
-		
-		<center>
-            <div class="container">
+		<div class="container">
             <div class="row">
-
-                <h2 style="text-align: center;">Sistema de Infomacion</h2>
-                <h6 style="text-align: center;">PROYECTO 1</h6>
-                
+                <h2 style="text-align: center;">Menu de Servicios</h2>
+                <h6 style="text-align: center;"></h6>
             </div>
-           
-        		
-           
-        </center>
-        <table border="0">
+        </div>
+
+   		<!--Modelo meno son cuadro contenedor
+        <table border="1">
 		<tr>
-		  <td ><CENTER></CENTER></td>
+		  <td ><CENTER>A</CENTER></td>
 		</tr>
-		 
 		<tr>
-		  <td><div class="col-xs-12 col-sm-4" data-reactid="36">
+		  <td><div class="col-xs-12 col-sm-50" data-reactid="50">
 	        			<div class="Card" data-reactid="37">
 
 	        				<figure data-reactid="38">
@@ -154,67 +139,53 @@
 		  <td><div class="col-xs-12 col-sm-4" data-reactid="58">
     			<div class="Card" data-reactid="59">
     				<figure data-reactid="60">
-    					<a href="index.html"   data-reactid="68"><img src="imagenes/cerrar.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
+    					<a href="menu_ppal.php"   data-reactid="68"><img src="imagenes/menu_p.png" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
     				</figure>
     				<div class="Card-info" data-reactid="62">
     					
-    					<span class="Card-title" data-reactid="64">Cerrar Sesion</span>
+    					<span class="Card-title" data-reactid="64">Menu Principal</span>
     					
     				</div>
     				<a href="" class="Card-link" data-reactid="68"></a>
     			</div>
     			
     		</div></td>
-		  
 		</tr>
-		</table>
+		</table>-->	
 
 		<br>
-		<!--Modelo meno son cuadro contenedor
 		<center>
-				<div class="row u-row-wrapper" data-reactid="32">
-	        		
-	        		<div class="col-xs-12 col-sm-4" data-reactid="36">
-	        			<div class="Card" data-reactid="37">
-
-	        				<figure data-reactid="38">
-	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
-	        				</figure>
-	        				<div class="Card-info" data-reactid="40">
-	        					
-	        					<span class="Card-title" data-reactid="42">Actualizacion</span>
-
-						       					
-	        				</div>
-	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"></a>
-	        			</div>
-	        		</div>
-	        		<div class="col-xs-12 col-sm-4" data-reactid="47">
-	        			<div class="Card" data-reactid="48">
-	        				<figure data-reactid="49">
-	        					<a href="tip_cons/cursos.php" ><img src=imagenes/control.jpg alt="" width="100" height="100" data-reactid="50">
-	        				</figure>
-	        				<div class="Card-info" data-reactid="51">
-	        					<span class="Card-title" data-reactid="53">Control Cursos</span>
-	        					
-	        				</div>
-	        				
-	        			</div>
-	        		</div>
-	        		<div class="col-xs-12 col-sm-4" data-reactid="58">
-	        			<div class="Card" data-reactid="59">
-	        				<figure data-reactid="60">
-	        					<a href="tip_cons/acreditaciones.php"  class="Card-link" data-reactid="68"><img src="imagenes/control2.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
-	        				</figure>
-	        				<div class="Card-info" data-reactid="62">
-	        					
-	        					<span class="Card-title" data-reactid="64">Control SVSP</span>
-	        					
-	        				</div>
-	        				
-	        			</div>
-	        		</div>
-	        		
+			<div class="row u-row-wrapper" data-reactid="32">
+				<div class="col-xs-12 col-sm-4" data-reactid="36">
+        			<div class="Card" data-reactid="37">
+        				<figure data-reactid="38">
+        				<a href="formularios/ingresos.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
+        				</figure>
+        				<div class="Card-info" data-reactid="40">
+        					<span class="Card-title" data-reactid="42">Ingreso Nuevo</span>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="col-xs-12 col-sm-4" data-reactid="47">
+        			<div class="Card" data-reactid="59">
+        				<figure data-reactid="60">
+        					<a href="tip_cons/cursos.php"  class="Card-link" data-reactid="68"><img src="imagenes/control.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
+        				</figure>
+        				<div class="Card-info" data-reactid="62">
+        					<span class="Card-title" data-reactid="64">Control Cursos</span>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="col-xs-12 col-sm-4" data-reactid="58">
+        			<div class="Card" data-reactid="59">
+        				<figure data-reactid="60">
+        					<a href="tip_cons/acreditaciones.php"  class="Card-link" data-reactid="68"><img src="imagenes/control2.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
+        				</figure>
+        				<div class="Card-info" data-reactid="62">
+        					<span class="Card-title" data-reactid="64">Control SVSP</span>
+        				</div>
+        			</div>
+        		</div>
 	    	</div><br><br>			
 		</center>
 		<center>
@@ -224,36 +195,28 @@
     					<a href="tip_cons/planta.php"   data-reactid="68"><img src="imagenes/personal.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
     				</figure>
     				<div class="Card-info" data-reactid="62">
-    					
     					<span class="Card-title" data-reactid="64">Planta de Personal</span>
-    					
     				</div>
     				<a href="" class="Card-link" data-reactid="68"></a>
     			</div>
-    			
     		</div>
     		<div class="col-xs-12 col-sm-4" data-reactid="58">
     			<div class="Card" data-reactid="59">
     				<figure data-reactid="60">
-    					<a href="index.html"   data-reactid="68"><img src="imagenes/cerrar.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
+    					<a href="menu_ppal.php"   data-reactid="68"><img src="imagenes/menu_p.png" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
     				</figure>
     				<div class="Card-info" data-reactid="62">
     					
-    					<span class="Card-title" data-reactid="64">Cerrar Sesion</span>
+    					<span class="Card-title" data-reactid="64">Menu Principal</span>
     					
     				</div>
     				<a href="" class="Card-link" data-reactid="68"></a>
     			</div>
-    			
     		</div>
 		</center>
-		
 
-		</center>	
-		
 	</body><br><br><br><br><br>
 	<center>
-
 		<div >
 			<p><br><br><br><br><br><br><br>
 				<marquee direction="right"  onmouseover="stop()" onmouseout="start()" scrollamount="15" scrolldelay="100" >
@@ -263,14 +226,9 @@
 					<img src="imagenes/SISE1.jpg" align="" width="10%">
 					<img src="imagenes/SISE2.jpg" align="" width="10%">
 					<img src="imagenes/SISE3.jpg" align="" width="10%">
-					
 				</marquee>
 			</p>
-			
 		</div>
-		
-				
 	</center>
-
 </html>
 

@@ -1,114 +1,88 @@
+
 <?php
-	require 'config/conexion.php';
 
-	// Imprime algo como: Monday 8th of August 2005 03:12:46 PM
-	date('m');
-	if (date('m')==01) {
-		$fecha1= '2018-01-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = date_create('2018-01-01');
-		date_add($fecha, date_interval_create_from_date_string('30 days'));
-		$fecha3= date_format($fecha, 'Y-m-d');
+    require 'config/conexion.php';
 
-		/*$fecha = new DateTime('2018-01-01');
-		$fecha->add(new DateInterval('P30D'));
-		echo $fecha->format('Y-m-d') . "\n";*/
-	}elseif (date('m')==02) {
-		$fecha1= '2018-02-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = date_create('2018-02-01');
-		date_add($fecha, date_interval_create_from_date_string('28 days'));
-		$fecha3= date_format($fecha, 'Y-m-d');
-		echo ($fecha3);
-		/*
-		$fecha = new DateTime('2018-02-01');
-		$fecha->add(new DateInterval('P27D'));
-		echo $fecha->format('Y-m-d') . "\n";*/
-	}elseif (date('m')==03) {
-		$fecha1= '2018-03-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-03-01');
-		$fecha->add(new DateInterval('P30D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==04) {
-		$fecha1= '2018-04-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-04-01');
-		$fecha->add(new DateInterval('P29D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==05) {
-		$fecha1= '2018-05-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-05-01');
-		$fecha->add(new DateInterval('P30D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==06) {
-		$fecha1= '2018-06-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-06-01');
-		$fecha->add(new DateInterval('P29D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==07) {
-		$fecha1= '2018-07-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-07-01');
-		$fecha->add(new DateInterval('P30D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==8) {
-		$fecha1= '2018-08-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-08-01');
-		$fecha->add(new DateInterval('P30D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==9) {
-		$fecha1= '2018-09-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-09-01');
-		$fecha->add(new DateInterval('P29D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==10) {
-		$fecha1= '2018-10-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-10-01');
-		$fecha->add(new DateInterval('P30D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==11) {
-		$fecha1= '2018-11-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-11-01');
-		$fecha->add(new DateInterval('P29D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}elseif (date('m')==12) {
-		$fecha1= '2018-12-01';
-		echo ($fecha1);
-		echo "  ";
-		$fecha = new DateTime('2018-12-01');
-		$fecha->add(new DateInterval('P30D'));
-		echo $fecha->format('Y-m-d') . "\n";
-	}
-
-
-
-
-	
-	$where = "where venc_curso BETWEEN CAST('$fecha1' AS DATE) AND CAST('$fecha3' AS DATE) and id_empleado=empleado_id";
-	$sql = "SELECT id_empleado, nombres, apellidos, venc_curso, venc_acreditacion FROM empleado, credencial $where";//
-	$resultado = $mysqli->query($sql);
-
-?>
-
-
+    date('m');
+    if (date('m')==01) {
+     	$dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==2) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('12 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==3) {
+       	$dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==4) {
+      	$dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==5) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==6) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        $fecha = date_create('2018-06-01');
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==7) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==8) {
+      	$dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==9) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==10) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==11) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }elseif (date('m')==12) {
+        $dato=Date('m-d');
+        $fecha1= "2018-".$dato;
+        $fecha = date_create('2018-'.$dato);
+        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+    }
+    
+    $where = "where fecha_vencimiento BETWEEN CAST('$fecha1' AS DATE) AND CAST('$fecha3' AS DATE) and id_empleado=empleado_id and estado_id=1";
+    $sql = "SELECT id_empleado, concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, nro_curso, fecha_vencimiento FROM empleado, control_cursos $where";//
+    $resultado = $mysqli->query($sql);
+    
 ?>
 
 <htm lang="es">
@@ -122,7 +96,7 @@
 		<title>Sis_Vise</title>
 		<style type="text/css">
 			
-			* {
+			{
 				margin:0px;
 				padding:0px;
 			}
@@ -153,7 +127,7 @@
 				border: 2px solid #A8A8A8;
 				font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 				font-size: 10px;
-}
+			}
 
 			.nav li a:hover {
 				background-color:#434343;
@@ -179,170 +153,82 @@
 			}
 		</style>
 	</head>
-	
-	<body>
-				
-		
-		
-		<center>
-            <div class="container">
+
+	<body width:100% class="row table-responsive">
+        <div class="container" >
             <div class="row">
-
-                <h2 style="text-align: center;">Sistema de Infomacion</h2>
-                <h6 style="text-align: center;">PROYECTO 1</h6>
-                
-            </div>
-           
-        		
-           
-        </center>
-
-
-
-
-		<!--<<div id="header">
-			<ul class="nav" align="center">
-				
-				<li><a href="">Servicios</a>
-					<ul>
-						
-						<li><a href="tip_cons/consulta.php">Actualizaciones</a></li>
-						<li><a href="tip_cons/cursos.php" >Control Cursos</a></li>
-						<li><a href="tip_cons/acreditaciones.php" >Control SVSP</a></li>
-						<li><a href="tip_cons/planta.php">Planta Personal</a></li>					
-						<li><a href="formularios/formulario_UD.php">Vencieminto Contrato</a></li>
-						li><a href="formularios/formulario_CS.php" >Consultas</a></li>
-							
-						<li><a href="formularios/formulario.php">Ingresos</a></li>
-						<li><a href="formularios/formulario_UD.php">Personal Proceso SVSP</a></li>
-						<li><a href="tip_cons/per_acredi.php">Personal SVSP</a></li>
-						
-												
-					</ul>
-				</li>
-								
-				<li><a href="">Documentacion</a>
-					<ul>
-						<li><a href="formularios/formulario_CS.php" >Tutorial</a></li>
-						<li><a href="formularios/formulario.php">Notas Legales</a></li>
-						<li><a href="archivos/SOPORTES/CREDENCIALES/CREDENCIALES VENCEN 15-11-2017.jpg">Soporte</a></li>
-					
-					</ul>
-				</li>
-				<li><a href="">Opciones</a>
-					<ul>
-						<li><a href="index.html" >Cerrar Sesion</a></li>
-						<li><a href="operaciones/cambiar_pw.php">Cambiar Contraseña</a></li>
-						
-						<li><a href="https://codigosdeprogramacion.com/cursos/?lesson=4-crud-parte-2-insertar-actualizar-eliminar-y-buscar">codigosdeprogramacion</a></li>
-						<li><a href="https://styde.net/manejo-de-errores-404-en-laravel/">styde.net</a></li>
-						
-					</ul>
-					
-				</li>
-							
-			</ul>
-		</div>--><br>
+	            <h2 style="text-align: center;">Menu Principal</h2>
+	        </div>
+       
 		<center>
 				<div class="row u-row-wrapper" data-reactid="32">
 	        		
 	        		<div class="col-xs-12 col-sm-4" data-reactid="36">
 	        			<div class="Card" data-reactid="37">
-
 	        				<figure data-reactid="38">
-	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
+	        				<a href="menu.php" class="Card-link" data-reactid="46"><img src="imagenes/menu.png" width="100" height="100" data-reactid="39"></a>
 	        				</figure>
 	        				<div class="Card-info" data-reactid="40">
-	        					
-	        					<span class="Card-title" data-reactid="42">Actualizacion</span>
-
-						       					
-	        				</div>
-	        				<a href="tip_cons/consulta.php" class="Card-link" data-reactid="46"></a>
+	        					<span class="Card-title" data-reactid="42">Menu de Sevicios</span>
+						    </div>
 	        			</div>
 	        		</div>
-	        		<div class="col-xs-12 col-sm-4" data-reactid="47">
-	        			<div class="Card" data-reactid="48">
-	        				<figure data-reactid="49">
-	        					<a href="tip_cons/cursos.php" ><img src=imagenes/control.jpg alt="" width="100" height="100" data-reactid="50">
+	        		<div class="col-xs-12 col-sm-4" data-reactid="36">
+	        			<div class="Card" data-reactid="37">
+	        				<figure data-reactid="38">
+	        				<a href="config/config_user.php" class="Card-link" data-reactid="46"><img src="imagenes/config.jpg" width="100" height="100" data-reactid="39"></a>
 	        				</figure>
-	        				<div class="Card-info" data-reactid="51">
-	        					<span class="Card-title" data-reactid="53">Control Cursos</span>
-	        					
-	        				</div>
-	        				
+	        				<div class="Card-info" data-reactid="40">
+	        					<span class="Card-title" data-reactid="42">Configuraciones</span>
+						    </div>
 	        			</div>
 	        		</div>
 	        		<div class="col-xs-12 col-sm-4" data-reactid="58">
-	        			<div class="Card" data-reactid="59">
-	        				<figure data-reactid="60">
-	        					<a href="tip_cons/acreditaciones.php"  class="Card-link" data-reactid="68"><img src="imagenes/control2.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
-	        				</figure>
-	        				<div class="Card-info" data-reactid="62">
-	        					
-	        					<span class="Card-title" data-reactid="64">Control SVSP</span>
-	        					
-	        				</div>
-	        				
-	        			</div>
-	        		</div>
-	        		
-	    	</div><br><br>			
-		</center>
-		<center>
-			<div class="col-xs-12 col-sm-4" data-reactid="58">
-    			<div class="Card" data-reactid="59">
-    				<figure data-reactid="60">
-    					<a href="tip_cons/planta.php"   data-reactid="68"><img src="imagenes/personal.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
-    				</figure>
-    				<div class="Card-info" data-reactid="62">
-    					
-    					<span class="Card-title" data-reactid="64">Planta de Personal</span>
-    					
-    				</div>
-    				<a href="" class="Card-link" data-reactid="68"></a>
-    			</div>
-    			
-    		</div>
-    		<div class="col-xs-12 col-sm-4" data-reactid="58">
-    			<div class="Card" data-reactid="59">
-    				<figure data-reactid="60">
-    					<a href="index.html"   data-reactid="68"><img src="imagenes/cerrar.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
-    				</figure>
-    				<div class="Card-info" data-reactid="62">
-    					
-    					<span class="Card-title" data-reactid="64">Cerrar Sesion</span>
-    					
-    				</div>
-    				<a href="" class="Card-link" data-reactid="68"></a>
-    			</div>
-    			
-    		</div>
-		</center>
-		
+		    			<div class="Card" data-reactid="59">
+		    				<figure data-reactid="60">
+		    					<a href="index.html"   data-reactid="68"><img src="imagenes/cerrar.png"  width="100" height="100" data-reactid="71"></a>
+		    				</figure>
+		    				<div class="Card-info" data-reactid="62">
+		    					
+		    					<span class="Card-title" data-reactid="64">Cerrar Sesion</span>
+		    					
+		    				</div>
+			    				
+		    			</div>
+		    		</div>
+	    		</div>
+		</center><br>
+		<h3 style="text-align: center;">Vencimientos Proximos </h3>
+		<h4 style="text-align: center;"">Mes <?php $mes=date('m'); echo ($mes)?></h4>
+		<div class="row table-responsive">
+            <table  class="table table-striped" border="3" style="background-color:red">
+                <thead border="3" >
+                    <tr  style="background-color:#cccccc">
+                        <th><center>Cedula</th>
+                        <th><center>Nombres</th>
+                        <th><center>Apellidos</th>
+                        <th><center>NRO</th>
+                        <th><center>Vencimiento Curso</th>
+                        <th><center>Modificar</th>
 
-		</center>
-		
-	</body><br><br><br><br><br>
-	<center>
+                </thead>
 
-		<div >
-			<p><br><br><br><br><br><br><br>
-				<marquee direction="right"  onmouseover="stop()" onmouseout="start()" scrollamount="15" scrolldelay="100" >
-					<img src="imagenes/logo.jpg" align="" width="10%">
-					<img src="imagenes/logo1.jpg" align="" width="10%">
-					<img src="imagenes/SISE.jpg" align="" width="10%">
-					<img src="imagenes/SISE1.jpg" align="" width="10%">
-					<img src="imagenes/SISE2.jpg" align="" width="10%">
-					<img src="imagenes/SISE3.jpg" align="" width="10%">
-					
-				</marquee>
-			</p>
-			
-		</div>
-		
-				
-	</center>
+                <!--cuerpo de la tabla-->
+                <tbody>
+                    <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
 
+                            <td><center><?php echo $row['id_empleado']; ?></td>
+                            <td><center><?php echo $row['nombres']; ?></td>
+                            <td><center><?php echo $row['apellidos']; ?></td>
+                            <td><center><?php echo $row['nro_curso']; ?></td>
+                            <td><center><?php echo $row['fecha_vencimiento']; ?></td>
+                            <td><center><a href="operaciones/modificar_cursos.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+	</body>
 </html>
 

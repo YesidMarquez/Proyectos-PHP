@@ -195,8 +195,8 @@
                 <h3 style="text-align:center"><?php if (date('m')==6) {?>
                     Mes De los Padres
                 <?php }?></h3>
-                <h3 style="text-align:center"><?php if (date('m')==9) {?>
-                    Mes De los Amor y la Amistad
+                <h3 style="text-align:center"><?php if (date('m')==5) {?>
+                    Mes De madres
                 <?php }?></h3>
                 <h3 style="text-align:center"><?php if (date('m')==12) {?>
                     Feliz Navidad
