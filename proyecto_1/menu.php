@@ -159,7 +159,7 @@
 				<div class="col-xs-12 col-sm-4" data-reactid="36">
         			<div class="Card" data-reactid="37">
         				<figure data-reactid="38">
-        				<a href="formularios/ingresos.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
+        				<a href="formularios/menu_ingresos.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
         				</figure>
         				<div class="Card-info" data-reactid="40">
         					<span class="Card-title" data-reactid="42">Ingreso Nuevo</span>

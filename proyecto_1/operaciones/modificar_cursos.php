@@ -64,7 +64,7 @@
                     
                     <label for="estado_civil" class="col-sm-2 control-label">Modificar Academia</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="Academia" name="Academia" ">
+                        <select class="form-control" id="Academia" name="Academia" placeholder="Academia" >
                             <option value="<?php echo $row2['academia_nit']; ?>"></option>
                             <option value="8300211325">Escuela Colombiana De Seguridad Privada ECOSEP Ltda</option>
                             <option value="8300393700">Escuela Colombiana De Capacitacionen Vigilancia Privada </option>
