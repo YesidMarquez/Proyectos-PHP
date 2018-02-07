@@ -37,10 +37,10 @@
         
     </head>
     
-    <body>
+    <body><font face="Comic Sans MS,verdana">
         <div class="container">
             <div class="row">
-                <h3 style="text-align:center">MODIFICAR DATOS <?php echo $row1['apellidos']; ?> <?php echo $row1['nombres']; ?> DE LA PLANTA</h3>
+                <h3 style="text-align:center">MODIFICAR DATOS DE "<?php echo $row1['apellidos']; ?> <?php echo $row1['nombres']; ?>" </h3>
             </div>
             
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_planta.php" autocomplete="off">

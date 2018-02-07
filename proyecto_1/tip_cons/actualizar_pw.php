@@ -30,7 +30,7 @@ $sql = "UPDATE usuarios SET password = '$CONTRASEÑA' WHERE id_usuario = '$ID';"
         <script src="../js/bootstrap.min.js"></script> 
 	</head>
 	
-	<body>
+	<body><font face="Comic Sans MS,verdana">
 		<div class="container">
 			<div class="row">
 				<div class="row" style="text-align:center">

@@ -156,8 +156,8 @@
 
 	<body width:100% class="row table-responsive">
         <div class="container" >
-            <div class="row">
-	            <h2 style="text-align: center;">Menu Principal</h2>
+            <div class="row"><font face="Comic Sans MS,verdana">
+	            <h2 style="text-align: center; "  >Menu Principal</h2>
 	        </div>
        
 		<center>
@@ -169,7 +169,7 @@
 	        				<a href="menu.php" class="Card-link" data-reactid="46"><img src="imagenes/menu.png" width="100" height="100" data-reactid="39"></a>
 	        				</figure>
 	        				<div class="Card-info" data-reactid="40">
-	        					<span class="Card-title" data-reactid="42">Menu de Sevicios</span>
+	        					<span class="Card-title" data-reactid="42"><h4 style="text-align: center; ;">Menu <br> De Sevicios</span>
 						    </div>
 	        			</div>
 	        		</div>
@@ -179,7 +179,7 @@
 	        				<a href="config/config_user.php" class="Card-link" data-reactid="46"><img src="imagenes/config.jpg" width="100" height="100" data-reactid="39"></a>
 	        				</figure>
 	        				<div class="Card-info" data-reactid="40">
-	        					<span class="Card-title" data-reactid="42">Configuraciones</span>
+	        					<span class="Card-title" data-reactid="42"><h4 style="text-align: center; ;">Configuraciones</span>
 						    </div>
 	        			</div>
 	        		</div>
@@ -190,18 +190,18 @@
 		    				</figure>
 		    				<div class="Card-info" data-reactid="62">
 		    					
-		    					<span class="Card-title" data-reactid="64">Cerrar Sesion</span>
+		    					<span class="Card-title" data-reactid="64"><h4 style="text-align: center; ;">Cerrar <br> Sesion</span>
 		    					
 		    				</div>
 			    				
 		    			</div>
 		    		</div>
 	    		</div>
-		</center><br>
+		</center>
 		<h3 style="text-align: center;">Vencimientos Proximos </h3>
 		<h4 style="text-align: center;"">Mes <?php $mes=date('m'); echo ($mes)?></h4>
 		<div class="row table-responsive">
-            <table  class="table table-striped" border="3" style="background-color:red">
+            <table  class="table table-striped"  border="3" style="background-color:red" >
                 <thead border="3" >
                     <tr  style="background-color:#cccccc">
                         <th><center>Cedula</th>

@@ -55,7 +55,7 @@
                 border: 2px solid #A8A8A8;
                 font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
                 font-size: 10px;
-}
+            }
 
             
             .nav li a:hover {
@@ -84,7 +84,7 @@
     </head>
 
     
-    <body>
+    <body><font face="Comic Sans MS,verdana">
 
         <div class="container">
             <div class="row">

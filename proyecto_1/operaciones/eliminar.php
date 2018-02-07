@@ -22,7 +22,7 @@
 <html>
 <head>
 	<htm lang="es">
-    <head>
+    <head><font face="Comic Sans MS,verdana">
         <meta name="viewporte" content="width=device-width, initial-scale=1">
         <link rel="stylesheet"  href="../css/bootstrap-theme.css">
         <link rel="stylesheet"  href="../css/bootstrap.min.css">

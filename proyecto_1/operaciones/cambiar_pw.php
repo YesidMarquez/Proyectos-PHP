@@ -11,7 +11,7 @@
         
     </head>
     
-    <body>
+    <body><font face="Comic Sans MS,verdana">
         <div class="container">
             <div class="row">
                 <h3 style="text-align:center">CAMBIO DE CONTRASEÑA</h3>

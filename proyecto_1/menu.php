@@ -68,7 +68,7 @@
 		</style>
 	</head>
 	
-	<body>
+	<body><font face="Comic Sans MS,verdana">
 		<div class="container">
             <div class="row">
                 <h2 style="text-align: center;">Menu de Servicios</h2>
@@ -162,7 +162,7 @@
         				<a href="formularios/menu_ingresos.php" class="Card-link" data-reactid="46"><img src="imagenes/update.jpg" width="100" height="100" data-reactid="39"></a>
         				</figure>
         				<div class="Card-info" data-reactid="40">
-        					<span class="Card-title" data-reactid="42">Ingreso Nuevo</span>
+        					<span class="Card-title" data-reactid="42"><h5 style="text-align: center; ;">Ingreso <br> Nuevo</span>
         				</div>
         			</div>
         		</div>
@@ -172,7 +172,7 @@
         					<a href="tip_cons/cursos.php"  class="Card-link" data-reactid="68"><img src="imagenes/control.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
         				</figure>
         				<div class="Card-info" data-reactid="62">
-        					<span class="Card-title" data-reactid="64">Control Cursos</span>
+        					<span class="Card-title" data-reactid="64"><h5 style="text-align: center; ;">Control <br> Cursos</span>
         				</div>
         			</div>
         		</div>
@@ -182,7 +182,7 @@
         					<a href="tip_cons/acreditaciones.php"  class="Card-link" data-reactid="68"><img src="imagenes/control2.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="61"></a>
         				</figure>
         				<div class="Card-info" data-reactid="62">
-        					<span class="Card-title" data-reactid="64">Control SVSP</span>
+        					<span class="Card-title" data-reactid="64"><h5 style="text-align: center; ;">Control <br> SVSP</span>
         				</div>
         			</div>
         		</div>
@@ -195,7 +195,7 @@
     					<a href="tip_cons/planta.php"   data-reactid="68"><img src="imagenes/personal.jpg" alt="Desarrollo con Java " width="100" height="100" data-reactid="71"></a>
     				</figure>
     				<div class="Card-info" data-reactid="62">
-    					<span class="Card-title" data-reactid="64">Planta de Personal</span>
+    					<span class="Card-title" data-reactid="64"><h5 style="text-align: center; ;">Planta <br> De Personal</span>
     				</div>
     				<a href="" class="Card-link" data-reactid="68"></a>
     			</div>
@@ -207,7 +207,7 @@
     				</figure>
     				<div class="Card-info" data-reactid="62">
     					
-    					<span class="Card-title" data-reactid="64">Menu Principal</span>
+    					<span class="Card-title" data-reactid="64"><h5 style="text-align: center; ;">Menu <br> Principal</span>
     					
     				</div>
     				<a href="" class="Card-link" data-reactid="68"></a>

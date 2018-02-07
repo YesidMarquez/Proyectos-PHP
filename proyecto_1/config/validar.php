@@ -22,7 +22,7 @@ if ($row = mysqli_fetch_array($result)) {
 		session_start();
 		$_SESSION['usuario'] = $USUARIO;
 		
-		header("Location: ../menu.php");
+		header("Location: ../menu_ppal.php");
 		# code...
 	}else{
 			header("Location: ../index.html");
