@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
+/* Con esta funcion estoy omitiendo este error: Notice: Undefined variable: valor in C:\xampp\htdocs\Proyectos-PHP XAMPP\proyecto_1\tip_cons\planta.php on line 15*/
     require '../config/conexion.php';
    
     
@@ -103,7 +105,7 @@
                 
                 
                 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <b>Nombre: </b><input type="text" id="campo" name="campo" value="" />
+                    <b>Cedula: </b><input type="text" id="campo" name="campo" value="" />
                     <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
                 </form>
             </div>
@@ -123,7 +125,7 @@
                             <th><center>Cliente</th>
                             <th><center>Ingreso</th>
                             <th><center>Vencimiento</th>
-                            <th><center>Estado</th>
+                            
                             <th><center>Ver</th>
                         </tr>
                     </thead>
@@ -138,7 +140,7 @@
                                 <td><center><?php echo $row['nombre_cliente']; ?></td>
                                 <td><center><?php echo $row['fecha_ingreso']; ?></td>
                                 <td><center><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><center><?php echo $row['descripcion']; ?></td>
+                               
                                 <td><center><a href="../tip_cons/ver.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-search"></span></a></center></td>
                                 
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
