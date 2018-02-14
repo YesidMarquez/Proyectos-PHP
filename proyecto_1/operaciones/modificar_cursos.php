@@ -62,7 +62,8 @@
                     </div>
                     
                     <label for="estado_civil" class="col-sm-2 control-label">Modificar Academia</label>
-                    <div class="col-sm-10">
+
+                    <div class="col-sm-10" >
                         <select class="form-control" id="Academia" name="Academia" placeholder="Academia" >
                             <option value="<?php echo $row2['academia_nit']; ?>"><?php echo $row2['nombre']; ?></option>
                             <option value="8001916712">ACADEMIA DE VIGILANTES ADEVIP LIMITADA</option>
@@ -224,7 +225,7 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row2['fecha_vencimiento']; ?>" >
                     </div>
-                </div>
+                    
                 <input type="hidden" id="id" name="id" value="<?php echo $row['empleado_id']; ?>" />
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
@@ -234,5 +235,6 @@
                 </div>
             </form>
         </div>
+  
     </body>
 </html>

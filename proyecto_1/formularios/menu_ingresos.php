@@ -68,7 +68,7 @@
         </style>
     </head>
     
-    <body>
+    <body><font face="Comic Sans MS,verdana">
         <div class="container">
             <div class="row">
                 <h2 style="text-align: center;">Ingreso de Personal por Modulos</h2>
@@ -87,7 +87,7 @@
                         <a href="empleado.php" class="Card-link" data-reactid="46"><img src="../imagenes/empleado.png" width="100" height="100" data-reactid="39"></a>
                         </figure>
                         <div class="Card-info" data-reactid="40">
-                            <span class="Card-title" data-reactid="42"><center>Empleados</span>
+                            <span class="Card-title" data-reactid="42"><center>Persona</span>
                         </div>
                     </div>
                 </div>
@@ -154,13 +154,15 @@
 
         </center>
         <center>
-            <div class="col-xs-12 col-sm-4" data-reactid="36">
-                <div class="Card" data-reactid="37">
-                    <figure data-reactid="38">
-                    <a href="../menu.php" class="Card-link" data-reactid="46"><img src="../imagenes/menu.png" width="100" height="100" data-reactid="39"></a>
-                    </figure>
-                    <div class="Card-info" data-reactid="40">
-                        <span class="Card-title" data-reactid="42">Menu de Sevicios</span>
+            <div class="container"><br><br><br><br>
+                <div class="col-xs-12 col-sm-15" data-reactid="36">
+                    <div class="Card" data-reactid="37">
+                        <figure data-reactid="38">
+                        <a href="../menu.php" class="Card-link" data-reactid="46"><img src="../imagenes/menu.png" width="100" height="100" data-reactid="39"></a>
+                        </figure>
+                        <div class="Card-info" data-reactid="40">
+                            <span class="Card-title" data-reactid="42">Menu de Sevicios</span>
+                        </div>
                     </div>
                 </div>
             </div>

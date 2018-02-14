@@ -1,17 +1,8 @@
 <?php
     require '../config/conexion.php';
-   
     
-    if(!empty($_POST))
-    {  
-        $valor = $_POST['campo'];
-        if(!empty($valor)){
-            $where = "WHERE '";
-        }
-    }
-  
 
-    $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and empleado.estado_id=estado.id_estado and estado.id_estado=1 and id_empleado LIKE '%$valor'";
+    $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and empleado.estado_id=estado.id_estado and estado.id_estado=1  ";
     /*empleado.estado_id=estado.id_estado ";*/
     $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, ubicacion.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento,estado.descripcion FROM ubicacion,empleado,control_cursos, contrato,cliente,estado $where";//
 
@@ -99,21 +90,25 @@
             <div class="row">
                 <h2 style="text-align:center">Datos del Personal</h2>
             </div>
-            <div class="row">
-                
-                
-                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <b>Nombre: </b><input type="text" id="campo" name="campo" value="" />
-                    <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
-                </form>
-            </div>
-            
-            <br>
             </FORM>
-                <form ACTION="../menu.php">
+                <form ACTION="../menu.php"><br>
                 <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
+                                   
+            <br>
+
             <div class="row table-responsive">
-                <table class="table table-striped" border="3" style="background-color:#e6f9ff"><br>
+
+
+                <table class="table table-striped" border="3" style="background-color:#e6f9ff">
+
+                <table class="table table-striped" border="3">
+
+
+                <table class="table table-striped" border="3">
+
+
+                <table class="table table-striped" border="3">
+
                     <thead>
                         <tr style="background-color:#cccccc">
                             <th><center>Cedula</th>

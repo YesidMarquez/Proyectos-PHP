@@ -200,3 +200,12 @@ h1 a {
  	color: #FFF;
  }
 
+ #parallax{
+  background-image: url("../imagenes/logo.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
