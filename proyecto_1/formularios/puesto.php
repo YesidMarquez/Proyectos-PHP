@@ -42,7 +42,7 @@
             </form>
         </div>
                     
-        <form class="form-horizontal" method="POST"  action="../operaciones/modulos/insertar_cursos.php">
+        <form class="form-horizontal" method="POST"  action="../operaciones/modulos/insertar_puesto.php">
             <div class="form-group">
                 <label for="nombre" class="col-sm-2 control-label">Cedula</label>
                 <div class="col-sm-10">

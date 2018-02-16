@@ -26,7 +26,7 @@
     
 ?>
 <html lang="es">
-    <head>
+    <head><title>Actualizacion</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -104,7 +104,7 @@
                     <div class="col-sm-5">
                         <input type="text" class="form-control" id="ingreso" name="ingreso" placeholder="ingreso" value="<?php echo $row4['fecha_ingreso']; ?>" >
                     </div>
-                    <label for="nombre" class="col-sm-2 control-label">Fecha Vencimiento</label>
+                    <label for="nombre" class="col-sm-2 control-label">* Fecha Vencimiento<br>* Fecha Retiro</label>
                     <div class="col-sm-2">
                         <input type="text" class="form-control" id="vence" name="vence" placeholder="vence" value="<?php echo $row4['fecha_vencimiento']; ?>" >
                     </div>

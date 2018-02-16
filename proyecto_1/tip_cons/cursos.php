@@ -115,7 +115,7 @@
 ?>
 
 <htm lang="es">
-    <head>
+    <head><TITLE>Cursos</TITLE>
         <meta name="viewporte" content="width=device-width, initial-scale=1">
         <link rel="stylesheet"  href="../css/bootstrap-theme.css">
         <link rel="stylesheet"  href="../css/bootstrap.min.css">
@@ -155,7 +155,7 @@
                 border: 2px solid #A8A8A8;
                 font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
                 font-size: 10px;
-}
+            }
 
             
             .nav li a:hover {
@@ -222,8 +222,7 @@
                             <th><center>NRO</th>
                             <th><center>Vencimiento Curso</th>
                             <th><center>Modificar</th>
-
-                
+           
 
 
                     </thead>
@@ -234,12 +233,12 @@
 
 
 
-                                <td><center><?php echo $row['id_empleado']; ?></td>
-                                <td><center><?php echo $row['nombres']; ?></td>
-                                <td><center><?php echo $row['apellidos']; ?></td>
-                                <td><center><?php echo $row['nro_curso']; ?></td>
-                                <td><center><?php echo $row['fecha_vencimiento']; ?></td>
-                                <td><center><a href="../operaciones/modificar_cursos.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                                <td width="10%"><center><?php echo $row['id_empleado']; ?></td>
+                                <td width="20%"><center><?php echo $row['nombres']; ?></td>
+                                <td width="20%"><center><?php echo $row['apellidos']; ?></td>
+                                <td width="15%"><center><?php echo $row['nro_curso']; ?></td>
+                                <td width="10%"><center><?php echo $row['fecha_vencimiento']; ?></td>
+                                <td width="9%"><center><a href="../operaciones/modificar_cursos.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
 
                                
 

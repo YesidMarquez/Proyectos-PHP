@@ -13,20 +13,17 @@ error_reporting(E_ALL ^ E_NOTICE);
     }
   
 
-    $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and empleado.estado_id=estado.id_estado and estado.id_estado=1 and id_empleado LIKE '%$valor'";
+    $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and empleado.estado_id=estado.id_estado and estado.id_estado=1 and ubicacion.puesto_id= puesto.id_puesto and id_empleado LIKE '%$valor'";
     /*empleado.estado_id=estado.id_estado ";*/
-    $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, ubicacion.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento,estado.descripcion FROM ubicacion,empleado,control_cursos, contrato,cliente,estado $where";//
+    $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, puesto.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento,estado.descripcion FROM ubicacion,puesto,empleado,control_cursos, contrato,cliente,estado $where";//
 
-   /* $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente ";
-    $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, ubicacion.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM ubicacion,empleado,control_cursos, contrato,cliente $where";//
-
-    /*and estado_id=1*/
+   /* SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, puesto.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento,estado.descripcion FROM ubicacion,puesto,empleado,control_cursos, contrato,cliente,estado WHERE ubicacion.empleado_id=empleado.id_empleado AND control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and empleado.estado_id=estado.id_estado and estado.id_estado=1 and ubicacion.puesto_id= puesto.id_puesto and id_empleado LIKE '1088248409'*/
     $resultado = $mysqli->query($sql);
     
 ?>
 
 <htm lang="es">
-    <head>
+    <head><title>Planta</title>
         <meta name="viewporte" content="width=device-width, initial-scale=1">
         <link rel="stylesheet"  href="../css/bootstrap-theme.css">
         <link rel="stylesheet"  href="../css/bootstrap.min.css">
@@ -115,16 +112,16 @@ error_reporting(E_ALL ^ E_NOTICE);
                 <form ACTION="../menu.php">
                 <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
             <div class="row table-responsive">
-                <table class="table table-striped" border="3" style="background-color:#e6f9ff"><br>
+                <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:100%"><br>
                     <thead>
-                        <tr style="background-color:#cccccc">
+                        <tr style="background-color:#cccccc" >
                             <th><center>Cedula</th>
                             <th><center>Apellidos</th>
                             <th><center>Nombres</th>
                             <th><center>Puesto</th>
                             <th><center>Cliente</th>
-                            <th><center>Ingreso</th>
-                            <th><center>Vencimiento</th>
+                            <th WIDTH="100"><center>Ingreso</th>
+                            <th WIDTH="100"><center>Vencimiento</th>
                             
                             <th><center>Ver</th>
                         </tr>

@@ -221,11 +221,11 @@
     		</div>
 		</center>
 
-	</body><br><br><br><br><br>
+	</body>
 	<center>
 		
-		<div >
-			<p><br><br><br><br><br><br><br>
+		<div ><br><br><br><br><br>
+			<p>
 				<marquee direction="right"  onmouseover="stop()" onmouseout="start()" scrollamount="15" scrolldelay="100" >
 					<img src="imagenes/logo.jpg" align="" width="10%">
 					<img src="imagenes/logo1.jpg" align="" width="10%">

@@ -3,33 +3,47 @@
 require '../../config/conexion.php';
 
 $id = $_POST['id_empleado'];
-$academia = $_POST['academia'];
-$nivel_seg = $_POST['niv'];
-$numero_nro = $_POST['nro'];
-$fecha= $_POST['f_vence'];
+$puesto = $_POST['puesto'];
+$cliente = $_POST['cliente'];
+$dir_puesto = $_POST['dir_pto'];
+$ciudad = $_POST['ciudad'];
+$modalidad = $_POST['modalidad'];
+$fecha= $_POST['f_in'];
 $inicio = strtotime($fecha);
-$f_vence = date('Y-m-d',$inicio);
+$f_in = date('Y-m-d',$inicio);
+$fecha1= $_POST['f_sale'];
+$inicio1 = strtotime($fecha1);
+$f_sale = date('Y-m-d',$inicio1);
 
 
 
 echo "Cedula:";
 echo ( $id);    
-echo "Ingreso:";
-echo ( $academia);
+echo "puesto:";
+echo ( $puesto);
 echo "  ";
-echo "Vencimiento:";
-echo ($nivel_seg);
+echo "cliente:";
+echo ($cliente);
 echo "  ";
-echo "Prorrogas:";
-echo ($numero_nro);
+echo "direccion:";
+echo ($dir_puesto);
 echo "  ";
-echo "Tipo de Contrato:";
-echo ($f_vence);
+echo "ciudad:";
+echo ($ciudad);
+echo "  ";
+echo "modalidad:";
+echo ($modalidad);
+echo "  ";
+echo "ingreso:";
+echo ($f_in);
+echo "  ";
+echo "sale:";
+echo ($f_sale);
 
 
 
 
-$sql = "INSERT INTO `control_cursos` (`nro_curso`, `empleado_id`, `fecha_vencimiento`, `academia_nit`, `curso_id`) VALUES ('$numero_nro', '$id', '$f_vence', '$academia', '$nivel_seg');";
+$sql = "INSERT INTO `ubicacion` (`puesto_id`, `cliente_id`, `direccion_puesto`, `ciudad`, `modalidad_id`, `empleado_id`, `fecha_ingreso`, `fecha_salida`) VALUES ('$puesto', '$cliente', '$dir_puesto', '$ciudad', '$modalidad', '$id', '$f_in', '$f_sale');";
 
 $resultado = $mysqli->query($sql);
 
