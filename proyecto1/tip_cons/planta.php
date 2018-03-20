@@ -19,6 +19,14 @@ error_reporting(E_ALL ^ E_NOTICE);
 
    /* SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, puesto.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento,estado.descripcion FROM ubicacion,puesto,empleado,control_cursos, contrato,cliente,estado WHERE ubicacion.empleado_id=empleado.id_empleado AND control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and empleado.estado_id=estado.id_estado and estado.id_estado=1 and ubicacion.puesto_id= puesto.id_puesto and id_empleado LIKE '1088248409'*/
     $resultado = $mysqli->query($sql);
+
+    $sql1 = "SELECT  count(*) as conteo FROM `empleado` WHERE estado_id= 1";
+    $resultado1 = $mysqli->query($sql1);
+    $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
+
+    $sql2 = "SELECT  count(*) as conteo FROM `empleado` WHERE estado_id= 2";
+    $resultado2 = $mysqli->query($sql2);
+    $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
     
 ?>
 
@@ -40,6 +48,19 @@ error_reporting(E_ALL ^ E_NOTICE);
             </div>
             <div class="row">
                 
+                <div align="right" >
+                    <div class="col-sm-offset-2 col-sm-10" >
+                        <input type="text" id="" name="" value="PERSONAL ACTIVOS" class="btn btn-primary" readonly="readonly" />
+                        <input type="text" id="" name="" value="PERSONAL INACTIVOS" class="btn btn-primary" readonly="readonly" />
+                    </div>
+                </div>
+                <div align="right" >
+                    <div class="col-sm-offset-2 col-sm-10" >
+                        <input type="text" id="" name="" value="<?php echo $row1['conteo']; ?>" class="btn btn-success" readonly="readonly" />
+                        <input type="text" id="" name="" value="<?php echo $row2['conteo']; ?>" class="btn btn-danger" readonly="readonly" />
+                    </div>
+                </div>
+               
                 
                 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                     <b>Cedula: </b><input type="text" id="campo" name="campo" value="" />
@@ -77,16 +98,21 @@ error_reporting(E_ALL ^ E_NOTICE);
                                 <td><center><?php echo $row['nombre_cliente']; ?></td>
                                 <td><center><?php echo $row['fecha_ingreso']; ?></td>
                                 <td><center><?php echo $row['fecha_vencimiento']; ?></td>
-                               
+                                
+                                                   
                                 <td><center><a href="../tip_cons/ver.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></td></a></td>
                                 <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                                 <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
                             </tr>
                         <?php } ?>
                     </tbody>
-                    </tbody>
+                    
+                
+                   
                 </table>
+
             </div>
+            
             
 
     </body>

@@ -161,7 +161,12 @@
                             <td><center><a href="operaciones/modificar_cursos.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                         </tr>
                     <?php } ?>
-                </tbody>
+                </tbody><br><br><br><br><br><br>
+                
+                <span id="" style="position: absolute; text-align: center;">
+                    <img src="imagenes/giphy.gif" align="" width="10%">
+                </span>
+               
             </table>
         </div>
 	</body>

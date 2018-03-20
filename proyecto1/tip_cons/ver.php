@@ -7,7 +7,7 @@
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
     /*-----------------------------------------------------------------------*/
-    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion, estado_id FROM empleado, contrato,tipo_contrato WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id ";
+    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion as descrip, estado_id, cargo.descripcion FROM empleado, contrato,tipo_contrato,cargo WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id and contrato.cargo_id = cargo.id_cargo";
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
      /*-----------------------------------------------------------------------*/
@@ -109,7 +109,7 @@
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Cargo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row2['fecha_vencimiento']; ?>" readonly="readonly">
+                        <input type="text" class="form-control"  value="<?php echo $row1['descripcion']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Fecha Ingreso</label>
                     <div class="col-sm-10">
@@ -125,7 +125,7 @@
                     </div>
                      <label for="nombre" class="col-sm-2 control-label">Tipo Contrato</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['descripcion']; ?>" readonly="readonly">
+                        <input type="text" class="form-control"  value="<?php echo $row1['descrip']; ?>" readonly="readonly">
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
                     <div class="col-sm-10">

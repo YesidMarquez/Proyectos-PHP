@@ -22,6 +22,7 @@
         <div class="container">
 
             <h2 style="text-align:center">Vencimiento Acreditacion</h2>
+            <a href="../reporteexcel/reporteexcel.php"> Haz clic para descargar el reporte</a>
            
         <form ACTION="../menu.php"><br>
             <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br>
