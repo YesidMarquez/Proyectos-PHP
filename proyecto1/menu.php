@@ -11,6 +11,7 @@
 		<div>
 			<center>
 				<div>
+					
 					<div class="col-sm-4" title="Ingreso Nuevo">
 						<figure>
 		    				<a href="formularios/menu_ingresos.php"><img src="imagenes/update.jpg" width="90" height="90"></img></a>
