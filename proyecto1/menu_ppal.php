@@ -89,55 +89,58 @@
 		<link rel="stylesheet"  href="css/bootstrap.min.css">
 		<script src="js/jquery-3.3.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+        <!-- Con esta liena agrego estilo especiala l titulo llmando la clase "class="animated bounceIn""-->
+        <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<title>->MENU.1</title>
 	</head>
 
 	<body width:100% class="row table-responsive">
         <div class="container" >
             <div class="row"><font face="Comic Sans MS,verdana">
-	            <h2 style="text-align: center; "  >Menu Principal</h2>
+	            <h2 style="text-align: center;  " class="animated bounceIn" >Menu Principal</h2>
 	        </div>
  		<center>
        		<div class="col-sm-4" title="Menu de Sevicios">
 				<figure>
-					<a href="menu.php" ><img src="imagenes/menu.png" width="100" height="100" ></img></a><h4 style="text-align: center;">Menu <br> De Sevicios</h4>
+					<a href="menu.php" ><img src="imagenes/menu.png" width="100" height="100" ></img></a><h4 style="text-align: center;" class="animated bounceIn">Menu <br> De Sevicios</h4>
 				</figure>
     		</div>
     		<div class="col-sm-4" title="Configuraciones">
  				<figure>
-    				<a href="config/config_user.php"><img src="imagenes/config.jpg" width="100" height="100" ></img></a><h4 style="text-align: center; ;">Configuraciones</h4>
+    				<a href="config/config_user.php"><img src="imagenes/config.jpg" width="100" height="100" ></img></a><h4 style="text-align: center; ;" class="animated bounceIn">Configuraciones</h4>
     			</figure>
     		</div>
     		<div class="col-sm-4" title="Cerrar Sesion">
 				<figure>
-					<a href="index.html"><img src="imagenes/cerrar.png"  width="100" height="100" ></img></a><h4 style="text-align: center; ;">Cerrar <br> Sesion</span>
+					<a href="index.html"><img src="imagenes/cerrar.png"  width="100" height="100" ></img></a><h4 style="text-align: center; ;" class="animated bounceIn">Cerrar <br> Sesion</span>
 				</figure>
     		</div>
   		</center>
-		<h3 style="text-align: center;">Vencimientos Proximos </h3>
-		<h4 style="text-align: center;"><?php if (date('m')==1) {?>
+		<h3 style="text-align: center;" class="animated bounceIn">Vencimientos Proximos </h3>
+		<h4 style="text-align: center;" class="animated bounceIn"><?php if (date('m')==1) {?>
         Mes de Enero<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==2) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==2) {?>
         Mes de Febrero<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==3) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==3) {?>
         Mes de Marzo<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==4) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==4) {?>
         Mes de Abril<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==5) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==5) {?>
         Mes de Mayo<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==6) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==6) {?>
         Mes de Junio<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==7) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==7) {?>
         Mes de Julio<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==8) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==8) {?>
         Mes de Agosto<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==9) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==9) {?>
         Mes de Septiembre<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==10) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==10) {?>
         Mes de Octubre<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==11) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==11) {?>
         Mes de Noviembre<?php }?></h4>
-        <h4 style="text-align: center;""><?php if (date('m')==12) {?>
+        <h4 style="text-align: center;"" class="animated bounceIn"><?php if (date('m')==12) {?>
         Mes de Diciembre<?php }?></h4>
 		<div class="row table-responsive">
             <table  class="table table-striped"  border="3" style="background-color:red" >

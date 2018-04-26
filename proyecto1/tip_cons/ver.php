@@ -7,9 +7,10 @@
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
     /*-----------------------------------------------------------------------*/
-    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion as descrip, estado_id, cargo.descripcion FROM empleado, contrato,tipo_contrato,cargo WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id and contrato.cargo_id = cargo.id_cargo";
+    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion as descrip, estado_id, cargo.descripcion FROM empleado, contrato,tipo_contrato,cargo,imagenes_fotos WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id and contrato.cargo_id = cargo.id_cargo ";
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
+   
      /*-----------------------------------------------------------------------*/
     $sql2 = "SELECT cu.descripcion,cc.nro_curso,cc.fecha_vencimiento FROM control_cursos cc, cursos cu  WHERE cc.empleado_id='$id' and cc.curso_id=cu.id_cursos ";
     $resultado2 = $mysqli->query($sql2);
@@ -18,8 +19,35 @@
     $sql3 = "SELECT fecha_radicado,numero_radicado FROM acreditacion WHERE empleado_id = '$id' ";
     $resultado3 = $mysqli->query($sql3);
     $row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
-    
-    
+    /*------------------------------------------------------------------------*/
+    $sql4 = "SELECT * FROM `imagenes_fotos` WHERE id_foto= '$id'";
+    $res = $mysqli->query($sql4);
+    while($filas=mysqli_fetch_array($res)){
+        $ruta=$filas['ruta'];
+        $desc=$filas['id_foto'];
+    }
+    /*------------------------------------------------------------------------*/
+    $sql5 = "SELECT * FROM `imagenes_cedula` WHERE id_imagenc= '$id'";
+    $res1 = $mysqli->query($sql5);
+    while($filas=mysqli_fetch_array($res1)){
+        $ruta1=$filas['ruta'];
+        $desc1=$filas['id_imagenc'];
+    }
+    /*------------------------------------------------------------------------*/
+    $sql6 = "SELECT * FROM `imagenes_credencial` WHERE id_imagen= '$id'";
+    $res2 = $mysqli->query($sql6);
+    while($filas=mysqli_fetch_array($res2)){
+        $ruta2=$filas['ruta'];
+        $desc2=$filas['id_imagen'];
+    }
+    /*------------------------------------------------------------------------*/
+    $sql7 = "SELECT * FROM `imagenes_cursos` WHERE id_imgcurso= '$id'";
+    $res3 = $mysqli->query($sql7);
+    while($filas=mysqli_fetch_array($res3)){
+        $ruta3=$filas['ruta'];
+        $desc3=$filas['id_imgcurso'];
+    }
+
 ?>
 <html lang="es">
     <head><title>Planta x Persona</title>
@@ -50,7 +78,7 @@
                        
                         <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                        
-                    </div>
+                    </div><br>
                      <?php if($row1['estado_id']=="1"){ ?>
                     <div class="form-group">
                         <input type="text" id="" name="" value="ACTIVO" class="btn btn-success" readonly="readonly" />
@@ -64,6 +92,22 @@
                     <?php } ?>
                 </div>
                 <div class="form-group">
+                    
+                    <div class="col-sm-10">
+                         <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:100%"><br>
+                            <thead>
+                                <tr style="background-color:#cccccc" >
+                                    <th><center> <img src="../<?php echo $ruta1; ?>" width="400" height="600"><br></th>
+                                    <th><center><img src="../<?php echo $ruta2; ?>" width="600" height="600"><br></th>
+                                    <th><center><img src="../<?php echo $ruta3; ?>" width="600" height="600"><br></th>
+                                    
+                            </thead>
+                    </div>
+                    <label for="nombre" class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                       
+                        <center><img src="../<?php echo $ruta; ?>" width="150" height="180"></center>
+                    </div>
                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
                        
