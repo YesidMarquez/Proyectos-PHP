@@ -16,99 +16,88 @@
         echo $fecha->format('Y-m-d') . "\n";*/
     }elseif (date('m')==2) {
         $fecha1= '2018-02-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-02-01');
         date_add($fecha, date_interval_create_from_date_string('27 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
         /*
         $fecha = new DateTime('2018-02-01');
         $fecha->add(new DateInterval('P27D'));
         echo $fecha->format('Y-m-d') . "\n";*/
     }elseif (date('m')==3) {
         $fecha1= '2018-03-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-03-01');
         date_add($fecha, date_interval_create_from_date_string('30 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
     }elseif (date('m')==4) {
         $fecha1= '2018-04-01';
-        echo ($fecha1);
-        echo "  ";
+        
         $fecha = date_create('2018-04-01');
         date_add($fecha, date_interval_create_from_date_string('29 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+        
     }elseif (date('m')==5) {
         $fecha1= '2018-05-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-05-01');
         date_add($fecha, date_interval_create_from_date_string('30 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
     }elseif (date('m')==6) {
         $fecha1= '2018-06-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-06-01');
         date_add($fecha, date_interval_create_from_date_string('29 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ('Mes de los Padres');
+      
     }elseif (date('m')==7) {
         $fecha1= '2018-07-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-07-01');
         date_add($fecha, date_interval_create_from_date_string('30 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
     }elseif (date('m')==8) {
         $fecha1= '2018-08-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-08-01');
         date_add($fecha, date_interval_create_from_date_string('30 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
     }elseif (date('m')==9) {
         $fecha1= '2018-09-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-09-01');
         date_add($fecha, date_interval_create_from_date_string('29 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
     }elseif (date('m')==10) {
         $fecha1= '2018-10-01';
-        echo ($fecha1);
-        echo "  ";
+      
         $fecha = date_create('2018-10-01');
         date_add($fecha, date_interval_create_from_date_string('30 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+        
     }elseif (date('m')==11) {
         $fecha1= '2018-11-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-11-01');
         date_add($fecha, date_interval_create_from_date_string('29 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
     }elseif (date('m')==12) {
         $fecha1= '2018-12-01';
-        echo ($fecha1);
-        echo "  ";
+       
         $fecha = date_create('2018-12-01');
         date_add($fecha, date_interval_create_from_date_string('30 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-        echo ($fecha3);
+       
     }
     
-    $where = "where fecha_vencimiento BETWEEN CAST('$fecha1' AS DATE) AND CAST('$fecha3' AS DATE) and id_empleado=empleado_id and estado_id=1";
+    $where = "where fecha_vencimiento BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2050-12-01' AS DATE) and id_empleado=empleado_id and estado_id=1 ";
     $sql = "SELECT id_empleado, concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, nro_curso, fecha_vencimiento FROM empleado, control_cursos $where";//
     $resultado = $mysqli->query($sql);
     

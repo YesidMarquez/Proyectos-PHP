@@ -14,8 +14,13 @@
     $sql2 = "SELECT cu.descripcion,cc.nro_curso,cc.fecha_vencimiento, cc.academia_nit, a.nombre,cc.curso_id FROM control_cursos cc, cursos cu, academias a WHERE cc.empleado_id='$id' and cc.curso_id=cu.id_cursos and cc.academia_nit=a.nit_academia";
     $resultado2 = $mysqli->query($sql2);
     $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
-    printf ("%s (%s) (%s) (%s)  (%s)\n", $row2["nro_curso"], $row2["nombre"], $row2["academia_nit"],date("l"),date(DATE_RFC2822));
-    
+      /*-----------------------------------------------------------------------*/   
+    $sql7 = "SELECT * FROM `imagenes_cursos` WHERE id_imgcurso= '$id'";
+    $res3 = $mysqli->query($sql7);
+    while($filas=mysqli_fetch_array($res3)){
+        $ruta3=$filas['ruta'];
+        $desc3=$filas['id_imgcurso'];
+    }
 ?> 
 <html lang="es">
     <head>
@@ -29,13 +34,24 @@
     </head>
     
     <body><font face="Comic Sans MS,verdana">
+        <div class="col-sm-5">
+             <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:10%">
+                <thead>
+                    <tr style="background-color:#cccccc" >
+                        <th><center><img src="../<?php echo $ruta3; ?>" width="600" height="400"><br></th>
+            </thead>
+        </div>
         <div class="container">
+
             <div class="row">
                 <h3 style="text-align:center">MODIFICAR REGISTRO</h3>
             </div>
             
-            <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_cursos.php" autocomplete="off">
+            <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_cursos.php" autocomplete="off"><br>
+
                 <div class="form-group">
+                    
+
                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
@@ -102,7 +118,7 @@
                             <option value="9005108808">ACADEMIA DE SEGURIDAD PARA VIGILANTES ESCOLTAS Y SUPERVISORES A.S.V.E.S. LTDA</option>
 
                         </select>
-                     </div>
+                     </div><br>
                       <label for="estado_civil" class="col-sm-2 control-label">Modificar NIvel</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="niv" name="niv" placeholder="Nivel" >
@@ -220,7 +236,7 @@
                             <option value="6105">SEMINARIO JEFES DE SEGURIDAD DE DEPARTAMENTOS</option>
 
                         </select>
-                     </div>
+                     </div><br>
                     <label for="nombre" class="col-sm-2 control-label">Vencimiento Curso</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row2['fecha_vencimiento']; ?>" >

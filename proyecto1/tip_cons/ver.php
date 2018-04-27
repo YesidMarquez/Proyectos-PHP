@@ -47,7 +47,7 @@
         $ruta3=$filas['ruta'];
         $desc3=$filas['id_imgcurso'];
     }
-
+ 
 ?>
 <html lang="es">
     <head><title>Planta x Persona</title>
@@ -94,19 +94,11 @@
                 <div class="form-group">
                     
                     <div class="col-sm-10">
-                         <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:100%"><br>
-                            <thead>
-                                <tr style="background-color:#cccccc" >
-                                    <th><center> <img src="../<?php echo $ruta1; ?>" width="400" height="600"><br></th>
-                                    <th><center><img src="../<?php echo $ruta2; ?>" width="600" height="600"><br></th>
-                                    <th><center><img src="../<?php echo $ruta3; ?>" width="600" height="600"><br></th>
-                                    
-                            </thead>
-                    </div>
+                         
                     <label for="nombre" class="col-sm-2 control-label"></label>
                     <div class="col-sm-10">
-                       
-                        <center><img src="../<?php echo $ruta; ?>" width="150" height="180"></center>
+                        
+                        <left><img src="../<?php echo $ruta; ?>" width="150" height="180"></center>
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">

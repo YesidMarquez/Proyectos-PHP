@@ -1,8 +1,102 @@
 
 <?php
     require '../config/conexion.php';
+    date('m');
+    if (date('m')==01) {
+        $fecha1= '2018-01-01';
+        echo ($fecha1);
+        echo "  ";
+        $fecha = date_create('2018-01-01');
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+
+        /*$fecha = new DateTime('2018-01-01');
+        $fecha->add(new DateInterval('P30D'));
+        echo $fecha->format('Y-m-d') . "\n";*/
+    }elseif (date('m')==2) {
+        $fecha1= '2018-02-01';
+       
+        $fecha = date_create('2018-02-01');
+        date_add($fecha, date_interval_create_from_date_string('27 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+        /*
+        $fecha = new DateTime('2018-02-01');
+        $fecha->add(new DateInterval('P27D'));
+        echo $fecha->format('Y-m-d') . "\n";*/
+    }elseif (date('m')==3) {
+        $fecha1= '2018-03-01';
+       
+        $fecha = date_create('2018-03-01');
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+    }elseif (date('m')==4) {
+        $fecha1= '2018-04-01';
+        
+        $fecha = date_create('2018-04-01');
+        date_add($fecha, date_interval_create_from_date_string('29 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+        
+    }elseif (date('m')==5) {
+        $fecha1= '2018-05-01';
+       
+        $fecha = date_create('2018-05-01');
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+    }elseif (date('m')==6) {
+        $fecha1= '2018-06-01';
+       
+        $fecha = date_create('2018-06-01');
+        date_add($fecha, date_interval_create_from_date_string('29 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+      
+    }elseif (date('m')==7) {
+        $fecha1= '2018-07-01';
+       
+        $fecha = date_create('2018-07-01');
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+    }elseif (date('m')==8) {
+        $fecha1= '2018-08-01';
+       
+        $fecha = date_create('2018-08-01');
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+    }elseif (date('m')==9) {
+        $fecha1= '2018-09-01';
+       
+        $fecha = date_create('2018-09-01');
+        date_add($fecha, date_interval_create_from_date_string('29 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+    }elseif (date('m')==10) {
+        $fecha1= '2018-10-01';
+      
+        $fecha = date_create('2018-10-01');
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+        
+    }elseif (date('m')==11) {
+        $fecha1= '2018-11-01';
+       
+        $fecha = date_create('2018-11-01');
+        date_add($fecha, date_interval_create_from_date_string('29 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+    }elseif (date('m')==12) {
+        $fecha1= '2018-12-01';
+       
+        $fecha = date_create('2018-12-01');
+        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        $fecha3= date_format($fecha, 'Y-m-d');
+       
+    }
     
-    $where = "WHERE empl.id_empleado=ac.empleado_id and ac.empleado_id=cc.empleado_id and cc.curso_id=cu.id_cursos and ac.fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2018-01-31' AS DATE)";
+    $where = "WHERE empl.id_empleado=ac.empleado_id and ac.empleado_id=cc.empleado_id and cc.curso_id=cu.id_cursos and ac.fecha_acreditacion BETWEEN CAST('$fecha1' AS DATE) AND CAST('$fecha3' AS DATE)";
     $sql = "SELECT empl.id_empleado, concat(empl.apellido_1,' ',empl.apellido_2) as apellidos,concat(empl.nombre_1,' ',empl.nombre_2) as nombres,cu.descripcion,cc.nro_curso,cc.fecha_vencimiento,ac.fecha_acreditacion fROM empleado empl, acreditacion ac, control_cursos cc, cursos cu $where";//
     $resultado = $mysqli->query($sql);
     
@@ -22,7 +116,7 @@
         <div class="container">
 
             <h2 style="text-align:center">Vencimiento Acreditacion</h2>
-            <a href="../reporteexcel/reporteexcel.php"> Haz clic para descargar el reporte</a>
+            <!--<a href="../reporteexcel/reporteexcel.php"> Haz clic para descargar el reporte</a>-->
            
         <form ACTION="../menu.php"><br>
             <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br>

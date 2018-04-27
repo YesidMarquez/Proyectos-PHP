@@ -14,6 +14,13 @@
     $sql2 = "SELECT cu.descripcion,cc.nro_curso,cc.fecha_vencimiento FROM control_cursos cc, cursos cu  WHERE cc.empleado_id='$id' and cc.curso_id=cu.id_cursos ";
     $resultado2 = $mysqli->query($sql2);
     $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
+    /*------------------------------------------------------------------------*/
+    $sql6 = "SELECT * FROM `imagenes_credencial` WHERE id_imagen= '$id'";
+    $res2 = $mysqli->query($sql6);
+    while($filas=mysqli_fetch_array($res2)){
+        $ruta2=$filas['ruta'];
+        $desc2=$filas['id_imagen'];
+    }
     
     
 ?>
@@ -30,6 +37,13 @@
     </head>
     
     <body><font face="Comic Sans MS,verdana">
+        <div class="col-sm-5">
+             <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:10%">
+                <thead>
+                    <tr style="background-color:#cccccc" >
+                        <th><center><img src="../<?php echo $ruta2; ?>" width="600" height="600"><br></th>
+            </thead>
+        </div>
         <div class="container">
             <div class="row">
                 <h3 style="text-align:center">MODIFICAR REGISTRO</h3>
