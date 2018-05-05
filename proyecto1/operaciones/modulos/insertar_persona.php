@@ -6,6 +6,7 @@ if(isset($_POST['c_na'])) {
   $_POST['c_na'] = trim($_POST['c_na']);
 } 
 
+
 $id = $_POST['cedula'];
 $nombre_1 = $_POST['nombre_1'];
 $nombre_2 = $_POST['nombre_2'];
@@ -22,6 +23,15 @@ $resi = $_POST['c_res'];
 $tel = $_POST['tel'];
 $genero= $_POST['sexo'];
 $estado1= "1";
+$rutaEnServidor='imagenes';
+$rutaTemporal=$_FILES['imagen']['tmp_name'];
+$nombreImagen=$_FILES['imagen']['name'];
+$rutaDestino=$rutaEnServidor.'/'.$nombreImagen;
+move_uploaded_file($rutaTemporal,$rutaDestino);
+echo ($rutaTemporal);
+echo "_________----->";
+echo ($nombreImagen);
+echo "_________----->";
 
 /*echo "Cedula:";
 echo ( $id);    
@@ -61,9 +71,19 @@ echo "Estado:";
 echo ($estado1);*/
 
 
+
 $sql = "INSERT INTO `empleado` (`id_empleado`, `nombre_1`, `nombre_2`, `apellido_1`, `apellido_2`, `fecha_nacimiento`, `ciudad_nacimiento`, `ciudad_expedicion`, `tipo_sangre`, `direccion`,`ciudad_residencia`,`telefono`, `genero`, `estado_id`) VALUES ('$id', '$nombre_1', '$nombre_2', '$apellido_1', '$apellido_2', '$inicio1', '$ciu_nas', '$ciu_ex', '$sangre', '$direcc','$resi','$tel','$genero','$estado1');";
 
 $resultado = $mysqli->query($sql);
+
+$sql1 = "INSERT INTO `imagenes` (`id_foto`, `ruta`) VALUES ('$id', '$rutaDestino');";
+$res = $mysqli->query($sql1);
+
+/*
+if ($res){
+    echo 'inserción con exito';
+}else{
+    echo 'no se puedo insertar';*/
 
        
 

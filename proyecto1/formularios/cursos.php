@@ -13,6 +13,11 @@
     $sql = "SELECT id_empleado,concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres FROM empleado $where";
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
+
+    $sql= "SELECT NOMBRE FROM `academias`";
+    $resultado1 = $mysqli->query($sql);
+    $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
+    echo $row1['NOMBRE'];
     
 ?>
 

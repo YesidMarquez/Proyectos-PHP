@@ -12,12 +12,7 @@ echo'<br>';
 echo 'ruta temporal de la imagen: ';
 print_r($_FILES['imagen']['tmp_name']);
  */
-$usuario = "root";
-$password = "";
-$servidor = "localhost";
-$basededatos = "vise_pereira";
-$conexion = mysqli_connect( $servidor, $usuario,$password) or die('No hay conexión a la base de datos');
-$db = mysqli_select_db( $conexion, $basededatos ) or die('no existe la base de datos.');
+require 'config/conexion.php';
 
 $rutaEnServidor='imagenes';
 $rutaTemporal=$_FILES['imagen']['tmp_name'];
@@ -26,9 +21,17 @@ $rutaDestino=$rutaEnServidor.'/'.$nombreImagen;
 move_uploaded_file($rutaTemporal,$rutaDestino);
 
 $desc=$_POST['Cedula'];
+echo ($rutaTemporal);
+echo "_________----->";
+echo ($nombreImagen);
+echo "_________----->";
+echo ($desc);
+echo "_________----->";
+echo ($rutaDestino);
+echo "_________----->";
+$sql = "INSERT INTO `imagenes` (`id_foto`, `ruta`) VALUES ('$desc', '$rutaDestino');";
+$res = $mysqli->query($sql);
 
-$sql="INSERT INTO imagenes_fotos (id_foto,ruta,empleado_id) values('".$desc."','".$rutaDestino."','".$desc."')";
-$res=mysqli_query($conexion,$sql);
 
 if ($res){
 	echo 'inserción con exito';
