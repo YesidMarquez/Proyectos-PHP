@@ -23,7 +23,7 @@ $resi = $_POST['c_res'];
 $tel = $_POST['tel'];
 $genero= $_POST['sexo'];
 $estado1= "1";
-$rutaEnServidor='imagenes';
+/*$rutaEnServidor='imagenes';
 $rutaTemporal=$_FILES['imagen']['tmp_name'];
 $nombreImagen=$_FILES['imagen']['name'];
 $rutaDestino=$rutaEnServidor.'/'.$nombreImagen;
@@ -31,7 +31,7 @@ move_uploaded_file($rutaTemporal,$rutaDestino);
 echo ($rutaTemporal);
 echo "_________----->";
 echo ($nombreImagen);
-echo "_________----->";
+echo "_________----->";*/
 
 /*echo "Cedula:";
 echo ( $id);    
@@ -76,7 +76,7 @@ $sql = "INSERT INTO `empleado` (`id_empleado`, `nombre_1`, `nombre_2`, `apellido
 
 $resultado = $mysqli->query($sql);
 
-$sql1 = "INSERT INTO `imagenes` (`id_foto`, `ruta`) VALUES ('$id', '$rutaDestino');";
+/*$sql1 = "INSERT INTO `imagenes` (`id_foto`, `ruta`) VALUES ('$id', '$rutaDestino');";
 $res = $mysqli->query($sql1);
 
 /*
