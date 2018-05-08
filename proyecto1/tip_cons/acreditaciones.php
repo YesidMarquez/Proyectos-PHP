@@ -96,7 +96,7 @@
        
     }
     
-    $where = "WHERE empl.id_empleado=ac.empleado_id and ac.empleado_id=cc.empleado_id and cc.curso_id=cu.id_cursos and ac.fecha_acreditacion BETWEEN CAST('$fecha1' AS DATE) AND CAST('$fecha3' AS DATE)";
+    $where = "WHERE empl.id_empleado=ac.empleado_id and ac.empleado_id=cc.empleado_id and cc.curso_id=cu.id_cursos and ac.fecha_acreditacion BETWEEN CAST('2018-01-01' AS DATE) AND CAST('2019-12-31' AS DATE)";
     $sql = "SELECT empl.id_empleado, concat(empl.apellido_1,' ',empl.apellido_2) as apellidos,concat(empl.nombre_1,' ',empl.nombre_2) as nombres,cu.descripcion,cc.nro_curso,cc.fecha_vencimiento,ac.fecha_acreditacion fROM empleado empl, acreditacion ac, control_cursos cc, cursos cu $where";//
     $resultado = $mysqli->query($sql);
     

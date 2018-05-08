@@ -22,6 +22,13 @@
     $sql4 = "SELECT * FROM contrato WHERE empleado_id = '$id' ";
     $resultado4 = $mysqli->query($sql4);
     $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
+    /*------------------------------------------------------------------------*/
+    $sql5 = "SELECT * FROM `imagenes_cedula` WHERE id_imagenc= '$id'";
+    $res1 = $mysqli->query($sql5);
+    while($filas=mysqli_fetch_array($res1)){
+        $ruta=$filas['ruta'];
+        $desc1=$filas['id_imagenc'];
+    }
     
     
 ?>
@@ -45,6 +52,7 @@
             
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_planta.php" autocomplete="off">
                 <div class="form-group">
+                    
                      <!--<label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
@@ -65,17 +73,19 @@
                     <label for="nombre" class="col-sm-2 control-label">Expedicion Ccedula</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"  value="<?php echo $row1['exp_cedula']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Fecha Nacimiento</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_nacimiento']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Ciudad Nacimiento</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['ciudad_nacimiento']; ?>" readonly="readonly">
                     </div>-->
+                    
 
                     <?php if ($row1['estado_id']=="1") {?>
+                        <label for="nombre" class="col-sm-2 control-label">Expedicion Cedula</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="ex_cc" name="ex_cc" placeholder="ex_cc"  value="<?php echo $row1['exp_cedula']; ?>">
+                        </div>
+                        
+                        <label for="nombre" class="col-sm-2 control-label">Ciudad Nacimiento</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="c_nac" name="c_nac" placeholder="c_nac"  value="<?php echo $row1['ciudad_nacimiento']; ?>" >
+                        </div>
 
                         <label for="nombre" class="col-sm-2 control-label">Tipo de Sangre</label>
                         <div class="col-sm-2">
@@ -112,7 +122,7 @@
                             <input type="text" class="form-control" id="vence" name="vence" placeholder="vence" value="<?php echo $row4['fecha_vencimiento']; ?>" >
                         </div>
                          <label for="nombre" class="col-sm-2 control-label">Prorrogas</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-5">
                             <input type="text" class="form-control" id="prorroga" name="prorroga" placeholder="prorroga" value="<?php echo $row4['prorrogas']; ?>" >
                         </div>
                     <?php } else {?>
@@ -120,6 +130,7 @@
                             <h3 style="text-align:center">LOS DATOS NO SE PUEDEN MODIFICAR, SE ENCUENTRA INACTIVO CON FECHA "<?php echo $row4['fecha_vencimiento']; ?>" </h3>
                         </div>
                     <?php } ?>
+
 
 
                     <!--<label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
@@ -166,16 +177,26 @@
                         </div>
                     </div>
                 <?php } else {?>   
-
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <a href="../tip_cons/planta.php" class="btn btn-default">Planta</a>
                             <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Empleado</a>
-                            
                         </div>
                     </div>
+                <?php } ?>
+                <center> 
+                <label for="nombre" class="col-sm-2 control-label"></label>
+                    <div class="col-sm-4">
+                         <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:10%">
 
-                <?php } ?> 
+                            <thead>
+                                <tr style="background-color:#cccccc" >
+                                    <th><left><img src="../<?php echo $ruta; ?>" width="400" height="400"></th>
+                            </thead>
+                        
+                       
+                    </div>
+                    </center>
             </form>
         </div>
     </body>

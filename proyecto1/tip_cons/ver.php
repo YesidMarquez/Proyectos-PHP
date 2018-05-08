@@ -93,12 +93,14 @@
                 </div>
                 <div class="form-group">
                     
+                    
                     <div class="col-sm-10">
                          
                     <label for="nombre" class="col-sm-2 control-label"></label>
                     <div class="col-sm-10">
-                        
-                        <left><img src="../<?php echo $ruta; ?>" width="150" height="180"></center>
+                       
+                        <left><img src="../<?php echo $ruta; ?>" width="150"  height="180"></center>
+                            
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">

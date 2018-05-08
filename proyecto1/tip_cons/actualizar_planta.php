@@ -13,37 +13,20 @@
 	$prorroga=$_POST['prorroga'];
 	$vence=$_POST['vence'];
 	$ingreso=$_POST['ingreso'];
+	$c_nac=$_POST['c_nac'];
+	$ex_cc=$_POST['ex_cc'];
+	
 
-	echo ($estado);
 
+	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado',ciudad_nacimiento='$c_nac',ciudad_expedicion='$ex_cc', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id' ";
 
 	
-	
-		
-
-
-	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id' ";
-
-	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id'";
-
-	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id'";
-
-
-	
-	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id'";
-
 	$resultado = $mysqli->query($sql);
 	/********************************************************************************************/
 	$sql1 = "SELECT * FROM acreditacion WHERE empleado_id = '$id' ";
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
-	
-	if($resultado == false) {
-	echo '<p>Error al modificar los campos en la tabla.</p>';
-	}else{
-	echo '<p>Los datos se han modificado correctamente.</p>';
-}
-	
+
 ?>
  
 <html lang="es">
