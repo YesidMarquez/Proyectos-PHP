@@ -193,8 +193,7 @@
                                 <tr style="background-color:#cccccc" >
                                     <th><left><img src="../<?php echo $ruta; ?>" width="400" height="400"></th>
                             </thead>
-                        
-                       
+    
                     </div>
                     </center>
             </form>
