@@ -4,7 +4,7 @@
 	<meta name="viewporte" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-  	<title>Mi sitio Web</title>
+  	<title>Web</title>
   	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   	<link rel="stylesheet" type="text/css" href="estilos.css">
@@ -12,11 +12,9 @@
 </head>
 <body>
 	<!--Etiqueta "nav" Zona de navegacion, formada por enlaces a las zonas principales.-->
-	<nav>
+	<nav id="narvar">
 		<!--La etiqueta "ul" definir las listas desordenadas con viñetas.-->
 		<ul> 
-			
-			<i class="fas fa-bars" aria-hidden="true"></i>
 			<!--La etiqueta "li" va a contener cada uno de los elementos de las listas ordenadas (<ol>), listas desordenadas (<ul>) y listas de menú (<menu>).-->
 			<!--La etiqueta "a" representan los hiperenlaces y nos permite enlazar una página web con otra página web u otros documentos. El atributo más importante de un enlace es el atributo href que nos dice la dirección de la página o documento con el que queremos enlazar. Este enlace puede ser un enlace interno o externo.-->
 	       <li><a href="index.html">Inicio</a></li> 
@@ -24,47 +22,100 @@
 	       <li><a href="acercade.html">Acerca De</a></li> 
 	       <li><a href="contacto.html">Contacto</a></li>
    		</ul>
+   		<div class="myicono"><i class="fas fa-bars" aria-hidden="true"></i></div>
+   		
 	</nav>
-	<!--La etiqueta "header" representa cabecera de un documento o sección (ya que puede estar dentro de un article).-->
-	<header>
-		<h1>Mat-SW</h1>
-		<!--La etiqueta "small" nos permite escribir caracteres con letra más pequeña.-->
-		<small>Tools Development</small>
-	</header>
-	<!--La etiqueta "section" representa la zona de un elemento.-->
-	<section>
-		<h2>Seccion 1</h2>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+	<div id="content">
+		<!--La etiqueta "header" representa cabecera de un documento o sección (ya que puede estar dentro de un article).-->
+		<header>
+			<h1>Mat-SW  Yesid Leandro Marquez</h1>
+			<!--La etiqueta "small" nos permite escribir caracteres con letra más pequeña.-->
+			<small>Tools Development</small>
+		</header>
+		<!--La etiqueta "section" representa la zona de un elemento.-->
+		<section id="principal">
+			<h2>Seccion 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
-		<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+			<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
 
-		<p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-
-
-	</section>
-	<section>
-		<h2>Seccion 2</h2>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-
-		<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+			<p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
 
 
-	</section>
-	<!--La etiqueta "aside" representa la barra lateral donde hay contenido relacionado con la página..-->
-	<aside>
-		<h2>Sideber</h2>
-		<a href="https://placeholder.com"><img src="http://via.placeholder.com/350x150"></a>
-		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+		</section>
+		<section id="secundario">
+			<h2>Seccion 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
 
-		<p>Aenean commodo ligula eget dolor. Aenean m</p>
-	</aside>
-	<!--La etiqueta "footer" representa el pie de página de un documento.-->
-	<footer>
-		<p align="center">Derechos de autor (c) 2018 Mat-sw, Inc.</p>	
-	</footer>
+			<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+
+
+		</section>
+		<!--La etiqueta "aside" representa la barra lateral donde hay contenido relacionado con la página..-->
+		<aside>
+			<h2>Sidebar</h2>
+			<a href="https://placeholder.com"><img src="http://via.placeholder.com/350x150"></a>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+
+			<p>Aenean commodo ligula eget dolor. Aenean m</p>
+		</aside>
+		<!--La etiqueta "footer" representa el pie de página de un documento.-->
+		<footer>
+			<p align="center">copyright (c) 2018 Mat-sw, Inc.</p>	
+		</footer>
+	</div>
 
 	
 
 </body>
 </html>
 
+<!--<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Efectos CSS3</title>
+  </head>
+  <body>
+    <div class="triangulo_lateral">
+      <p>Triangulo Lateral</p>
+    </div>
+    <div class="esquina_pagina">
+      <p>Esquina de Pagina</p>
+    </div>
+    <div class="sombra_fija">
+      <p>Sombra Fija</p>
+    </div>
+    <div class="sombra_difuminada">
+      <p>Sombra Difuminada</p>
+    </div>
+    <div class="sombra_radial">
+      <p>Sombra Radial</p>
+    </div>
+    <div class="sombra_externa">
+      <p>Sombra Externa</p>
+    </div>
+    <div class="sombra_interna">
+      <p>Sombra Interna</p>
+    </div>
+    <div class="iluminacion">
+      <p>Iluminacion</p>
+    </div>
+    <div class="resalte_borde">
+      <p>Bordo Resaltado</p>
+    </div>
+    <div class="borde_interno">
+      <p>Borde Interno</p>
+    </div>
+    <div class="expansion_borde">
+      <p>Borde Expandido</p>
+    </div>
+    <div class="recogida_borde">
+      <p>Borde Recogido</p>
+    </div>
+    <div class="esquina_redondeada">
+      <p>Esquina Redondeada</p>
+    </div>
+  </body>
+</html>-->
