@@ -10,7 +10,7 @@ $numero_nro = $_POST['nro'];
 $fecha= $_POST['f_vence'];
 $inicio = strtotime($fecha);
 $f_vence = date('Y-m-d',$inicio);
-
+$rura_curso = "imagenes/curso/".$id.".jpg";
 
 /*
 echo "Cedula:";
@@ -35,9 +35,10 @@ $row = $resultado1->fetch_array(MYSQLI_ASSOC);
 
 if ($row['empleado_id']<>$id) {
     
-  $sql = "INSERT INTO `control_cursos` (`nro_curso`, `empleado_id`, `fecha_vencimiento`, `academia_nit`, `curso_id`) VALUES ('$numero_nro', '$id', '$f_vence', '$academia', '$nivel_seg');";
-
+    $sql = "INSERT INTO `control_cursos` (`nro_curso`, `empleado_id`, `fecha_vencimiento`, `academia_nit`, `curso_id`) VALUES ('$numero_nro', '$id', '$f_vence', '$academia', '$nivel_seg');";
     $resultado = $mysqli->query($sql);
+    $sql2 = "INSERT INTO `imagenes_cursos` (`id_imgcurso`, `ruta`) VALUES ('$id', '$rura_curso');";
+    $resultado2 = $mysqli->query($sql2);
 }
 else{
     $id1=$id;

@@ -12,26 +12,11 @@ $fecha1 = $_POST['f_radicado'];
 $inicio1 = strtotime($fecha1);
 $f_radicado = date('Y-m-d',$inicio1);
 $numero_r = $_POST['n_radicado'];
+$rura_acre = "imagenes/credencial/".$id.".jpg";
 
 
-echo "Cedula:";
-echo ( $id);    
-echo "Ingreso:";
-echo ( $acreditacion);
-echo "  ";
-echo "Vencimiento:";
-echo ( $f_acredi);
-echo "  ";
-echo "Prorrogas:";
-echo ($radicado);
-echo "  ";
-echo "Tipo de Contrato:";
-echo ($f_radicado);
-echo "  ";
-echo "Cargo:";
-echo ($numero_r);
-
-
+echo "rura_acre:";
+echo ( $rura_acre);    
 
 
 $sql1 = "SELECT empleado_id FROM `acreditacion` WHERE empleado_id='$id'";
@@ -43,6 +28,8 @@ if ($row['empleado_id']<>$id) {
     
    $sql = "INSERT INTO `acreditacion` (`empleado_id`, `estado_acreditacion`, `fecha_acreditacion`, `estado_radicado`, `fecha_radicado`, `numero_radicado`) VALUES ('$id', '$acreditacion', '$f_acredi', '$radicado', '$f_radicado', '$numero_r');";
     $resultado = $mysqli->query($sql);
+    $sql2 = "INSERT INTO `imagenes_credencial` (`id_imagen`, `ruta`) VALUES ('$id', '$rura_acre');";
+    $resultado2 = $mysqli->query($sql2);
 }
 else{
     $id1=$id;

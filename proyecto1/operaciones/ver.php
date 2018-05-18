@@ -7,17 +7,25 @@
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
     /*-----------------------------------------------------------------------*/
-    $sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion FROM empleado, contrato,tipo_contrato WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id ";
+     /*$sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, (SELECT nombre_mun FROM municipio,empleado WHERE cod_mun=ciudad_expedicion and empleado.id_empleado='$id') as exp_ced, tipo_sangre, (SELECT nombre_mun FROM municipio,empleado WHERE cod_mun=ciudad_nacimiento and empleado.id_empleado='$id') as ciudad_naci, direccion,(SELECT nombre_mun FROM municipio,empleado WHERE cod_mun=ciudad_residencia and empleado.id_empleado='$id') as ciudad_resi, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion FROM empleado, contrato,tipo_contrato WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id ";
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
+   /* ------------------------------------------------------------------------------*/
+    /*$sql1 = "SELECT concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, fecha_nacimiento, ciudad_expedicion as exp_cedula, tipo_sangre, ciudad_nacimiento, direccion,ciudad_residencia, telefono,  genero, contrato.fecha_ingreso,contrato.fecha_vencimiento,contrato.prorrogas, tipo_contrato.descripcion FROM empleado, contrato,tipo_contrato WHERE id_empleado='$id' and contrato.empleado_id='$id' and tipo_contrato.id_tipo_contrato = contrato.tipo_contrato_id ";
+    $resultado1 = $mysqli->query($sql1);
+    $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);*/
      /*-----------------------------------------------------------------------*/
-    $sql2 = "SELECT cu.descripcion,cc.nro_curso,cc.fecha_vencimiento FROM control_cursos cc, cursos cu  WHERE cc.empleado_id='$id' and cc.curso_id=cu.id_cursos ";
+   /* $sql2 = "SELECT cu.descripcion,cc.nro_curso,cc.fecha_vencimiento FROM control_cursos cc, cursos cu  WHERE cc.empleado_id='$id' and cc.curso_id=cu.id_cursos ";
     $resultado2 = $mysqli->query($sql2);
     $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
     /*------------------------------------------------------------------------*/
-    $sql3 = "SELECT fecha_radicado,numero_radicado FROM acreditacion WHERE empleado_id = '$id' ";
+    /*$sql3 = "SELECT fecha_radicado,numero_radicado FROM acreditacion WHERE empleado_id = '$id' ";
     $resultado3 = $mysqli->query($sql3);
     $row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
+
+    $sql4 = "SELECT nombre_mun FROM municipio,empleado WHERE cod_mun=ciudad_expedicion and empleado.id_empleado='$id'";
+    $resultado4 = $mysqli->query($sql4);
+    $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
     
     
 ?>

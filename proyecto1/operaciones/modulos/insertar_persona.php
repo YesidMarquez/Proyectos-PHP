@@ -23,69 +23,26 @@ $resi = $_POST['c_res'];
 $tel = $_POST['tel'];
 $genero= $_POST['sexo'];
 $estado1= "1";
-/*$rutaEnServidor='imagenes';
-$rutaTemporal=$_FILES['imagen']['tmp_name'];
-$nombreImagen=$_FILES['imagen']['name'];
-$rutaDestino=$rutaEnServidor.'/'.$nombreImagen;
-move_uploaded_file($rutaTemporal,$rutaDestino);
-echo ($rutaTemporal);
-echo "_________----->";
-echo ($nombreImagen);
-echo "_________----->";*/
-
-/*echo "Cedula:";
-echo ( $id);    
-echo "nombres:";
-echo ( $nombre_1);echo "  ";
-echo ( $nombre_2);
-echo "  ";
-echo "Apellidos:";
-echo ( $apellido_1);echo "  ";
-echo ( $apellido_2);
-echo "  ";
-echo "fecha nacio:";
-echo ($inicio1);
-echo "  ";
-echo "ciudad _nc:";
-echo ($ciu_nas);
-echo "  ";
-echo "ciudad exp:";
-echo ($ciu_ex);
-echo "  ";
-echo "Tipo sangre:";
-echo ($sangre);
-echo "  ";
-echo "direccion:";
-echo ($direcc);
-echo "  ";
-echo "ciudad resi:";
-echo ($resi);
-echo "  ";
-echo "Telefono:";
-echo ($tel);
-echo "  ";
-echo "Sexo:";
-echo ($genero);
-echo "  ";
-echo "Estado:";
-echo ($estado1);*/
+$rura_foto = "imagenes/fotos/".$id.".jpg";
+$rura_cc = "imagenes/cedula/".$id.".jpg";
 
 
 
 $sql = "INSERT INTO `empleado` (`id_empleado`, `nombre_1`, `nombre_2`, `apellido_1`, `apellido_2`, `fecha_nacimiento`, `ciudad_nacimiento`, `ciudad_expedicion`, `tipo_sangre`, `direccion`,`ciudad_residencia`,`telefono`, `genero`, `estado_id`) VALUES ('$id', '$nombre_1', '$nombre_2', '$apellido_1', '$apellido_2', '$inicio1', '$ciu_nas', '$ciu_ex', '$sangre', '$direcc','$resi','$tel','$genero','$estado1');";
-
 $resultado = $mysqli->query($sql);
 
-/*$sql1 = "INSERT INTO `imagenes` (`id_foto`, `ruta`) VALUES ('$id', '$rutaDestino');";
+$sql1 = "INSERT INTO `imagenes_fotos` (`id_foto`, `ruta`) VALUES ('$id', '$rura_foto');";
 $res = $mysqli->query($sql1);
+$sql2 = "INSERT INTO `imagenes_cedula` (`id_imagenc`, `ruta`) VALUES ('$id', '$rura_cc');";
+    $resultado2 = $mysqli->query($sql2);
 
 /*
 if ($res){
     echo 'inserción con exito';
 }else{
-    echo 'no se puedo insertar';*/
+    echo 'no se puedo insertar';
 
-       
+}   */    
 
 ?>
 

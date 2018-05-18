@@ -6,15 +6,17 @@
 	$name = $_POST['name'];
 	$apl = $_POST['apel'];
 	$direccion = $_POST["direccion"];
-	$resi = $_POST["c_res"];
+	$resi = $_POST["cc2"];
 	$tel = $_POST["tel"];
 	$sangre=$_POST['t_san'];
 	$estado=$_POST['estado'];
 	$prorroga=$_POST['prorroga'];
 	$vence=$_POST['vence'];
 	$ingreso=$_POST['ingreso'];
-	$c_nac=$_POST['c_nac'];
-	$ex_cc=$_POST['ex_cc'];
+	$c_nac=$_POST['cc1'];
+	$ex_cc=$_POST['cc'];
+	echo ("ciudad_expedicion ->".$ex_cc);
+	echo ("Estado ->".$estado);
 	
 
 
