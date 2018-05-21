@@ -78,9 +78,15 @@
         $fecha3= date_format($fecha, 'Y-m-d');
     }
     
+    $user=$_POST['user']
+
     $where = "where fecha_vencimiento BETWEEN CAST('$fecha1' AS DATE) AND CAST('$fecha3' AS DATE) and id_empleado=empleado_id and estado_id=1";
     $sql = "SELECT id_empleado, concat(apellido_1,' ',apellido_2) as apellidos,concat(nombre_1,' ',nombre_2) as nombres, nro_curso, fecha_vencimiento FROM empleado, control_cursos $where";//
     $resultado = $mysqli->query($sql);
+
+    $sql1 = "SELECT concat(usuarios.apellido_1,' ',usuarios.apellido_2) as apellidos,concat(usuarios.nombre_1,' ',usuarios.nombre_2) as nombres from usuarios where usuario=' $user'";
+    $result = $mysqli->query($sql1);
+    $row1 = $result->fetch_array(MYSQLI_ASSOC)
 ?>
 
 <htm lang="es">

@@ -15,8 +15,6 @@ require 'conexion.php';
 //Consulta a la tabla
 $sql = ("SELECT * from usuarios where usuario='" . $USUARIO . "'");
 $result = $mysqli->query($sql);
-echo "Hasta el momento tu Login finciona";
-
 if ($row = mysqli_fetch_array($result)) {
 	if ($row["password"]==$CONTRASEÑA) {
 		session_start();

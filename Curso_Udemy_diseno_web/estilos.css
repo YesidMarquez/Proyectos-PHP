@@ -1,7 +1,11 @@
 /*Lenguaje de estilos es CSS*/
+@import url('https://fonts.googleapis.com/css?family=Modern+Antiqua');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 body{
 	background-color: #eee;
 	color: #333;
+  /*font-family: 'Modern Antiqua', cursive;*/
+  font-family: 'Indie Flower', cursive;
 }
 a{
 	text-decoration: none;
@@ -14,38 +18,73 @@ a :hover{
 img{
  	width: 70%
  }
- #narvar{
+ #navbar{
   	background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 100;
+    overflow: hidden;
     
  }
 
- #narvar ul{
- 	list-style-type: none;
- 	margin: 0;
- 	padding: 0;
- 	overflow: hidden;
- 	background-color: #000;
- 	z-index: 100;
+ #navbar ul{
+ 	 list-style-type: none;
+    margin: 0;
+    padding: 0; 
  }
-#narvar li{
+ .lista-s.{
+  display: block;
+ }
+#navbar li{
 	/*me pone los elementos del menu que estaban verticales - horizontales*/
  	float: left;
  }
- #narvar li a{
+ #navbar li a{
 	/*Le doy un espacio de separacion a las opciones de meni*/
- 	padding: 15px;
- 	display: inline-block;
- 	text-decoration: none;
- 	font-size: 1em;
- 	text-align: center;
- 	color: aliceblue;
+ 	padding: 20px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1em;
+  text-align: center;
+  color: aliceblue;
+
+ }
+ #navbar li.active a{
+
+  /*Le doy un espacio de separacion a las opciones de meni*/
+  /* Se creo la clase active para ejecutarse en el if del jquery de javaScript que colorea la pagina activa*/
+  color: red;
 
  }
  /*Con hover hago dinamico el meni cuando paso el mouse cambia a 
  color coral con letra negra*/
-  #narvar li a:hover{
+  #navbar li a:hover{
   	background-color: coral;
   	color: black;
+  }
+  form{
+    max-width: 750px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  form div{
+    padding: 15px;
+  }
+  input{
+    width:90%;
+    display: block;
+    /* Con este display block antes me pareceica nmbre y l frente el input,
+     ahora aparece el nombre y el input debajo, asi queda mas organizadi.*/
+  }
+  button{
+    width: 90%;
+    height: 50px;
+    padding: 15px;
+
   }
   .myicono{
   	color: aliceblue;
@@ -60,8 +99,10 @@ Se reliaza un marco par todo esta agrupacion. */
 	
 	max-width: 1180px;
 	position: relative;
-	top: 40px;
+	top: 80px;
 	margin: 0 auto;
+  background-color: #fff;
+  padding: 2%;
 }
 /*  En esta seccion e le da un estlo de recuadro 
 mas vistoso y suavisado al contenido del header */
@@ -70,41 +111,102 @@ mas vistoso y suavisado al contenido del header */
    padding: 10px 20px;
    background-color: #ddd;
    border-radius: 1em;
-  
-  
 }
 #principal{
-  
   width: 40%;
   float: left;
   padding: 5px;
 }
 #secundario{
-  
   width: 40%;
   float: left;
   padding: 5px;
 }
 #content aside{
-  
   width: 20%;
   float: left;
   padding: 5px;
 }
-
 #content footer{
   /*borrado de los flags*/
   clear: both;
   width: 100%;
   background-color: #ddd;
-  height: 50px;
-  padding: 15px;
-  border-radius: 1em;
- 
-
+  height: 100px;
+  padding: 25px;
 }
+/*MEdia query:
+Nos permite trabajar diseños responsive*/
+@media screen and (max-width: 820px){
+  /*Esta linea me evalua en cuanto esta el tamaño de l pantalla en pixeles y aplica los estilos definidos en la setiquetas.*/
+  #content{
+    padding: 0;
+    max-width: 100%;
+  }
+  #content header{
+    padding: 0;
+    border-radius:0;
+  }
+  #principal{
+    padding: 3%;
+    width: 45%;
+  }
+  #secundario{
+    float: right;
+    padding: 3%;
+    width: 45%;
+  }
+  #content aside{
+    clear: both;
+    padding: 5%;
+    width: 100%;
+  }
+  #content footer{
+    padding: 0%;
+    width: 100%;
+}
+@media screen and (max-width: 600px){
+  /*Esta linea me evalua en cuanto esta el tamaño de l pantalla en pixeles y aplica los estilos definidos en la setiquetas.*/
+  #content{
+    width: auto;
+  }
+  #principal{
+    width: auto;
+    float: none;
+    margin: 0px;
+  }
+  #secundario{
+    width: auto;
+    float: none;
+    margin: 0px;
+  }
+  #content aside{
+    padding: 0%;
+    width: auto;
+  }
+  #content footer{
+    width: auto;
+  }
+  .lista-sm{
+    display: none;
+  }
+  /*Oculto el menu para este tamaño y asi trabajar con el menu hambueguesa*/
+  #navbar li{
+    float: none;
+    display: block;
+  } 
+  #navbar li a{
+    padding: 5%;
+    text-align: left;
+    width: 100%;
+  }
+  /*Aplico estilo al menu ambueguesa*/
+  .myicono{
+    display: block;
+    text-align: right;
 
- 
+  }   
+}
 /* Estilos de recuadros CSS
 div{
   font-family: 'arial';

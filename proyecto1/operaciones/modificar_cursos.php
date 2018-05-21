@@ -34,13 +34,7 @@
     </head>
     
     <body><font face="Comic Sans MS,verdana">
-        <div class="col-sm-5">
-             <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:10%">
-                <thead>
-                    <tr style="background-color:#cccccc" >
-                        <th><center><img src="../<?php echo $ruta3; ?>" width="600" height="400"><br></th>
-            </thead>
-        </div>
+
         <div class="container">
 
             <div class="row">
@@ -116,7 +110,6 @@
                             <option value="9003763605">M & S CAPACITACIONES EN SEGURIDAD LTDA</option>
                             <option value="9004963237">SECURITY CENTER AAA LTDA</option>
                             <option value="9005108808">ACADEMIA DE SEGURIDAD PARA VIGILANTES ESCOLTAS Y SUPERVISORES A.S.V.E.S. LTDA</option>
-
                         </select>
                      </div><br>
                       <label for="estado_civil" class="col-sm-2 control-label">Modificar NIvel</label>
@@ -234,7 +227,6 @@
                             <option value="6103">SEMINARIO JEFES DE OPERACION DE EMPRESA DE V.S.P.</option>
                             <option value="6102">SEMINARIO JEFES DE RECURSOS HUMANOS</option>
                             <option value="6105">SEMINARIO JEFES DE SEGURIDAD DE DEPARTAMENTOS</option>
-
                         </select>
                      </div><br>
                     <label for="nombre" class="col-sm-2 control-label">Vencimiento Curso</label>
@@ -249,8 +241,23 @@
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
+
             </form>
-        </div>
+            
+            <div class="col-sm-5">
+                    <center>
+                        <table class="table table-striped" border="4" style="background-color:#e6f9ff; font-size:10%">
+                            <thead>
+                                <tr style="background-color:#cccccc" >
+                                    <th><center><img src="../<?php echo $ruta3; ?>" width="700" height="470"><br></th>
+                                </tr>            
+                            </thead>
+                        </table>
+                    </center>
+                </div>
+
+            </div>
+
   
     </body>
 </html>
