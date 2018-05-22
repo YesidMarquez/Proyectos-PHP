@@ -9,6 +9,7 @@
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
      /*-----------------------------------------------------------------------*/
+      /*-----------------------------------------------------------------------*/
     $sql2 = "SELECT cu.descripcion,cc.nro_curso,cc.fecha_vencimiento FROM control_cursos cc, cursos cu  WHERE cc.empleado_id='$id' and cc.curso_id=cu.id_cursos ";
     $resultado2 = $mysqli->query($sql2);
     $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
