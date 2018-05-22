@@ -1,8 +1,6 @@
 <?php
     require '../config/conexion.php';
-    
     $id = $_GET['id_empleado'];
-    
     $sql = "SELECT * FROM acreditacion WHERE empleado_id = '$id' ";
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
@@ -29,8 +27,19 @@
         $ruta=$filas['ruta'];
         $desc1=$filas['id_imagenc'];
     }
-    
-    
+       /*------------------------------------------------------------------------*/
+    $sql6 = "SELECT cod_mun FROM municipio, empleado WHERE empleado.id_empleado='$id' and municipio.cod_mun=empleado.ciudad_nacimiento";
+    $res6 = $mysqli->query($sql6);
+    $row6 = $res6->fetch_array(MYSQLI_ASSOC);
+        /*------------------------------------------------------------------------*/
+    $sql7 = "SELECT cod_mun FROM municipio, empleado WHERE empleado.id_empleado='$id' and municipio.cod_mun=empleado.ciudad_expedicion";
+    $res7 = $mysqli->query($sql7);
+    $row7 = $res7->fetch_array(MYSQLI_ASSOC);
+        /*------------------------------------------------------------------------*/
+    $sql8 = "SELECT cod_mun FROM municipio, empleado WHERE empleado.id_empleado='$id' and municipio.cod_mun=empleado.ciudad_residencia";
+    $res8 = $mysqli->query($sql8);
+    $row8 = $res8->fetch_array(MYSQLI_ASSOC);
+  
 ?>
 <html lang="es">
     <head><title>Actualizacion</title>
@@ -40,6 +49,7 @@
         <link href="../css/bootstrap-theme.css" rel="stylesheet">
         <script src="../js//jquery-3.1.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 
         
     </head>
@@ -80,7 +90,7 @@
                         <label for="nombre" class="col-sm-2 control-label">Expedicion Cedula</label>
                         <div class="col-sm-2">
                             <select class="form-control" id="cc" name="cc">
-                                <option value=""><?php echo $row1['exp_cedula']; ?></option>
+                                <option value="<?php echo $row7['cod_mun']; ?>"><?php echo $row1['exp_cedula']; ?></option>
                                 <option value="91001">LETICIA (AMAZONAS)</option>
                                  <option value="91263">EL ENCANTO (AMAZONAS)</option>
                                  <option value="91405">LA CHORRERA (AMAZONAS)</option>
@@ -1208,7 +1218,7 @@
                         <label for="nombre" class="col-sm-2 control-label">Ciudad Nacimiento</label>
                         <div class="col-sm-2">
                             <select class="form-control" id="cc1" name="cc1">
-                                <option value=""><?php echo $row1['ciudad_nacimiento']; ?></option>
+                                <option value="<?php echo $row6['cod_mun']; ?>"><?php echo $row1['ciudad_nacimiento']; ?></option>
                                 <option value="91001">LETICIA (AMAZONAS)</option>
                                  <option value="91263">EL ENCANTO (AMAZONAS)</option>
                                  <option value="91405">LA CHORRERA (AMAZONAS)</option>
@@ -2340,7 +2350,7 @@
                         <label for="nombre" class="col-sm-2 control-label">Ciudad/Residencia</label>
                         <div class="col-sm-2">
                             <select class="form-control" id="cc2" name="cc2">
-                                <option value=""><?php echo $row1['ciudad_residencia']; ?></option>
+                                <option value="<?php echo $row7['cod_mun']; ?>"><?php echo $row1['ciudad_residencia']; ?></option>
                                 <option value="91001">LETICIA (AMAZONAS)</option>
                                  <option value="91263">EL ENCANTO (AMAZONAS)</option>
                                  <option value="91405">LA CHORRERA (AMAZONAS)</option>
@@ -3555,18 +3565,11 @@
                         </div>
                     </div>
                 <?php } ?>
-                <center> 
-                <label for="nombre" class="col-sm-2 control-label"></label>
-                    <div class="col-sm-4">
-                         <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:10%">
-
-                            <thead>
-                                <tr style="background-color:#cccccc" >
-                                    <th><left><img src="../<?php echo $ruta; ?>" width="400" height="400"></th>
-                            </thead>
-    
+                <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <left><img src="../<?php echo $ruta; ?>" class='imgRedondacc'>
                     </div>
-                    </center>
+                
             </form>
         </div>
     </body>

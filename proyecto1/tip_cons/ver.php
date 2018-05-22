@@ -57,6 +57,7 @@
         <link href="../css/bootstrap-theme.css" rel="stylesheet">
         <script src="../js//jquery-3.1.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script> 
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 
         
     </head>
@@ -96,11 +97,9 @@
                     
                     <div class="col-sm-10">
                          
-                    <label for="nombre" class="col-sm-2 control-label"></label>
+                    <label class="col-sm-2 control-label"></label>
                     <div class="col-sm-10">
-                       
-                        <left><img src="../<?php echo $ruta; ?>" width="150"  height="180"></center>
-                            
+                        <left><img src="../<?php echo $ruta; ?>" class='imgRedonda'>
                     </div>
                     <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
                     <div class="col-sm-10">
