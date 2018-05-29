@@ -4,6 +4,8 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Eater|Henny+Penny|Nosifer|Sedgwick+Ave+Display|Shojumaru|UnifrakturCook:700');
 body{
 	margin:0;
 	font-family: 'Raleway', sans-serif;
@@ -120,24 +122,27 @@ a.boxclose{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	text-align: center;
-	min-height:750px;
+	min-height:1000px;
 }
 .banner-info{
 width:65%;
-margin: 141px auto 0 auto;
+margin: 120px auto 0 auto;
 }
 .banner-right h1{
-font-size:34px;
+font-size:70px;
 font-weight:800;
-color:#ffffff;
+color:#000;
 margin:35px 0 15px 0;
-letter-spacing: 15px;
+letter-spacing: 10px;
+font-family: 'Amatic SC', cursive;
 }
 .banner-right h2{
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 300;
   color: #ffffff;
   margin: 15px 0 45px 0;
+ 
+ font-family: 'Eater', cursive;
 }
 .banner-right a{
 text-decoration:none;
@@ -163,22 +168,23 @@ float:right;
   padding: 1px;
 }
 .img-circle {
-	height: 80%;
-	width: 80%;
+	height: 90%;
+	width: 90%;
 	border:2px solid #fff;
 	padding:4px;
 }
 /*--//banner--*/
 /*--about--*/
 .about{
-padding:60px 0 25px 0;
+padding:10px 0 15px 0;
 }
 .about h3{
-margin:0;
-color:#2b2b2b;
-font-size:36px;
-font-weight:500;
-letter-spacing: 18px;
+font-family: 'Amatic SC', cursive;
+margin:35px 0 15px 0;
+color:#000;
+font-size:70px;
+font-weight:800;
+letter-spacing: 5px;
 }
 .strip{
   margin: 28px 0 0px 0;
@@ -461,11 +467,14 @@ border-bottom: 2px solid #c3c3c3;
   padding: 60px 0;
 }
 .ser-info h3{
-  margin: 0;
-  color: #2b2b2b;
-  font-size: 3em;
-  font-weight: 500;
-  letter-spacing: 18px;
+  margin: 35px 0 15px 0;
+  color: #000;
+  font-size: 70px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  font-family: 'Amatic SC', cursive;
+
+ 
 }
 .ser-grids{
 margin-top:50px;
