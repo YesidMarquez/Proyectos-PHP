@@ -77,6 +77,7 @@
                         <select class="form-control" id="Academia" name="Academia" placeholder="Academia" >
                             <option value="<?php echo $row2['academia_nit']; ?>"><?php echo $row2['nombre']; ?></option>
                             <option value="8001916712">ACADEMIA DE VIGILANTES ADEVIP LIMITADA</option>
+                            <option value="8300434435">CENTRO DE APRENDIZAJE EN SEGURIDAD PRIVADA CADEVIP LTDA.</option>
                             <option value="8040073153">ACADEMIA DE ESTUDIOS TECNICOS EN SEGURIDAD LTDA.</option>
                             <option value="8050317483">ACADEMIA DE FORMACION INTEGRAL EN SEGURIDAD Y DESARROLLO EMPRESARIAL LTDA</option>
                             <option value="8090065755">INSTITUTO INTERNACIONAL DE SEGURIDAD INTEGRAL LIMITADA ISI LTDA.</option>
