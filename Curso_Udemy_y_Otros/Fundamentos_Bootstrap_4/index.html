@@ -8,28 +8,7 @@
 	<!--Compatibilidad con explorer 9 y navegador edge--- maxima compatibilidad-->
 	<meta http-equiv="x-ua-compatible" content="ie-edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<style type="text/css">
-		.border{
-			background-color: gray;
-			height: 200px;
-		}
-		.border1{
-			background-color: aquamarine;
-			height: 50px;
-		}
-		.border2{
-			background-color: olivedrab;
-			text-align: center;
-			height: 50px;
-		}
-		.border3{
-			background-color: orangered;
-			text-align: center;
-			height: 50px;
-		}
-
-	</style>
-
+	
 </head>
 
 <body>
@@ -37,7 +16,7 @@
 <!--En container para pantallas mayores a smartfone deja una margen con -fluid la quito y utiliza todo el espacio de trabajo-->
 <div class="container">
 	<div class="row">
-	<h1>CANECERA</h1>
+	<h1>CABECERA</h1>
 	<p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -49,10 +28,31 @@
 	<div class="row">
 		
 		<!--Con col me refiero a las columnas del sistema de rejillas-->
-		<!--Con col me refiero a las columnas del sistema de rejillas-->
-		<div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 border1"></div>
-		<div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 border2"></div>
-		<div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 border3"></div>
+		<!-- - col
+			 - col-xs (< 575)
+			 - col-sm (576 - 767)
+			 - col-md (768 - 991)
+			 - col-lg (992 - 1199)
+			 - col-xl (1200 >)
+			 Con estas convenciones me refiero al tamaño de los dispositivos y asi lograr una aplicacion responsive. 
+		-->
+		<div class="col-12 d-none d-md-inline border1"><p><abbr title="Chupame la verga">UNO</p></div>
+		<div class="col-12  border2"><p>DOS</p></div>
+		<button type="button" onclick="alert('Deseas hacer esto!')">Click Me!</button>
+		<div class="col-12 d-none d-md-inline border3"><p>TRES</p></div>
+		<!-- - col
+			  - d-xs-none = none para que no se vea la columna relacionada con el tamaño d - es de Display
+ 			  - d-sm-none = none para que no se vea la columna relacionada con el tamaño d - es de Display 
+ 			  - d-md-none = none para que no se vea la columna relacionada con el tamaño d - es de Display
+ 			  - d-lg-none = none para que no se vea la columna relacionada con el tamaño d - es de Display
+			  - d-xl-none = none para que no se vea la columna relacionada con el tamaño d - es de Display
+ 			  - d-sm-block = block para que se vea la columna relacionada con el tamaño d - es de Display
+ 			  - d-sm-inline
+ 			  	<div class="col-12 d-none d-md-block border1">UNO</div>
+				<div class="col-12  border2"><p></p></div>
+				<div class="col-12 d-none d-md-block border3">TRES</div>
+			  En este ejemplo utilino el nos para no visualizar en cirtos tamaños y el blocj para activarlo en otros
+		-->
 
 	</div>
 	<div class="row">

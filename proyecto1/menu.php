@@ -5,46 +5,53 @@
 		<script src="js/jquery-3.3.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<!-- Con esta liena agrego estilo especiala l titulo llmando la clase "class="animated bounceIn""-->
-        <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<title>->MENU.2</title>
 	</head>
 	<body><font face="Comic Sans MS,verdana">
 		<br><h2 style="text-align: center;" type="text/css" class="animated bounceIn">Menu de Servicios</h2><br>
-		<div>
+		<div class="container">
 			<center>
-				<div>
+				<div class="row">
 					
-					<div class="col-sm-4" title="Ingreso Nuevo">
+					<div class="col-xs-4" title="Ingreso Nuevo">
 						<figure>
 		    				<a href="formularios/menu_ingresos.php"><img src="imagenes/update.jpg" width="90" height="90"></img></a>
 		    				<h4 style="text-align: center; " class="animated bounceIn">Ingreso <br> Nuevo</h4>
 						</figure>
 			    	</div>
-		    		<div class="col-sm-4" title="Control Cursos">
+			    	<div class="col-xs-4" title="Control Cursos">
 		   				<figure>
 							<a href="tip_cons/cursos.php"><img src="imagenes/control.jpg" width="90" height="90" ></img></a>
 							<h4 style="text-align: center; ;" class="animated bounceIn">Control <br> Cursos</h4>
 						</figure>
 					</div>
-		    		<div class="col-sm-4" title="Control SVSP">
+					<div class="col-xs-4" title="Control SVSP">
 						<figure>
 							<a href="tip_cons/acreditaciones.php" ><img src="imagenes/control2.jpg" width="90" height="90" ></img></a>
 							<h4 style="text-align: center;" class="animated bounceIn">Control <br> SVSP</h4>
 						</figure>
 		    		</div>
-	    		</div>			
+
+		    	</div>
+		    		    					
 			</center>
 			<!--Segunda linea de iconos en el menu-->
 			<center>
-				<div >
-					<div class="col-sm-8" title="Planta de Personal">
+				<div class="row" >
+					<div class="col-12">
+						<font color="white" size="6"> hola </font>
+		    		</div>
+		    		
+	 			</div>
+	 			<div class="row" >
+					<div class="col-xs-8" title="Planta de Personal">
 						<figure>
 							<a href="tip_cons/planta.php"><img src="imagenes/personal.jpg" width="90" height="90"></img></a>
 							<h4 style="text-align: center; " class="animated bounceIn">Planta <br> De Personal</h4>
 						</figure>
 		    		</div>
-		    		<div class="col-sm-1" title="Menu Principal">
+		    		<div class="col-xs-1 border" title="Menu Principal">
 						<figure>
 							<a href="menu_ppal.php" ><img src="imagenes/menu_p.png" width="90" height="90"></img></a>
 							<h4 style="text-align: center; ;" class="animated bounceIn">Menu <br> Principal</h4>
@@ -52,8 +59,10 @@
 		 			</div>
 	 			</div>
 	  		</center>
-	  		<center>
-				<div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	  	</div>	
+		<div class="container-fluid">
+			<div class="row"><br><br><br><br><br>
+				<div class="col-12">
 					<p>
 						<marquee direction="right"  onmouseover="stop()" onmouseout="start()" scrollamount="15" scrolldelay="100" >
 							<img src="imagenes/logo.jpg" align="" width="9%">
@@ -65,8 +74,10 @@
 						</marquee>
 					</p>
 				</div>
-			</center>
+			</div>
 		</div>
+		
+		
 	</body>
 	
 </html>

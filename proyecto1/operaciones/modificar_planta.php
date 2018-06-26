@@ -51,8 +51,6 @@
         <script src="../js//jquery-3.1.1.min.js"></script>
         <script src="../js/bootstrap.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-
-        
     </head>
     
     <body><font face="Comic Sans MS,verdana">
@@ -60,36 +58,11 @@
             <div class="row">
                 <h3 style="text-align:center">MODIFICAR DATOS DE "<?php echo $row1['apellidos']; ?> <?php echo $row1['nombres']; ?>" </h3>
             </div>
-            
             <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_planta.php" autocomplete="">
                 <div class="form-group">
-                    
-                     <!--<label for="nombre" class="col-sm-2 control-label">Identificacion</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
-                    <div class="col-sm-10">
-                        <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                        <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Nombres</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['nombres']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Expedicion Ccedula</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['exp_cedula']; ?>" readonly="readonly">
-                    </div>-->
-                    
-
                     <?php if ($row1['estado_id']=="1") {?>
                         <label for="nombre" class="col-sm-2 control-label">Expedicion Cedula</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <select class="form-control" id="cc" name="cc">
                                 <option value="<?php echo $row7['cod_mun']; ?>"><?php echo $row1['exp_cedula']; ?></option>
                                 <option value="91001">LETICIA (AMAZONAS)</option>
@@ -1217,7 +1190,7 @@
                             </select>
                         </div>
                         <label for="nombre" class="col-sm-2 control-label">Ciudad Nacimiento</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <select class="form-control" id="cc1" name="cc1">
                                 <option value="<?php echo $row6['cod_mun']; ?>"><?php echo $row1['ciudad_nacimiento']; ?></option>
                                 <option value="91001">LETICIA (AMAZONAS)</option>
@@ -2345,11 +2318,11 @@
                             </select>
                         </div><br><br>
                         <label for="nombre" class="col-sm-2 control-label">Prorrogas</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <input type="text" class="form-control" id="prorroga" name="prorroga" placeholder="prorroga" value="<?php echo $row4['prorrogas']; ?>" >
                         </div>
                         <label for="nombre" class="col-sm-2 control-label">Ciudad/Residencia</label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <select class="form-control" id="cc2" name="cc2">
                                 <option value="<?php echo $row7['cod_mun']; ?>"><?php echo $row1['ciudad_residencia']; ?></option>
                                 <option value="91001">LETICIA (AMAZONAS)</option>
@@ -3555,7 +3528,7 @@
                         <div class="col-sm-offset-2 col-sm-10">
                             <a href="../tip_cons/planta.php" class="btn btn-default">Planta</a>
                             <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Empleado</a>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" onclick="alert('Deseas Guardar Cambios!')" class="btn btn-primary">Guardar</button>
                         </div>
                     </div>
                 <?php } else {?>   
