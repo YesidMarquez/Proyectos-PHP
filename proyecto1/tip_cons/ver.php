@@ -54,17 +54,18 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/bootstrap-theme.css" rel="stylesheet">
-        <script src="../js//jquery-3.1.1.min.js"></script>
+   
+        <script src="../js//jquery-3.3.1.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script> 
-        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+        <script src="../js/popper.min.js"></script> 
+        
 
         
     </head>
     
     <body><font face="Comic Sans MS,verdana">
         
-        <div class="container">
+        <!--<div class="container">
             <div class="row">
 
                 
@@ -79,7 +80,7 @@
                        
                         <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                        
-                    </div><br>
+                    </div>
                      <?php if($row1['estado_id']=="1"){ ?>
                     <div class="form-group">
                         <input type="text" id="" name="" value="ACTIVO" class="btn btn-success" readonly="readonly" />
@@ -194,6 +195,49 @@
                 
                
             </form>
+        </div>-->
+
+        <div class="row">
+
+            <div class="container" >
+                
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="../<?php echo $ruta; ?>" alt="Card image" style="width:60%">
+                    <div class="card-body">
+                        <h4 class="card-title"><?php echo $row1['nombres'].$row1['apellidos'];?></h4>
+                        <h5>Cedula: <?php echo $row['empleado_id'];?></h5>
+
+                        <h5>DATOS BASICOS</h5>
+                        <div class="list-group">
+                            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">
+                                Ciudad Nacimiento: <?php echo $row1['ciudad_nacimiento']; ?></a>
+                            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">
+                                Expedicion Cedula: <?php echo $row1['ciudad_expedicion']; ?></a>
+                            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">
+                                Ciudad/Residencia: <?php echo $row1['ciudad_residencia']; ?></a>
+                        </div>
+
+                      
+                    </div>
+                </div>
+
+
+            </div>
+            
         </div>
+        <div class="ROW">
+            <div class="container">
+                <a href="../tip_cons/planta.php" class="btn btn-primary">REGRESAR</a>
+                <a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']?>" class="btn btn-primary">MODIFICAR</a>
+                <?php if($row1['estado_id']=="1"){ ?>
+                <a class="btn btn-success">ACTIVO</a>
+                <?php } else { ?>
+                    <a class="btn btn-danger">RETIRADO</a>
+                <?php } ?>
+                
+            </div>
+            </div>
+        
+        
     </body>
 </html>
