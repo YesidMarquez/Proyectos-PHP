@@ -47,197 +47,66 @@
         $ruta3=$filas['ruta'];
         $desc3=$filas['id_imgcurso'];
     }
+    /*<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js//jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script> 
+    <script src="../js/popper.min.js"></script>*/
  
 ?>
-<html lang="es">
-    <head><title>Planta x Persona</title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-   
-        <script src="../js//jquery-3.3.1.slim.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script> 
-        <script src="../js/popper.min.js"></script> 
-        
-
-        
-    </head>
-    
-    <body><font face="Comic Sans MS,verdana">
-        
-        <!--<div class="container">
-            <div class="row">
-
-                
-                <h3 style="text-align:center">DATOS DEL EMPLEADO</h3>
-            
-
-            
-            <form class="form-horizontal" method="POST" action="../tip_cons/actualizar.php" autocomplete="off">
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10" class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a href="../tip_cons/planta.php" class="btn btn-info">Regresar</a>
-                       
-                        <td><a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                       
-                    </div>
-                     <?php if($row1['estado_id']=="1"){ ?>
-                    <div class="form-group">
-                        <input type="text" id="" name="" value="ACTIVO" class="btn btn-success" readonly="readonly" />
-                    </div>
-                    
-                    <?php } else { ?>
-                        <div class="form-group">
-                            <input type="text" id="" name="" value="RETIRADO" class="btn btn-danger" readonly="readonly"/>
-                        </div>
-
-                    <?php } ?>
-                </div>
-                <div class="form-group">
-                    
-                    
-                    <div class="col-sm-10">
-                         
-                    <label class="col-sm-2 control-label"></label>
-                    <div class="col-sm-10">
-                        <left><img src="../<?php echo $ruta; ?>" class='imgRedonda'>
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Identificacion</label>
-                    <div class="col-sm-10">
-                       
-                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['empleado_id']; ?>" required readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
-                    <div class="col-sm-10">
-                      
-                        <input type="text" class="form-control"  value="<?php echo $row1['apellidos']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Nombres</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['nombres']; ?>" readonly="readonly">
-                    </div>
-                    
-                    <label for="nombre" class="col-sm-2 control-label">Expedicion Cedula</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['ciudad_expedicion']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Fecha Nacimiento</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_nacimiento']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Ciudad Nacimiento</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['ciudad_nacimiento']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Tipo de Sangre</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['tipo_sangre']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Direccion</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['direccion']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Ciudad/Residencia</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['ciudad_residencia']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Telefono</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['telefono']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Cargo</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['descripcion']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Fecha Ingreso</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_ingreso']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Fecha Vencimiento</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['fecha_vencimiento']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Prorrogas</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['prorrogas']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Tipo Contrato</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row1['descrip']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row2['descripcion']; ?>" readonly="readonly">
-                    </div>
-                   
-                    <label for="nombre" class="col-sm-2 control-label">Vencimiento Curso</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row2['fecha_vencimiento']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Fecha Radicado</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row3['fecha_radicado']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Numero Radicado</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row3['numero_radicado']; ?>" readonly="readonly">
-                    </div>
-                    
-                    <label for="nombre" class="col-sm-2 control-label">Fecha de Acreditacion</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" readonly="readonly">
-                    </div>
-
-                </div>
-                
-                <input type="hidden" id="id" name="id" value="<?php echo $row['empleado_id']; ?>" />
-                             
-                
-               
-            </form>
-        </div>-->
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Datos Personales</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> 
+</head>
+<body >
+    <div class="container-fluid">
+      <h1 class="">Datos Personales</h1>
+     
+      <div class="container-fluid">     
         <div class="row">
-
-            <div class="container" >
-                
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="../<?php echo $ruta; ?>" alt="Card image" style="width:60%">
-                    <div class="card-body">
-                        <h4 class="card-title"><?php echo $row1['nombres'].$row1['apellidos'];?></h4>
-                        <h5>Cedula: <?php echo $row['empleado_id'];?></h5>
-
-                        <h5>DATOS BASICOS</h5>
-                        <div class="list-group">
-                            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">
-                                Ciudad Nacimiento: <?php echo $row1['ciudad_nacimiento']; ?></a>
-                            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">
-                                Expedicion Cedula: <?php echo $row1['ciudad_expedicion']; ?></a>
-                            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">
-                                Ciudad/Residencia: <?php echo $row1['ciudad_residencia']; ?></a>
-                        </div>
-
-                      
-                    </div>
-                </div>
-
-
-            </div>
-            
-        </div>
-        <div class="ROW">
+          <div class="col-sm-4 ">
+            <img src="../<?php echo $ruta; ?>" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+            <h4 class="card-title"><?php echo $row1['nombres']. " " .$row1['apellidos'];?></h4>
+            <h5><strong>Cargo: </strong><span class="badge badge-dark"><?php echo $row1['descripcion'];?></span></h5>
+            <h5><strong>Cedula:</strong> <?php echo $row['empleado_id'];?></h5>
             <div class="container">
                 <a href="../tip_cons/planta.php" class="btn btn-primary">REGRESAR</a>
                 <a href="../operaciones/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']?>" class="btn btn-primary">MODIFICAR</a>
                 <?php if($row1['estado_id']=="1"){ ?>
-                <a class="btn btn-success">ACTIVO</a>
+
+                    <a class="badge badge-primary">ACTIVO</a>
                 <?php } else { ?>
-                    <a class="btn btn-danger">RETIRADO</a>
+
+                    
+                    <a class="badge badge-danger">RETIRADO</a>
                 <?php } ?>
                 
             </div>
-            </div>
-        
-        
-    </body>
+
+          </div>
+          <div class="col-sm-8 ">
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action" >                              <big><strong>Ciudad Nacimiento:    </strong></big> <?php echo $row1['ciudad_nacimiento']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Expedicion Cedula:    </strong></big> <?php echo $row1['ciudad_expedicion']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Ciudad/Residencia:    </strong></big> <?php echo $row1['ciudad_residencia']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action" >                              <big><strong>Direccion/Residencia:    </strong></big> <?php echo $row1['direccion']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Telefono:    </strong></big> <?php echo $row1['telefono']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Tipo de Sangre:    </strong></big> <?php echo $row1['tipo_sangre']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action" >                              <big><strong>Contrato/Fecha Ingreso:    </strong></big> <?php echo $row1['fecha_ingreso']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Contrato/Fecha Vencimiento:    </strong></big> <?php echo $row1['fecha_vencimiento']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Nivel curso:    </strong></big> <?php echo $row2['descripcion']; ?></a>
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Vencimiento Curso:    </strong></big> <?php echo $row2['fecha_vencimiento']; ?></a> 
+            <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action">                               <big><strong>Fecha de Acreditacion:    </strong></big> <?php echo $row['fecha_acreditacion']; ?></a>   
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
 </html>
