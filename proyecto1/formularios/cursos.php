@@ -110,6 +110,7 @@
                             <option value="9003763605">M & S CAPACITACIONES EN SEGURIDAD LTDA</option>
                             <option value="9004963237">SECURITY CENTER AAA LTDA</option>
                             <option value="9005108808">ACADEMIA DE SEGURIDAD PARA VIGILANTES ESCOLTAS Y SUPERVISORES A.S.V.E.S. LTDA</option>
+                            <option value="9005520114">CENTRO DE ESTUDIOS ESPECIALIZADOS EN SEGURIDAD PRIVADA CEESP</option>
 
                         </select>
                      </div>
