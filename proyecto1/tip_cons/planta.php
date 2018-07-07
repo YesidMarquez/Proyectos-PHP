@@ -32,86 +32,122 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 <htm lang="es">
     <head>
-        <link rel="stylesheet"  href="../css/bootstrap-theme.css">
-        <link rel="stylesheet"  href="../css/bootstrap.min.css">
-        <script src="../js/jquery-3.3.3.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <title>Planta</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
+        <title>Personal</title>
     </head>
 
     
-    <body><font face="Comic Sans MS,verdana">
-
-        <div class="container" >
+    <body>
+        <font face="Comic Sans MS,verdana">
+<!--****************************************************** header *************************************************************************-->
+        <div class="container">
             <div class="row">
-                <h2 style="text-align:center">Datos del Personal</h2>
+                <div class="col"><h2 style="text-align:center">Datos del Personal</h2></div>
             </div>
+        </div>
+<!--******************************************************busqueda, informacion **********************************************************-->
+        <div class="container">
             <div class="row">
-                
-                <div align="right" >
-                    <div class="col-sm-offset-2 col-sm-10" >
-                        <input type="text" id="" name="" value="PERSONAL ACTIVO" class="btn btn-primary" readonly="readonly" />
-                        <input type="text" id="" name="" value="PERSONAL INACTIVO" class="btn btn-primary" readonly="readonly" />
-                    </div>
-                </div>
-                <div align="right" >
-                    <div class="col-sm-offset-2 col-sm-10" >
-                        <input type="text" id="" name="" value="<?php echo $row1['conteo']; ?>" class="btn btn-success" readonly="readonly" />
-                        <input type="text" id="" name="" value="<?php echo $row2['conteo']; ?>" class="btn btn-danger" readonly="readonly" />
-                    </div>
-                </div>
-               
-                
-                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <b>Cedula: </b><input type="text" id="campo" name="campo" value="" />
-                    <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
-                </form>
-            </div>
-            
-            <br>
-            </FORM>
-                <form ACTION="../menu.php">
-                <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br></form>
-            <div class="row table-responsive">
-                <table class="table table-striped" border="3" style="background-color:#e6f9ff; font-size:100%"><br>
-                    <thead>
-                        <tr style="background-color:#cccccc" >
-                            <th><center>Cedula</th>
-                            <th><center>Apellidos</th>
-                            <th><center>Nombres</th>
-                            <th><center>Puesto</th>
-                            <th><center>Cliente</th>
-                            <th WIDTH="100"><center>Ingreso</th>
-                            <th WIDTH="100"><center>Vencimiento</th>
-                            
-                            <th><center>Ver</th>
-                        </tr>
-                    </thead>
-                    <!--cuerpo de la tabla-->
-                    <tbody>
-                        <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
-                            <tr>
-                                <td><center><?php echo $row['id_empleado']; ?></td>
-                                <td><center><?php echo $row['apellidos']; ?></td>
-                                <td><center><?php echo $row['nombres']; ?></td>
-                                <td><center><?php echo $row['nombre_puesto']; ?>
-                                <td><center><?php echo $row['nombre_cliente']; ?></td>
-                                <td><center><?php echo $row['fecha_ingreso']; ?></td>
-                                <td><center><?php echo $row['fecha_vencimiento']; ?></td>
-                                
-                                                   
-                                <td><center><a href="../tip_cons/ver.php?id_empleado=<?php echo $row['id_empleado']; ?>"><span class="glyphicon glyphicon-eye-open"></span></a></td></a></td>
-                                <!--<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                                <td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span></a></td>-->
-                            </tr>
-                        <?php } ?>
-                    </tbody>
+                <div class="col-4">
+                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
                     
-                
-                   
-                </table>
-
+                    <form ACTION="../menu.php">
+                        <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br>
+                    </form>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <ul class="list-group">
+                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                        PERSONAL ACTIVO
+                        <span class="badge badge-dark badge-pill"><?php echo $row1['conteo']; ?></span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger">
+                        PERSONAL RETIRADO
+                        <span class="badge badge-dark badge-pill"><?php echo $row2['conteo']; ?></span>
+                      </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+        <br>
+<!--****************************************************** Tabla de batos *****************************************************************-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col ">
+                    <div class="table-responsive">
+                        
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th><center>Cedula</th>
+                                    <th><center>Apellidos</th>
+                                    <th><center>Nombres</th>
+                                    <th><center>Puesto</th>
+                                    <th><center>Cliente</th>
+                                    <th><center>Ver</th>
+                                </tr>
+                            </thead>
+                            <!--cuerpo de la tabla-->
+                            <tbody id="myTable">
+                                <?php while($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+                                    <tr>
+                                        <td><?php echo $row['id_empleado']; ?></td>
+                                        <td><?php echo $row['apellidos']; ?></td>
+                                        <td><?php echo $row['nombres']; ?></td>
+                                        <td><?php echo $row['nombre_puesto']; ?>
+                                        <td><?php echo $row['nombre_cliente']; ?></td>
+                                        <td><center><a href="../tip_cons/ver.php?id_empleado=<?php echo $row['id_empleado']; ?>"><i class="fas fa-eye"></i></a></td></a></td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+            </div>
+                </div>
+            </div>
+        </div>
+<!--****************************************************** foother ************************************************************************-->
+        <div class="container">    
+            <div class="row">
+                <div class="col">
+                     <div class="row justify-content-md-center">
+                        <div class="footer-copyright  py-3">© 2018 Copyright:
+                                <a href="https://ymarquez.000webhostapp.com/"> Mat-sw</a>
+                        </div>
+                              
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+<!--******************************************************************************************************************************-->
+            <!-- Optional JavaScript -->
+            <script>
+            $(document).ready(function(){
+              $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+            </script>
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function(){
+                $('[data-toggle="popover"]').popover();
+                });
+            </script>
             
             
 

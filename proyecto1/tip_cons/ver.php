@@ -147,13 +147,13 @@
                       <!-- The slideshow -->
                       <div class="carousel-inner">
                         <div class="carousel-item active">
-                          <img src="../<?php echo $ruta1; ?>" alt="Los Angeles" width="600" height="500">
+                          <img src="../<?php echo $ruta1; ?>" alt="Los Angeles" width="550" height="500">
                         </div>
                         <div class="carousel-item">
-                          <img src="../<?php echo $ruta2; ?>" alt="Chicago" width="600" height="500">
+                          <img src="../<?php echo $ruta2; ?>" alt="Chicago" width="550" height="500">
                         </div>
                         <div class="carousel-item">
-                          <img src="../<?php echo $ruta3; ?>" alt="New York" width="600" height="500">
+                          <img src="../<?php echo $ruta3; ?>" alt="New York" width="550" height="500">
                         </div>
                       </div>
                       

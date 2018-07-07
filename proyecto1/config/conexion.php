@@ -4,7 +4,7 @@ $server='localhost';
 $user='root';
 $pass='';
 
-$bd='vise_pereira';
+$bd='pruebas';
 $mysqli= new mysqli($server,$user,$pass,$bd);
 //Si hay conexion no entra mal if
 if($mysqli->connect_error){
