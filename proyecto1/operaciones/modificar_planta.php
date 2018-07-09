@@ -3487,35 +3487,6 @@
                     <?php } ?>
 
 
-
-                    <!--<label for="nombre" class="col-sm-2 control-label">Nivel curso</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row2['descripcion']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">NRO Curso</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row2['nro_curso']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Vencimiento Curso</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row2['fecha_vencimiento']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Fecha Radicado</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row3['fecha_radicado']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Numero Radicado</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row3['numero_radicado']; ?>" readonly="readonly">
-                    </div>
-                     <label for="nombre" class="col-sm-2 control-label">Vencimiento Curso</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"  value="<?php echo $row2['fecha_vencimiento']; ?>" readonly="readonly">
-                    </div>
-                    <label for="nombre" class="col-sm-2 control-label">Fecha de Acreditacion</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="fec" name="fec" placeholder="fecha" value="<?php echo $row['fecha_acreditacion']; ?>" readonly="readonly">
-                    </div>-->
                    
                 </div>
                 

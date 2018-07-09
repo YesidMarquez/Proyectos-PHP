@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<meta name="viewporte" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<title>Coopasst</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Web-Yesid</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
@@ -21,47 +18,22 @@
 			<!--La etiqueta "li" va a contener cada uno de los elementos de las listas ordenadas (<ol>), listas desordenadas (<ul>) y listas de menú (<menu>).-->
 			<!--La etiqueta "a" representan los hiperenlaces y nos permite enlazar una página web con otra página web u otros documentos. El atributo más importante de un enlace es el atributo href que nos dice la dirección de la página o documento con el que queremos enlazar. Este enlace puede ser un enlace interno o externo.-->
 	       <li><a href="index.html">Inicio</a></li> 
-	       <li><a href="actas.html">Actas de Reunion</a></li> 
+	       <li><a href="servicios.html">servicios</a></li> 
 	       <li><a href="acercade.html">Acerca De</a></li> 
 	       <li><a href="contacto.html">Contacto</a></li>
    		</ul>
-  
-	</nav>
+ 	</nav>
 	<div id="content">
-		<!--La etiqueta "header" representa cabecera de un documento o sección (ya que puede estar dentro de un article).-->
-		<header>
-			<h1>Coopasst </h1>
-			<!--La etiqueta "small" nos permite escribir caracteres con letra más pequeña.-->
-			<small>Sucursal Pereira</small>
-		</header>
 		<!--La etiqueta "section" representa la zona de un elemento.-->
 		<section id="principal">
-			<h2>Seccion 1</h2>
-      <p><img src="http://placeimg.com/400/200/any/grayscale"></p>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-			<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
-
-			<p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-
-
-		</section>
-		<section id="secundario">
-			<h2>DOM</h2>
-			<p>Modelo de objetos de nuestro docuemnto, todos los objetos d enuestra web JQUERY los analiza y nos permite programar eventos dentro d enuestar web.</p>
-
-			<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
-
-
-		</section>
-		<!--La etiqueta "aside" representa la barra lateral donde hay contenido relacionado con la página..-->
-		<aside>
-			<h2>Sidebar</h2>
-			<a href="https://placeholder.com"><img src="http://via.placeholder.com/350x150"></a>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-
-			<p>Aenean commodo ligula eget dolor. Aenean m</p>
-		</aside>
+			<h2>Formulario de Contacto</h2>
+      <!--En esta etiqueta se crean los formularios .-->
+      <form>
+        <div>Nombre: <input type="text" name="nombre"></div>      
+        <div>Email: <input type="email" name="email"></div> 
+        <div><button type="submit">Enviar Mensaje</button></div>
+      </form>
+     
 		<!--La etiqueta "footer" representa el pie de página de un documento.-->
 		<footer>
 			<p align="center">copyright (c) 2018 Mat-sw, Inc.</p>	
