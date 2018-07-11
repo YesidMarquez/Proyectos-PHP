@@ -1,10 +1,13 @@
 <?php
 
-$USUARIO= $_POST['Nombre'];
+$USUARIO= $_POST['user'];
 $CONTRASEÑA=$_POST['Password'];
+echo " uswer :".$USUARIO;
+echo "          pw :".$CONTRASEÑA;
+
 
 if (empty($USUARIO) || empty($CONTRASEÑA)) {
-	header("Location: ../index.html");
+	header("Location: ../../index.html");
 	exit();
 }
 
@@ -13,24 +16,24 @@ if (empty($USUARIO) || empty($CONTRASEÑA)) {
 require 'conexion.php';
 
 //Consulta a la tabla
-$sql = ("SELECT * from usuarios where usuario='" . $USUARIO . "'");
+$sql = ("SELECT * from user where usuario='$USUARIO'");
 $result = $mysqli->query($sql);
 if ($row = mysqli_fetch_array($result)) {
 	if ($row["password"]==$CONTRASEÑA) {
 		session_start();
 		$_SESSION['usuario'] = $USUARIO;
-		
-		header("Location: ../menu_ppal.php");
+			
+		header("Location: ../index.php?usuario=$USUARIO");
 		# code...
 	}else{
-			header("Location: ../index.html");
+			header("Location: ");
 			exit();
 			# code...
 	}
 
 
 }else{
-	header("Location: ../index.html");
+	header("Location: ../../index.html");
 	exit();
 
 }

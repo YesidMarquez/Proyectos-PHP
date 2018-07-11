@@ -3477,23 +3477,15 @@
                         <div class="col-sm-2">
                             <input type="text" class="form-control" id="vence" name="vence" placeholder="vence" value="<?php echo $row4['fecha_vencimiento']; ?>" >
                         </div>
-                         
-                        
-                        
                     <?php } else {?>
                         <div class="row">
                             <h3 style="text-align:center">LOS DATOS NO SE PUEDEN MODIFICAR, SE ENCUENTRA INACTIVO CON FECHA "<?php echo $row4['fecha_vencimiento']; ?>" </h3>
                         </div>
                     <?php } ?>
-
-
-                   
                 </div>
-                
                 <input type="hidden" id="id" name="id" value="<?php echo $row['empleado_id']; ?>" />
                 <input type="hidden" id="name" name="name" value="<?php echo $row1['nombres']; ?>" />
                 <input type="hidden" id="apel" name="apel" value="<?php echo $row1['apellidos']; ?>" />
-                             
                 <?php if ($row1['estado_id']=="1") {?>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
