@@ -62,10 +62,11 @@ else{
         <div class="container">
             <div class="row">
                 <div class="row" style="text-align:center"><br>
-                    <?php if($resultado) { ?>
-                        <h1>INGRESO EXITOSO CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?></h3>
+                    <?php if($resultado) { 
+                       header("Location: ../../formularios/puesto.php");?>
+                        <!--<h1>INGRESO EXITOSO CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?></h3>
                         <?php } else { ?>
-                        <h4>ERROR AL INSERTAR CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> YA SE ENCUENTA UN REGISTRO EN BASE DE DATOS CON ESTA CEDULA </h4>
+                        <h1>ERROR AL INSERTAR CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> YA SE ENCUENTA UN REGISTRO EN LA TABLA CON ESTA CEDULA </h3>-->
                     <?php } ?><br><br>
                     <a href="../../formularios/contrato.php" class="btn btn-primary">Regresar</a>
                                         

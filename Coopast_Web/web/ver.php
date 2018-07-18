@@ -64,7 +64,7 @@ error_reporting(E_ALL ^ E_NOTICE);
           <iframe src="<?php echo $row['ruta']; ?>"style="width:600px; height:500px;" frameborder="0"></iframe>
         </div>
 
-        <div class="col-sm-5" >
+        <div class="col-sm-5 shadow-lg p-3 mb-5 bg-white rounded" >
           <form method="POST" action="update/update.php" >
             <div class="form-group">
               <label for="email">Descripcion:</label>

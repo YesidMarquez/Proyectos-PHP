@@ -1,7 +1,7 @@
 <?php 
 require 'config/conexion.php';
-$USUARIO= $_GET['usuario'];
-echo $USUARIO;
+$USUARIO= htmlentities($_GET['usuario']);
+
  ?>
 <!DOCTYPE html>
 <html>

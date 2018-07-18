@@ -38,6 +38,11 @@ error_reporting(E_ALL ^ E_NOTICE);
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
         <title>Personal</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+            @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Gloria+Hallelujah');
+            @import url('https://fonts.googleapis.com/css?family=Satisfy');
+        </style>
     </head>
 
     
@@ -116,7 +121,7 @@ error_reporting(E_ALL ^ E_NOTICE);
                 <div class="col">
                      <div class="row justify-content-md-center">
                         <div class="footer-copyright  py-3">© 2018 Copyright:
-                                <a href="https://ymarquez.000webhostapp.com/"> Mat-sw</a>
+                            <a href="https://ymarquez.000webhostapp.com/" style="font-family: 'Satisfy', cursive;">Mat-Sw<img src="../imagenes/logo.jpg" width="50" height="50"></a>
                         </div>
                               
                     </div>

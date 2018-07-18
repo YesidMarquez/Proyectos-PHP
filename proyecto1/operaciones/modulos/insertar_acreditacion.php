@@ -52,10 +52,11 @@ else{
         <div class="container">
             <div class="row">
                 <div class="row" style="text-align:center"><br>
-                    <?php if($resultado) { ?>
-                        <h3>LOS REGISTROS CON ID CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> FUERON INGRESADOS</h3>
+                    <?php if($resultado) { 
+                        header("Location: ../../formularios/cursos.php");?>
+                        <!--<h3>LOS REGISTROS CON ID CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> FUERON INGRESADOS</h3>
                         <?php } else { ?>
-                        <h1>ERROR AL INSERTAR CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> YA SE ENCUENTA UN REGISTRO EN LA TABLA CON ESTA CEDULA </h3>
+                        <h1>ERROR AL INSERTAR CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> YA SE ENCUENTA UN REGISTRO EN LA TABLA CON ESTA CEDULA </h3>-->
                     <?php } ?><br><br>
                     <a href="../../formularios/acreditacion.php" class="btn btn-primary">Regresar</a>
                                         

@@ -60,8 +60,9 @@ if ($res){
         <div class="container">
             <div class="row">
                 <div class="row" style="text-align:center"><br>
-                    <?php if($resultado) { ?>
-                        <h3>LOS REGISTROS CON ID CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> NOMBRE <?php echo "'"?><?php echo ($nombre_1." ".$nombre_2." ".$apellido_1." ".$apellido_2)?> <?php echo "'"?> FUE INGRESADO</h3>
+                    <?php if($resultado) { 
+                        header("Location: ../../formularios/contarto.php");?>
+                        <!--<h3>LOS REGISTROS CON ID CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> NOMBRE <?php echo "'"?><?php echo ($nombre_1." ".$nombre_2." ".$apellido_1." ".$apellido_2)?> <?php echo "'"?> FUE INGRESADO</h3> -->
                         <?php } else { ?>
                         <h3>ERROR AL INSERTAR CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> NOMBRE <?php echo "'"?><?php echo ($nombre_1." ".$nombre_2." ".$apellido_1." ".$apellido_2)?> <?php echo "'"?></h3>
                     <?php } ?><br><br>

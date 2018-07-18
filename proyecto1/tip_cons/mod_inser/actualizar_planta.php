@@ -60,10 +60,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="row" style="text-align:center">
-					<?php if($resultado) { ?>
-						<h3>LOS REGISTROS CON ID <?php echo ($id)?> <?php echo "''"?><?php echo ($apl)?> <?php echo ($name)?><?php echo "''"?> FUERON MODIFICADOS</h3>
+					<?php if($resultado) { 
+						header("Location: ../ver.php");?>
+						<!--<h3>LOS REGISTROS CON ID <?php echo ($id)?> <?php echo "''"?><?php echo ($apl)?> <?php echo ($name)?><?php echo "''"?> FUERON MODIFICADOS</h3>
 						<?php } else { ?>
-						<h3>ERROR AL MODIFICAR</h3>
+						<h3>ERROR AL MODIFICAR</h3>-->
 					<?php } ?>
 					<a href="planta.php" class="btn btn-default">Planta</a>
                     <a href="ver.php?id_empleado=<?php echo $row1['empleado_id'];  ?>" class="btn btn-primary">Empleado</a>

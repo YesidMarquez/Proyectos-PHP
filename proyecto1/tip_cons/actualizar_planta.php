@@ -45,9 +45,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="row" style="text-align:center">
-					<?php if($resultado) { ?>
-						<h3>LOS REGISTROS CON ID <?php echo ($id)?> <?php echo "''"?><?php echo ($apl)?> <?php echo ($name)?><?php echo "''"?> FUERON MODIFICADOS</h3>
+					<?php if($resultado) { 
+						header("Location: ver.php?id_empleado=$id ");?>
+						<!--<h3>LOS REGISTROS CON ID <?php echo ($id)?> <?php echo "''"?><?php echo ($apl)?> <?php echo ($name)?><?php echo "''"?> FUERON MODIFICADOS</h3>
 						<?php } else { ?>
+						<h3>ERROR AL MODIFICAR</h3>-->
 						<h3>ERROR AL MODIFICAR</h3>
 					<?php } ?>
 					<a href="planta.php" class="btn btn-default">Planta</a>
