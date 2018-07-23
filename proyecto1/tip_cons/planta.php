@@ -37,14 +37,34 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         <title>Personal</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
-            @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Gloria+Hallelujah');
-            @import url('https://fonts.googleapis.com/css?family=Satisfy');
-        </style>
+        
     </head>
     <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <!-- Brand/logo -->
+          <a class="navbar-brand" href="#" style="font-family: 'Satisfy', cursive;">Mat-Sw</a>
+          
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="planta.php"><img  class="menu" src="../imagenes/iconos/personal.jpg" title="Personal"></img></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cursos.php"><img class="menu2" src="../imagenes/iconos/curso.jpg" title="Cursos"></img></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="acreditaciones.php"><img class="menu1" src="../imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../formularios/menu_ingresos.php"><img class="menu" src="../imagenes/iconos/empleado.png" title="Ingreso Nuevo"></img></a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="#"><img  class="menu" src="../imagenes/iconos/cerrar.png" title="Cerrar"></a>
+            </li>
+          </ul>
+        </nav>
         <font face="Comic Sans MS,verdana">
 <!--****************************************************** header *************************************************************************-->
         <div class="container">
