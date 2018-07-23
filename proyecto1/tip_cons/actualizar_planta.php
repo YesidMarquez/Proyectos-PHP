@@ -1,6 +1,5 @@
 <?php
    	require '../config/conexion.php';
-
 	/*ssssss*/
 	$id = $_POST['id'];
 	$name = $_POST['name'];
@@ -17,18 +16,12 @@
 	$ex_cc=$_POST['cc'];
 	echo ("ciudad_expedicion ->".$ex_cc);
 	echo ("Estado ->".$estado);
-	
-
-
 	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado',ciudad_nacimiento='$c_nac',ciudad_expedicion='$ex_cc', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id' ";
-
-	
 	$resultado = $mysqli->query($sql);
 	/********************************************************************************************/
 	$sql1 = "SELECT * FROM acreditacion WHERE empleado_id = '$id' ";
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
-
 ?>
  
 <html lang="es">

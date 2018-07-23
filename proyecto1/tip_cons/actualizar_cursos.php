@@ -44,8 +44,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="row" style="text-align:center">
-					<?php if($resultado) { ?>
-						<h3>EL REGISTRO CON ID <?php echo ($id)?> FUE MODIFICADO</h3>
+					<?php if($resultado) { 
+						header("Location: ../operaciones/modificar_cursos.php?id_empleado=$id ");?>
 						<?php } else { ?>
 						<h3>ERROR AL MODIFICAR <?php echo ($error)?></h3>
 					<?php } ?>

@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);
-/* Con esta funcion estoy omitiendo este error: Notice: Undefined variable: valor in C:\xampp\htdocs\Proyectos-PHP XAMPP\proyecto_1\tip_cons\planta.php on line 15*/
+    error_reporting(E_ALL ^ E_NOTICE);
+    /* Con esta funcion estoy omitiendo este error: Notice: Undefined variable: valor in C:\xampp\htdocs\Proyectos-PHP XAMPP\proyecto_1\tip_cons\planta.php on line 15*/
     require '../config/conexion.php';
    
     
@@ -44,8 +44,6 @@ error_reporting(E_ALL ^ E_NOTICE);
             @import url('https://fonts.googleapis.com/css?family=Satisfy');
         </style>
     </head>
-
-    
     <body>
         <font face="Comic Sans MS,verdana">
 <!--****************************************************** header *************************************************************************-->
