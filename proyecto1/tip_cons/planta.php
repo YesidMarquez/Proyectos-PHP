@@ -44,7 +44,7 @@
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <!-- Brand/logo -->
-          <a class="navbar-brand" href="#" style="font-family: 'Satisfy', cursive;">Mat-Sw</a>
+          <a class="navbar-brand" href="../menu.php" style="font-family: 'Satisfy', cursive;" title="Menu">Mat-Sw</a>
           
           <!-- Links -->
           <ul class="navbar-nav">
@@ -63,9 +63,32 @@
              <li class="nav-item">
               <a class="nav-link" href="#"><img  class="menu" src="../imagenes/iconos/cerrar.png" title="Cerrar"></a>
             </li>
+             
+           
           </ul>
-        </nav>
-        <font face="Comic Sans MS,verdana">
+              <div class="container"> 
+                <div class="col-sm-4 ">
+                                
+                </div>
+                <div class="col-sm-4 ">
+                    
+                </div>
+                
+                <div class="col-3 ">
+                    <ul class="list-group">
+                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                        ACTIVOS
+                        <span class="badge badge-dark badge-pill"><?php echo $row1['conteo']; ?></span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger">
+                        RETIRADOS
+                        <span class="badge badge-dark badge-pill"><?php echo $row2['conteo']; ?></span>
+                      </li>
+                    </ul>
+                </div> 
+            </div> 
+        </nav><br>
+        
 <!--****************************************************** header *************************************************************************-->
         <div class="container">
             <div class="row">
@@ -73,7 +96,7 @@
             </div>
         </div>
 <!--******************************************************busqueda, informacion **********************************************************-->
-        <div class="container">
+        <!--<div class="container">
             <div class="row">
                 <div class="col-4">
                     <input class="form-control" id="myInput" type="text" placeholder="Search..">
@@ -96,13 +119,26 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <br>
+        </div>-->
+       
 <!--****************************************************** Tabla de batos *****************************************************************-->
         <div class="container-fluid">
             <div class="row">
                 <div class="col ">
-                    <div class="table-responsive">
+                    <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
+                        <div class="container-fluid"> 
+                            <div class="row">
+                                <div class="col-sm-8 ">
+                                
+                                </div>
+                                <div class="col-sm-2 ">
+                                    
+                                </div>
+                                <div class="col-sm-2 ">
+                                 <input class="form-control justify-content-end" id="myInput" type="text" placeholder="Filtrar.." align="left">   
+                                </div>
+                            </div>
+                        </div>
                         
                         <table class="table table-bordered">
                             <thead class="thead-dark">

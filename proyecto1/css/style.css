@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Gloria+Hallelujah');
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Great+Vibes|Marck+Script|Nothing+You+Could+Do|Quicksand|Tangerine');
+/*
+font-family: 'Great Vibes', cursive;
+font-family: 'Tangerine', cursive;
+font-family: 'Marck Script', cursive;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Quicksand', sans-serif;
+*/
 .pull-left {
   float: left !important;
 }

@@ -7,74 +7,74 @@
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('30 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==2) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('12 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==3) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==4) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==5) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==6) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
         $fecha = date_create('2018-06-01');
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==7) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==8) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==9) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==10) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==11) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }elseif (date('m')==12) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
         $fecha = date_create('2018-'.$dato);
-        date_add($fecha, date_interval_create_from_date_string('10 days'));
+        date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
     }
     
@@ -108,7 +108,7 @@
 	<body style="background-color:#F0000;">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <!-- Brand/logo -->
-         <a class="navbar-brand" href="#" style="font-family: 'Satisfy', cursive;">Mat-Sw</a>
+         <a class="navbar-brand" href="menu.php" style="font-family: 'Nothing You Could Do', cursive;" title="Menu">Mat-Sw</a>
           
           <!-- Links -->
           <ul class="navbar-nav">
@@ -130,36 +130,36 @@
           </ul>
         </nav><br>
         <div class="container" >
-            <h3 style="text-align: center;">Vencimientos Proximos </h3>
-            <h4 style="text-align: center;"><?php if (date('m')==1) {?>
+            <h3 style="text-align: center; font-family: 'Fjalla One', sans-serif;">Proximos Vencimientos</h3>
+            <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==1) {?>
             Mes de Enero<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==2) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==2) {?>
             Mes de Febrero<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==3) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==3) {?>
             Mes de Marzo<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==4) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==4) {?>
             Mes de Abril<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==5) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==5) {?>
             Mes de Mayo<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==6) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==6) {?>
             Mes de Junio<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==7) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==7) {?>
             Mes de Julio<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==8) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==8) {?>
             Mes de Agosto<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==9) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==9) {?>
             Mes de Septiembre<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==10) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==10) {?>
             Mes de Octubre<?php }?></h4>
-            <h4 style="text-align: center"><?php if (date('m')==11) {?>
+            <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==11) {?>
             Mes de Noviembre<?php }?></h4>
-            <h4 style="text-align: center;"><?php if (date('m')==12) {?>
+            <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==12) {?>
             Mes de Diciembre<?php }?></h4>
         </div>   
-        <div class="container table-responsive"><br>
-            <table  class="table table-striped"  border="3" style="background-color:" >
-                <thead border="3" >
-                    <tr  style="background-color:#cccccc">
+        <div class="container table-responsive shadow-lg p-3 mb-5 bg-white rounded"><br>
+            <table  class="table table-striped"  border="3" style="font-family: 'Quicksand', sans-serif;" >
+                <thead class="thead-dark" >
+                    <tr  scope="row" style="background-color:#cccccc; font-family: 'Fjalla One', sans-serif;">
                         <th><center>Cedula</th>
                         <th><center>Nombres</th>
                         <th><center>Apellidos</th>
@@ -205,8 +205,8 @@
             <div class="row">
                 <div class="col">
                      <div class="row justify-content-md-center">
-                        <div class="footer-copyright  py-3">© 2018 Copyright:
-                            <a href="https://ymarquez.000webhostapp.com/" style="font-family: 'Satisfy', cursive;">Mat-Sw<img src="imagenes/logos/logo.jpg" width="50" height="50"></a>
+                        <div class="footer-copyright  py-3" style="font-family: 'Nothing You Could Do', cursive;">© 2018 Copyright:
+                            <a href="https://ymarquez.000webhostapp.com/" style="font-family: 'Nothing You Could Do', cursive;">Mat-Sw<img src="imagenes/logos/logo.jpg" width="50" height="50"></a>
                         </div>
                               
                     </div>
