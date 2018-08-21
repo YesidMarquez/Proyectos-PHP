@@ -1,6 +1,5 @@
 <?php
-
-    require 'config/conexion.php';
+   require 'config/conexion.php';
 
     date('m');
     if (date('m')==01) {

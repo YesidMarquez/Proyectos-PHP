@@ -36,7 +36,7 @@
               <a class="nav-link" href="cursos.php"><img class="menu2" src="../imagenes/iconos/curso.jpg" title="Cursos"></img></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="puesto.php"><img class="menu2" src="../imagenes/iconos/puesto.jpg" title="Puesto"></img></a>
+              <a class="nav-link" href="puesto.php"><img class="menu2" src="../imagenes/iconos/puesto.png" title="Puesto"></img></a>
             </li>
                       
              <li class="nav-item">

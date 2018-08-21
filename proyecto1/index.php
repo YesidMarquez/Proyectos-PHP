@@ -1,3 +1,4 @@
+<?php @session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,8 @@
 	<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
-			<img src="imagenes/logo.jpg">
-			<form action="validar.php" method="POST">
+			<img src="imagenes/logos/logo.jpg">
+			<form action="config/validar.php" method="POST">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email address</label>
 				    <input type="text" class="form-control" name="User" aria-describedby="emailHelp" placeholder="Enter user">
@@ -40,4 +41,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php exit(); ?>
 

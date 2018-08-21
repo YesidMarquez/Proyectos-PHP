@@ -1,19 +1,13 @@
 <?php
     require '../config/conexion.php';
-    
-
     $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and empleado.estado_id=estado.id_estado and estado.id_estado=1  ";
     /*empleado.estado_id=estado.id_estado ";*/
     $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, ubicacion.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento,estado.descripcion FROM ubicacion,empleado,control_cursos, contrato,cliente,estado $where";//
-
    /* $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente ";
     $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, ubicacion.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM ubicacion,empleado,control_cursos, contrato,cliente $where";//
-
     /*and estado_id=1*/
     $resultado = $mysqli->query($sql);
-    
 ?>
-
 <htm lang="es">
     <head>
         <meta name="viewporte" content="width=device-width, initial-scale=1">
@@ -82,8 +76,6 @@
             }
         </style>
     </head>
-
-    
     <body><font face="Comic Sans MS,verdana">
 
         <div class="container">
@@ -144,8 +136,6 @@
                     </tbody>
                 </table>
             </div>
-            
-
     </body>
 </html>
 

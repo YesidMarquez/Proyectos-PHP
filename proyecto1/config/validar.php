@@ -1,10 +1,11 @@
 <?php
 
-$USUARIO= $_POST['Nombre'];
+$USUARIO= $_POST['User'];
 $CONTRASEÑA=$_POST['Password'];
 
 if (empty($USUARIO) || empty($CONTRASEÑA)) {
-	header("Location: ../index.html");
+	echo"<script> alert('Por favro ingrese datos para Login.'); window.location.href='../index.php'; </script>";
+	//header("Location: ../index.html");
 	exit();
 }
 
@@ -20,17 +21,19 @@ if ($row = mysqli_fetch_array($result)) {
 		session_start();
 		$_SESSION['usuario'] = $USUARIO;
 		
-		header("Location: ../menu_ppal.php");
+		header("Location: ../menu.php");
 		# code...
 	}else{
-			header("Location: ../index.html");
+			echo"<script> alert('Usuario o clave incorrecta. Vuelva a digitarlos por favor.'); window.location.href='../index.php'; </script>";
+			//header("Location: ../index.");
 			exit();
 			# code...
 	}
 
 
 }else{
-	header("Location: ../index.html");
+	echo"<script> alert('Usuario o clave incorrecta. Vuelva a digitarlos por favor.'); window.location.href='../index.php'; </script>";
+	//header("Location: ../index.html");
 	exit();
 
 }

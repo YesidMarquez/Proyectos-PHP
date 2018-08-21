@@ -1,7 +1,7 @@
 
 <?php
 
-require '../../config/conexion.php';
+require '../proyecto1/config/conexion.php';
 if(isset($_POST['c_na'])) {
   $_POST['c_na'] = trim($_POST['c_na']);
 } 

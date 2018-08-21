@@ -2,8 +2,6 @@
     error_reporting(E_ALL ^ E_NOTICE);
     /* Con esta funcion estoy omitiendo este error: Notice: Undefined variable: valor in C:\xampp\htdocs\Proyectos-PHP XAMPP\proyecto_1\tip_cons\planta.php on line 15*/
     require '../config/conexion.php';
-   
-    
     if(!empty($_POST))
     {  
         $valor = $_POST['campo'];
@@ -11,8 +9,6 @@
             $where = "WHERE '";
         }
     }
-  
-
     $where = "WHERE ubicacion.empleado_id=empleado.id_empleado AND  control_cursos.empleado_id=empleado.id_empleado and contrato.empleado_id=empleado.id_empleado and ubicacion.cliente_id=cliente.id_cliente and  ubicacion.puesto_id= puesto.id_puesto and  estado_id=1 and id_empleado LIKE '%$valor'";
     $sql = "SELECT empleado.id_empleado,concat(empleado.apellido_1,' ',empleado.apellido_2) as apellidos,concat(empleado.nombre_1,' ',empleado.nombre_2) as nombres,empleado.direccion, puesto.nombre_puesto,cliente.nombre_cliente, ubicacion.modalidad_id,control_cursos.nro_curso,control_cursos.fecha_vencimiento, contrato.fecha_ingreso,contrato.fecha_vencimiento FROM ubicacion,puesto,empleado,control_cursos, contrato,cliente $where";//
     $resultado = $mysqli->query($sql);
@@ -24,6 +20,7 @@
     $sql2 = "SELECT  count(*) as conteo FROM `empleado` WHERE estado_id= 2";
     $resultado2 = $mysqli->query($sql2);
     $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
+    //echo $row2['conteo'];
     
 ?>
 
@@ -45,7 +42,6 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <!-- Brand/logo -->
           <a class="navbar-brand" href="../menu.php" style="font-family: 'Satisfy', cursive;" title="Menu">Mat-Sw</a>
-          
           <!-- Links -->
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -63,24 +59,19 @@
              <li class="nav-item">
               <a class="nav-link" href="#"><img  class="menu" src="../imagenes/iconos/cerrar.png" title="Cerrar"></a>
             </li>
-             
-           
           </ul>
-              <div class="container"> 
+            <div class="container"> 
                 <div class="col-sm-4 ">
-                                
                 </div>
                 <div class="col-sm-4 ">
-                    
                 </div>
-                
                 <div class="col-3 ">
                     <ul class="list-group">
-                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                      <li class="badge badge-primary badge-pill">
                         ACTIVOS
                         <span class="badge badge-dark badge-pill"><?php echo $row1['conteo']; ?></span>
                       </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger">
+                      <li class="badge badge-danger badge-pill">
                         RETIRADOS
                         <span class="badge badge-dark badge-pill"><?php echo $row2['conteo']; ?></span>
                       </li>
@@ -95,32 +86,6 @@
                 <div class="col"><h2 style="text-align:center">Datos del Personal</h2></div>
             </div>
         </div>
-<!--******************************************************busqueda, informacion **********************************************************-->
-        <!--<div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                    
-                    <form ACTION="../menu.php">
-                        <INPUT TYPE="submit" VALUE="Retornar al menu" class="btn btn-primary"><br>
-                    </form>
-                </div>
-                <div class="col-4"></div>
-                <div class="col-4">
-                    <ul class="list-group">
-                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
-                        PERSONAL ACTIVO
-                        <span class="badge badge-dark badge-pill"><?php echo $row1['conteo']; ?></span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger">
-                        PERSONAL RETIRADO
-                        <span class="badge badge-dark badge-pill"><?php echo $row2['conteo']; ?></span>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-        </div>-->
-       
 <!--****************************************************** Tabla de batos *****************************************************************-->
         <div class="container-fluid">
             <div class="row">
@@ -135,11 +100,10 @@
                                     
                                 </div>
                                 <div class="col-sm-2 ">
-                                 <input class="form-control justify-content-end" id="myInput" type="text" placeholder="Filtrar.." align="left">   
+                                    <input class="form-control justify-content-end" id="myInput" type="text" placeholder="Filtrar.." align="left">   
                                 </div>
                             </div>
                         </div>
-                        
                         <table class="table table-bordered">
                             <thead class="thead-dark">
                                 <tr>
@@ -165,7 +129,7 @@
                                 <?php } ?>
                             </tbody>
                         </table>
-            </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -186,14 +150,14 @@
 <!--******************************************************************************************************************************-->
             <!-- Optional JavaScript -->
             <script>
-            $(document).ready(function(){
-              $("#myInput").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function() {
-                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                $(document).ready(function(){
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
                 });
-              });
-            });
             </script>
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -201,12 +165,8 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
             <script>
                 $(document).ready(function(){
-                $('[data-toggle="popover"]').popover();
+                    $('[data-toggle="popover"]').popover();
                 });
             </script>
-            
-            
-
     </body>
 </html>
-
