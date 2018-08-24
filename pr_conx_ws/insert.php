@@ -11,7 +11,7 @@ if (empty($nombre)||empty($telefono)) {
     ini_set('soap.wsdl_cache_ttl', 900);
     ini_set('default_socket_timeout', 15);
     $params = array('pnombre'=>$nombre, 'ptelefono'=>$telefono, 'ip'=>$ipvisitante );
-    $wsdl = 'http://192.168.2.25:8090/WebService.asmx?WSDL';
+    $wsdl = 'http://192.168.2.25:8090/WebService1.asmx?WSDL';
     //190.14.226.148
     $options = array(
             'uri'=>'http://schemas.xmlsoap.org/soap/envelope/',
