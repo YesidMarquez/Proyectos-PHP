@@ -1,18 +1,23 @@
 <?php
 /************************************************** INICIO AREA CONEXION Y CONSULTA CON BD  (BACKEND)PROYECTO *****************/
-
+session_start();
     require '../../config/conexion.php';
     
-    $id = $_GET['cedula_usuario'];
+    $id = $_GET['token'];
    
-    
-    $sql = "SELECT * FROM usuarios u, cargo c where u.cargo_id=c.id_cargo and  u.cedula_usuario= $id ";
+       
+    $sql1 = "SELECT * FROM confronta where token_confronta = $id ";
+    $resultado1 = $mysqli->query($sql1);
+    $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
+    $usuario=$row1['usuario_cedula'];
+
+    $sql = "SELECT * FROM usuarios u, cargo c where u.cargo_id=c.id_cargo and  u.cedula_usuario= $usuario ";
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
-    $sql1 = "SELECT * FROM confronta where usuario_cedula = $id ";
-    $resultado1 = $mysqli->query($sql1);
-    $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
+    $sql2 = "SELECT * FROM imagephp where confronta_token = $id ";
+    $resultado2 = $mysqli->query($sql2);
+    $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
 
     //$sql = "SELECT * FROM usuarios where cargo_id=1";//
     //$resultado = $mysqli->query($sql);
@@ -52,22 +57,23 @@
    
 <!-- ***************************************************INICIO DE AREA DE TRABAJO****************************************************--> 
     <div class="container">
-        <h1 class="text-center font-weight-light">Detalle de la Venta</h1><br>
+        <h2 class="text-center font-weight-light">Detalle de la Venta</h2><br>
         <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6  ">
-                <img src="../<?php echo $ruta; ?>" class="img-thumbnail" alt="Cinque Terre" width="500" height="400"><br><br><br>
-                <h6 class="card-title"><strong><?php echo $row['nombres'];?></strong></h5>
-                <h6><strong>Cargo: </strong><span class="badge badge-dark"><?php echo $row['descripcion'];?></span></h5>
-                <h6><strong>Cedula:</strong> <?php echo $row['cedula_usuario'];?></h5>
-                <div class="btn-group">
-                    <a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario'];?>" class="btn btn-outline-primary ">ATRAS</a>
-                </div>
-            </div>
-            <div class="col-sm-5">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($row2['imagen']);?>" class="img-thumbnail"  width="900" height="9000"><br><br><br>
+             </div>
+            <div class="col-sm-6">
                 <div class=" container p-2 bg-info">
-                    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo1">DETALLES</button>
+                    <a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario'];?>" class="btn btn-danger ">ATRAS</a>
+                    
                     <div >
+                        <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Identificacion Usuario:</strong></big>
+                            <?php echo $row['cedula_usuario']; ?></a>
+                        <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Nombre Usuario:</strong></big>
+                            <?php echo $row['nombres']; ?></a>
+                        <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Cargo Usuario:</strong></big>
+                            <?php echo $row['descripcion']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Identificador de Llamada:</strong></big>
                             <?php echo $row1['id_llamada']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Cedula del Cliente:</strong></big> 
@@ -84,7 +90,6 @@
         </div>
     </div>
     
-    <footer>
         <div class="container">    
             <div class="row">
                 <div class="col">
@@ -98,7 +103,7 @@
                 
             </div>
         </div> 
-    </footer>    
+      
      
    
 <!-- ***************************************************FIN DE AREA DE TRABAJO******************************************************-->    

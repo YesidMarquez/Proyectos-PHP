@@ -134,7 +134,7 @@
                                         <td><?php echo $row['campana']; ?>
                                         <td><?php echo $row['token_confronta']; ?>
                                         <td><?php echo $row['registro']; ?>
-                                        <td><center><a href="detalle.php?cedula_usuario=<?php echo $row['usuario_cedula']; ?>"><i class="fas fa-eye"></i></a></td></a></td>
+                                        <td><center><a href="detalle.php?token=<?php echo $row['token_confronta']; ?>"><i class="fas fa-eye"></i></a></td></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 $USUARIO= $_POST['user'];
 $CONTRASEÑA=$_POST['Password'];
-echo " uswer :".$USUARIO;
-echo "          pw :".$CONTRASEÑA;
+
+
 
 
 if (empty($USUARIO) || empty($CONTRASEÑA)) {
@@ -20,10 +20,12 @@ $sql = ("SELECT * from user where usuario='$USUARIO'");
 $result = $mysqli->query($sql);
 if ($row = mysqli_fetch_array($result)) {
 	if ($row["password"]==$CONTRASEÑA) {
-		session_start();
 		$_SESSION['usuario'] = $USUARIO;
+		$_SESSION['contraseña'] = $CONTRASEÑA;
+		$_SESSION['cedula'] = $row["cedula"];
+		
 			
-		header("Location: ../index.php?usuario=$USUARIO");
+		header("Location: ../index.php");
 		# code...
 	}else{
 			header("Location: ");

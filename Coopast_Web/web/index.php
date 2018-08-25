@@ -1,6 +1,13 @@
 <?php 
+session_start();
+//session_start();
+//$USUARIO= $_POST['user'];
+//$CONTRASEÑA=$_POST['Password'];
+$USUARIO=$_SESSION['usuario'] ;
+$cs=$_SESSION['contraseña'] ;
+$cc=$_SESSION['cedula'];
 require 'config/conexion.php';
-$USUARIO= htmlentities($_GET['usuario']);
+//$USUARIO= htmlentities($_GET['usuario']);
 
  ?>
 <!DOCTYPE html>
@@ -32,7 +39,7 @@ $USUARIO= htmlentities($_GET['usuario']);
          <li><a href="actas.php">Actas de Reunion</a></li> 
          <li><a href="actividades.html">Actividades</a></li> 
          <li><a href="../index.html"><i class="fas fa-power-off" name="Salir"></i></a></li>
-         <li class="navbar-left"><a ><?php echo($USUARIO)?></a></li>
+         <li class="navbar-left"><a ><?php echo $USUARIO .$cs.$cc?></a></li>
       </ul>
   
   </nav>
