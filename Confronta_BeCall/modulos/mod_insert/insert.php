@@ -6,6 +6,8 @@ $id = $_POST['id_empleado'];
 $campaña = $_POST['campaña'];
 $id_llamada= $_POST['id_llamada'];
 $id_cliente= $_POST['id_cliente'];
+/*$nombre= $_POST['nombre'];*/
+$imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 $token= $_POST['token'];
 $id_imagen=$token;
 /************************Fin Recibidos por metodo POST********************************************/
@@ -23,20 +25,25 @@ if (empty($id_llamada)||empty($id_cliente)) {
     $sql = "SELECT * FROM `confronta` where cedula_cliente= $id_cliente" ;
     $resultado = $mysqli->query($sql);
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
-    echo "string".$row['cedula_cliente'];
+    
 
     $sql1 = "SELECT * FROM `confronta` where token_confronta=$token" ;
     $resultado1 = $mysqli->query($sql1);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
-    echo "string".$row1['token_confronta'];
+    
 
 /********************************Fin Consultas Base de Datos************************************/
     if ($id_cliente <> $row['cedula_cliente']   ){
         if ($token <> $row1['token_confronta']) {
-             $sql = 
+            $sql = 
            "INSERT INTO `confronta` (`id_llamada`, `cedula_cliente`, `imagen_id`, `usuario_cedula`, `registro`,`campana`, `token_confronta`) VALUES ('$id_llamada', '$id_cliente', '$id_imagen', '$id', '$fecha1', '$campaña', '$token');";
            $resultado = $mysqli->query($sql);
-           if ($resultado){
+
+           $sql1 = 
+           "INSERT INTO `imagephp` (`imagen`, `confronta_token`) VALUES ('$imagen', '$token'); ";
+            $resultado1 = $mysqli->query($sql1);
+
+           if ($resultado && $resultado1){
                 echo"<script> alert('Operacion exitosa este es el token de operacion = $token.'); window.location.href='ventas.php?cedula_usuario=$id'; </script>";
             }
             else{

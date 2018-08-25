@@ -31,7 +31,7 @@
             	<h3 style="text-align:center">INGRESO DE VENTAS CONFRONTA</h3>
             </div>	
         </div><br><br>
-        <form class="needs-validation" method="POST" action="insert.php" novalidate>
+        <form class="needs-validation" method="POST" action="insert.php" novalidate enctype="multipart/form-data">
  	        <div class="container ">
 			    <div class="row">
 			    	<div class="col ">
@@ -92,12 +92,10 @@
 					    		<input type="text" class="form-control" id="validationCustom03" placeholder="City" name="token" value="<?php echo $token = rand(); ?>" style="display:none">
 					       	</div>
 					    </div>
-					    
 			    	</div>
 			    	<div class="col">
-			    		<div class="custom-file">
-			    			<input enctype="multipart/form-data" type="file" class="custom-file-input" id="validatedCustomFile"  action="<?php echo $_SERVER["PHP_SELF"]?>" name="userfile" required>
-			    			<label class="custom-file-label" for="validatedCustomFile"></label>
+			    		<div class="custom-file" class="btn btn-primary">
+							<input type="file" name="imagen" class="btn btn-primary"> 				
 						</div>
 			    	</div>
 			  	</div>
