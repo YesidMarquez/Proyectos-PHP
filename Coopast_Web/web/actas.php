@@ -1,20 +1,54 @@
 <?php
 
-require 'config/conexion.php';
-$USUARIO= $_GET['usuario'];
+session_start();
 
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
-error_reporting(E_ALL ^ E_NOTICE);
-/* Con esta funcion estoy omitiendo este error: Notice: Undefined variable: valor in C:\xampp\htdocs\Proyectos-PHP XAMPP\proyecto_1\tip_cons\planta.php on line 15*/
-    require 'config/conexion.php';
+} else {
+   echo "Esta pagina es solo para usuarios registrados.<br>";
+   echo "<br><a href='login.html'>Login</a>";
+   echo "<br><br><a href='index.html'>Registrarme</a>";
 
+exit;
+}
 
-    $sql = " SELECT * FROM `acta`";
-    $result = $mysqli->query($sql);
+$now = time();
+
+if($now > $_SESSION['expire']) {
+session_destroy();
+
+echo "Su sesion a terminado,
+<a href='login.html'>Necesita Hacer Login</a>";
+exit;
+}
+//-------------------
+session_start();
+if (isset($_SESSION['usuario']) && $_SESSION['usuario'] == true) {
+  require 'config/conexion.php';
+  $USUARIO=$_SESSION['usuario'] ;
+  $NIVEL=$_SESSION['nivel'] ;
+  $sql = " SELECT * FROM `acta`";
+  $result = $mysqli->query($sql);
+ 
+  $sql1 = " SELECT * FROM user where usuario='$USUARIO'";
+  $result1 = $mysqli->query($sql1);
+  $row1 = $result1->fetch_array(MYSQLI_ASSOC);
+    
+}else {
+   echo "Esta pagina es solo para usuarios registrados.<br>";
+   echo "<br><a href='../index.html'>Login</a>";
    
-    $sql1 = " SELECT * FROM user where usuario='$USUARIO'";
-    $result1 = $mysqli->query($sql1);
-    $row1 = $result1->fetch_array(MYSQLI_ASSOC);
+
+exit;
+}
+
+
+
+//error_reporting(E_ALL ^ E_NOTICE);
+/* Con esta funcion estoy omitiendo este error: Notice: Undefined variable: valor in C:\xampp\htdocs\Proyectos-PHP XAMPP\proyecto_1\tip_cons\planta.php on line 15*/
+    
+
+
     
      
           
@@ -48,7 +82,10 @@ error_reporting(E_ALL ^ E_NOTICE);
       <li><a href="index.php">Inicio</a></li> 
       <li><a href="actas.php">Actas de Reunion</a></li> 
       <li><a href="actividades.html">Actividades</a></li>
-      <li><a href="nuevo.php">Nuevo</a></li>
+      
+      <?php if ($NIVEL==1) {?>
+        <li><a href="nuevo.php">Nuevo</a></li>
+      <?php }  ?>
       <li><a href="../index.html"><i class="fas fa-power-off" name="Salir"></i></a></li>
       <li class="navbar-left"><a ><?php echo($USUARIO)?></a></li>
     </ul>

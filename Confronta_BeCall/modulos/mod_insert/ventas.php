@@ -95,7 +95,7 @@
 			    	</div>
 			    	<div class="col">
 			    		<div class="custom-file" class="btn btn-primary">
-							<input type="file" name="imagen" class="btn btn-primary"> 				
+							<input type="file" name="imagen" class="btn btn-primary" required="" id="validationCustom03"> 				
 						</div>
 			    	</div>
 			  	</div>

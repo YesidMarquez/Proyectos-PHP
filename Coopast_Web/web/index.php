@@ -4,8 +4,8 @@ session_start();
 //$USUARIO= $_POST['user'];
 //$CONTRASEÑA=$_POST['Password'];
 $USUARIO=$_SESSION['usuario'] ;
-$cs=$_SESSION['contraseña'] ;
-$cc=$_SESSION['cedula'];
+$NIVEL=$_SESSION['nivel'] ;
+
 require 'config/conexion.php';
 //$USUARIO= htmlentities($_GET['usuario']);
 
@@ -39,7 +39,7 @@ require 'config/conexion.php';
          <li><a href="actas.php">Actas de Reunion</a></li> 
          <li><a href="actividades.html">Actividades</a></li> 
          <li><a href="../index.html"><i class="fas fa-power-off" name="Salir"></i></a></li>
-         <li class="navbar-left"><a ><?php echo $USUARIO .$cs.$cc?></a></li>
+         <li class="navbar-left"><a ><?php echo $USUARIO ?></a></li>
       </ul>
   
   </nav>
@@ -95,6 +95,5 @@ require 'config/conexion.php';
   <!--La libreria de jQuery la estoy extrayendo len host de ligrerias de google "https://developers.google.com/speed/libraries/".-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/script.js"></script>
-
 </body>
 </html>
