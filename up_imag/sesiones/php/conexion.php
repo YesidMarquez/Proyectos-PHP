@@ -1,4 +1,5 @@
-<?php
+<?php 
+   
 
 $server='127.0.0.1';
 $user='yesid_marquez';
@@ -12,5 +13,6 @@ if($mysqli->connect_error){
 }	
 
 //printf("Sevidor informacion: %s\n", $mysqli->server_info);
+
 
 ?>
