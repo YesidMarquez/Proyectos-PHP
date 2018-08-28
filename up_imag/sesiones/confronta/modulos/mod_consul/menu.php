@@ -1,20 +1,19 @@
 <?php
-
-   // conexión con la base de datos
-require("modulos/mod_config/conexion.php");
-//Iniciar Sesión
-session_start();
-   
-//Validar si se está ingresando con sesión correctamente
-if (!$_SESSION){
-echo '<script language = javascript>
-alert("usuario no autenticado")
-self.location = "../index.html"
-</script>';
-}    
- 
-$id=$_SESSION['cedula'];
-$nivel=$_SESSION['id_cargo'];
+       // conexión con la base de datos
+    require("../mod_config/conexion.php");
+    //Iniciar Sesión
+    session_start();
+       
+    //Validar si se está ingresando con sesión correctamente
+    if (!$_SESSION){
+    echo '<script language = javascript>
+    alert("usuario no autenticado")
+    self.location = "../index.html"
+    </script>';
+    }    
+     
+    $id=$_SESSION['cedula'];
+    $nivel=$_SESSION['id_cargo'];
 
     date('m');
     if (date('m')==01) {
@@ -119,48 +118,16 @@ $nivel=$_SESSION['id_cargo'];
  <!-- Diseño del bore domnde se ubucican las opciones de navegacion.-->       
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand/logo -->
-            <a class="nav-link" href="#"><img  class="" src="imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
+            <a class="nav-link" href="#"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="modulos/mod_consul/allventas.php">
-                        <img  class="menu" src="imagenes/iconos/contrato.png" title="Ventas" width="80" height="80"></img>
+                    <a class="nav-link" href="../../modulos/mod_consul/allventas.php">
+                        <img  class="menu" src="../../imagenes/iconos/contrato.png" title="Ventas" width="80" height="80"></img>
                     </a>
                 </li>
-                <!--<li>
-                    <div class="container" >
-                        <p><h3 style="text-align: center; font-family: 'Fjalla One', sans-serif;">Confronta</h3></p>
-                        <p>
-
-                        <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==1) {?>
-                        Mes de Enero<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==2) {?>
-                        Mes de Febrero<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==3) {?>
-                        Mes de Marzo<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==4) {?>
-                        Mes de Abril<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==5) {?>
-                        Mes de Mayo<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==6) {?>
-                        Mes de Junio<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==7) {?>
-                        Mes de Julio<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==8) {?>
-                        Mes de Agosto<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==9) {?>
-                        Mes de Septiembre<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==10) {?>
-                        Mes de Octubre<?php }?></h4>
-                        <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==11) {?>
-                        Mes de Noviembre<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==12) {?>
-                        Mes de Diciembre<?php }?></h4>
-                        </p>
-                    </div>   
-                </li>-->
             </ul>
-             <div class="container fuente"> 
+            <div class="container fuente"> 
                 <div class="col-sm-8 titulo" >
                     <CENTER> 
                     <h3 >CONFRONTA</h3>                        
@@ -226,7 +193,7 @@ $nivel=$_SESSION['id_cargo'];
                         <tr>
                             <td><center><?php echo $row['cedula_usuario']; ?></td>
                             <td><center><?php echo $row['nombres']; ?></td>
-                            <td><center><a href="modulos/mod_consul/ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario']; ?>"><i class="fas fa-pencil-alt"></i></a></td>
+                            <td><center><a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario']; ?>"><i class="fas fa-pencil-alt"></i></a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

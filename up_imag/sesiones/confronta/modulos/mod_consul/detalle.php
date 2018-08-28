@@ -80,9 +80,9 @@ $fecha2=date('00:00:00');
                 <div class=" container p-2 bg-info">
                     <?php if ($row['cargo_id']==2) { ?>
                         <a href="allventas.php" class="btn btn-danger ">ATRAS</a>
-                    <?php } ?>
+                    <?php }else { ?>
                     <a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario'];?>" class="btn btn-danger ">ATRAS</a>
-                    
+                    <?php } ?>
                     <div >
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Identificacion Usuario:</strong></big>
                             <?php echo $row['cedula_usuario']; ?></a>

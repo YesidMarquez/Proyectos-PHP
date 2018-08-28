@@ -11,16 +11,29 @@ echo '<script language = javascript>
 alert("usuario no autenticado")
 self.location = "../index.html"
 </script>';
-}    
- 
+}
+
+if ( $_SESSION['cargo']<>2 ) {
+        $idAgente=$_GET['cedula_usuario'];
+    }    
+
+
 $id=$_SESSION['cedula'];
-$nivel=$_SESSION['id_cargo'];  
+$nivel=$_SESSION['id_cargo']; 
+$cargo=$_SESSION['cargo'];
+$nombre = $_SESSION['nombre'];
+$apellido=$_SESSION['apellido'];
+
 //id_registro,cedula_cliente,usuario_cedula,campaña
-$sql = "SELECT *  FROM `confronta` WHERE usuario_cedula = $id";
+$sql = "SELECT *  FROM confronta, usuarios WHERE usuario_cedula = $idAgente and cedula_usuario= $idAgente";
 $resultado = $mysqli->query($sql);
 
+$sql3 = "SELECT *  FROM usuarios WHERE cedula_usuario= $idAgente";
+$resultado3 = $mysqli->query($sql3);
+$row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
 
-$sql2 = "SELECT  count(*) as conteo FROM `confronta` WHERE usuario_cedula= $id";
+
+$sql2 = "SELECT  count(*) as conteo FROM `confronta` WHERE usuario_cedula= $idAgente";
 $resultado2 = $mysqli->query($sql2);
 $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
 //echo $row2['conteo'];
@@ -42,73 +55,60 @@ $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
         <link rel="icon" type="image/x-icon" href="imagenes/logos/favicon.ico" />
     </head>
     <body>
-          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand/logo -->
             <?php if ($nivel==2) {?>
-                <a class="nav-link" href="../../menu.php"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
-            <?php } ?>
+                <a class="nav-link" href="#"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
+            <?php } else { ?>
             <a class="nav-link" href="#"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
+            <?php   } ?>
             <!-- Links -->
             <ul class="navbar-nav">
                 <?php if ($nivel==2) {?>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../menu.php">
+                    <a class="nav-link" href="menu.php">
                         <img  class="menu" src="../../imagenes/iconos/agentes.png"  title="Agentes"></img>
-                    </a>
                 </li>   
                 <?php } ?>
-                
+                <?php if ($nivel<>2) {?>
                 <li class="nav-item">
                     <a class="nav-link" href="../mod_insert/ventas.php">
                         <img  class="menu" src="../../imagenes/iconos/ventas.png" title="Ventas">
                         </img>
-                </a>
+                    </a>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" href="../mod_config/desconectar.php">
                         <img  class="menu" src="../../imagenes/iconos/cerrar.png"  title="Agentes" width="80" height="80"></img>
                     </a>
                 </li>
-                <li>
-                    <div class="container" >
-                        <p><h3 style="text-align: center; font-family: 'Fjalla One', sans-serif;">Confronta</h3></p>
-                        <p>
-
-                        <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==1) {?>
-                        Mes de Enero<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==2) {?>
-                        Mes de Febrero<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==3) {?>
-                        Mes de Marzo<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==4) {?>
-                        Mes de Abril<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==5) {?>
-                        Mes de Mayo<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==6) {?>
-                        Mes de Junio<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==7) {?>
-                        Mes de Julio<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==8) {?>
-                        Mes de Agosto<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==9) {?>
-                        Mes de Septiembre<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==10) {?>
-                        Mes de Octubre<?php }?></h4>
-                        <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==11) {?>
-                        Mes de Noviembre<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==12) {?>
-                        Mes de Diciembre<?php }?></h4>
-                        </p>
-                    </div>   
-                </li>
             </ul>
-        </nav><br>      
+                
+            <div class="container fuente"> 
+                <div class="col-sm-8 titulo" >
+                    <CENTER> 
+                    <h3 >CONFRONTA</h3>                        
+                    VENTAS POR AGENTE </CENTER>
+                </div>
+                    <div class="titulo">
+                    <ul class="list-group">
+                      <li class="badge badge-danger badge-pill">
+                        <span class="badge badge-dark badge-pill"><?php echo $nombre." ".$apellido; ?></span><br>  
+                        <span class="badge badge-dark badge-pill"><?php echo $cargo; ?></span>
+                      </li>
+                    </ul>
+                </div> 
+            </div>
+        </nav><br>             
         
-<!--****************************************************** header *************************************************************************-->
+<!--****************************************************** header
+    
+ *************************************************************************-->
         <div class="container">
             
             <div class="row">
-                <div class="col"><h2 style="text-align:center">Datos del Personal</h2></div>
+                <div class="col"><h2 style="text-align:center">VENTAS DEL AGENTE <?php echo $row3['nombres']; ?></h2></div>
             </div>
         </div>
 

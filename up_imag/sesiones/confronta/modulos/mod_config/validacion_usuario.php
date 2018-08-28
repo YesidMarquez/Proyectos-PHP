@@ -32,14 +32,18 @@ else //opcion2: Usuario logueado correctamente
 	$_SESSION['id_usuario']  = $fila['id_cargo'];
 	if ($_SESSION['id_usuario']<>2) {
 		$_SESSION['nombre'] = $fila['nombres'];
+		$_SESSION['apellido'] = $fila['apellidos'];
 		$_SESSION['cedula'] = $fila['cedula'];
 		$_SESSION['id_cargo'] = $fila['id_cargo'];
+		$_SESSION['cargo'] = $fila['descripcion'];
 		header("Location: ../mod_consul/ventaxagente.php");
 	}else{
 		$_SESSION['nombre'] = $fila['nombres'];
+		$_SESSION['apellido'] = $fila['apellidos'];
 		$_SESSION['cedula'] = $fila['cedula'] ;
 		$_SESSION['id_cargo'] = $fila['id_cargo'] ;
-		header("Location: ../../menu.php");	
+		$_SESSION['cargo'] = $fila['descripcion'];
+		header("Location: ../mod_consul/menu.php");	
 	}
 	
 }

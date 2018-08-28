@@ -22,11 +22,23 @@ $nivel=$_SESSION['id_cargo'];
     //id_registro,cedula_cliente,usuario_cedula,campaña
     $sql = "SELECT *  FROM `confronta`";
     $resultado = $mysqli->query($sql);
-   
-
-    $sql2 = "SELECT  count(*) as conteo FROM `confronta`";
+    date_default_timezone_set('America/Bogota');
+    $fecha=date('Y-m-d');
+    $hora1=date(' 24:00:00');
+    $hora2=date(' 23:59:59');
+    $fecha1= $fecha.$hora1;
+    $fecha2= $fecha.$hora2;
+    $sql2 = "SELECT  count(*) as conteo FROM `confronta` where registro BETWEEN '$fecha1' AND '$fecha2' ";
     $resultado2 = $mysqli->query($sql2);
     $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
+
+    $sql3 = "SELECT  count(*) as conteo FROM `confronta`";
+    $resultado3 = $mysqli->query($sql3);
+    $row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
+
+    $sql4 = "SELECT  count(*) as conteo FROM `confronta`";
+    $resultado4 = $mysqli->query($sql4);
+    $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
     //echo $row2['conteo'];
     
 ?>
@@ -48,11 +60,11 @@ $nivel=$_SESSION['id_cargo'];
     <body>
           <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand/logo -->
-            <a class="nav-link" href="../../menu.php"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
+            <a class="nav-link" href="#"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="../../menu.php">
+                    <a class="nav-link" href="menu.php">
                         <img src="../../imagenes/iconos/agentes.png" title="Personal"></img>
                     </a>
                 </li>
@@ -110,7 +122,7 @@ $nivel=$_SESSION['id_cargo'];
                       </li>
                       <li class="badge badge-danger badge-pill">
                         HISTORICO DE VENTAS  
-                        <span class="badge badge-dark badge-pill"><?php echo $row2['conteo']; ?></span>
+                        <span class="badge badge-dark badge-pill"><?php echo $row4['conteo']; ?></span>
                       </li>
                     </ul>
                 </div> 

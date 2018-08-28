@@ -113,39 +113,7 @@
                         <img  class="menu" src="imagenes/iconos/contrato.png" title="Ventas"></img>
                     </a>
                 </li>
-                <!--<li>
-                    <div class="container" >
-                        <p><h3 style="text-align: center; font-family: 'Fjalla One', sans-serif;">Confronta</h3></p>
-                        <p>
-
-                        <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==1) {?>
-                        Mes de Enero<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==2) {?>
-                        Mes de Febrero<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==3) {?>
-                        Mes de Marzo<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==4) {?>
-                        Mes de Abril<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==5) {?>
-                        Mes de Mayo<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==6) {?>
-                        Mes de Junio<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==7) {?>
-                        Mes de Julio<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==8) {?>
-                        Mes de Agosto<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==9) {?>
-                        Mes de Septiembre<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==10) {?>
-                        Mes de Octubre<?php }?></h4>
-                        <h4 style="text-align: center; font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==11) {?>
-                        Mes de Noviembre<?php }?></h4>
-                        <h4 style="text-align: center;font-family: 'Fjalla One', sans-serif;"><?php if (date('m')==12) {?>
-                        Mes de Diciembre<?php }?></h4>
-                        </p>
-                    </div>   
-                </li>-->
-            </ul>
+             </ul>
              <div class="container fuente"> 
                 <div class="col-sm-8 titulo" >
                     <CENTER> 
