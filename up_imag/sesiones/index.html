@@ -12,37 +12,42 @@
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
 	</head>
-	<body>
+	<body background="Confronta_BeCall/imagenes/background/ALNpereira1.png"; background-size: cover;>
 <!--login modal-->
 <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center">Login</h1>
+          <h1 class="text-center"><img src="Confronta_BeCall/imagenes/logos/logo.png"></h1>
+          <center><h3 class="form-text text">Sistema Confronta.</h3></center>
       </div>
       <div class="modal-body">
-          <form class="form col-md-12 center-block" action="php/script_acceso_usuario.php" method="post" name="frm_ingreso" id="frm_ingreso">
+          <form class="form col-md-12 center-block" action="modulos/mod_config/validacion_usuario.php" method="post" name="frm_ingreso" id="frm_ingreso">
             <div class="form-group">
-              <input name="user" type="text" id="user" class="form-control input-lg" placeholder="user">
+              <input name="User" type="text" id="User" class="form-control input-lg" placeholder="Usuario">
             </div>
             <div class="form-group">
-              <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+              <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña">
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
-              <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+              
             </div>
           </form>
       </div>
       <div class="modal-footer">
-          <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-		  </div>	
+          <div class="col-md-12"><center>
+            <div class="row justify-content-md-center">
+                <div class="footer-copyright  py-3" style="font-family: 'IM Fell English SC', serif;">© 2018 Copyright:<a><img src="Confronta_BeCall/imagenes/logos/logo.png" width="50" height="30"></a>
+                  <p>Yesid Marquez. Tecnologia Pereira</p>
+                </div>
+            </div>
+		      </div></center>	
       </div>
   </div>
   </div>
 </div>
+
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
