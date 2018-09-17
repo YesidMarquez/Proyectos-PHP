@@ -131,6 +131,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="reporteexcel.php">
+                        <img  class="menu" src="../../imagenes/iconos/descarga.png" title="Historico de Ventas" width="70" height="70"></img>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="../../imagenes/manuales/Manual Usuario Administrador.pdf">
                         <img  class="menu" src="../../imagenes/iconos/ayuda.png" title="Manual Admin" width="70" height="70">
                         </img>
@@ -203,6 +208,7 @@
                      <tr  scope="row" style="background-color:#cccccc ">
                         <th><center>Cedula</th>
                         <th><center>Nombres y Apellidos</th>
+                        <th><center>N° Ventas</th>
                         <th><center>Ver</th>
                     </tr>
                 </thead>
@@ -212,6 +218,11 @@
                         <tr>
                             <td><center><?php echo $row['cedula_usuario']; ?></td>
                             <td><center><?php echo $row['nombres']." ".$row['apellidos']; ?></td>
+                            <?php $id_us=$row['cedula_usuario'];  
+                            $sql4 = "SELECT  count(*) as conteo FROM `confronta`where        usuario_cedula=$id_us";
+                            $resultado4 = $mysqli->query($sql4);
+                            $row4 = $resultado4->fetch_array(MYSQLI_ASSOC); ?> 
+                            <td><center><span class="badge badge-dark badge-pill"><?php echo $row4['conteo'];?></span></td>
                             <td><center><a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario']; ?>"><i class="fas fa-eye"></i></a></td>
                         </tr>
                     <?php } ?>

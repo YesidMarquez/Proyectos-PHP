@@ -1,4 +1,5 @@
 
+
 <?php
 date('m');
     if (date('m')==01) {
@@ -341,8 +342,5 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                 $('[data-toggle="popover"]').popover();
                 });
             </script>
-            
-            
-
     </body>
 </html>

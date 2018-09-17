@@ -43,7 +43,7 @@ if (empty($id_llamada)||empty($id_cliente)) {
             $resultado1 = $mysqli->query($sql1);
 
            if ($resultado && $resultado1){
-                echo"<script> alert('Operacion exitosa token = $token.'); window.location.href='ventas.php?cedula_usuario=$id'; </script>";
+                echo"<script> alert('Operacion exitosa token = $token'); window.location.href='ventas.php?cedula_usuario=$id'; </script>";
             }
             else{
                 echo"<script> alert('No se pudo insertar comuniquese con el administrador del sistema'); window.location.href='ventas.php?cedula_usuario=$id'; </script>";

@@ -1,17 +1,16 @@
 <?php
-/*
-| -------------------------------------------------------------------
-| CONFIGURACION DE CONEXION DE BASE DE DATOS
-| -------------------------------------------------------------------
-*/
-	$server='127.0.0.1';
-$user='yesid_marquez';
-$pass='Matias.2014';
-$BaseDeDatos="copasst";
-$sql_tabla="user";
-/*
-| -------------------------------------------------------------------
-| FIN DE CONFIGURACION DE CONEXION DE BASE DE DATOS
-| -------------------------------------------------------------------
-*/
+require("../mod_config/conexion.php");
+//Iniciar Sesión
+session_start();
+   
+//Validar si se está ingresando con sesión correctamente
+if (!$_SESSION){
+    echo '<script language = javascript>
+    alert("usuario no autenticado")
+    self.location = "../../index.html"
+    </script>';
+    }       
+ 
+$usuario=$_SESSION['cedula'];
+$nivel=$_SESSION['id_cargo'];
 ?>

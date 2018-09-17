@@ -1,0 +1,36 @@
+<html lang="es">
+<head>
+   <title>Actualizacion</title>
+</head>
+   <body><font face="Comic Sans MS,verdana">
+            <div class="container">
+         <div class="row">
+            <div class="col">
+               <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_planta.php" autocomplete="">
+                  
+                    
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <a href="../tip_cons/planta.php" class="btn btn-default">Planta</a>
+                                <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Empleado</a>
+                                <button type="submit" onclick="alert('Deseas Guardar Cambios!')" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    <?php } else {?>   
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <a href="../tip_cons/planta.php" class="btn btn-default">Planta</a>
+                                <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Empleado</a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <left><img src="../<?php echo $ruta; ?>" class='imgRedondacc'>
+                        </div>
+               </form>
+            </div>
+         </div>  
+      </div>
+    </body>
+</html>
