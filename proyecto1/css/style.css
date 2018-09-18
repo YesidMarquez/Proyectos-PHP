@@ -59,3 +59,7 @@ img.menu2 {
     background-size: 150% auto;
     
 }
+#colorForm {
+    background: rgba(006, 057, 113,0.3);
+    border-radius: 15px 15px 15px 15px;
+}

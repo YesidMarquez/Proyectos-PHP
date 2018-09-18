@@ -120,7 +120,7 @@
 	<body >
  <!--<body style="background-color:#0E74BC;">
  <!-- Diseño del bore domnde se ubucican las opciones de navegacion.-->       
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <!-- Brand/logo -->
             <a class="nav-link" href="#"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
             <!-- Links -->
@@ -219,7 +219,7 @@
                             <td><center><?php echo $row['cedula_usuario']; ?></td>
                             <td><center><?php echo $row['nombres']." ".$row['apellidos']; ?></td>
                             <?php $id_us=$row['cedula_usuario'];  
-                            $sql4 = "SELECT  count(*) as conteo FROM `confronta`where        usuario_cedula=$id_us";
+                            $sql4 = "SELECT  count(*) as conteo FROM `movil`where        usuario_cedula=$id_us";
                             $resultado4 = $mysqli->query($sql4);
                             $row4 = $resultado4->fetch_array(MYSQLI_ASSOC); ?> 
                             <td><center><span class="badge badge-dark badge-pill"><?php echo $row4['conteo'];?></span></td>

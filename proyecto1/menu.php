@@ -107,9 +107,7 @@
 	<body style="background-color:#F0000;">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <!-- Brand/logo -->
-         <a class="navbar-brand" href="menu.php" style="font-family: 'Nothing You Could Do', cursive;" title="Menu" ><img  class="menu" src="imagenes/logos/logo.png" title="Personal"></img></a>
-          
-          <!-- Links -->
+          <a class="navbar-brand" href="menu.php" style="font-family: 'Satisfy', cursive;" title="Menu">Mat-Sw</a>
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="tip_cons/planta.php"><img  class="menu" src="imagenes/iconos/personal.jpg" title="Personal"></img></a>

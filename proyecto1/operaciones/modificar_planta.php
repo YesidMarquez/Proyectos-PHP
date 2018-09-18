@@ -52,15 +52,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h3 style="text-align:center">MODIFICAR DATOS <br> "<?php echo $row1['nombres']; ?> <?php echo $row1['apellidos']; ?> "</h3>
-    <div class="container">
+    <h3 style="text-align:center">MODIFICACION DE DATOS <br> "<?php echo $row1['nombres']; ?> <?php echo $row1['apellidos']; ?> "</h3>
+    <div class="container " id="colorForm" >
         <form class="form-horizontal" method="POST" action="../tip_cons/actualizar_planta.php" autocomplete="">
-            <div class="row">
-                <div class="col-sm-6" style="background-color:yellow;"><br>
+            <div class="row shadow-lg p-3 mb-5 " >
+                <div class="col-sm-6 "><br>
                     <label for="nombre" class="control-label">Expedicion Cedula</label>
-                    <select class="form-control" id="cc" name="cc">
+                    <select class="form-control" id="E_c" name="E_c">
                             <option value="<?php echo $row7['cod_mun']; ?>"><?php echo $row1['exp_cedula']; ?></option>
                             <option value="91001">LETICIA (AMAZONAS)</option>
                             <option value="91263">EL ENCANTO (AMAZONAS)</option>
@@ -1187,7 +1188,7 @@
                     </select>
                     <br>
                     <label for="nombre" class="control-label">Ciudad Nacimiento</label>
-                    <select class="form-control" id="cc1" name="cc1">
+                    <select class="form-control" id="C_n" name="C_n">
                             <option value="<?php echo $row6['cod_mun']; ?>"><?php echo $row1['ciudad_nacimiento']; ?></option>
                             <option value="91001">LETICIA (AMAZONAS)</option>
                             <option value="91263">EL ENCANTO (AMAZONAS)</option>
@@ -2314,13 +2315,13 @@
                     </select>
                     <br>
                     <label class="control-label">Fecha Nacimiento:</label>
-                    <input  type="date" class="form-control"></input>
+                    <input  type="date" class="form-control" id="F_nac" name="F_nac" value="<?php echo $row1['fecha_nacimiento']; ?>"></input>
                     <br>
                     <label for="nombre" class="control-label">Tipo de Sangre</label>
-                    <input type="text" class="form-control" id="t_san" name="t_san" placeholder="t_san" value="<?php echo $row1['tipo_sangre']; ?>" >
+                    <input type="text" class="form-control" id="T_san" name="T_san" placeholder="t_san" value="<?php echo $row1['tipo_sangre']; ?>" >
                     <br>
                     <label for="nombre" class="control-label">Ciudad/Residencia</label>
-                    <select class="form-control" id="cc2" name="cc2">
+                    <select class="form-control" id="C_r" name="C_r">
                                <option value="<?php echo $row7['cod_mun']; ?>"><?php echo $row1['ciudad_residencia']; ?></option>
                                <option value="91001">LETICIA (AMAZONAS)</option>
                                <option value="91263">EL ENCANTO (AMAZONAS)</option>
@@ -3447,30 +3448,32 @@
                     </select>
                     <br>
                     <label for="nombre" class="control-label">Direccion</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion" value="<?php echo $row1['direccion']; ?>" >
+                    <input type="text" class="form-control" id="Dir" name="Dir" placeholder="direccion" value="<?php echo $row1['direccion']; ?>" >
                     <br>
                      
                     <label for="nombre" class="control-label">Telefono</label>
-                    <input type="text" class="form-control" id="tel" name="tel" placeholder="tel" value="<?php echo $row1['telefono']; ?>" >
+                    <input type="text" class="form-control" id="Tel" name="Tel" placeholder="tel" value="<?php echo $row1['telefono']; ?>" >
                     <br>   
                 </div>
-                <div class="col-sm-6" style="background-color:orange;"><br>
+                <div class="col-sm-6 "><br>
                     <label for="nombre" class="control-label">Fecha Ingreso</label>
-                    <input type="date" class="form-control" id="ingreso" name="ingreso" placeholder="ingreso" value="<?php echo $row4['fecha_ingreso']; ?>" >
+                    <input type="date" class="form-control" id="F_in" name="F_in" placeholder="ingreso" value="<?php echo $row4['fecha_ingreso']; ?>" >
                     <br>
                     <label for="nombre" class="control-label"><strong>* Fecha Vencimiento<br>* Fecha Retiro</strong></label>
-                    <input type="date" class="form-control" id="vence" name="vence" placeholder="vence" value="<?php echo $row4['fecha_vencimiento']; ?>" >
+                    <input type="date" class="form-control" id="F_v" name="F_v" placeholder="vence" value="<?php echo $row4['fecha_vencimiento']; ?>" >
                     <br>
                     <label for="estado_civil" class="control-label">Estado</label>
-                    <select class="form-control" id="estado" name="estado">
+                    <select class="form-control" id="Es" name="Es">
                            <option value="1">ACTIVO</option>
                            <option value="2">INACTIVO</option>
                     </select>
                     <br>
+                    <input type="text" class="form-control" id="Id" name="Id" placeholder="prorroga" value="<?php echo $row4['empleado_id']; ?>" style="display:none" >
                     <label for="nombre" class="control-label">Prorrogas</label>
-                    <input type="text" class="form-control" id="prorroga" name="prorroga" placeholder="prorroga" value="<?php echo $row4['prorrogas']; ?>" ><br><br><br>
-                    <center><a href="../tip_cons/planta.php" class="btn btn-default">Planta</a>
-                    <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-default">Empleado</a>
+                    <input type="text" class="form-control" id="Pro" name="Pro" placeholder="prorroga" value="<?php echo $row4['prorrogas']; ?>" ><br><br><br><br>
+
+                    <center><a href="../tip_cons/planta.php" class="btn btn-primary">Planta</a>
+                    <a href="../tip_cons/ver.php?id_empleado=<?php echo $row['empleado_id'];  ?>" class="btn btn-primary">Empleado</a>
                     <button type="submit" onclick="alert('Deseas Guardar Cambios!')" class="btn btn-primary">Guardar</button></center>
                 </div>
             </div>

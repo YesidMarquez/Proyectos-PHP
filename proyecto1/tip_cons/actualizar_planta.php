@@ -1,22 +1,22 @@
 <?php
    	require '../config/conexion.php';
 	/*ssssss*/
-	$id = $_POST['id'];
-	$name = $_POST['name'];
-	$apl = $_POST['apel'];
-	$direccion = $_POST["direccion"];
-	$resi = $_POST["cc2"];
-	$tel = $_POST["tel"];
-	$sangre=$_POST['t_san'];
-	$estado=$_POST['estado'];
-	$prorroga=$_POST['prorroga'];
-	$vence=$_POST['vence'];
-	$ingreso=$_POST['ingreso'];
-	$c_nac=$_POST['cc1'];
-	$ex_cc=$_POST['cc'];
-	echo ("ciudad_expedicion ->".$ex_cc);
-	echo ("Estado ->".$estado);
-	$sql = "UPDATE empleado, contrato SET direccion = '$direccion', ciudad_residencia='$resi',telefono='$tel', tipo_sangre='$sangre', estado_id='$estado',ciudad_nacimiento='$c_nac',ciudad_expedicion='$ex_cc', contrato.fecha_ingreso='$ingreso',contrato.fecha_vencimiento='$vence',contrato.prorrogas='$prorroga' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id' ";
+	$E_c=$_POST['E_c'];
+	$C_n=$_POST['C_n'];
+	$F_nac=$_POST['F_nac'];
+	$T_san=$_POST['T_san'];
+	$C_r = $_POST["C_r"];
+	$Dir = $_POST["Dir"];
+	$Tel = $_POST['Tel'];
+	$F_in=$_POST['F_in'];
+	$F_v=$_POST['F_v'];
+	$Es=$_POST['Es'];
+	$Pro=$_POST['Pro'];
+	$id = $_POST['Id'];
+	
+	
+	
+	$sql = "UPDATE empleado, contrato SET direccion = '$Dir', fecha_nacimiento = '$F_nac', ciudad_residencia='$C_r',telefono='$Tel', tipo_sangre='$T_san', estado_id='$Es',ciudad_nacimiento='$C_n',ciudad_expedicion='$E_c', contrato.fecha_ingreso='$F_in',contrato.fecha_vencimiento='$F_v',contrato.prorrogas='$Pro' WHERE empleado.id_empleado='$id' and contrato.empleado_id='$id' ";
 	$resultado = $mysqli->query($sql);
 	/********************************************************************************************/
 	$sql1 = "SELECT * FROM acreditacion WHERE empleado_id = '$id' ";
