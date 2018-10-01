@@ -8,7 +8,61 @@ $id_cliente= $_POST['id_cliente'];
 /*$nombre= $_POST['nombre'];*/
 $imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 $token= $_POST['token'];
-$id_imagen=$token;
+
+date('m');
+    if (date('m')==01) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==2) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==3) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==4) {
+       $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==5) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==6) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==7) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==8) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==9) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==10) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==11) {
+        $dato=Date('m-d');
+        $fecha= "2018-".$dato;
+  }elseif (date('m')==12) {
+    $dato=Date('m-d');
+    $fecha= "2018-".$dato;
+  }
+
+$validar="../../soportes/$fecha/$id";
+if (!file_exists($validar)) {
+    mkdir("../../soportes/$fecha/$id",  0777, true);
+  
+}
+$imagen= $_FILES['imagen']['tmp_name'];
+$ruta="../../soportes/$fecha/$id/$token.jpg";//ruta carpeta donde queremos copiar las imágenes y en nuevo nombre.
+if (is_uploaded_file($imagen)) 
+{ 
+    move_uploaded_file($imagen,$ruta); 
+} 
+else 
+{ 
+echo "Error al cargar el Archivo"; 
+} 
 /************************Fin Recibidos por metodo POST********************************************/
 /************************Generar hora para insercion********************************************/
 date_default_timezone_set('America/Bogota');
@@ -35,11 +89,11 @@ if (empty($id_llamada)||empty($id_cliente)) {
     if ($id_cliente <> $row['cedula_cliente']   ){
         if ($token <> $row1['token_confronta']) {
             $sql = 
-           "INSERT INTO `confronta` (`id_llamada`, `cedula_cliente`, `imagen_id`, `usuario_cedula`, `registro`,`campana`, `token_confronta`) VALUES ('$id_llamada', '$id_cliente', '$id_imagen', '$id', '$fecha1', '$campaña', '$token');";
+           "INSERT INTO `confronta` (`id_llamada`, `cedula_cliente`,`usuario_cedula`, `registro`,`campana`, `token_confronta`) VALUES ('$id_llamada', '$id_cliente',$id', '$fecha1', '$campaña', '$token');";
            $resultado = $mysqli->query($sql);
 
            $sql1 = 
-           "INSERT INTO `imagephp` (`imagen`, `confronta_token`) VALUES ('$imagen', '$token'); ";
+           "INSERT INTO `imagephp` (`ruta_imagen`, `confronta_token`) VALUES ('$imagen', '$token'); ";
             $resultado1 = $mysqli->query($sql1);
 
            if ($resultado && $resultado1){
