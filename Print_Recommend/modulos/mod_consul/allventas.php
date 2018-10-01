@@ -257,7 +257,7 @@
                                         <td><?php echo $row['usuario_cedula']; ?></td>
                                         <td><?php echo $row['campana']; ?></td>
                                         <td><?php echo $row['registro']; ?></td>
-                                        <td><center><a href="detalle.php?token=<?php echo $row['token_movil']; ?>"><i class="fas fa-eye"></i></a></td></a></td>
+                                        <td><center><a href="detalle.php?token=<?php echo $row['token_movil']; ?>"><img src="../../imagenes/iconos/Ver1.png" width="30" height="30"></a></td></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

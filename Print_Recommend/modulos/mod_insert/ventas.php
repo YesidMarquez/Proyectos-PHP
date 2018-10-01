@@ -16,7 +16,7 @@ $nivel=$_SESSION['id_cargo'];
 $sql = "SELECT * FROM usuarios where cedula_usuario=$usuario";
 $resultado = $mysqli->query($sql);
 $row = $resultado->fetch_array(MYSQLI_ASSOC);
-    
+   
 ?>
 <!DOCTYPE html>
 <html>

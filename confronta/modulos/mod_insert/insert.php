@@ -6,7 +6,6 @@ $campaña = $_POST['campaña'];
 $id_llamada= $_POST['id_llamada'];
 $id_cliente= $_POST['id_cliente'];
 /*$nombre= $_POST['nombre'];*/
-$imagen= addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 $token= $_POST['token'];
 
 date('m');

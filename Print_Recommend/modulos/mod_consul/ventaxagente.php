@@ -151,7 +151,7 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                 <?php if ($nivel==2) {?>
                 <li class="nav-item">
                     <a class="nav-link" href="menu.php">
-                        <img  class="menu" src="../../imagenes/iconos/agentes.png"  title="Listado Agentes" width="70" height="70"></img>
+                        <img  class="menu" src="../../imagenes/iconos/ag10.png"  title="Listado Agentes" width="70" height="70"></img>
                 </li>
                   
                 <?php } ?>
@@ -297,7 +297,7 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                                         <td><?php echo $row['campana']; ?>
                                         <td><?php echo $row['token_movil']; ?>
                                         <td><?php echo $row['registro']; ?>
-                                        <td><center><a href="detalle.php?token=<?php echo $row['token_movil']; ?>"><i class="fas fa-eye"></i></a></td></a></td>
+                                        <td><center><a href="detalle.php?token=<?php echo $row['token_movil']; ?>"><img src="../../imagenes/iconos/Ver1.png" width="40" height="40"></a></td></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

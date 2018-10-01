@@ -223,7 +223,7 @@
                             $resultado4 = $mysqli->query($sql4);
                             $row4 = $resultado4->fetch_array(MYSQLI_ASSOC); ?> 
                             <td><center><span class="border badge badge-dark badge-pill"><?php echo $row4['conteo'];?></span></td>
-                            <td><center><a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario']; ?>"><i class="fas fa-eye"></i></a></td>
+                            <td><center><a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario']; ?>"><img src="../../imagenes/iconos/Ver1.png" width="30" height="30"></a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
