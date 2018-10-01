@@ -120,24 +120,24 @@
 	<body >
  <!--<body style="background-color:#0E74BC;">
  <!-- Diseño del bore domnde se ubucican las opciones de navegacion.-->       
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Brand/logo -->
             <a class="nav-link" href="#"><img  class="" src="../../imagenes/logos/logo.png" title="Personal" width="80" height="50"></img></a>
             <!-- Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="../../modulos/mod_consul/allventas.php">
-                        <img  class="menu" src="../../imagenes/iconos/contrato.png" title="Historico de Ventas" width="80" height="80"></img>
+                        <img  class="menu" src="../../imagenes/iconos/hventas.png" title="Historico de Ventas" width="80" height="80"></img>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="reporteexcel.php">
-                        <img  class="menu" src="../../imagenes/iconos/descarga.png" title="Historico de Ventas" width="70" height="70"></img>
+                        <img  class="menu" src="../../imagenes/iconos/descargae.png" title="Historico de Ventas" width="70" height="70"></img>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../../imagenes/manuales/Manual Usuario Administrador.pdf">
-                        <img  class="menu" src="../../imagenes/iconos/ayuda.png" title="Manual Admin" width="70" height="70">
+                        <img  class="menu" src="../../imagenes/iconos/manual.png" title="Manual Admin" width="70" height="70">
                         </img>
                     </a>
                 </li>
@@ -219,11 +219,11 @@
                             <td><center><?php echo $row['cedula_usuario']; ?></td>
                             <td><center><?php echo $row['nombres']." ".$row['apellidos']; ?></td>
                             <?php $id_us=$row['cedula_usuario'];  
-                            $sql4 = "SELECT  count(*) as conteo FROM `movil`where        usuario_cedula=$id_us";
+                            $sql4 = "SELECT  count(*) as conteo FROM `confronta`where        usuario_cedula=$id_us";
                             $resultado4 = $mysqli->query($sql4);
                             $row4 = $resultado4->fetch_array(MYSQLI_ASSOC); ?> 
                             <td><center><span class="badge badge-dark badge-pill"><?php echo $row4['conteo'];?></span></td>
-                            <td><center><a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario']; ?>"><i class="fas fa-eye"></i></a></td>
+                            <td><center><a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario']; ?>"><img src="../../imagenes/iconos/Ver1.png" width="30" height="30"></a></td>
                         </tr>
                     <?php } ?>
                 </tbody>

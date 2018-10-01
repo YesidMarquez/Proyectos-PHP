@@ -35,15 +35,19 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
     <link rel="icon" type="image/x-icon" href="../../imagenes/logos/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
-<body>
-	<div class="container shadow-lg p-3 mb-5 bg-white rounded">
+<body style="background: rgba(24, 42, 121,0.3);">
+	<div class="container shadow-lg p-3 mb-5 bg-white rounded" style="background-color: blue;">
 		<div class="row">
 			<div class="col">
-            	<h3 style="text-align:center">INGRESO DE VENTAS CONFRONTA</h3>
+			</div>
+			<div class="col">
+            	<span class="border border badge badge-dark badge-pill"><CENTER><marquee><h3 style="text-align:center">INGRESO DE VENTAS</h3></marquee></CENTER></span>
+            </div>
+            <div class="col">
             </div>	
         </div><br><br>
-        <form class="needs-validation" method="POST" action="insert.php" novalidate enctype="multipart/form-data">
- 	        <div class="container-fluid ">
+        <form class="needs-validation" method="POST" action="insert.php" novalidate enctype="multipart/form-data" >
+ 	        <div class="container-fluid " >
 			    <div class="row">
 			    	<div class="col ">
 			    		
@@ -105,8 +109,12 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 					    </div>
 			    	</div>
 			    	<div class="col-md-8">
-			    		<div class="custom-file" class="btn btn-primary">
-							<input type="file" name="imagen" class="btn btn-primary" required="" id="imagen" ">
+			    		<div class="custom-file">
+							<input type="file" name="imagen" class="custom-file-input"" required="" id="imagen" ">
+							<label class="custom-file-label" for="customFileLang" id="imagen">Cargar Imagen</label>
+							<div class="invalid-feedback">
+					        	Por favor, ingrese Una imagen..
+					      	</div>
 						</div>
 			    		<div class="custom-file" class="btn btn-primary"><br>
 							<h6>Vista Previa de la imagen</h6>
@@ -115,7 +123,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 			    	</div>
 			  	</div>
 			</div>
-			<a  href="../mod_consul/ventaxagente.php" class="btn btn-primary">ATRAS</a>
+			<a  href="../mod_consul/ventaxagente.php" class="btn btn-primary" >ATRAS</a>
 	     	<button class="btn btn-primary" type="submit">GUARDAR</button>
 		</form>
         	

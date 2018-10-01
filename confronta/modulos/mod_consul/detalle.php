@@ -78,8 +78,8 @@ $fecha2=date('00:00:00');
              </div>
             <div class="col-sm-4">
                 <div class=" container p-2 bg-info">
-                    <?php if ($nivel==2) { ?>
-                        <a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario'];?>" class="btn btn-danger ">ATRAS</a>
+                    <?php if ($nivel>2) { ?>
+                        <a href="allventas.php" class="btn btn-danger ">ATRAS</a>
                     <?php }else { ?>
                     <a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario'];?>" class="btn btn-danger ">ATRAS</a>
                     <?php } ?>

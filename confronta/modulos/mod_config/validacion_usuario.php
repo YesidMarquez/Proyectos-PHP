@@ -47,13 +47,17 @@ else //opcion2: Usuario logueado correctamente
 {
 	//Definimos las variables de sesión y redirigimos a la página de usuario
 	$_SESSION['id_usuario']  = $fila['id_cargo'];
-	if ($_SESSION['id_usuario']<>2) {
+	if ($_SESSION['id_usuario']==1) {
 		
 		header("Location: ../mod_consul/ventaxagente.php");
-	}else{
+	}elseif ($_SESSION['id_usuario']==2) {
+		header("Location: ../mod_consul/menu.php");
+		# code...
+	}elseif ($_SESSION['id_usuario']>2) {
+		header("Location: ../mod_consul/menu.php");
 		
-		header("Location: ../mod_consul/menu.php");	
-	}
+	}		
+	
 	
 }
 ?>

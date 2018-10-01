@@ -46,6 +46,7 @@
 <html>
 <head>
     <title>Actualizacion</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -53,6 +54,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.custom.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script>
+        Modernizr.load({
+            test: Modernizr.inputtypes.date,
+            nope: "js/jquery-ui.custom.js",
+            callback: function() {
+              $("input[type=date]").datepicker();
+            }
+          });
+    </script>
 </head>
 <body>
     <h3 style="text-align:center">MODIFICACION DE DATOS <br> "<?php echo $row1['nombres']; ?> <?php echo $row1['apellidos']; ?> "</h3>
@@ -3456,6 +3470,7 @@
                     <br>   
                 </div>
                 <div class="col-sm-6 "><br>
+                    
                     <label for="nombre" class="control-label">Fecha Ingreso</label>
                     <input type="date" class="form-control" id="F_in" name="F_in" placeholder="ingreso" value="<?php echo $row4['fecha_ingreso']; ?>" >
                     <br>
@@ -3479,4 +3494,12 @@
             </div>
         </form>
     </div>
-</bod</html>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                locale: 'ru'
+            });
+        });
+    </script>
+</body>
+</html>

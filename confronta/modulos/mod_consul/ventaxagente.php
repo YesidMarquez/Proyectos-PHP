@@ -89,7 +89,7 @@ if (!$_SESSION){
     </script>';
     }    
 
-if ( $_SESSION['id_cargo']==2 ) {
+if ( $_SESSION['id_cargo']>1 ) {
     $idAgente = $_GET['cedula_usuario'];
        
     }else { $idAgente = $_SESSION['cedula'];
@@ -153,7 +153,7 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                 <?php if ($nivel==2) {?>
                 <li class="nav-item">
                     <a class="nav-link" href="menu.php">
-                        <img  class="menu" src="../../imagenes/iconos/agentes.png"  title="Listado Agentes" width="70" height="70"></img>
+                        <img  class="menu" src="../../imagenes/iconos/ag10.png"  title="Listado Agentes" width="70" height="70"></img>
                 </li>
                   
                 <?php } ?>
@@ -166,7 +166,7 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../../imagenes/manuales/Manual Usuario Agente.pdf">
-                        <img  class="menu" src="../../imagenes/iconos/ayuda.png" title="Manual Agente">
+                        <img  class="menu" src="../../imagenes/iconos/manual02.png" title="Manual Agente" width="60" height="60">
                         </img>
                     </a>
                 </li>
@@ -186,6 +186,23 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                 </div>
                 <div class="titulo">
                     <ul class="list-group">
+                        <?php if ( $_SESSION['id_cargo']>2 ) {?>
+                            <center><a class="nav-link" >
+                            <img  class="menu" src="../../imagenes/iconos/ag.png"  title="<?php echo $nombre." ".$apellido; ?>" width="60" height="60"></img>
+                            </a></center>
+                            
+                        <?php } elseif ( $_SESSION['id_cargo']==2 ) {?>
+                        <center><a class="nav-link" >
+                        <img  class="menu" src="../../imagenes/iconos/Admin.png"  title="<?php echo $nombre." ".$apellido; ?>" width="60" height="60"></img>
+                        </a></center>
+                            
+                        <?php } else {?>
+                        
+                            <a class="nav-link" >
+                            <img  class="menu" src="../../imagenes/iconos/ag08.png"  title="<?php echo $nombre." ".$apellido; ?>" width="60" height="60"></img>
+                            </a></center>
+                        <?php } ?>
+                        
                         <li class="badge badge-danger badge-pill">
                             <span class="badge badge-dark badge-pill"><?php echo $nombre." ".$apellido; ?></span><br>  
                             <span class="badge badge-dark badge-pill"><?php echo $cargo; ?></span>
@@ -247,8 +264,9 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                 <div class="col-sm-9">
                     <h2 style="text-align:center">
                         VENTAS AGENTE 
-                        <span class="badge badge-dark badge-pill"><?php if ( $_SESSION['cargo']<>2 ) {echo $row1['nombres'];
+                        <span class="badge badge-dark badge-pill"><marquee><?php if ( $_SESSION['cargo']<>2 ) {echo $row1['nombres']." ".$row1['apellidos'];
                             } else { echo $row1['nombres'];} ?>
+                        </marquee>
                         </span>
                     </h2>
                 </div> 
@@ -298,7 +316,7 @@ $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
                                         <td><?php echo $row['campana']; ?>
                                         <td><?php echo $row['token_confronta']; ?>
                                         <td><?php echo $row['registro']; ?>
-                                        <td><center><a href="detalle.php?token=<?php echo $row['token_confronta']; ?>"><i class="fas fa-eye"></i></a></td></a></td>
+                                        <td><center><a href="detalle.php?token=<?php echo $row['token_confronta']; ?>"><img src="../../imagenes/iconos/Ver1.png" width="30" height="30"></a></td></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

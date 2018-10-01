@@ -1,4 +1,3 @@
-
 <?php
     date('m');
     if (date('m')==01) {
@@ -118,9 +117,7 @@
     $resultado4 = $mysqli->query($sql4);
     $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
     //echo $row2['conteo'];
-    
 ?>
-
 <htm lang="es">
     <head>
         <title>HISTORICO</title>
@@ -143,7 +140,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="menu.php">
-                        <img src="../../imagenes/iconos/agentes.png" title="Listado de Agentes" width="70" height="70"></img>
+                        <img src="../../imagenes/iconos/ag10.png" title="Listado de Agentes" width="70" height="70"></img>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -161,6 +158,11 @@
                 </div>
                 <div class="titulo">
                     <ul class="list-group">
+                        <center>
+                            <a class="nav-link" >
+                                <img  class="menu" src="../../imagenes/iconos/ag.png"  title="<?php echo $nombre." ".$apellido; ?>" width="60" height="60"></img>
+                            </a>
+                        </center>
                         <li class="badge badge-danger badge-pill">
                             <span class="badge badge-dark badge-pill"><?php echo $nombre." ".$apellido; ?></span><br>  
                             <span class="badge badge-dark badge-pill"><?php echo $cargo; ?></span>
@@ -262,7 +264,7 @@
                                         <td><?php echo $row['usuario_cedula']; ?></td>
                                         <td><?php echo $row['campana']; ?></td>
                                         <td><?php echo $row['registro']; ?></td>
-                                        <td><center><a href="detalle.php?token=<?php echo $row['token_confronta']; ?>"><i class="fas fa-eye"></i></a></td></a></td>
+                                        <td><center><a href="detalle.php?token=<?php echo $row['token_confronta']; ?>"><img src="../../imagenes/iconos/Ver1.png" width="30" height="30"></a></td></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
