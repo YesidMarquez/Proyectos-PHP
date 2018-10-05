@@ -17,27 +17,60 @@
     $sql= "SELECT NOMBRE FROM `academias`";
     $resultado1 = $mysqli->query($sql);
     $row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
-    echo $row1['NOMBRE'];
+    
     
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
+    <title>->MENU.2</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap-theme.css" rel="stylesheet">
-    <script src="../js//jquery-3.1.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script> 
-    <!--<link href="../css/style.css" rel="stylesheet">-->
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script type="text/JavaScript">
+        function mayus(e) {
+            e.value = e.value.toUpperCase();
+        }
+    </script>            
 </head>
-<body><font face="Comic Sans MS,verdana">
+<body style="background-color:#F0000;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand/logo -->
+     <a class="navbar-brand" href="../menu.php" style="font-family: 'Satisfy', cursive;" title="Menu">Mat-Sw</a>
+      
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="empleado.php"><img class="menu" src="../imagenes/iconos/empleado.png" title="Empleado"></img></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contrato.php""><img  class="menu" src="../imagenes/iconos/contrato.png" title="Personal"></img></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="acreditacion.php"><img class="menu1" src="../imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img class="menu2" src="../imagenes/iconos/curso.png" title="Cursos"></img></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="puesto.php"><img class="menu2" src="../imagenes/iconos/puesto.png" title="Puesto"></img></a>
+        </li>
+                  
+         <li class="nav-item">
+          <a class="nav-link" href="#"><img  class="menu" src="../imagenes/iconos/cerrar.png" title="Cerrar"></a>
+        </li>
+      </ul>
+    </nav><br>
+
     <div class="container">
-        <div class="row">
-            <h3 style="text-align:center">INGRESO DE CURSOS </h3>
-        </div>
+        <h3 style="text-align:center">INGRESO DE CURSOS </h3>
         <div class="row">
            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="form-group">
@@ -46,34 +79,22 @@
                 </div>
             </form>
         </div>
-                    
-        <form class="form-horizontal" method="POST"  action="../operaciones/modulos/insertar_cursos.php">
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Cedula</label>
-                <div class="col-sm-10">
+    </div> 
+    <form class="form-horizontal" method="POST"  action="../operaciones/modulos/insertar_cursos.php">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <label for="nombre" class="control-label">Cedula</label>
                     <input type="text" class="form-control" id="id_empleado" name="id_empleado" placeholder="Cedula" value="<?php echo $row['id_empleado']; ?>" required readonly="readonly">
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
-                <div class="col-sm-10">
-                    
-                    <input type="text" class="form-control"  value="<?php echo $row['apellidos']; ?>" readonly="readonly">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Nombres</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control"  value="<?php echo $row['nombres']; ?>" readonly="readonly">
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="estado_civil" class="col-sm-2 control-label">Academia</label>
 
-                    <div class="col-sm-10" >
-                        <select class="form-control" id="Academia" name="academia" placeholder="academia" >
+                    <label for="nombre" class="control-label">Apellidos</label>
+                    <input type="text" class="form-control"  value="<?php echo $row['apellidos']; ?>" readonly="readonly">
+
+                    <label for="nombre" class="control-label">Nombres</label>
+                    <input type="text" class="form-control"  value="<?php echo $row['nombres']; ?>" readonly="readonly">
+
+                    <label for="estado_civil" class="control-label">Academia</label>
+                    <select class="form-control" id="Academia" name="academia" placeholder="academia" >
                             <option value="0"></option>
                             <option value="8001916712">ACADEMIA DE VIGILANTES ADEVIP LIMITADA</option>
                             <option value="8300434435">CENTRO DE APRENDIZAJE EN SEGURIDAD PRIVADA CADEVIP LTDA.</option>
@@ -111,152 +132,140 @@
                             <option value="9004963237">SECURITY CENTER AAA LTDA</option>
                             <option value="9005108808">ACADEMIA DE SEGURIDAD PARA VIGILANTES ESCOLTAS Y SUPERVISORES A.S.V.E.S. LTDA</option>
                             <option value="9005520114">CENTRO DE ESTUDIOS ESPECIALIZADOS EN SEGURIDAD PRIVADA CEESP</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="estado_civil" class="control-label">Nivel de Seguridad</label>
+                    <select class="form-control" id="niv" name="niv" placeholder="Nivel" >
+                        <option value="0"></option>
+                        <option value="2303">ESPECIALlZACION ESCOLTA MANEJO DEFENSIVO</option>
+                        <option value="2302">ESPECIALlZACION ESCOLTA MERCANCIAS</option>
+                        <option value="2305">ESPECIALlZACION ESCOLTA PROTECCION A DIGNATARIOS</option>
+                        <option value="2304">ESPECIALlZACION ESCOLTA TRANSPORTE VALORES</option>
+                        <option value="5306">ESPECIALlZACION MANEJADOR CANINO BUSQUEDA y RESCATE</option>
+                        <option value="5302">ESPECIALlZACION MANEJADOR CANINO DEFENSA CONTROLADA</option>
+                        <option value="5303">ESPECIALlZACION MANEJADOR CANINO DETECCION EXPLOSIVOS</option>
+                        <option value="5305">ESPECIALlZACION MANEJADOR CANINO DETECCION MONEDA</option>
+                        <option value="5304">ESPECIALlZACION MANEJADOR CANINO DETECCION NARCOTICOS</option>
+                        <option value="5301">ESPECIALlZACION MANEJADOR CANINO SUPERVISOR</option>
+                        <option value="4301">ESPECIALlZACION MEDIOS TECNOLOGICOS COORDINADOR</option>
+                        <option value="4302">ESPECIALlZACION MEDIOS TECNOLOGICOS INSTALADOR</option>
+                        <option value="3301">ESPECIALlZACION SUPERVISORES AEROPORTUARIA</option>
+                        <option value="3303">ESPECIALlZACION SUPERVISORES COMERCIAL</option>
+                        <option value="3304">ESPECIALlZACION SUPERVISORES EDUCATIVA</option>
+                        <option value="3313">ESPECIALlZACION SUPERVISORES ENTIDADES OFICIALES</option>
+                        <option value="3305">ESPECIALlZACION SUPERVISORES EVENTOS PUBLlCOS</option>
+                        <option value="3315">ESPECIALlZACION SUPERVISORES GRANDES SUPERFICIES</option>
+                        <option value="3306">ESPECIALlZACION SUPERVISORES HOSPITALARIA</option>
+                        <option value="3308">ESPECIALlZACION SUPERVISORES INDUSTRIAL</option>
+                        <option value="3310">ESPECIALlZACION SUPERVISORES MEDIOS TECNOLOGICOS</option>
+                        <option value="3314">ESPECIALlZACION SUPERVISORES MINERA</option>
+                        <option value="3311">ESPECIALlZACION SUPERVISORES PETROLERA</option>
+                        <option value="3307">ESPECIALlZACION SUPERVISORES PORTUARIA</option>
+                        <option value="3309">ESPECIALlZACION SUPERVISORES RESIDENCIAL</option>
+                        <option value="3302">ESPECIALlZACION SUPERVISORES SECTOR FINANCIERO</option>
+                        <option value="3316">ESPECIALlZACION SUPERVISORES TRANSPORTE MASIVO</option>
+                        <option value="3312">ESPECIALlZACION SUPERVISORES TURISTICA</option>
+                        <option value="1301">ESPECIALlZACION VIGILANCIA AEROPORTUARIA</option>
+                        <option value="1303">ESPECIALlZACION VIGILANCIA COMERCIAL</option>
+                        <option value="1304">ESPECIALlZACION VIGILANCIA EDUCATIVA</option>
+                        <option value="1312">ESPECIALlZACION VIGILANCIA ENTIDADES OFICIALES</option>
+                        <option value="1305">ESPECIALlZACION VIGILANCIA EVENTOS PUBLlCOS</option>
+                        <option value="1314">ESPECIALlZACION VIGILANCIA GRANDES SUPERFICIES</option>
+                        <option value="1306">ESPECIALlZACION VIGILANCIA HOSPITALARIA</option>
+                        <option value="1308">ESPECIALlZACION VIGILANCIA INDUSTRIAL</option>
+                        <option value="1313">ESPECIALlZACION VIGILANCIA MINERA</option>
+                        <option value="1310">ESPECIALlZACION VIGILANCIA PETROLERA</option>
+                        <option value="1307">ESPECIALlZACION VIGILANCIA PORTUARIA</option>
+                        <option value="1309">ESPECIALlZACION VIGILANCIA RESIDENCIAL</option>
+                        <option value="1302">ESPECIALlZACION VIGILANCIA SECTOR FINANCIERO</option>
+                        <option value="1315">ESPECIALlZACION VIGILANCIA TRANSPORTE MASIVO</option>
+                        <option value="1311">ESPECIALlZACION VIGILANCIA TURISTICA</option>
+                        <option value="2101">FUNDAMENTACION ESCOLTA</option>
+                        <option value="5105">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN BUSQUEDA y RESCATE</option>
+                        <option value="5103">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN DEFENSA</option>
+                        <option value="5104">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN EXPLOSIVOS</option>
+                        <option value="5102">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN MONEDA</option>
+                        <option value="5101">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN NARCOTICOS</option>
+                        <option value="4101">FUNDAMENTACION MEDIOS TECNOLOGICOS</option>
+                        <option value="3101">FUNDAMENTACION SUPERVISORES</option>
+                        <option value="1101">FUNDAMENTACION VIGILANCIA</option>
+                        <option value="2403">PROFUNDIZACION ESCOLTA MANEJO DEFENSIVO</option>
+                        <option value="2402">PROFUNDIZACION ESCOLTA MERCANCIAS</option>
+                        <option value="2401">PROFUNDIZACION ESCOLTA PERSONAS</option>
+                        <option value="2405">PROFUNDIZACION ESCOLTA PROTECCION A DIGNATARIOS</option>
+                        <option value="2404">PROFUNDIZACION ESCOLTA TRANSPORTE VALORES</option>
+                        <option value="5406">PROFUNDIZACION MANEJADOR CANINO BUSQUEDA y RESCATE</option>
+                        <option value="5402">PROFUNDIZACION MANEJADOR CANINO DEFENSA CONTROLADA</option>
+                        <option value="5403">PROFUNDIZACION MANEJADOR CANINO DETECCION EXPLOSIVOS</option>
+                        <option value="5405">PROFUNDIZACION MANEJADOR CANINO DETECCION MONEDA</option>
+                        <option value="5404">PROFUNDIZACION MANEJADOR CANINO DETECCION NARCOTICOS</option>
+                        <option value="5401">PROFUNDIZACION MANEJADOR CANINO SUPERVISOR</option>
+                        <option value="4401">PROFUNDIZACION MEDIOS TECNOLOGICOS COORDINADOR</option>
+                        <option value="4402">PROFUNDIZACION MEDIOS TECNOLOGICOS INSTALADOR</option>
+                        <option value="3401">PROFUNDIZACION SUPERVISORES AEROPORTUARIA</option>
+                        <option value="3403">PROFUNDIZACION SUPERVISORES COMERCIAL</option>
+                        <option value="3404">PROFUNDIZACION SUPERVISORES EDUCATIVA</option>
+                        <option value="3413">PROFUNDIZACION SUPERVISORES ENTIDADES OFICIALES</option>
+                        <option value="3405">PROFUNDIZACION SUPERVISORES EVENTOS PUBLlCOS</option>
+                        <option value="3415">PROFUNDIZACION SUPERVISORES GRANDES SUPERFICIES</option>
+                        <option value="3406">PROFUNDIZACION SUPERVISORES HOSPITALARIA</option>
+                        <option value="3408">PROFUNDIZACION SUPERVISORES INDUSTRIAL</option>
+                        <option value="3414">PROFUNDIZACION SUPERVISORES MINERA</option>
+                        <option value="3411">PROFUNDIZACION SUPERVISORES PETROLERA</option>
+                        <option value="3407">PROFUNDIZACION SUPERVISORES PORTUARIA</option>
+                        <option value="3409">PROFUNDIZACION SUPERVISORES RESIDENCIAL</option>
+                        <option value="3402">PROFUNDIZACION SUPERVISORES SECTOR FINANCIERO</option>
+                        <option value="3416">PROFUNDIZACION SUPERVISORES TRANSPORTE MASIVO</option>
+                        <option value="3412">PROFUNDIZACION SUPERVISORES TURISTICA</option>
+                        <option value="1401">PROFUNDIZACION VIGILANCIA AEROPORTUARIA</option>
+                        <option value="1403">PROFUNDIZACION VIGILANCIA COMERCIAL</option>
+                        <option value="1404">PROFUNDIZACION VIGILANCIA EDUCATIVA</option>
+                        <option value="1412">PROFUNDIZACION VIGILANCIA ENTIDADES OFICIALES</option>
+                        <option value="1405">PROFUNDIZACION VIGILANCIA EVENTOS PUBLlCOS</option>
+                        <option value="1414">PROFUNDIZACION VIGILANCIA GRANDES SUPERFICIES</option>
+                        <option value="1406">PROFUNDIZACION VIGILANCIA HOSPITALARIA</option>
+                        <option value="1408">PROFUNDIZACION VIGILANCIA INDUSTRIAL</option>
+                        <option value="1413">PROFUNDIZACION VIGILANCIA MINERA</option>
+                        <option value="1410">PROFUNDIZACION VIGILANCIA PETROLERA</option>
+                        <option value="1407">PROFUNDIZACION VIGILANCIA PORTUARIA</option>
+                        <option value="1409">PROFUNDIZACION VIGILANCIA RESIDENCIAL</option>
+                        <option value="1402">PROFUNDIZACION VIGILANCIA SECTOR FINANCIERO</option>
+                        <option value="1415">PROFUNDIZACION VIGILANCIA TRANSPORTE MASIVO</option>
+                        <option value="1411">PROFUNDIZACION VIGILANCIA TURISTICA</option>
+                        <option value="2201">REENTRENAMIENTO ESCOLTA</option>
+                        <option value="5205">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN BUSQUEDA Y RESCATE</option>
+                        <option value="5203">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN DEFENSA</option>
+                        <option value="5204">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN EXPLOSIVOS</option>
+                        <option value="5202">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN MONEDA</option>
+                        <option value="5201">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN NARCOTICOS</option>
+                        <option value="4201">REENTRENAMIENTO MEDIOS TECNOLOGICOS</option>
+                        <option value="3201">REENTRENAMIENTO SUPERVISORES</option>
+                        <option value="1201">REENTRENAMIENTO VIGILANCIA</option>
+                        <option value="6101">SEMINARIO ADMINISTRACION DE SERVICIOS DE V.S.P.</option>
+                        <option value="6107">SEMINARIO COORDINADORE y DIRECTIVOS INSTALADORES DE EQUIPOS PARA LA VIGILANCIA Y S.P.</option>
+                        <option value="6106">SEMINARIO COORDINADORES DE MEDIOS TECNOLOGICOS</option>
+                        <option value="6104">SEMINARIO ESPECTACULOS PUBLlCOS</option>
+                        <option value="6103">SEMINARIO JEFES DE OPERACION DE EMPRESA DE V.S.P.</option>
+                        <option value="6102">SEMINARIO JEFES DE RECURSOS HUMANOS</option>
+                        <option value="6105">SEMINARIO JEFES DE SEGURIDAD DE DEPARTAMENTOS</option>
+                    </select>
 
-                        </select>
-                     </div>
-            </div>
-            <div class="form-group">
-                <label for="estado_civil" class="col-sm-2 control-label">Nivel de Seguridad</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="niv" name="niv" placeholder="Nivel" >
-                            <option value="0"></option>
-                            <option value="2303">ESPECIALlZACION ESCOLTA MANEJO DEFENSIVO</option>
-                            <option value="2302">ESPECIALlZACION ESCOLTA MERCANCIAS</option>
-                            <option value="2305">ESPECIALlZACION ESCOLTA PROTECCION A DIGNATARIOS</option>
-                            <option value="2304">ESPECIALlZACION ESCOLTA TRANSPORTE VALORES</option>
-                            <option value="5306">ESPECIALlZACION MANEJADOR CANINO BUSQUEDA y RESCATE</option>
-                            <option value="5302">ESPECIALlZACION MANEJADOR CANINO DEFENSA CONTROLADA</option>
-                            <option value="5303">ESPECIALlZACION MANEJADOR CANINO DETECCION EXPLOSIVOS</option>
-                            <option value="5305">ESPECIALlZACION MANEJADOR CANINO DETECCION MONEDA</option>
-                            <option value="5304">ESPECIALlZACION MANEJADOR CANINO DETECCION NARCOTICOS</option>
-                            <option value="5301">ESPECIALlZACION MANEJADOR CANINO SUPERVISOR</option>
-                            <option value="4301">ESPECIALlZACION MEDIOS TECNOLOGICOS COORDINADOR</option>
-                            <option value="4302">ESPECIALlZACION MEDIOS TECNOLOGICOS INSTALADOR</option>
-                            <option value="3301">ESPECIALlZACION SUPERVISORES AEROPORTUARIA</option>
-                            <option value="3303">ESPECIALlZACION SUPERVISORES COMERCIAL</option>
-                            <option value="3304">ESPECIALlZACION SUPERVISORES EDUCATIVA</option>
-                            <option value="3313">ESPECIALlZACION SUPERVISORES ENTIDADES OFICIALES</option>
-                            <option value="3305">ESPECIALlZACION SUPERVISORES EVENTOS PUBLlCOS</option>
-                            <option value="3315">ESPECIALlZACION SUPERVISORES GRANDES SUPERFICIES</option>
-                            <option value="3306">ESPECIALlZACION SUPERVISORES HOSPITALARIA</option>
-                            <option value="3308">ESPECIALlZACION SUPERVISORES INDUSTRIAL</option>
-                            <option value="3310">ESPECIALlZACION SUPERVISORES MEDIOS TECNOLOGICOS</option>
-                            <option value="3314">ESPECIALlZACION SUPERVISORES MINERA</option>
-                            <option value="3311">ESPECIALlZACION SUPERVISORES PETROLERA</option>
-                            <option value="3307">ESPECIALlZACION SUPERVISORES PORTUARIA</option>
-                            <option value="3309">ESPECIALlZACION SUPERVISORES RESIDENCIAL</option>
-                            <option value="3302">ESPECIALlZACION SUPERVISORES SECTOR FINANCIERO</option>
-                            <option value="3316">ESPECIALlZACION SUPERVISORES TRANSPORTE MASIVO</option>
-                            <option value="3312">ESPECIALlZACION SUPERVISORES TURISTICA</option>
-                            <option value="1301">ESPECIALlZACION VIGILANCIA AEROPORTUARIA</option>
-                            <option value="1303">ESPECIALlZACION VIGILANCIA COMERCIAL</option>
-                            <option value="1304">ESPECIALlZACION VIGILANCIA EDUCATIVA</option>
-                            <option value="1312">ESPECIALlZACION VIGILANCIA ENTIDADES OFICIALES</option>
-                            <option value="1305">ESPECIALlZACION VIGILANCIA EVENTOS PUBLlCOS</option>
-                            <option value="1314">ESPECIALlZACION VIGILANCIA GRANDES SUPERFICIES</option>
-                            <option value="1306">ESPECIALlZACION VIGILANCIA HOSPITALARIA</option>
-                            <option value="1308">ESPECIALlZACION VIGILANCIA INDUSTRIAL</option>
-                            <option value="1313">ESPECIALlZACION VIGILANCIA MINERA</option>
-                            <option value="1310">ESPECIALlZACION VIGILANCIA PETROLERA</option>
-                            <option value="1307">ESPECIALlZACION VIGILANCIA PORTUARIA</option>
-                            <option value="1309">ESPECIALlZACION VIGILANCIA RESIDENCIAL</option>
-                            <option value="1302">ESPECIALlZACION VIGILANCIA SECTOR FINANCIERO</option>
-                            <option value="1315">ESPECIALlZACION VIGILANCIA TRANSPORTE MASIVO</option>
-                            <option value="1311">ESPECIALlZACION VIGILANCIA TURISTICA</option>
-                            <option value="2101">FUNDAMENTACION ESCOLTA</option>
-                            <option value="5105">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN BUSQUEDA y RESCATE</option>
-                            <option value="5103">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN DEFENSA</option>
-                            <option value="5104">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN EXPLOSIVOS</option>
-                            <option value="5102">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN MONEDA</option>
-                            <option value="5101">FUNDAMENTACION MANEJADOR CANINO ENFASIS EN NARCOTICOS</option>
-                            <option value="4101">FUNDAMENTACION MEDIOS TECNOLOGICOS</option>
-                            <option value="3101">FUNDAMENTACION SUPERVISORES</option>
-                            <option value="1101">FUNDAMENTACION VIGILANCIA</option>
-                            <option value="2403">PROFUNDIZACION ESCOLTA MANEJO DEFENSIVO</option>
-                            <option value="2402">PROFUNDIZACION ESCOLTA MERCANCIAS</option>
-                            <option value="2401">PROFUNDIZACION ESCOLTA PERSONAS</option>
-                            <option value="2405">PROFUNDIZACION ESCOLTA PROTECCION A DIGNATARIOS</option>
-                            <option value="2404">PROFUNDIZACION ESCOLTA TRANSPORTE VALORES</option>
-                            <option value="5406">PROFUNDIZACION MANEJADOR CANINO BUSQUEDA y RESCATE</option>
-                            <option value="5402">PROFUNDIZACION MANEJADOR CANINO DEFENSA CONTROLADA</option>
-                            <option value="5403">PROFUNDIZACION MANEJADOR CANINO DETECCION EXPLOSIVOS</option>
-                            <option value="5405">PROFUNDIZACION MANEJADOR CANINO DETECCION MONEDA</option>
-                            <option value="5404">PROFUNDIZACION MANEJADOR CANINO DETECCION NARCOTICOS</option>
-                            <option value="5401">PROFUNDIZACION MANEJADOR CANINO SUPERVISOR</option>
-                            <option value="4401">PROFUNDIZACION MEDIOS TECNOLOGICOS COORDINADOR</option>
-                            <option value="4402">PROFUNDIZACION MEDIOS TECNOLOGICOS INSTALADOR</option>
-                            <option value="3401">PROFUNDIZACION SUPERVISORES AEROPORTUARIA</option>
-                            <option value="3403">PROFUNDIZACION SUPERVISORES COMERCIAL</option>
-                            <option value="3404">PROFUNDIZACION SUPERVISORES EDUCATIVA</option>
-                            <option value="3413">PROFUNDIZACION SUPERVISORES ENTIDADES OFICIALES</option>
-                            <option value="3405">PROFUNDIZACION SUPERVISORES EVENTOS PUBLlCOS</option>
-                            <option value="3415">PROFUNDIZACION SUPERVISORES GRANDES SUPERFICIES</option>
-                            <option value="3406">PROFUNDIZACION SUPERVISORES HOSPITALARIA</option>
-                            <option value="3408">PROFUNDIZACION SUPERVISORES INDUSTRIAL</option>
-                            <option value="3414">PROFUNDIZACION SUPERVISORES MINERA</option>
-                            <option value="3411">PROFUNDIZACION SUPERVISORES PETROLERA</option>
-                            <option value="3407">PROFUNDIZACION SUPERVISORES PORTUARIA</option>
-                            <option value="3409">PROFUNDIZACION SUPERVISORES RESIDENCIAL</option>
-                            <option value="3402">PROFUNDIZACION SUPERVISORES SECTOR FINANCIERO</option>
-                            <option value="3416">PROFUNDIZACION SUPERVISORES TRANSPORTE MASIVO</option>
-                            <option value="3412">PROFUNDIZACION SUPERVISORES TURISTICA</option>
-                            <option value="1401">PROFUNDIZACION VIGILANCIA AEROPORTUARIA</option>
-                            <option value="1403">PROFUNDIZACION VIGILANCIA COMERCIAL</option>
-                            <option value="1404">PROFUNDIZACION VIGILANCIA EDUCATIVA</option>
-                            <option value="1412">PROFUNDIZACION VIGILANCIA ENTIDADES OFICIALES</option>
-                            <option value="1405">PROFUNDIZACION VIGILANCIA EVENTOS PUBLlCOS</option>
-                            <option value="1414">PROFUNDIZACION VIGILANCIA GRANDES SUPERFICIES</option>
-                            <option value="1406">PROFUNDIZACION VIGILANCIA HOSPITALARIA</option>
-                            <option value="1408">PROFUNDIZACION VIGILANCIA INDUSTRIAL</option>
-                            <option value="1413">PROFUNDIZACION VIGILANCIA MINERA</option>
-                            <option value="1410">PROFUNDIZACION VIGILANCIA PETROLERA</option>
-                            <option value="1407">PROFUNDIZACION VIGILANCIA PORTUARIA</option>
-                            <option value="1409">PROFUNDIZACION VIGILANCIA RESIDENCIAL</option>
-                            <option value="1402">PROFUNDIZACION VIGILANCIA SECTOR FINANCIERO</option>
-                            <option value="1415">PROFUNDIZACION VIGILANCIA TRANSPORTE MASIVO</option>
-                            <option value="1411">PROFUNDIZACION VIGILANCIA TURISTICA</option>
-                            <option value="2201">REENTRENAMIENTO ESCOLTA</option>
-                            <option value="5205">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN BUSQUEDA Y RESCATE</option>
-                            <option value="5203">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN DEFENSA</option>
-                            <option value="5204">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN EXPLOSIVOS</option>
-                            <option value="5202">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN MONEDA</option>
-                            <option value="5201">REENTRENAMIENTO MANEJADOR CANINO ENFASIS EN NARCOTICOS</option>
-                            <option value="4201">REENTRENAMIENTO MEDIOS TECNOLOGICOS</option>
-                            <option value="3201">REENTRENAMIENTO SUPERVISORES</option>
-                            <option value="1201">REENTRENAMIENTO VIGILANCIA</option>
-                            <option value="6101">SEMINARIO ADMINISTRACION DE SERVICIOS DE V.S.P.</option>
-                            <option value="6107">SEMINARIO COORDINADORE y DIRECTIVOS INSTALADORES DE EQUIPOS PARA LA VIGILANCIA Y S.P.</option>
-                            <option value="6106">SEMINARIO COORDINADORES DE MEDIOS TECNOLOGICOS</option>
-                            <option value="6104">SEMINARIO ESPECTACULOS PUBLlCOS</option>
-                            <option value="6103">SEMINARIO JEFES DE OPERACION DE EMPRESA DE V.S.P.</option>
-                            <option value="6102">SEMINARIO JEFES DE RECURSOS HUMANOS</option>
-                            <option value="6105">SEMINARIO JEFES DE SEGURIDAD DE DEPARTAMENTOS</option>
+                    <label class="control-label">NRO</label>
+                    <input type="text" class="form-control" id="nro" name="nro" placeholder="Fecha Radicado" onkeyup="mayus(this);" required>
 
-                        </select>
-                     </div>
+                    <label class="control-label">Fecha Vencimiento</label>
+                    <input type="date" class="form-control" id="f_vence" name="f_vence" placeholder="Fecha Radicado" required>
+                </div>    
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">NRO <br><h7>"En Mayusacula"</h7></label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nro" name="nro" placeholder="Fecha Radicado" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Fecha Vencimiento</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="f_vence" name="f_vence" placeholder="Fecha Radicado" required>
-                </div>
-            </div>
-           
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <a href="menu_ingresos.php" class="btn btn-default">Regresar</a>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-                
-            </div>
-        </form>
-    </div>
+        </div><br>  <br>                  
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <a href="menu_ingresos.php" class="btn btn-default">Regresar</a>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>            
+        </div>
+    </form><br>
 </body>
 </html>
 <head>

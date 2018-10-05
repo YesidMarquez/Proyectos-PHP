@@ -27,10 +27,19 @@ $usuario=$row1['usuario_cedula'];
 $sql = "SELECT * FROM usuarios u, cargo c where u.cargo_id=c.id_cargo and  u.cedula_usuario= $usuario ";
 $resultado = $mysqli->query($sql);
 $row = $resultado->fetch_array(MYSQLI_ASSOC);
+$fechaCambio="2018-10-01";
+$fechaSistema=$row1['registro'];
+$newDate = date("Y-m-d", strtotime($fechaSistema));
 
-$sql2 = "SELECT * FROM imagephp where confronta_token = $token ";
-$resultado2 = $mysqli->query($sql2);
-$row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
+
+//consulta para ruta de imagenes
+$sql3 = "SELECT * FROM imagephp where confronta_token = $token ";
+$resultado3 = $mysqli->query($sql3);
+$row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
+
+   
+
+
 
 //$sql = "SELECT * FROM usuarios where cargo_id=1";//
 //$resultado = $mysqli->query($sql);
@@ -74,7 +83,11 @@ $fecha2=date('00:00:00');
         <div class="container-fluid">
         <div class="row">
             <div class="col-sm-8">
-                <img src="data:image/jpg;base64,<?php echo base64_encode($row2['imagen']);?>" class="img-thumbnail" width="" height=""><br><br><br>
+                <?php if ($fechaSistema > $fechaCambio) { ?>
+                    <img src="<?php echo ($row3['ruta_imagen']);?>" class="img-thumbnail" width="" height=""><br><br><br>
+                <?php }elseif ($fechaSistema <= $fechaCambio) {?>
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row3['imagen']);?>" class="img-thumbnail" width="" height=""><br><br><br>
+                <?php } ?>
              </div>
             <div class="col-sm-4">
                 <div class=" container p-2 bg-info">

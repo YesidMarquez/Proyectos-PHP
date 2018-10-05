@@ -14,6 +14,11 @@ $ipvisitante =$_SERVER["REMOTE_ADDR"];
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/JavaScript">
+    	function mayus(e) {
+        	e.value = e.value.toUpperCase();
+        }
+</script>
 </head>
 <body>
 	<div class="container">    
@@ -21,11 +26,11 @@ $ipvisitante =$_SERVER["REMOTE_ADDR"];
 			<form method="post" action="insert.php">
 			  <div class="form-group">
 				<label for="inputAddress"></label>
-				<input type="text" class="form-control" id="nombre" name="nombre" 	placeholder="Tu Nombre">
+				<input type="text" class="form-control" id="nombre" name="nombre" 	placeholder="Tu Nombre" onkeyup="mayus(this);">
 			  </div>
 			  <div class="form-group">
 				<label for="inputAddress2"></label>
-				<input type="text" class="form-control" id="telefono" name="telefono" placeholder="Tu Movil">
+				<input type="date" class="form-control" id="telefono" name="telefono" placeholder="Tu Movil">
 			  </div>
 			  <div class="form-group">
 			  	

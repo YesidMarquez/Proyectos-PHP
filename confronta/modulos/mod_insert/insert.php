@@ -5,10 +5,10 @@ $id = $_POST['id_empleado'];
 $campaña = $_POST['campaña'];
 $id_llamada= $_POST['id_llamada'];
 $id_cliente= $_POST['id_cliente'];
-/*$nombre= $_POST['nombre'];*/
 $token= $_POST['token'];
-
-date('m');
+date_default_timezone_set('America/Bogota');
+date('Y-m-d');
+$f= date('Y-m-d');;
     if (date('m')==01) {
         $dato=Date('m-d');
         $fecha= "2018-".$dato;
@@ -46,14 +46,13 @@ date('m');
     $dato=Date('m-d');
     $fecha= "2018-".$dato;
   }
-
-$validar="../../soportes/$fecha/$id";
+$validar="../soportes/$fecha/$id";
 if (!file_exists($validar)) {
-    mkdir("../../soportes/$fecha/$id",  0777, true);
+    mkdir("../soportes/$fecha/$id",  0777, true);
   
 }
 $imagen= $_FILES['imagen']['tmp_name'];
-$ruta="../../soportes/$fecha/$id/$token.jpg";//ruta carpeta donde queremos copiar las imágenes y en nuevo nombre.
+$ruta="../soportes/$fecha/$id/$token.jpg";//ruta carpeta donde queremos copiar las imágenes y en nuevo nombre.
 if (is_uploaded_file($imagen)) 
 { 
     move_uploaded_file($imagen,$ruta); 
@@ -61,7 +60,10 @@ if (is_uploaded_file($imagen))
 else 
 { 
 echo "Error al cargar el Archivo"; 
-} 
+}
+
+
+
 /************************Fin Recibidos por metodo POST********************************************/
 /************************Generar hora para insercion********************************************/
 date_default_timezone_set('America/Bogota');
@@ -88,15 +90,15 @@ if (empty($id_llamada)||empty($id_cliente)) {
     if ($id_cliente <> $row['cedula_cliente']   ){
         if ($token <> $row1['token_confronta']) {
             $sql = 
-           "INSERT INTO `confronta` (`id_llamada`, `cedula_cliente`,`usuario_cedula`, `registro`,`campana`, `token_confronta`) VALUES ('$id_llamada', '$id_cliente',$id', '$fecha1', '$campaña', '$token');";
+           "INSERT INTO `confronta` (`id_llamada`, `cedula_cliente`, `usuario_cedula`, `registro`,`campana`, `token_confronta`) VALUES ('$id_llamada', '$id_cliente', '$id', '$fecha1', '$campaña', '$token');";
            $resultado = $mysqli->query($sql);
 
            $sql1 = 
-           "INSERT INTO `imagephp` (`ruta_imagen`, `confronta_token`) VALUES ('$imagen', '$token'); ";
+           "INSERT INTO `imagephp` (`ruta_imagen`, `confronta_token`) VALUES ('$ruta', '$token'); ";
             $resultado1 = $mysqli->query($sql1);
 
            if ($resultado && $resultado1){
-                echo"<script> alert('Operacion exitosa token = $token'); window.location.href='ventas.php?cedula_usuario=$id'; </script>";
+                echo"<script> alert('Operacion exitosa token = $token $fecha'); window.location.href='ventas.php?cedula_usuario=$id'; </script>";
             }
             else{
                 echo"<script> alert('No se pudo insertar comuniquese con el administrador del sistema'); window.location.href='ventas.php?cedula_usuario=$id'; </script>";

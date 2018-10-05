@@ -15,24 +15,57 @@
     $row = $resultado->fetch_array(MYSQLI_ASSOC);
     
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap-theme.css" rel="stylesheet">
-    <script src="../js//jquery-3.1.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script> 
-    <!--<link href="../css/style.css" rel="stylesheet">-->
-    
+        <title>->MENU.2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script type="text/JavaScript">
+            function mayus(e) {
+                e.value = e.value.toUpperCase();
+            }
+        </script>            
 </head>
-<body><font face="Comic Sans MS,verdana">
+<body style="background-color:#F0000;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand/logo -->
+     <a class="navbar-brand" href="../menu.php" style="font-family: 'Satisfy', cursive;" title="Menu">Mat-Sw</a>
+      
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="empleado.php"><img class="menu" src="../imagenes/iconos/empleado.png" title="Empleado"></img></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contrato.php""><img  class="menu" src="../imagenes/iconos/contrato.png" title="Personal"></img></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img class="menu1" src="../imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="cursos.php"><img class="menu2" src="../imagenes/iconos/curso.png" title="Cursos"></img></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="puesto.php"><img class="menu2" src="../imagenes/iconos/puesto.png" title="Puesto"></img></a>
+        </li>
+                  
+         <li class="nav-item">
+          <a class="nav-link" href="#"><img  class="menu" src="../imagenes/iconos/cerrar.png" title="Cerrar"></a>
+        </li>
+      </ul>
+    </nav><br>
     <div class="container">
-        <div class="row">
-            <h3 style="text-align:center">INGRESO DE ACREDIATCION Y RADICADOS SVSP</h3>
-        </div>
+        <h3 style="text-align:center">INGRESO DE ACREDIATCION Y RADICADOS SVSP</h3><br>
+        
         <div class="row">
            <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
                 <div class="form-group">
@@ -41,75 +74,53 @@
                 </div>
             </form>
         </div>
-                    
-        <form class="form-horizontal" method="POST"  action="../operaciones/modulos/insertar_acreditacion.php">
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Cedula</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="id_empleado" name="id_empleado" placeholder="fecha" value="<?php echo $row['id_empleado']; ?>" required readonly="readonly">
+        <div class="conatiner">
+            <form class="form-horizontal" method="POST"  action="../operaciones/modulos/insertar_acreditacion.php">
+                <div class="row">
+                    <div class="col">
+                        <label for="nombre" class="control-label">Cedula</label>
+                        <input type="text" class="form-control" id="id_empleado" name="id_empleado" placeholder="fecha" value="<?php echo $row['id_empleado'];?>" required readonly="readonly">
+
+                        <label for="nombre" class="control-label">Apellidos</label>
+                        <input type="text" class="form-control"  value="<?php echo $row['apellidos']; ?>" readonly="readonly">
+
+                        <label for="nombre" class="control-label">Nombres</label>
+                        <input type="text" class="form-control"  value="<?php echo $row['nombres']; ?>" readonly="readonly">
+
+                        <label class="control-label">Estado Acreditacion</label>
+                        <select class="form-control" id="estado_a" name="estado_a">
+                            <option value="ACREDITADO">ACREDITADO</option>
+                            <option value="EN PROCESO">EN PROCESO</option>
+                            <option value="0"></option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="control-label">Fecha Acreditacion</label>
+                        <input type="date" class="form-control" id="f_acredi" name="f_acredi" placeholder="Fecha Acreditacion" required>
+
+                        <label class="control-label">Estado Radicado</label>
+                        <select class="form-control" id="estado_r" name="estado_r">
+                            <option value="ACREDITADO">RADICADO</option>
+                            <option value="0"></option>
+                        </select>
+
+                        <label class="control-label">Fecha Radicado</label>
+                        <input type="date" class="form-control" id="f_radicado" name="f_radicado" placeholder="Fecha Radicado" required>
+
+                        <label for="nombre" class="control-label">Numero Radicado</label>
+                        <input type="text" class="form-control" id="n_radicado" name="n_radicado" placeholder="Numero Radicado" required>    
+                    </div>
+                </div><br><br>
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <a href="menu_ingresos.php" class="btn btn-default">Regresar</a>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>            
                 </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Apellidos</label>
-                <div class="col-sm-10">
-                    
-                    <input type="text" class="form-control"  value="<?php echo $row['apellidos']; ?>" readonly="readonly">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Nombres</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control"  value="<?php echo $row['nombres']; ?>" readonly="readonly">
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Estado Acreditacion</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="estado_a" name="estado_a">
-                        <option value="ACREDITADO">ACREDITADO</option>
-                        <option value="EN PROCESO">EN PROCESO</option>
-                        <option value="0"></option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Fecha Acreditacion</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="f_acredi" name="f_acredi" placeholder="Fecha Acreditacion" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Estado Radicado</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="estado_r" name="estado_r">
-                        <option value="ACREDITADO">RADICADO</option>
-                        <option value="0"></option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Fecha Radicado</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="f_radicado" name="f_radicado" placeholder="Fecha Radicado" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="nombre" class="col-sm-2 control-label">Numero Radicado</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="n_radicado" name="n_radicado" placeholder="Numero Radicado" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <a href="menu_ingresos.php" class="btn btn-default">Regresar</a>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-                
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    </div>    
 </body>
 </html>
 <head>

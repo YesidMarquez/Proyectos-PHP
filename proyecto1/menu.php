@@ -110,10 +110,10 @@
           <a class="navbar-brand" href="menu.php" style="font-family: 'Satisfy', cursive;" title="Menu">Mat-Sw</a>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="tip_cons/planta.php"><img  class="menu" src="imagenes/iconos/personal.jpg" title="Personal"></img></a>
+              <a class="nav-link" href="tip_cons/planta.php"><img  class="menu" src="imagenes/iconos/personal.png" title="Personal"></img></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tip_cons/cursos.php"><img class="menu2" src="imagenes/iconos/curso.jpg" title="Cursos"></img></a>
+              <a class="nav-link" href="tip_cons/cursos.php"><img class="menu2" src="imagenes/iconos/curso.png" title="Cursos"></img></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="tip_cons/acreditaciones.php"><img class="menu1" src="imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>

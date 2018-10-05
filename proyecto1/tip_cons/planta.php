@@ -54,7 +54,7 @@
               <a class="nav-link" href="acreditaciones.php"><img class="menu1" src="../imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../formularios/menu_ingresos.php"><img class="menu" src="../imagenes/iconos/empleado.png" title="Ingreso Nuevo"></img></a>
+              <a class="nav-link" href="../formularios/empleado.php"><img class="menu" src="../imagenes/iconos/empleado.png" title="Ingreso Nuevo"></img></a>
             </li>
              <li class="nav-item">
               <a class="nav-link" href="#"><img  class="menu" src="../imagenes/iconos/cerrar.png" title="Cerrar"></a>

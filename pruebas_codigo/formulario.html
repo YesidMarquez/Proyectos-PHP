@@ -2,8 +2,13 @@
 	<html>
 	<head>
 		<title></title>
+		<script> 
+			function abrir() { 
+			open('pr.html','','width=1350,height=680') ; 
+			} 
+		</script>
 	</head>
-	<body>
+	<body onload="abrir()">
 		<form enctype="multipart/form-data" action="upload.php" method="post">
 		<input type="hidden" name="MAX_FILE_SIZE" value="30000">
 		Seleccionar archivo: <input name="archivo_usuario" type="file"><br>
