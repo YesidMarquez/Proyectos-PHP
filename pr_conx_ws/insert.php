@@ -64,5 +64,24 @@ if (empty($nombre)||empty($telefono)) {
     //echo"<script> alert('Datos Guardados corectamente.'); window.location.href='pr.php'; </script>";
     die;
 
+    /* CONSULTA PARA VALIDACION DE DATOS*/
+    /*$sql1 = "SELECT telefono FROM `datos_landing_movil` WHERE telefono='$telefono'";
+    $resultado1 = $mysqli->query($sql1);
+    $row = $resultado1->fetch_array(MYSQLI_ASSOC);
+    /* FIN CONSULTA PARA VALIDACION DE DATOS*/
+    /*if ($row['telefono ']==$telefono) {
+
+    
+    }else{
+    /* INSERCION DE DATOS*/
+    /*date_default_timezone_set('America/Bogota');
+    $fecha1=date('Y-m-d g:i:s');
+    $sql = "INSERT INTO `datos_landing_movil` (`created`, `nombre`, `telefono`, `terminos_condiciones`, `ip_usuario`, `numero_radicado`) VALUES ('$id', '$acreditacion', '$f_acredi', '$radicado', '$f_radicado', '$numero_r');";
+    $resultado = $mysqli->query($sql);
+    $sql2 = "INSERT INTO `imagenes_credencial` (`id_imagen`, `ruta`) VALUES ('$id', '$rura_acre');";
+    $resultado2 = $mysqli->query($sql2);
+    
+    /* FIN INSERCION DE DATOS*/
+
 ?>
 

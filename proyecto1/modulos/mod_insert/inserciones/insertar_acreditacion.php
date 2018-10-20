@@ -16,12 +16,23 @@ $fecha1 = $_POST['f_radicado'];
 $inicio1 = strtotime($fecha1);
 $f_radicado = date('Y-m-d',$inicio1);
 $numero_r = $_POST['n_radicado'];
-$rura_acre = "imagenes/credencial/".$id.".jpg";
 
-
-echo "rura_acre:";
-echo ( $rura_acre);    
-
+/********************************************************/
+$validarC="../../soportes/imagenes/credencial";
+if (!file_exists($validarc)) {
+    mkdir("../../soportes/imagenes/credencial",  0777, true);
+}
+$imagenc= $_FILES['credencial']['tmp_name'];
+$rutac="../../soportes/imagenes/credencial/$id.jpg";//ruta carpeta donde queremos copiar las imágenes y en nuevo nombre.
+if (is_uploaded_file($imagenc)) 
+{ 
+    move_uploaded_file($imagenc,$rutac); 
+} 
+else 
+{ 
+echo "Error al cargar el Archivo"; 
+}
+/*********************************************************/
 
 $sql1 = "SELECT empleado_id FROM `acreditacion` WHERE empleado_id='$id'";
 $resultado1 = $mysqli->query($sql1);
@@ -32,41 +43,13 @@ if ($row['empleado_id']<>$id) {
     
    $sql = "INSERT INTO `acreditacion` (`empleado_id`, `estado_acreditacion`, `fecha_acreditacion`, `estado_radicado`, `fecha_radicado`, `numero_radicado`) VALUES ('$id', '$acreditacion', '$f_acredi', '$radicado', '$f_radicado', '$numero_r');";
     $resultado = $mysqli->query($sql);
-    $sql2 = "INSERT INTO `imagenes_credencial` (`id_imagen`, `ruta`) VALUES ('$id', '$rura_acre');";
+    $sql2 = "INSERT INTO `imagenes_credencial` (`id_imagen`, `ruta`) VALUES ('$id', '$rutac');";
     $resultado2 = $mysqli->query($sql2);
 }
-else{
-    $id1=$id;
-    }
-       
-
+/*if($resultado) { 
+    header("Location: ../formularios/cursos.php");
+}else {
+    echo "Condición no cumplida";
+    header("Location: ../formularios/acreditacion.php");
+}  */  
 ?>
-
-<html lang="es">
-    <head>
-                
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/bootstrap-theme.css" rel="stylesheet">
-        <script src="../../js//jquery-3.1.1.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script> 
-        <link rel="icon" type="image/x-icon" href="../../imagenes/logos/favicon.ico" />
-    </head>
-    
-    <body><font face="Comic Sans MS,verdana">
-        <div class="container">
-            <div class="row">
-                <div class="row" style="text-align:center"><br>
-                    <?php if($resultado) { 
-                        header("Location: ../../formularios/cursos.php");?>
-                        <!--<h3>LOS REGISTROS CON ID CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> FUERON INGRESADOS</h3>
-                        <?php } else { ?>
-                        <h1>ERROR AL INSERTAR CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> YA SE ENCUENTA UN REGISTRO EN LA TABLA CON ESTA CEDULA </h3>-->
-                    <?php } ?><br><br>
-                    <a href="../../formularios/acreditacion.php" class="btn btn-primary">Regresar</a>
-                                        
-                </div>
-            </div>
-        </div>
-    </body>
-</html>

@@ -102,7 +102,7 @@
                 <div class="btn-group">
                     <a href="planta.php" class="btn btn-outline-primary ">ATRAS</a>
                     <?php if($row1['estado_id']=="1"){ ?>
-                    <a href="../mod_update/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']?>" class="btn btn-outline-primary">MODIFICAR</a>
+                    <a href="../mod_update/modificar_planta.php?id_empleado=<?php echo $row['empleado_id']?>" class="btn btn-outline-primary">ACTUALIZAR</a>
                     <a class="btn btn-primary disabled">ACTIVO</a>
                     <?php } else { ?>
                                      

@@ -80,7 +80,7 @@ else{
             <div class="row">
                 <div class="row" style="text-align:center"><br>
                      <?php if($resultado) { 
-                       header("Location: ../../formularios/s_social.php");?>
+                      header("Location: ../../mod_consultas/ver.php?id_empleado=$id ");?>
                         <!--<h1>INGRESO EXITOSO CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?></h3>
                         <?php } else { ?>
                         <h1>ERROR AL INSERTAR CEDULA <?php echo "'"?><?php echo ($id)?><?php echo "'"?> YA SE ENCUENTA UN REGISTRO EN LA TABLA CON ESTA CEDULA </h3>-->

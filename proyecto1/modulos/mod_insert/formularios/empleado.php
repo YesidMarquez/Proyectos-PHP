@@ -44,7 +44,7 @@ session_start();
               <a class="nav-link" href="#"><img class="menu" src="../../../imagenes/iconos/empleado.png" title="Empleado"></img></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contrato.php""><img  class="menu" src="../../../imagenes/iconos/contrato.png" title="Personal"></img></a>
+              <a class="nav-link" href="contrato.php""><img  class="menu" src="../../../imagenes/iconos/contrato.png" title="Contrato"></img></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="acreditacion.php"><img class="menu1" src="../../../imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>

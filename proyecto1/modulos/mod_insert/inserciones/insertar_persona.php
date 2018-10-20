@@ -18,6 +18,11 @@ $direcc = $_POST['direccion'];
 $resi = $_POST['c_res'];
 $tel = $_POST['tel'];
 $genero= $_POST['sexo'];
+/********************************************************/
+$validarC="../../soportes/imagenes/cedula";
+if (!file_exists($validarc)) {
+    mkdir("../../soportes/imagenes/cedula",  0777, true);
+}
 $imagenc= $_FILES['cedula']['tmp_name'];
 $rutac="../../soportes/imagenes/cedula/$id.jpg";//ruta carpeta donde queremos copiar las imágenes y en nuevo nombre.
 if (is_uploaded_file($imagenc)) 
@@ -28,6 +33,11 @@ else
 { 
 echo "Error al cargar el Archivo"; 
 }
+/*********************************************************/
+$validarf="../../soportes/imagenes/fotos";
+if (!file_exists($validarf)) {
+        mkdir("../../soportes/imagenes/fotos",  0777, true);
+    }
 $imagenf= $_FILES['fotos']['tmp_name'];
 $rutaf="../../soportes/imagenes/fotos/$id.jpg";//ruta carpeta donde queremos copiar las imágenes y en nuevo nombre.
 if (is_uploaded_file($imagenf)) 
@@ -38,6 +48,8 @@ else
 { 
 echo "Error al cargar el Archivo"; 
 }
+
+
 $nombres = explode(" ", $nombre);
 $var= count($nombres, COUNT_RECURSIVE);
 if ($var == 2) {
@@ -66,37 +78,20 @@ if ($varA == 2) {
 }
    
 $estado1= "1";
-$rura_foto = "imagenes/fotos/".$id.".jpg";
-$rura_cc = "imagenes/cedula/".$id.".jpg";
-
- $validar="../soportes/$fecha/$id";
-          if (!file_exists($validar)) {
-              mkdir("../soportes/$fecha/$id",  0777, true);
-            
-          }
-          $imagen= $_FILES['imagen']['tmp_name'];
-          $ruta="../soportes/$fecha/$id/$token.jpg";//ruta carpeta donde queremos copiar las imágenes y en nuevo nombre.
-          if (is_uploaded_file($imagen)) 
-          { 
-              move_uploaded_file($imagen,$ruta); 
-          } 
-          else 
-          { 
-          echo "Error al cargar el Archivo"; 
-          }
 
 
 $sql = "INSERT INTO `empleado` (`id_empleado`, `nombre_1`, `nombre_2`, `apellido_1`, `apellido_2`, `fecha_nacimiento`, `ciudad_nacimiento`, `ciudad_expedicion`, `tipo_sangre`, `direccion`,`ciudad_residencia`,`telefono`, `genero`, `estado_id`) VALUES ('$id', '$nombre_1', '$nombre_2', '$apellido_1', '$apellido_2', '$fech_nac', '$ciu_nas', '$ciu_ex', '$sangre', '$direcc','$resi','$tel','$genero','$estado1');";
 $resultado = $mysqli->query($sql);
 
-$sql1 = "INSERT INTO `imagenes_fotos` (`id_foto`, `ruta`) VALUES ('$id', '$rura_foto');";
+$sql1 = "INSERT INTO `imagenes_fotos` (`id_foto`, `ruta`) VALUES ('$id', '$rutaf');";
 $res = $mysqli->query($sql1);
-$sql2 = "INSERT INTO `imagenes_cedula` (`id_imagenc`, `ruta`) VALUES ('$id', '$rura_cc');";
+$sql2 = "INSERT INTO `imagenes_cedula` (`id_imagenc`, `ruta`) VALUES ('$id', '$rutac');";
     $resultado2 = $mysqli->query($sql2);
 
 
 if ($res){
-    echo 'inserción con exito';
+    
+    header("Location: contrato.php ");
 }else{
     echo 'no se puedo insertar';
 

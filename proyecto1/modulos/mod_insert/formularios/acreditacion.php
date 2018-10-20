@@ -36,7 +36,15 @@
             function mayus(e) {
                 e.value = e.value.toUpperCase();
             }
-        </script>            
+
+            function previewImage(nb) {        
+                var reader = new FileReader();         
+                reader.readAsDataURL(document.getElementById('uploadImage'+nb).files[0]);         
+                reader.onload = function (e) {             
+                    document.getElementById('uploadPreview'+nb).src = e.target.result;         
+                };     
+            }  
+        </script>             
 </head>
 <body style="background-color:#F0000;">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -97,22 +105,33 @@
                             <option value="EN PROCESO">EN PROCESO</option>
                             <option value="0"></option>
                         </select>
-                    </div>
-                    <div class="col">
+
                         <label class="control-label">Fecha Acreditacion</label>
                         <input type="date" class="form-control" id="f_acredi" name="f_acredi" placeholder="Fecha Acreditacion" required>
-
                         <label class="control-label">Estado Radicado</label>
                         <select class="form-control" id="estado_r" name="estado_r">
                             <option value="ACREDITADO">RADICADO</option>
                             <option value="0"></option>
                         </select>
 
+                    </div>
+                    <div class="col">
+                       
+
+                       
                         <label class="control-label">Fecha Radicado</label>
                         <input type="date" class="form-control" id="f_radicado" name="f_radicado" placeholder="Fecha Radicado" required>
 
                         <label for="nombre" class="control-label">Numero Radicado</label>
-                        <input type="text" class="form-control" id="n_radicado" name="n_radicado" placeholder="Numero Radicado" required>    
+                        <input type="text" class="form-control" id="n_radicado" name="n_radicado" placeholder="Numero Radicado" required> 
+
+                        <label for="nombre" class="control-label">Credencial</label>    
+                        <div class="custom-file">
+
+                            <input class="custom-file-input" id="uploadImage1" name="credencial" width="500" height="500" type="file" name="images[1]" onchange="previewImage(1);" />
+                            <img id="uploadPreview1" class="img-responsive" width="240" height="220" src="../../../imagenes/iconos/image_not_available.jpg" />
+                            <label class="custom-file-label" for="customFileLang" id="imagen2">Cargar Credencial</label>
+                        </div>   
                     </div>
                 </div><br><br>
                 <div class="container">
