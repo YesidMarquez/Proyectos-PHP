@@ -4,7 +4,7 @@ $telefono = $_POST['telefono'];
 $ipvisitante =$_POST['ip'];
 
 //echo "--| ".$nombre."--| ".$telefono."--| ".$ipvisitante;
-
+/*
 if (empty($nombre)||empty($telefono)) {
    echo"<script> alert('Por favro ingrese datos para Login.'); window.location.href='pr.php'; </script>";
 }else{
@@ -32,8 +32,9 @@ if (empty($nombre)||empty($telefono)) {
     catch(Exception $e) {
         die($e->getMessage());
     }
-    //var_dump($data);
-    /*$nombres = explode(" ", $nombre);
+    //var_dump($data);*/
+    
+    $nombres = explode(" ", $nombre);
     for ($i=4; $i <1 ; $i--) { 
         # code...
     }
@@ -54,10 +55,7 @@ if (empty($nombre)||empty($telefono)) {
         
        
     }
-    {
-        
-    }
-
+    
    
     /*
      
@@ -65,6 +63,6 @@ if (empty($nombre)||empty($telefono)) {
     echo "  |  Fecha ".$telefono; 
     //echo"<script> alert('Datos Guardados corectamente.'); window.location.href='pr.php'; </script>";
     die;
-}
+
 ?>
 

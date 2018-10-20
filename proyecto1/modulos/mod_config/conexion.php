@@ -1,10 +1,10 @@
 <?php
 
 $server='127.0.0.1';
-$user='yesid_marquez';
-$pass='Matias.2014';
+$user='root';
+$pass='';
 
-$bd='matsw_gesempleados';
+$bd='vise_pereira';
 $mysqli= new mysqli($server,$user,$pass,$bd);
 //Si hay conexion no entra mal if
 mysqli_set_charset($mysqli,'utf8');

@@ -72,8 +72,10 @@ session_start();
                         <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cedula" required>
 
                         <label for="nombre" class="control-label">Nombres y Apellidos</label>
-                        <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres y Apellidos" onkeyup="mayus(this);" required>
-
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" onkeyup="mayus(this);" required>
+                             <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" onkeyup="mayus(this);" required>
+                        </div>        
                         <label class="control-label">Fecha Nacimiento</label>
                         <input type="date" class="form-control" id="nac" name="nac" placeholder="Fecha Nacimiento" required>
 
@@ -3491,7 +3493,7 @@ session_start();
                             <div class="row">
                                 <div class="col">
                                     <div class="custom-file">
-                                        <input class="custom-file-input" id="uploadImage1" name="uploadImage1" width="500" height="500" type="file" name="images[1]" onchange="previewImage(1);" />
+                                        <input class="custom-file-input" id="uploadImage1" name="cedula" width="500" height="500" type="file" name="images[1]" onchange="previewImage(1);" />
                                         <img id="uploadPreview1" class="img-responsive" width="240" height="220" src="../../../imagenes/iconos/image_not_available.jpg" />
                                         <label class="custom-file-label" for="customFileLang" id="imagen2">Cargar Foto</label>
                                     </div>
@@ -3499,7 +3501,7 @@ session_start();
                                 <div class="col">
                                     <div class="custom-file">
                                         
-                                        <input class="custom-file-input" id="uploadImage2" name="uploadImage2" width="500" height="500" type="file" name="images[2]" onchange="previewImage(2);" />
+                                        <input class="custom-file-input" id="uploadImage2" name="fotos" width="500" height="500" type="file" name="images[2]" onchange="previewImage(2);" />
                                         <img id="uploadPreview2" class="img-responsive" width="240" height="220" src="../../../imagenes/iconos/image_not_available.jpg" />
                                         <label class="custom-file-label" for="customFileLang" id="imagen1">Cargar Cedula</label>
                                         
