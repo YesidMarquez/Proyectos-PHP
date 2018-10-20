@@ -26,7 +26,11 @@ $ipvisitante =$_SERVER["REMOTE_ADDR"];
 			<form method="post" action="insert.php">
 			  <div class="form-group">
 				<label for="inputAddress"></label>
-				<input type="text" class="form-control" id="nombre" name="nombre" 	placeholder="Tu Nombre" onkeyup="mayus(this);">
+				<input type="text" class="form-control" id="nombre" name="nombre" 	placeholder="Nombre" onkeyup="mayus(this);">
+			  </div>
+			  <div class="form-group">
+				<label for="inputAddress"></label>
+				<input type="text" class="form-control" id="apellido" name="apellido" 	placeholder="Apellido" onkeyup="mayus(this);">
 			  </div>
 			  <div class="form-group">
 				<label for="inputAddress2"></label>

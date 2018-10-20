@@ -1,5 +1,9 @@
 <?php
-   require 'config/conexion.php';
+   require 'modulos/mod_config/conexion.php';
+    session_start();
+    if (!$_SESSION){
+    echo"<script> alert('Usuario no autenticado.'); window.location.href='index.php'; </script>";
+    }   
 
     date('m');
     if (date('m')==01) {
@@ -90,7 +94,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>->MENU.2</title>
+		<title>Menu | 2.0</title>
 		<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -99,6 +103,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/v4-shims.css">
+        <link rel="icon" type="image/x-icon" href="imagenes/logos/favicon.ico" />
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <style ">
            
@@ -110,19 +115,19 @@
           <a class="navbar-brand" href="menu.php" style="font-family: 'Satisfy', cursive;" title="Menu">Mat-Sw</a>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="tip_cons/planta.php"><img  class="menu" src="imagenes/iconos/personal.png" title="Personal"></img></a>
+              <a class="nav-link" href="modulos/mod_consultas/planta.php"><img  class="menu" src="imagenes/iconos/personal.png" title="Personal"></img></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tip_cons/cursos.php"><img class="menu2" src="imagenes/iconos/curso.png" title="Cursos"></img></a>
+              <a class="nav-link" href="modulos/mod_consultas/cursos.php"><img class="menu2" src="imagenes/iconos/curso.png" title="Cursos"></img></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tip_cons/acreditaciones.php"><img class="menu1" src="imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>
+              <a class="nav-link" href="modulos/mod_consultas/acreditaciones.php"><img class="menu1" src="imagenes/iconos/acreditacion.png" title="Acreditaciones"></img></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="formularios/menu_ingresos.php"><img class="menu" src="imagenes/iconos/empleado.png" title="Ingreso Nuevo"></img></a>
+              <a class="nav-link" href="modulos/mod_insert/formularios/empleado.php"><img class="menu" src="imagenes/iconos/empleado.png" title="Ingreso Nuevo"></img></a>
             </li>
              <li class="nav-item">
-              <a class="nav-link" href="#"><img  class="menu" src="imagenes/iconos/cerrar.png" title="Cerrar"></a>
+              <a class="nav-link" href="modulos/mod_config/desconectar.php"><img  class="menu" src="imagenes/iconos/cerrar.png" title="Cerrar"></a>
             </li>
           </ul>
         </nav><br>
@@ -179,23 +184,6 @@
             </table>
         </div>    
         
-        <!--
-        <div class="row justify-content-md-center">
-            <div class="col col-sm-12 ">
-            	<p>
-					<marquee direction="right"  onmouseover="stop()" onmouseout="start()" scrollamount="15" scrolldelay="100" >
-						<img src="imagenes/logos/logo.jpg" align="" width="9%">
-						<img src="imagenes/logos/logo1.jpg" align="" width="9%">
-						<img src="imagenes/logos/SISE.jpg" align="" width="9%">
-						<img src="imagenes/logos/SISE1.jpg" align="" width="9%">
-						<img src="imagenes/logos/SISE2.jpg" align="" width="9%">
-						<img src="imagenes/logos/SISE3.jpg" align="" width="9%">
-					</marquee>
-				</p>
-            	
-				
-            </div>
-        </div>-->
 <!-- ***************************************************FIN DE AREA DE TRABAJO****************************************************-->
 <!--*********************************************************** FOOTER ***********************************************************-->
         <div class="container">    
@@ -203,7 +191,7 @@
                 <div class="col">
                      <div class="row justify-content-md-center">
                         <div class="footer-copyright  py-3" style="font-family: 'Nothing You Could Do', cursive;">© 2018 Copyright:
-                            <a href="https://ymarquez.000webhostapp.com/" style="font-family: 'Nothing You Could Do', cursive;">Mat-Sw<img src="imagenes/logos/logo.jpg" width="50" height="50"></a>
+                            <a href="https://ymarquez.000webhostapp.com/" style="font-family: 'Nothing You Could Do', cursive;"><img src="imagenes/logos/logo.png" width="50" height="50"></a>
                         </div>
                               
                     </div>

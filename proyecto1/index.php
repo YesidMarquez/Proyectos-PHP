@@ -1,45 +1,57 @@
-<?php @session_start(); ?>
 <!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-</head>
-<body>
-<!-- ***************************************************INICIO DE AREA DE TRABAJO****************************************************-->	
-<div class="container">
-	<div class="row">
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4">
-			<img src="imagenes/logos/logo.jpg">
-			<form action="config/validar.php" method="POST">
-				<div class="form-group">
-					<label for="exampleInputEmail1">Email address</label>
-				    <input type="text" class="form-control" name="User" aria-describedby="emailHelp" placeholder="Enter user">
-				    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				</div>
-				<div class="form-group">
-				    <label for="exampleInputPassword1">Password</label>
-				    <input type="password" class="form-control" name="Password" placeholder="Password">
-				</div>
-				<div class="form-group form-check">
-				    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-				    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-				</div>
-				<div class="btn-group" role="group" aria-label="Basic example">
-				  <button type="submit" class="btn btn-primary">Ingresar</button>
-				  <button type="button" class="btn btn-primary">Registro</button>
-				  
-				</div>
-				
-			</form>
-		</div>	
-	</div>	
-</div>	 
-<!-- ***************************************************FIN DE AREA DE TRABAJO******************************************************-->  
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-</body>
-</html>
-<?php exit(); ?>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Login | 2.0</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagenes/logos/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Coiny');
+    </style>
+	</head>
+	<body>
+<!--login modal-->
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="text-center"><img src="imagenes/logos/logo.png" width="180" height="150"></h1>
+          <center><h3 id="textH">Gestion de Empleados</h3></center>
+      </div>
+      <div class="modal-body">
+          <form class="form col-md-12 center-block" action="modulos/mod_config/validar.php" method="post" id="frm_ingreso">
+            <div class="form-group">
+              <input name="User" id="User" type="text" class="form-control input-lg" placeholder="Usuario" required>
+            </div>
+            <div class="form-group">
+              <input type="password" name="Password" id="Password" class="form-control input-lg" placeholder="Contraseña" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-info btn-lg btn-block" id="textB">Ingresar</button>
+              
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12"><center>
+            <div class="row justify-content-md-center">
+                <div class="footer-copyright  py-3" style="font-family: 'IM Fell English SC', serif;">© 2018 Copyright:<a><img src="imagenes/logos/logo.png" width="50" height="30"></a>
+                  <p>Yesid Leandro Marquez P.</p>
+                </div>
+            </div>
+		      </div></center>	
+      </div>
+  </div>
+  </div>
+</div>
 
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
