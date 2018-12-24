@@ -4,7 +4,7 @@ $server='127.0.0.1';
 $user='yesid_marquez';
 $pass='Matias.2014';
 
-$bd='copasst';
+$bd='matsw_copasst';
 $mysqli= new mysqli($server,$user,$pass,$bd);
 //Si hay conexion no entra mal if
 if($mysqli->connect_error){

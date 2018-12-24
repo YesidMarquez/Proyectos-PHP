@@ -35,6 +35,14 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
     <link rel="icon" type="image/x-icon" href="../../imagenes/logos/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
+<script  type="text/javascript" charset="utf-8" async defer>
+	var numero = /^([0-9])*$/;
+	if(!numero.test(id_cliente.value == "")){
+
+        alert('ERROR: Falta Campo Nombre');
+        return false;
+    }
+</script>
 <body style="background: rgba(24, 42, 121,0.3);">
 	<div class="container shadow-lg p-3 mb-5 bg-white rounded" style="background-color: blue;">
 		<div class="row">

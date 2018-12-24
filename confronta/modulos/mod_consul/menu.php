@@ -19,7 +19,9 @@
     $nombre = $_SESSION['nombre'];
     $apellido=$_SESSION['apellido'];
 
-    date('m');
+    require("../funciones/funciones.php");
+
+    /*date('m');
     if (date('m')==01) {
         $dato=Date('m-d');
         $fecha1= "2018-".$dato;
@@ -93,7 +95,7 @@
         $fecha = date_create('2018-'.$dato);
         date_add($fecha, date_interval_create_from_date_string('5 days'));
         $fecha3= date_format($fecha, 'Y-m-d');
-    }
+    }*/
     
     $sql = "SELECT cedula_usuario, nombres, apellidos FROM usuarios where cargo_id=1";//
     $resultado = $mysqli->query($sql);

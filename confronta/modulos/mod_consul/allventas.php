@@ -26,20 +26,11 @@
     $resultado = $mysqli->query($sql);
     
     
-   
-    $sql2 = "SELECT  count(*) as conteo FROM `confronta` where registro BETWEEN '$fecha_ini' AND '$fecha_fin' ";
-    $resultado2 = $mysqli->query($sql2);
-    $row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
-    
-   
-    $sql3 = "SELECT  count(*) as conteo FROM `confronta` where registro BETWEEN '$fecha_mes_inc' AND '$fecha1'";
-    $resultado3 = $mysqli->query($sql3);
-    $row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
-
-    $sql4 = "SELECT  count(*) as conteo FROM `confronta`";
-    $resultado4 = $mysqli->query($sql4);
-    $row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
-    //echo $row2['conteo'];
+  
+    $sql8 = "CALL Contador('$fecha_mes_inc','$fecha1','$fecha_ini','$fecha_fin')";
+    $result8 = $mysqli->query($sql8);
+    $row8 = $result8->fetch_array(MYSQLI_ASSOC);
+  
 ?>
 <htm lang="es">
     <head>
@@ -122,7 +113,7 @@
                                               <li class="badge badge-success badge-pill">
                                                 VENTAS DIARIAS
                                                 <span class="badge badge-dark badge-pill">
-                                                    <?php echo $row2['conteo']; ?>
+                                                    <?php echo $row8['conteod']; ?>
                                                 </span>
                                               </li>
                                               <li class="badge badge-primary badge-pill">
@@ -151,11 +142,11 @@
                                                 <?php if (date('m')==12) {?>
                                                 DICIEMBRE<?php }?>   
                                                 <span class="badge badge-dark badge-pill">
-                                                    <?php echo $row3['conteo']; ?></span>
+                                                    <?php echo $row8['conteom']; ?></span>
                                               </li>
                                               <li class="badge badge-danger badge-pill">
                                                 HISTORICO DE VENTAS  
-                                                <span class="badge badge-dark badge-pill"><?php echo $row4['conteo']; ?></span>
+                                                <span class="badge badge-dark badge-pill"><?php echo $row8['conteoh']; ?></span>
                                               </li>
                                             </ul>
                                         </div><br> 

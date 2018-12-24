@@ -13,41 +13,22 @@ if (!$_SESSION){
     </script>';
     }      
  
-$usuario=$_SESSION['cedula'];
+//$usuario=$_SESSION['cedula'];
 $nivel=$_SESSION['id_cargo'];
 
 $token = $_GET['token'];
 
-   
-$sql1 = "SELECT * FROM confronta where token_confronta = $token ";
-$resultado1 = $mysqli->query($sql1);
-$row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
-$usuario=$row1['usuario_cedula'];
+  
+$sql8 = "CALL `ventas`($token)";
+$result8 = $mysqli->query($sql8);
+$row8 = $result8->fetch_array(MYSQLI_ASSOC);
 
-$sql = "SELECT * FROM usuarios u, cargo c where u.cargo_id=c.id_cargo and  u.cedula_usuario= $usuario ";
-$resultado = $mysqli->query($sql);
-$row = $resultado->fetch_array(MYSQLI_ASSOC);
 $fechaCambio="2018-10-01";
 $fechaSistema=$row1['registro'];
 $newDate = date("Y-m-d", strtotime($fechaSistema));
 
 
-//consulta para ruta de imagenes
-$sql3 = "SELECT * FROM imagephp where confronta_token = $token ";
-$resultado3 = $mysqli->query($sql3);
-$row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
 
-   
-
-
-
-//$sql = "SELECT * FROM usuarios where cargo_id=1";//
-//$resultado = $mysqli->query($sql);
-date_default_timezone_set('America/Bogota');
-$fecha1=date('Y-m-d');
-$fecha2=date('00:00:00');
-//echo "Fecha---> ".$fecha1." ".$fecha2;;
-    
 /************************************************** FIN AREA CONEXION Y CONSULTA CON BD  (BACKEND)PROYECTO ****************************/ 
 ?>
 <!--******************************************************** INICIO AREA DE DISEÑO (FRONTEND)PROYECTO ********************************-->
@@ -84,9 +65,9 @@ $fecha2=date('00:00:00');
         <div class="row">
             <div class="col-sm-8">
                 <?php if ($fechaSistema > $fechaCambio) { ?>
-                    <img src="<?php echo ($row3['ruta_imagen']);?>" class="img-thumbnail" width="" height=""><br><br><br>
+                    <img src="<?php echo ($row8['ruta_imagen']);?>" class="img-thumbnail" width="" height=""><br><br><br>
                 <?php }elseif ($fechaSistema <= $fechaCambio) {?>
-                    <img src="data:image/jpg;base64,<?php echo base64_encode($row3['imagen']);?>" class="img-thumbnail" width="" height=""><br><br><br>
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row8['imagen']);?>" class="img-thumbnail" width="" height=""><br><br><br>
                 <?php } ?>
              </div>
             <div class="col-sm-4">
@@ -94,27 +75,27 @@ $fecha2=date('00:00:00');
                     <?php if ($nivel>2) { ?>
                         <a href="allventas.php" class="btn btn-danger ">ATRAS</a>
                     <?php }else { ?>
-                    <a href="ventaxagente.php?cedula_usuario=<?php echo $row['cedula_usuario'];?>" class="btn btn-danger ">ATRAS</a>
+                    <a href="ventaxagente.php?cedula_usuario=<?php echo $row8['cedula_usuario'];?>" class="btn btn-danger ">ATRAS</a>
                     <?php } ?>
                     <div >
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Identificacion Usuario:</strong></big>
-                            <?php echo $row['cedula_usuario']; ?></a>
+                            <?php echo $row8['cedula_usuario']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Nombre Usuario:</strong></big>
-                            <?php echo $row['nombres']; ?></a>
+                            <?php echo $row8['nombres']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Apellido Usuario:</strong></big>
-                            <?php echo $row['apellidos']; ?></a>
+                            <?php echo $row8['apellidos']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Cargo Usuario:</strong></big>
-                            <?php echo $row['descripcion']; ?></a>
+                            <?php echo $row8['descripcion']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Identificador de Llamada:</strong></big>
-                            <?php echo $row1['id_llamada']; ?></a>
+                            <?php echo $row8['id_llamada']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Cedula del Cliente:</strong></big> 
-                            <?php echo $row1['cedula_cliente']; ?></a>
+                            <?php echo $row8['cedula_cliente']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action" ><big><strong>Fecha de la venta:</strong></big> 
-                            <?php echo $row1['registro']; ?></a>
+                            <?php echo $row8['registro']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Campaña:    </strong></big> 
-                            <?php echo $row1['campana']; ?></a>
+                            <?php echo $row8['campana']; ?></a>
                         <a class="list-group-item list-group-item-info" class="list-group-item list-group-item-action"><big><strong>Token Transaccion:    </strong></big> 
-                            <?php echo $row1['token_confronta']; ?></a> 
+                            <?php echo $row8['token_confronta']; ?></a> 
                     </div>
                 </div>
             </div>
