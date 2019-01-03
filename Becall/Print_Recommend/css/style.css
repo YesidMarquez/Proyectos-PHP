@@ -1,0 +1,28 @@
+/*@import url('https://fonts.googleapis.com/css?family=Coiny');*/
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Arimo|Coiny|Fira+Sans|Fredoka+One|Gloria+Hallelujah|Indie+Flower|Kavoon|Kosugi+Maru|Lato:400,700|Lora|Merienda:700|Merriweather|Monoton|Montserrat|Mukta+Malar|Muli|Nanum+Gothic|Notable|Noticia+Text:700|Noto+Sans|Noto+Serif|Noto+Serif+JP|Noto+Serif+KR|Nunito|Open+Sans+Condensed:300|Open+Sans:400,600|Orbitron:700|Oswald:400,700|PT+Sans|PT+Sans+Narrow|PT+Serif|Passion+One|Permanent+Marker|Playfair+Display|Poor+Story|Poppins|Quattrocento:700|Raleway:400,700|Righteous|Roboto+Condensed:400,700|Roboto+Mono|Roboto+Slab|Roboto:400,500|Slabo+27px|Source+Sans+Pro:400,600|Titillium+Web|Ubuntu|Ubuntu+Condensed|Ultra');
+
+.modal-footer {   border-top: 8px; }
+
+.colortext {
+	color: red;
+}
+#colorForm {
+    background: rgba(006, 057, 113,0.3);
+    border-radius: 15px 15px 15px 15px;
+}
+body{
+	background-color:#D7D7D7;
+	border-radius: 30px 30px 15px 15px;
+	
+}
+
+#textH{
+	font-family: 'Coiny', cursive;
+	font-size: 40px;
+}
+
+#textB{
+	font-family: 'Coiny', cursive;
+	font-size: 25px;
+}
+
